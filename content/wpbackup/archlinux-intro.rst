@@ -1,5 +1,5 @@
 ArchLinux入门浅谈
-#############
+#################
 :date: 2012-02-24 12:43
 :category: IT技术
 :tags: Archlinux, wiki, 入门, 安装, 手册, 技巧
@@ -51,7 +51,7 @@ Handbook`_\ 。但是我们应当注意到这本书发布于2009年，由于Arch
 
 -  如何找到适合的软件？
 
-Arch默认的包管理工具是pacman，主要有两个配置文件：/etc/pacman.conf和/etc/pacman.d/mirrorlist。pacman可以安装的软件可以到\ `这里`_\ 搜索。AUR包含的软件可以到\ `这里`_\ 搜索。应当善用这两个搜索，当然你也可以命令行方式搜索，不过要注意源的配置。
+Arch默认的包管理工具是pacman，主要有两个配置文件：/etc/pacman.conf和/etc/pacman.d/mirrorlist。pacman可以安装的软件可以到\ `这里<http://www.archlinux.org/packages/>`_\ 搜索。AUR包含的软件可以到\ `这里<https://aur.archlinux.org>`_\ 搜索。应当善用这两个搜索，当然你也可以命令行方式搜索，不过要注意源的配置。
 
 -  学习什么？
 
@@ -64,5 +64,3 @@ Arch默认的包管理工具是pacman，主要有两个配置文件：/etc/pacma
 .. _比较: http://www.cyberciti.biz/tips/linux-unix-bsd-documentations.html
 .. _Arch Linux Handbook: http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=7&ved=0CGIQFjAG&url=http%3A%2F%2Ftuxweet.linux.org.tr%2Fgetfile%2Fpid%3Apublic_250721%2Farch.pdf&ei=gHZHT5_eM62tiQel09SnDg&usg=AFQjCNH7_1Q5VGEdo98g8prZra0-D5msFw&sig2=3SPyg8TUbP0d6IBaY0G4DQ
 .. _《打造完美的 Linux 桌面》: http://linuxtoy.org/archives/the-perfect-linux-desktop-arch-linux-2007-08-2-1.html
-.. _这里: http://www.archlinux.org/packages/
-.. _这里: https://aur.archlinux.org

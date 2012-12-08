@@ -1,12 +1,12 @@
 Latex for wordpress 插件测试
-########################
+############################
 :date: 2012-02-18 05:48
 :category: IT技术
 :tags: LaTeX, WordPress, 测试
 
 本文主要用于测试\ `latex for wordpress`_\ 插件
 
-毕达哥拉斯定理：\\(a^2+b^2=c^2\\)
+毕达哥拉斯定理：:math:`a^2+b^2=c^2`
 
 正态分布：\\(f(x)=\\frac{1}{\\sqrt{2\\pi}\\sigma}exp\\left(
 -\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)\\)
