@@ -19,6 +19,7 @@ LINKS =  (('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
 
 # Social widget
 SOCIAL = (('Twitter', 'https://twitter.com/voidmous'),
+          ('Douban', 'http://www.douban.com/people/45448149'),
           ('Weibo', 'http://weibo.com/u/1760438435'),
           ('Renren', 'http://www.renren.com/221168912'),)
 

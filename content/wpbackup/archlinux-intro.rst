@@ -6,7 +6,8 @@ ArchLinux入门浅谈
 
 这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。
 
--  为什么用Arch？
+为什么用Arch？
+^^^^^^^^^^^^^^
 
 这方面的文章相当多，一搜一大把，我就不做什么总结发言了，写几点自己的想法。其实弊人最早接触的linux发行版是ubuntu和debian，当时ubuntu很被看好，不过还没流行到现在这个程度。那是我第一次被一个完全免费而且漂亮的东西打动了，期间零零碎碎玩过几次系统，但是由于技术水平有限，一直玩得不怎么顺手。直到最近，我开始越来越讨厌windows的臃肿庞大和功利，希望能够转移到linux平台上，把windows作为对“现实世界的妥协”。虽然debian也是很出色的系统，但是显然它和windows相同的特点就是较为臃肿，杂七杂八的东西自带一大堆（我不很清楚debian有没有精简定制的可能性）。出于这点考虑，我也玩过几天的LFS，注意，我当时不过装过几次linux，断断续续看过linux书籍的几个章节而已，可以想象当时我是怎样的抓耳挠腮吧^\_^。当然这次实验以失败告终，我只能继续寻找能让自己足够满意的系统，终于，ArchLinux进入了我的视线。在我看来，Arch有以下几个特点是让我欲罢不能的：
 
@@ -17,22 +18,21 @@ ArchLinux入门浅谈
 
 个人的使用感受就是如此，技术层面我暂时还说不出什么更深的东西，Linux是需要积累的。
 
--  如何入门？
+如何入门？
+^^^^^^^^^^
 
 虚拟机是必要的。即使你有一定的Linux基础，仍然需要在虚拟环境下感受一下整个的组装过程，同时考虑可能碰到的问题和解决方案并做好记录（关键问题记录即可，不需要事无巨细，下面会谈到）。
 
 当然实际的安装更加必要，尤其是设计到驱动和X的部分，很有可能你就会在这儿倒下。
 
-不同于某些流行的发行版，Arch没有什么书籍可以参考，如果一定要说有的话也只有这本\ `Arch
-Linux
-Handbook`_\ 。但是我们应当注意到这本书发布于2009年，由于Arch更新地非常快，因此书中很多内容已经不符合现在的情况，过程虽然相似，但是如果在细节上马虎，那么很有可能出现难以解决的问题（对于从地基开始搭建的系统更是如此）。所以这本书仅能作为参考，千万不能如标题所言作为手册。
+不同于某些流行的发行版，Arch没有什么书籍可以参考，如果一定要说有的话也只有这本\ `Arch Linux Handbook`_\ 。但是我们应当注意到这本书发布于2009年，由于Arch更新地非常快，因此书中很多内容已经不符合现在的情况，过程虽然相似，但是如果在细节上马虎，那么很有可能出现难以解决的问题（对于从地基开始搭建的系统更是如此）。所以这本书仅能作为参考，千万不能如标题所言作为手册。
 
-中文资料也有不少，主要是网页，最经典的是\ `《打造完美的 Linux
-桌面》`_\ ，同样的，里面的某些命令也严重过时。
+中文资料也有不少，主要是网页，最经典的是\ `打造完美的 Linux 桌面`_\ ，同样的，里面的某些命令也严重过时。
 
 不要沮丧，初学者应当坚定一个信念，最好的文档就是官方wiki，它由最活跃的Arch用户打造，实时性、正确性都有保障，应当作为我们的最权威指南。里面大部分是英文，部分有中文（这里提一下，部分页面中文翻译相对英文原文有延时，如果参考中文手册出现问题，建议参考英文），玩Linux就应该做好挑战自己英语水平的准备，呵呵。
 
--  如何使用手册？
+如何使用手册？
+^^^^^^^^^^^^^^
 
 这个问题困扰了我很久，虽然我有两台电脑可以自由使用，但是它们在空间上相距太远，无法做到让我边安装边参考。我也想过将wiki打印出来，但是在最初的安装中发现打印的总是不够，你需要不停地链接到其它文章，所以只能作罢（当然如果你熟练了，那么需要参考的文章就少了，但那就不是入门者的问题了）。
 
@@ -40,27 +40,24 @@ Handbook`_\ 。但是我们应当注意到这本书发布于2009年，由于Arch
 
 实际上这个问题Arch的维护人员早就替你解决了，这主要分两个阶段：
 
-#. 安装基本系统时。如果你足够细心，那么你会看到Arch的提示，在Arch的ISO文件里就存了一份最新的Offical
-   Installation Guide
-   en，位于/usr/share/aif/docs/official\_installation\_guide\_en，用vi或者nano打开即可。你可能会问，我打开了文档那我怎么继续安装呢？不要忘了，Linux有多个终端，你可以Ctrl+ALT+F2在第二个终端看文档，再Ctrl+ALT+F1切换会终端1,还可以用ALT+F7看安装实时日志，现在知道Linux多用户终端的好处了吧。
-#. 配置系统GUI时。这个时候初学者如果手头没有参考手册，面对黑压压的终端完全无从操作。这时只要你网络配置正常，那么你照样可以参考wiki。当然这时是没法用Firefox或者Chrome的，但我们有lynx，它是一个终端的网络浏览器，支持在字符界面下查看网页或者上网（直接用pacman命令安装），为了效率考虑，我们直接把wiki下载下来，而不要去上网刷新了。这同样很简单：pacman
-   -S arch-wiki-docs
-   arch-wiki-lite。其中arch-wiki-docs是网页，arch-wiki-lite是文本，推荐用lynx浏览网页版（因为在字符终端下有高亮，Geek味马上就来了！）。PS：安装后直接打开/usr/share/doc/arch-wiki/html/index.html就可以了，lynx有搜索功能，非常实用。同样的你也需要在不同终端下切换文档和工作空间。
+#. 安装基本系统时。如果你足够细心，那么你会看到Arch的提示，在Arch的ISO文件里就存了一份最新的Offical Installation Guide en，位于/usr/share/aif/docs/official\_installation\_guide\_en，用vi或者nano打开即可。你可能会问，我打开了文档那我怎么继续安装呢？不要忘了，Linux有多个终端，你可以Ctrl+ALT+F2在第二个终端看文档，再Ctrl+ALT+F1切换会终端1,还可以用ALT+F7看安装实时日志，现在知道Linux多用户终端的好处了吧。
+#. 配置系统GUI时。这个时候初学者如果手头没有参考手册，面对黑压压的终端完全无从操作。这时只要你网络配置正常，那么你照样可以参考wiki。当然这时是没法用Firefox或者Chrome的，但我们有lynx，它是一个终端的网络浏览器，支持在字符界面下查看网页或者上网（直接用pacman命令安装），为了效率考虑，我们直接把wiki下载下来，而不要去上网刷新了。这同样很简单：\ ``pacman -S arch-wiki-docs arch-wiki-lite``\ 。其中arch-wiki-docs是网页，arch-wiki-lite是文本，推荐用lynx浏览网页版（因为在字符终端下有高亮，Geek味马上就来了！）。PS：安装后直接打开/usr/share/doc/arch-wiki/html/index.html就可以了，lynx有搜索功能，非常实用。同样的你也需要在不同终端下切换文档和工作空间。
 
 有了这个工具，安装过程就不再黑暗，我甚至都不想切到图形界面去了^\_^（有zhcon这还真没有什么难的）。只要善用该方法，安装Arch时不再需要大量的文档准备工作，只要对目标配置了解即可，边参考边装系统，多装几遍自然就熟悉了，除了重要的问题做点记录外，基本不需要准备小本子了。
 
--  如何找到适合的软件？
+如何找到适合的软件？
+^^^^^^^^^^^^^^^^^^^^
 
-Arch默认的包管理工具是pacman，主要有两个配置文件：/etc/pacman.conf和/etc/pacman.d/mirrorlist。pacman可以安装的软件可以到 \ `这里<http://www.archlinux.org/packages/>`_\ 搜索。AUR包含的软件可以到 \ `这里<https://aur.archlinux.org>`_\ 搜索。应当善用这两个搜索，当然你也可以命令行方式搜索，不过要注意源的配置。
+Arch默认的包管理工具是pacman，主要有两个配置文件：/etc/pacman.conf和/etc/pacman.d/mirrorlist。pacman可以安装的软件可以到\ `这里`__\ 搜索。AUR包含的软件可以到\ `这里`__\ 搜索。应当善用这两个搜索，当然你也可以命令行方式搜索，不过要注意源的配置。
 
--  学习什么？
+__ http://www.archlinux.org/packages
+__ https://aur.archlinux.org
+
+学习什么？
+^^^^^^^^^^
 
 不同Linux有不同特点，这些特点决定了用户在该发行版下大量的时间在干什么，比如Ubuntu用于娱乐，Debian用于编程，Gentoo用于管理服务器。对我而言，学习Linux主要目的在于熟悉工作平台，写LaTeX文档以及偶尔编程（当前的目标），所以折腾X和软件（Arch高度的定制性保证了我可以方便地折腾各种WM和DE）、提高LaTeX水平以及Matlab和C语言编程是我可以着力的方向。当然，适当的娱乐同样需要，Mplayer的使用以及Wine平台都需要了解。
 
-.. raw:: html
-
-   </p>
-
 .. _比较: http://www.cyberciti.biz/tips/linux-unix-bsd-documentations.html
 .. _Arch Linux Handbook: http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=7&ved=0CGIQFjAG&url=http%3A%2F%2Ftuxweet.linux.org.tr%2Fgetfile%2Fpid%3Apublic_250721%2Farch.pdf&ei=gHZHT5_eM62tiQel09SnDg&usg=AFQjCNH7_1Q5VGEdo98g8prZra0-D5msFw&sig2=3SPyg8TUbP0d6IBaY0G4DQ
-.. _《打造完美的 Linux 桌面》: http://linuxtoy.org/archives/the-perfect-linux-desktop-arch-linux-2007-08-2-1.html
+.. _打造完美的 Linux 桌面: http://linuxtoy.org/archives/the-perfect-linux-desktop-arch-linux-2007-08-2-1.html

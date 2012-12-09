@@ -85,7 +85,7 @@ open。
 
 黑底白色的大量文字看久了很累，可以考虑自定义彩色的manpage，编辑～/.bashrc：
 
-::
+.. code-block:: bash
 
     # colorful man page
     export PAGER="`which less` -s"
@@ -97,9 +97,5 @@ open。
     export LESS_TERMCAP_so=$'\E[01;44;33m'
     export LESS_TERMCAP_ue=$'\E[0m'
     export LESS_TERMCAP_us=$'\E[01;33m'这样一个简单可用的彩色manpage就搞定了，当然你也可以自己参照修改。
-
-.. raw:: html
-
-   </p>
 
 .. _manpages-zh项目: https://github.com/lidaobing/manpages-zh
