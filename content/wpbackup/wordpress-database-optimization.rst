@@ -16,22 +16,20 @@ wordpress数据库优化记录
 Codex的\ `数据库描述`_\ 进行修改。
 
 删除akismet垃圾数据。关于akismet如何产生这些数据可以参考\ `wp\_commentmeta是否正在拖慢你的blog`_\ 。
-[sql] delete from wp\_commentmeta where
-meta\_key='akismet\_as\_submitted' or meta\_key='akismet\_history' or
-meta\_key='akismet\_rechecking' or meta\_key='akismet\_result' or
-meta\_key='akismet\_user' or meta\_key='akismet\_user\_result[/sql]
+
+.. code-block:: sql
+
+   delete from wp_commentmeta where meta_key='akismet_as_submitted' or meta_key='akismet_history' or meta_key='akismet_rechecking' or meta_key='akismet_result' or meta_key='akismet_user' or meta_key='akismet_user_result
 
 wp\_options数据表清理。主要有两部分垃圾数据：其一、已删除的插件选项。大部分插件都不提供完全的删除功能，主要就是针对数据表而言。由于不清楚数据和插件的对应关系，最好不要盲目删除，如果一定要清理，可以尝试用\ `clean
 options`_\ 插件，注意备份！其二、没用的RSS Feed
 Cache。以“\_transient”开头的数据都是因为用了RSS小工具产生的，作用不大，体积却不小。可以用下面的SQL语句删除：
-[sql] DELETE FROM wp\_options WHERE option\_name REGEXP "\_transient\_
-[/sql]
+
+.. code-block:: sql
+
+   DELETE FROM wp_options WHERE option_name REGEXP "_transient_
 
 4、优化数据表。最后还要利用phpmyadmin执行优化数据表，体积还会有所减小。
-
-.. raw:: html
-
-   </p>
 
 .. _statpresscn: http://www.6psp.cn/20100917/statpresscn%E6%8F%92%E4%BB%B6%E9%80%A0%E6%88%90%E5%8D%9A%E5%AE%A2%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%EF%BC%8C%E8%B5%B6%E5%BF%AB%E5%88%A0%E9%99%A4.html
 .. _数据库描述: http://codex.wordpress.org/zh-cn:%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0
