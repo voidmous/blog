@@ -6,6 +6,7 @@
 
 本文翻译自\ `howtogeek`_\ ，总结得不错。不过从评论来看，似乎对opera支持不大好，读者请自行尝试。
 |image0|
+
 每个主流的网络浏览器都有一部分相同的快捷键设置。无论你使用Mozilla
 Firefox，Google Chrome，Apple
 Safari或者Opera——这些键盘快捷键应该都是有效的。每个浏览器都有自己特有的快捷键，不过学会使用通用的键位在不同浏览器或者电脑间切换时就非常有用。下面的列表同时也包括几个鼠标快捷键。
@@ -14,13 +15,29 @@ Safari或者Opera——这些键盘快捷键应该都是有效的。每个浏览
 ~~~~~~~~
 
 按Ctrl +1-8 切换到指定的标签，从左边算起。 CTRL +9
-切换到最后一个标签。\ |image1| Ctrl + Tab
+切换到最后一个标签。\ |image1| 
+
+Ctrl + Tab
 切换到下一个标签——换句话说，切换到右边的选项卡。（CTRL + PAGE UP
-也可以，但在IE下无效。） Ctrl + Shift + Tab
+也可以，但在IE下无效。） 
+
+Ctrl + Shift + Tab
 切换到前一个标签——换句话说，切换到左边的选项卡。 （CTRL + PAGE DOWN
-也可以，但IE下无效。） CTRL + W，CTRL + F4 关闭当前标签。 Ctrl + Shift + T
--重新打开上次关闭的标签。|image2| CTRL + T 建立新标签 Ctrl + N
-打开一个新的浏览器窗口。 ALT + F4 关闭当前窗口。（所有应用程序通用哦）
+也可以，但IE下无效。） 
+
+CTRL + W，CTRL + F4 关闭当前标签。 
+
+Ctrl + Shift + T
+-重新打开上次关闭的标签。
+
+\ |image2| 
+
+CTRL + T 建立新标签 
+
+Ctrl + N
+打开一个新的浏览器窗口。 
+
+ALT + F4 关闭当前窗口。（所有应用程序通用哦）
 
 **鼠标操作**
 ~~~~~~~~~~~~
@@ -40,13 +57,17 @@ Alt +Left Arrow，Backspace 返回。 Alt +Right Arrow，Shift + Backspace
 ~~~~~~~~
 
 Ctrl 和+，Ctrl +Mousewheel Up  放大。 Ctrl 和- ，Ctrl +Mousewheel Down 
-缩小。 CTRL +0  默认缩放级别。 F11   全屏模式。\ |image3|
+缩小。 CTRL +0  默认缩放级别。 F11   全屏模式。
+
+\ |image3|
 
 **滚动**
 ~~~~~~~~
 
 Space，Page Down  向下滚动一帧。 Page Up  向上滚动一帧。 Home  页面顶部。
-End  页面底部。 Middle Click  用鼠标滚动页面。\ |image4|
+End  页面底部。 Middle Click  用鼠标滚动页面。
+
+\ |image4|
 
 **地址栏**
 ~~~~~~~~~~
@@ -63,14 +84,18 @@ CTRL + K，CTRL + E 
 聚焦浏览器内置的搜索框，如果浏览器没有专用搜索框就聚焦在地址栏（CTRL + K
 在IE浏览器下不起作用， 按Ctrl + E替代。） ALT + Enter 
 在新标签中执行搜索栏搜索。 Ctrl + F，F3 打开页面搜索工具窗口 Ctrl + G，F3 
-下一个搜索结果 Ctrl + Shift + G，SHIFT + F3  上一个搜索结果\ |image5|
+下一个搜索结果 Ctrl + Shift + G，SHIFT + F3  上一个搜索结果
+
+\ |image5|
 
 **浏览历史与书签**
 ~~~~~~~~~~~~~~~~~~
 
 CTRL + H  打开浏览历史窗口。 Ctrl + J  打开下载历史窗口。 Ctrl + D 
 收藏当前网站到书签。 Ctrl + Shift + Del 
-打开“清除浏览历史记录”窗口\ |image6|
+打开“清除浏览历史记录”窗口
+
+\ |image6|
 
 **其他功能**
 ~~~~~~~~~~~~

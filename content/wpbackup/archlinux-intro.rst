@@ -51,7 +51,7 @@ Handbook`_\ 。但是我们应当注意到这本书发布于2009年，由于Arch
 
 -  如何找到适合的软件？
 
-Arch默认的包管理工具是pacman，主要有两个配置文件：/etc/pacman.conf和/etc/pacman.d/mirrorlist。pacman可以安装的软件可以到\ `这里<http://www.archlinux.org/packages/>`_\ 搜索。AUR包含的软件可以到\ `这里<https://aur.archlinux.org>`_\ 搜索。应当善用这两个搜索，当然你也可以命令行方式搜索，不过要注意源的配置。
+Arch默认的包管理工具是pacman，主要有两个配置文件：/etc/pacman.conf和/etc/pacman.d/mirrorlist。pacman可以安装的软件可以到 \ `这里<http://www.archlinux.org/packages/>`_\ 搜索。AUR包含的软件可以到 \ `这里<https://aur.archlinux.org>`_\ 搜索。应当善用这两个搜索，当然你也可以命令行方式搜索，不过要注意源的配置。
 
 -  学习什么？
 
