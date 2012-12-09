@@ -9,6 +9,9 @@ TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = 'cn'
 
+# Specify a customized theme, via relative path
+THEME = "./themes/tuxlite_tbs"
+
 # Blogroll
 LINKS =  (('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
           ('Python.org', 'http://python.org'),
