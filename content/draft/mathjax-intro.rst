@@ -2,7 +2,7 @@ MathJax Intro
 #############
 
 :Author: voidmous
-:Date: 2012-12-10
+:Date: 2012-12-11 00:01
 :Status: draft
 
 与reST配合
