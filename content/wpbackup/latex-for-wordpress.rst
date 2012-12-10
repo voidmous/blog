@@ -6,14 +6,14 @@ LaTeX for Pelican 测试
 
 本文主要用于测试Pelican与MathJax配合显示数学公式
 
-毕达哥拉斯定理：:math:`a^2+b^2=c^2`
+毕达哥拉斯定理： :math:`a^2+b^2=c^2`
 
-正态分布：:math:`f(x)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)`
+正态分布： :math:`f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)`
 
-傅里叶变换：:math:`F(\omega)=\mathcal{F}\left[f(t)\right]=\int\_{-\infty}^{\infty}e^{-i\omega
+傅里叶变换： :math:`F\left(\omega\right)=\mathcal{F}\left[f(t)\right]=\int_{-\infty}^{\infty}e^{-i\omega
 t}dt`
 
-傅里叶逆变换：:math:`f(t)=\mathcal{F}^{-1}[F(\omega)]=\frac{1}{2\pi}\int\_{-\infty}^{\infty}F(\omega)e^{i\omega t}d\omega`
+傅里叶逆变换： :math:`f\left(t\right)=\mathcal{F}^{-1}\left[F\left(\omega\right)\right]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F\left(\omega\right)e^{i\omega t}d\omega`
 
 MathJax的语法基本与latex一致，可以参考wikipedia的latex书写语法规范\ `Help:数学公式`_
 

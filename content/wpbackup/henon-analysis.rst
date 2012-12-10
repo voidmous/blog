@@ -5,8 +5,7 @@
 :tags: Henon, Matlab, 分岔, 吸引子, 映射, 混沌
 
 Henon映射是动力系统研究中很常见的离散映射，因为它具有的混沌特性而闻名。映射方程如下：
-
-:math:`\left\{\begin{array}~x_{n+1}=y_n+1-a\times x_n^2 \\y_{n+1}=bx_n \\ \end{array} \right\`
+\\[\\left\\{\\begin{array}\\~x\_{n+1}=y\_n+1-a\\times\~x_n^2 \\\\ y\_{n+1}=bx\_n \\\\ \\end{array} \\right. \\]
 
 不同的a、b参数下该映射具有不同的性质，可能出现混沌、断续或者收敛到周期轨道上不同的情况。取a=1.4，b=0.3时会产生著名的henon吸引子。
 
