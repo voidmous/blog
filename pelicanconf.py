@@ -9,8 +9,16 @@ TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = 'cn'
 
+# Misc
+GITHUB_URL= 'http://github.com/voidmous/'
+PDF_GENERATOR = False
+
 # Specify a customized theme, via relative path
 THEME = "./themes/tuxlite_tbs"
+
+# RSS and ATOM
+FEED_ALL_RSS = 'feeds/all.rss.xml'
+CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 
 # Blogroll
 LINKS =  (('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
