@@ -2,7 +2,7 @@
 CYGWIN使用笔记
 ==============
 :Author: voidmous
-:Time: 2012-12-24-20:28
+:Date: 2012-12-24
 :Status: draft
 :Tags: cygwin
 

@@ -3,7 +3,7 @@ WordPress文章编辑发布方案
 =========================
 
 :Author: voidmous
-:Date: Sat Dec 22 16:34:11 2012
+:Date: 2012-12-22
 :Status: draft
 :Tags: WordPress, 工具链
 :Category: IT互联网
