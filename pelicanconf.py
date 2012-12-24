@@ -7,7 +7,7 @@ SITEURL = 'http://voidmous.github.com'
 
 TIMEZONE = 'Europe/Paris'
 
-DEFAULT_LANG = 'cn'
+DEFAULT_LANG = 'en'
 
 # Misc
 GITHUB_URL= 'http://github.com/voidmous/'

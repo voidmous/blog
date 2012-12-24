@@ -1,10 +1,10 @@
 ==============
 CYGWIN使用笔记
 ==============
-:Author: voidmous
-:Date: 2012-12-24
-:Status: draft
-:Tags: cygwin
+:author: voidmous
+:date: 2012-12-24
+:status: draft
+:tags: cygwin
 
 * 用户主目录被篡改
 
