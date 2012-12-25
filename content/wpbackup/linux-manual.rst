@@ -3,6 +3,7 @@ Linux帮助系统常见技巧
 :date: 2012-04-04 08:55
 :category: IT技术
 :tags: Linux, man, 技巧
+:slug: linux-manual
 
 Linux下命令实在太多，学习命令行最佳途径当然是通过手册（manual），新手对帮助系统有所了解可以更快地上手Linux基本管理操作。
 

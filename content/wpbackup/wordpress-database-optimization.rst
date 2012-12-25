@@ -3,6 +3,7 @@ wordpress数据库优化记录
 :date: 2012-08-30 20:02
 :category: IT技术
 :tags: WordPress, 优化, 数据库
+:slug: wp-database-optimization
 
 前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。
 

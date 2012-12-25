@@ -1,9 +1,10 @@
 从WordPress到Pelican
 ####################
-:Author: voidmous
-:Date: 2012-12-10
-:Tags: WordPress, Pelican
+:author: voidmous
+:date: 2012-12-10
+:tags: WordPress, Pelican
 :status: draft
+:slug: wp-to-pelican
 
 为什么WordPress不适合我
 =======================

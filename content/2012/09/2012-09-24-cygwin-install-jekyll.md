@@ -2,6 +2,7 @@ Title: cygwin安装jekyll
 Date: 2012-09-24
 Tags: cygwin,jekyll
 Category:软件应用
+Slug: cygwin-install-jekyll
 
 ## 卸载已安装的ruby
 用对应的包管理器卸载

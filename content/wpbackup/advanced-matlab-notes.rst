@@ -3,6 +3,7 @@
 :date: 2012-07-30 21:04
 :category: 科研学术
 :tags: Matlab, 笔记,
+:slug: matlab-note
 
 第一章：M语言基础
 

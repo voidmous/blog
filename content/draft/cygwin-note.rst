@@ -5,6 +5,7 @@ CYGWIN使用笔记
 :date: 2012-12-24
 :status: draft
 :tags: cygwin
+:slug: cygwin-note
 
 * 用户主目录被篡改
 

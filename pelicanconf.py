@@ -3,11 +3,14 @@
 
 AUTHOR = u"voidmous"
 SITENAME = u"幻空轩"
-SITEURL = 'http://voidmous.github.com'
+SITEURL = 'http://www.joshuazhang.info'
+ARTICLE_URL = 'posts/{date:%Y}/{date:%b}/{slug}.html'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{slug}.html'
+LOCALE =  "C" # This option is needed for above 2 options
 
 TIMEZONE = 'Europe/Paris'
 
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = 'cn'
 
 # Misc
 GITHUB_URL= 'http://github.com/voidmous/'

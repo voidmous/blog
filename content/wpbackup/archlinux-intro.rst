@@ -3,6 +3,7 @@ ArchLinux入门浅谈
 :date: 2012-02-24 12:43
 :category: IT技术
 :tags: Archlinux, wiki, 入门, 安装, 手册, 技巧
+:slug: archlinux-intro
 
 这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。
 

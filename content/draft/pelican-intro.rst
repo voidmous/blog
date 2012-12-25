@@ -7,6 +7,7 @@ Pelican 简介
 :category: 零壹道
 :tags: Pelican
 :status: draft
+:slug: pelican-intro
 
 Pelican是什么
 -------------

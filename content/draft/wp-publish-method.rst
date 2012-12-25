@@ -2,11 +2,12 @@
 WordPress文章编辑发布方案
 =========================
 
-:Author: voidmous
-:Date: 2012-12-22
-:Status: draft
-:Tags: WordPress, 工具链
-:Category: IT互联网
+:author: voidmous
+:date: 2012-12-22
+:status: draft
+:tags: WordPress, 工具链
+:category: IT互联网
+:slug: wp-publish-method
 
 我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话，这篇文章也许会有帮助。基本上，围绕WordPress有这么几大类发布方案：
 

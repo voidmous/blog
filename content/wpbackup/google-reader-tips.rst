@@ -3,6 +3,7 @@ Google Reader使用技巧
 :date: 2012-02-18 16:14
 :category: IT技术
 :tags: Google Reader, 快捷键, 技巧
+:slug: google-reader-tips
 
 .. raw:: html
 

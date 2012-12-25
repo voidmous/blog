@@ -3,6 +3,7 @@
 :date: 2012-05-25 13:15
 :category: 软件应用
 :tags: 快捷键, 浏览器, 通用
+:slug: universal-browser-keyboard-shortcuts
 
 本文翻译自\ `howtogeek`_\ ，总结得不错。不过从评论来看，似乎对opera支持不大好，读者请自行尝试。
 |image0|
