@@ -11,12 +11,32 @@ Pelican 简介
 
 Pelican是什么
 -------------
+
 Pelican是一个静态博客生成器，
 
 
 
 安装
 ----
+
+常见问题
+--------
+
+* 如何改变post链接地址？
+
+* 如何快速同步到gh-pages?
+首先安装ghp-import
+
+.. code:: python
+
+   pip install ghp-import
+
+Pelican自带的Makefile已经添加了ghp-import支持，只需要执行以下命令即可：
+
+.. code:: shell
+
+  make html
+  make github
 
 参考资源
 --------
