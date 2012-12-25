@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>幻空轩</title>
+    <meta name="description" content="">
+    <meta name="author" content="voidmous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- LaTeX mathjax support -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">幻空轩</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+                    
+                                </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+                
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="../posts/2012/Jul/henon-matlab-analysis.html"><h1>用MATLAB分析Henon映射</h1></a>
+            Mon 09 July 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><p>Henon映射是动力系统研究中很常见的离散映射，因为它具有的混沌特性而闻名。映射方程如下：
+\[\left\{\begin{array}\~x_{n+1}=y_n+1-a\times~x_n^2 \\ y_{n+1}=bx_n \\ \end{array} \right. \]</p>
+<p>不同的a、b参数下该映射具有不同的性质，可能出现混沌、断续或者收敛到周期轨道上不同的情况。取a=1.4，b=0.3时会产生著名的henon吸引子。</p>
+<img alt="http://img.voidmous.net/2012/07/henon1.png" src="http://img.voidmous.net/2012/07/henon1.png" />
+<p>Henon吸引子，横轴为x，纵轴为y，其实就是所有迭代的点产生的图案，形状比较怪异。</p>
+<img alt="http://img.voidmous.net/2012/07/henon2.png" src="http://img.voidmous.net/2012/07/henon2.png" />
+<p>b=0.3时的分岔图，不同a值下x可能在几个值间变化，也可能在许多值之间变化，即产生了混沌。顺便吐槽下Matlab生成的图片太不精细了，暂时还不知道用什么方法能提高图片细节。</p>
+<p>Matlab源代码：</p>
+<div class="highlight"><pre><span class="c">% By voidmous&lt;voidmous@gmail.com&gt;</span>
+<span class="c">% Henon map analysis</span>
+<span class="n">clear</span> <span class="n">all</span><span class="p">;</span><span class="n">close</span> <span class="n">all</span><span class="p">;</span><span class="n">clc</span>
+<span class="n">N</span><span class="p">=</span>10000<span class="p">;</span>
+<span class="n">x</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span>1<span class="p">,</span><span class="n">N</span><span class="p">);</span>
+<span class="n">y</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span>1<span class="p">,</span><span class="n">N</span><span class="p">);</span>
+<span class="n">x</span><span class="p">(</span>1<span class="p">)=</span>0<span class="p">;</span>
+<span class="n">y</span><span class="p">(</span>1<span class="p">)=</span>0<span class="p">;</span>
+<span class="n">a</span><span class="p">=</span>1<span class="p">.</span>4<span class="p">;</span><span class="n">b</span><span class="p">=</span>0<span class="p">.</span>3<span class="p">;</span>
+<span class="k">for</span> <span class="nb">i</span><span class="p">=</span>2<span class="p">:</span><span class="n">N</span>
+   <span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span>1<span class="p">)</span><span class="o">+</span>1<span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span>1<span class="p">)</span>^2<span class="p">;</span>
+   <span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span>1<span class="p">);</span>
+<span class="k">end</span>
+<span class="n">figure</span><span class="p">(</span>1<span class="p">)</span>
+<span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span>2<span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;Henon Attractor&#39;</span><span class="p">)</span>
+<span class="n">figure</span><span class="p">(</span>2<span class="p">)</span>
+<span class="n">L</span><span class="p">=</span><span class="nb">round</span><span class="p">(</span>0<span class="p">.</span>97<span class="o">*</span><span class="n">N</span><span class="p">);</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">=</span>1<span class="p">.</span>0<span class="p">:</span>0<span class="p">.</span>001<span class="p">:</span>1<span class="p">.</span>5
+   <span class="k">for</span> <span class="nb">i</span><span class="p">=</span>2<span class="p">:</span><span class="n">N</span>
+      <span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span>1<span class="p">)</span><span class="o">+</span>1<span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span>1<span class="p">)</span>^2<span class="p">;</span>
+      <span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span>1<span class="p">);</span>
+   <span class="k">end</span>
+   <span class="n">scatter</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span>1<span class="p">,</span><span class="n">N</span><span class="o">-</span><span class="n">L</span><span class="p">),</span><span class="n">x</span><span class="p">(</span>1<span class="p">,</span><span class="n">L</span><span class="o">+</span>1<span class="p">:</span><span class="n">N</span><span class="p">),</span>2<span class="p">,</span><span class="s">&#39;black&#39;</span><span class="p">,</span><span class="s">&#39;filled&#39;</span><span class="p">);</span>
+   <span class="n">hold</span> <span class="n">on</span>
+<span class="k">end</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;bifurcation for a&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">)</span>
+</pre></div>
+<p>参考文献</p>
+<p>[1]Wikipedia contributors. <a class="reference external" href="http://en.wikipedia.org/w/index.php?title=H%C3%A9non_map&amp;oldid=474794740">Hénon map</a>[J]. Wikipedia, the free
+encyclopedia, Wikimedia Foundation, Inc., 2012.</p>
+</div>
+        <hr />
+    </div>
+		
+            <div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="../tag/henon.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>    
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">Archives</a>
+                <li><a href="../tags.html">Tags</a>
+                <li><a href="http://voidmous.github.com/" rel="alternate">Atom feed</a></li>
+                            </ul>
+            </div>
+
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                                <li><a href="../category/itji-zhu.html">IT技术</a></li>
+                                <li><a href="../category/sheng-guang-hua-ying.html">声光画影</a></li>
+                                <li><a href="../category/ke-yan-xue-zhu.html">科研学术</a></li>
+                                <li><a href="../category/ruan-jian-ying-yong.html">软件应用</a></li>
+                                   
+            </ul>
+            </div>
+            
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                            <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                            <li><a href="http://python.org">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                        </ul>
+            </div>
+            
+
+                        <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                                <li><a href="https://github.com/voidmous">Github</a></li>
+                                <li><a href="https://twitter.com/voidmous">Twitter</a></li>
+                                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+                                <li><a href="http://www.renren.com/221168912">Renren</a></li>
+                            </ul>
+            </div>
+            </div>
+            
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="..">幻空轩</a> &copy; voidmous 2012</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<a href="http://github.com/voidmous/"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>

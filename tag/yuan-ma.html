@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>幻空轩</title>
+    <meta name="description" content="">
+    <meta name="author" content="voidmous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- LaTeX mathjax support -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">幻空轩</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+                    
+                                </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+                
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="../posts/2012/Jun/zotero-bib-blog.html"><h1>利用Zotero为博文添加参考文献</h1></a>
+            Fri 29 June 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><p>对于技术类文章而言，添加必要的参考文献体现的是对他人劳动成果的尊重。即便你不会全文转载别人的文章而不标明出处，但是严格的说，学习了别人的方法或者观点也不能据为己有，标注参考文献就是向原创致敬的方法之一。目前而言，许多加了参考文献的文章都是怎么简单怎么来，没有个统一的格式，也不方便读者查阅。其实规范并不是没有，许多学术期刊对引用网页这样的媒体都有说明，我国<a class="reference external" href="http://gradschool.ustc.edu.cn/ylb/material/xw/wdxz/19.pdf">参考文献标准</a>也有说明。从我较短的使用过程来看，GB/T&nbsp;7714-2005标准设计得比较简洁紧凑，适合中文、英文以及混排的情况，看上去比较舒服。</p>
+<p>收集、管理文献的工具我首推Zotero，主要就在于它和Firefox结合得很好，对国际国内各大学术期刊数据库都支持得不错，和Google
+Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a class="reference external" href="http://blog.yesmryang.net/zotero-usage/">文献管理软件Zotero的一点使用感受</a>》。</p>
+<p>利用Zotero的导出功能实际已经可以生成很好的参考文献了，不过美中不足的是导出的只是纯文本，没有任何格式化，所以读者仍然要自己手动去查找参考文献，这可不是我这样的懒人想干的事，于是干脆自己动手写了下面这个style，基本功能已经实现，在外观和功能上可能还有提升的空间。</p>
+<p>Blogit是我基于<a class="reference external" href="http://www.zotero.org/styles/chinese-gb7714-2005-numeric">Chinese Std GB/T 7714-2005
+(numeric)</a>这个style文件，参考<a class="reference external" href="http://www.zotero.org/styles/radiopaedia">radiopaedia</a>鼓捣出来的一个结合体。一方面保留了国标的规范，同时加上了源网页和DOI（<a class="reference external" href="http://dx.doi.org/">hdx.doi.org</a>）或者ISBN（<a class="reference external" href="http://www.worldcat.org/wcpa/isbn/">www.worldcat.org</a>）的超链接，方便在网页上直接跳转查看，不用复制粘贴再搜索这么麻烦了。利用此style配合Zotero导出的代码包含超链接，可以直接粘贴到文章源代码上。</p>
+<p>Blogit源代码：<a class="reference external" href="http://voidmous.net/blog/wp-content/uploads/2012/06/Blogit20120627.rar">Blogit20120627</a></p>
+<p>Zotero的style文件为<a class="reference external" href="http://citationstyles.org/">CSL</a>格式，其实质为xml，所以自己看看就可以摸到些门道。Windows下直接用Notepad++即可编辑，不推荐直接用记事本编辑，因为CSL是Unix文本格式，所以用记事本查看会没有换行。编辑过程中可以直接在Firefox标签页<a class="reference external" href="chrome://zotero/content/tools/cslpreview.xul">chrome://zotero/content/tools/cslpreview.xul</a>中预览，当前选中的文献在所有可用的style作用下生成的参考文献代码都可以看到，方便比较和进一步修改。修改编辑后一定要用<a class="reference external" href="https://github.com/citation-style-language/styles/wiki/Validation">验证工具</a>验证是否有错，推荐用在线的<a class="reference external" href="http://simonster.github.com/csl-validator.js/">csl-validator.js</a>。验证无误后即可用Zotero导入该style，如果已经导入那么覆盖原有文件即可。</p>
+<p>几点说明：</p>
+<p>1、一般来说，源网页和DOI、ISBN指向的网页很可能是同一个，所以如果你嫌太多超链接很难看，那么也可以去除源网页的链接，只要在Zotero设置Citation
+Option里去掉Include URLs of paper articles in references前面的钩即可。</p>
+<p>2、Chinese Std GB/T 7714-2005 (numeric)
+sytle文件的一个小问题：如果插入多篇文献时上标顺序是从大到小而不是标准的从小到大，那么应该把citation-number这个宏中的sort
+从descending改为ascending。</p>
+<p>参考文献示例：</p>
+<p>[1] 陈永春编. <a class="reference external" href="http://book.douban.com/subject/1151443/">MATLAB
+M语言高级编程</a>[M]. 清华大学出版社, 2004. <a class="reference external" href="http://www.worldcat.org/wcpa/isbn/9787302075141">ISBN: 9787302075141</a>.</p>
+<p>[2]
+<a class="reference external" href="http://www.360doc.com/content/11/0301/09/4539198_97069216.shtml">Matlab自定义函数的五种方法</a>[EB/OL]. [2012-06-27].</p>
+<p>[3] Shampine L F,
+Thompson S. <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S0168927400000556">Solving DDEs in Matlab</a>[J]. Applied Numerical
+Mathematics, 2001, 37(4): 441–458. <a class="reference external" href="http://dx.doi.org/10.1016/S0168-9274(00)00055-6">doi:10.1016/S0168-9274(00)00055-6</a>.</p>
+<p>[4] L.F. Shampine, S. Thompson. <a class="reference external" href="http://scholar.google.com/scholar?hl=zh-CN&amp;q=Solving+Delay+Differential+Equations+with+dde23&amp;btnG=%E6%90%9C%E7%B4%A2&amp;lr=&amp;as_ylo=&amp;as_vis=0">Solving Delay Differential Equations
+with dde23</a>[J]. .</p>
+<p>[5] 陈丽安. <a class="reference external" href="http://202.204.193.237/cupbbs/accessory/93/cb00d031-6df1-417b-a9e0-71c1aabff823.pdf">输出高品质 MATLAB
+图形的方法与技巧</a>[J]. 计算机应用研究, 2002, 19(1): 154–155.</p>
+</div>
+        <hr />
+    </div>
+		
+            <div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="../tag/yuan-ma.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>    
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">Archives</a>
+                <li><a href="../tags.html">Tags</a>
+                <li><a href="http://voidmous.github.com/" rel="alternate">Atom feed</a></li>
+                            </ul>
+            </div>
+
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                                <li><a href="../category/itji-zhu.html">IT技术</a></li>
+                                <li><a href="../category/sheng-guang-hua-ying.html">声光画影</a></li>
+                                <li><a href="../category/ke-yan-xue-zhu.html">科研学术</a></li>
+                                <li><a href="../category/ruan-jian-ying-yong.html">软件应用</a></li>
+                                   
+            </ul>
+            </div>
+            
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                            <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                            <li><a href="http://python.org">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                        </ul>
+            </div>
+            
+
+                        <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                                <li><a href="https://github.com/voidmous">Github</a></li>
+                                <li><a href="https://twitter.com/voidmous">Twitter</a></li>
+                                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+                                <li><a href="http://www.renren.com/221168912">Renren</a></li>
+                            </ul>
+            </div>
+            </div>
+            
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="..">幻空轩</a> &copy; voidmous 2012</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<a href="http://github.com/voidmous/"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>

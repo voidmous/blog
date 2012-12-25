@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>幻空轩</title>
+    <meta name="description" content="">
+    <meta name="author" content="voidmous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+
+    <!-- LaTeX mathjax support -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">幻空轩</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+                    
+                                </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+                
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="../posts/2012/Aug/wp-database-optimization.html"><h1>wordpress数据库优化记录</h1></a>
+            Thu 30 August 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><p>前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。</p>
+<p>基本流程如下：</p>
+<p>1、备份。做任何数据库操作前，做一个临时备份都是必要的。使用phpmyadmin按默认设置导出sql文件下载到本地即可。</p>
+<p>2、删除不必要的插件。不必要的插件应当越少越好，尤其是会写入数据库或者查询数据库的插件。比如我之前使用过的<a class="reference external" href="http://www.6psp.cn/20100917/statpresscn%E6%8F%92%E4%BB%B6%E9%80%A0%E6%88%90%E5%8D%9A%E5%AE%A2%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%EF%BC%8C%E8%B5%B6%E5%BF%AB%E5%88%A0%E9%99%A4.html">statpresscn</a>，这个插件会在数据库中建立一个庞大的wp_statpresscn表，虽然没有前台查询，不过它造成的数据库冗余带来的坏处可远远大于统计功能带来的便利，所以还是删了吧。</p>
+<p>3、删除垃圾数据表。功能比较复杂的插件可能会在数据库中建立新表，删除插件一般不会把这些表顺带删除，所以手动排查垃圾数据表也是必要的。为了防止误删，请一定对照WP
+Codex的<a class="reference external" href="http://codex.wordpress.org/zh-cn:%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0">数据库描述</a>进行修改。</p>
+<p>删除akismet垃圾数据。关于akismet如何产生这些数据可以参考<a class="reference external" href="http://www.solagirl.net/wp-commentmeta-slowing-down-your-blog.html">wp_commentmeta是否正在拖慢你的blog</a>。</p>
+<div class="highlight"><pre><span class="k">delete</span> <span class="k">from</span> <span class="n">wp_commentmeta</span> <span class="k">where</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_as_submitted&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_history&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_rechecking&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_result&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_user&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="err">&#39;</span><span class="n">akismet_user_result</span>
+</pre></div>
+<p>wp_options数据表清理。主要有两部分垃圾数据：其一、已删除的插件选项。大部分插件都不提供完全的删除功能，主要就是针对数据表而言。由于不清楚数据和插件的对应关系，最好不要盲目删除，如果一定要清理，可以尝试用<a class="reference external" href="http://www.mittineague.com/dev/co.php">clean
+options</a>插件，注意备份！其二、没用的RSS Feed
+Cache。以“_transient”开头的数据都是因为用了RSS小工具产生的，作用不大，体积却不小。可以用下面的SQL语句删除：</p>
+<div class="highlight"><pre><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">wp_options</span> <span class="k">WHERE</span> <span class="n">option_name</span> <span class="n">REGEXP</span> <span class="err">&quot;</span><span class="n">_transient_</span>
+</pre></div>
+<p>4、优化数据表。最后还要利用phpmyadmin执行优化数据表，体积还会有所减小。</p>
+</div>
+        <hr />
+    </div>
+		
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Apr/cloud-storage-comparison.html"><h2>几款云存储服务比较</h2></a>
+        <div class= "well small"> Fri 13 April 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>所谓云存储服务，通俗点说就是网盘啦。不过现在各种免费网盘的服务其实并不仅限于存储，社交分享、同步备份都是很常见的功能，所以用云的概念可能更加合适（现在还称不上真正的云，但是趋势已经可以看出来了）。我个人用过国内国外的几个云存储服务，现在拿它们比较一番，顺便思考下云时代，什么样的存储才是我们（起码是我）真正所需的。</p>
+<p>首先还是把范围确定，我所说的云存储并非Rapidshare，hotfile，城通网盘此类以快速文件分享作为主打功能的网盘，而是指具备同步功能以打造用户的私有资料、信息云为目标的网盘。这样的概念可能有点泛，现在的网络存储基本都还没实现这样的目标，但是是否具备这样的野心还是可以看出来的。</p>
+<p>再来分析下必要的功能需求（此处仅对我而言）：</p>
+<p>同步功能。这是目前而言最重要也是最差异化的功能。对我这样寝室、实验室两头跑的人来说，用U盘可不是什么方便的事情，有同步功能我就可以在两头处理同一个文件而不用把工作地点锁定在某一个地方。同时，有一份网络备份可比什么U盘备份强。</p>
+<p>分享功能。这个我认为是从网盘时代遗传下来的功能，我个人并不常用，但是它也是不可或缺的，因为以此途径发布文件是最简单的事情，虽然目前暂时我没有这方面的需求。</p>
+<p>多平台共享。现在电子设备越来越多，操作系统也五花八门，兼顾主流平台应该是必须的。不过对于我而言，Linux平台的支持非常重要，尽管它并非主流。</p>
+<p>下面我简单比较下几个云存储服务：</p>
+<p>1、<a class="reference external" href="https://www.dropbox.com/">Dropbox</a></p>
+<p>Dropbox作为这个方面的老大是当仁不让的 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Apr/cloud-storage-comparison.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Apr/linux-manual.html"><h2>Linux帮助系统常见技巧</h2></a>
+        <div class= "well small"> Wed 04 April 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>Linux下命令实在太多，学习命令行最佳途径当然是通过手册（manual），新手对帮助系统有所了解可以更快地上手Linux基本管理操作。</p>
+<ul class="simple">
+<li>man cmdname</li>
+</ul>
+<p>这是最基本的用法了，也是最有效的方法。man
+page主要是面向unix程序员，因此事无巨细，对于常见的操作其实并不需要细看，了解书写格式，挑出几个选项就可以了。</p>
+<ul class="simple">
+<li>cmdname --help或者cmdname -h</li>
+</ul>
+<p>相比上一条，这个对于新手更加适用，因为它只显示最常用的选项，文字也更精简，真正可以让你快速参考。另外还要说明的是，许多打包的可执行安装文件都可以用这条命令显示安装帮助，如一些后缀名为bin或者run的文件，在安装前有必要阅读一下。这条命令只能作用于外部命令，shell内部命令无法使用（虽然还是有输出文字）。判断一条命令是外部或者内部命令，可以用type
+cmdname查询某个命令或者help查看所有内部命令。</p>
+<ul class="simple">
+<li>whatis cmdname</li>
+</ul>
+<p>whatis命令显示的其实是manpage的名称一栏的注释，你可以试试man
+whatis和whatis
+whatis看看区别所在。如果只是想简单了解某条命令的用处，用whatis就再合适不过了。（whatis
+man会出现三个带选项的man命令，为什么？）</p>
+<ul class="simple">
+<li>info cmdname</li>
+</ul>
+<p>info命令显示的帮助更加详尽，信息量更大，同时界面更加友好。不过不怎么常用</p>
+<ul class="simple">
+<li>manual系统 ...</li></ul> <a class="btn btn-info xsmall" href="../posts/2012/Apr/linux-manual.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Mar/archlinux-audacious.html"><h2>Archlinux下编译Audacious(cue、ape支持)</h2></a>
+        <div class= "well small"> Tue 20 March 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul class="simple">
+<li>首先安装需求：</li>
+</ul>
+<p>Glib 2, GTK+ 2, Pango, Cairo, libmcs(AUR), libmowgli(AUR)</p>
+<ul class="simple">
+<li>为了支持cue，还需要安装libcue</li>
+<li>下载audacious源码包与插件包： <a class="reference external" href="http://audacious-media-player.org/download">下载地址</a></li>
+<li>解压audacious源码包，然后常规三步曲</li>
+</ul>
+<div class="highlight"><pre><span class="nv">$ </span>./configure
+<span class="nv">$ </span>sudo make <span class="o">&amp;&amp;</span> make install
+</pre></div>
+<ul class="simple">
+<li>再解压audacious插件源码包</li>
+</ul>
+<p>此时直接configure会出错，错误提示：</p>
+<pre class="literal-block">
+checking for AUDACIOUS... no
+configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
+</pre>
+<p>根据google到的方法：</p>
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/local/lib/pkgconfig:<span class="nv">$PKG_CONFIG_PATH</span>
+<span class="nb">export ...</span></pre></div> <a class="btn btn-info xsmall" href="../posts/2012/Mar/archlinux-audacious.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Mar/firefox-addon.html"><h2>我的Firefox扩展总结</h2></a>
+        <div class= "well small"> Thu 01 March 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>一、浏览优化类</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Adblock Plus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 清除广告就靠它了。</li>
+<li>AutoPager
+自动翻页。不想成为鼠标手？该插件必装。</li>
+<li>Flashblock
+加快网页加载速度，屏蔽恼人的flash广告和自动播放功能</li>
+<li>GreaseMonkey&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用脚本实现对个别站点的自定义配置</li>
+<li>Stylish
+与GreaseMonkey类似，自定义CSS。GR的新界面很低效，配合该插件可以完美解决。</li>
+<li>iReader
+重新布局文章，优化浏览体验。较少适用，需要网页符合规范。</li>
+</ol>
+</blockquote>
+<p>二、下载工具类</p>
+<blockquote>
+<ol class="arabic simple">
+<li>DownThemAll
+坚守FF的原因之一，非常稳定高速的下载体验</li>
+<li>DownloadStatusbar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下载状态查看，必备的基本扩展</li>
+<li>NetVideoHunter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在线视频下载利器</li>
+<li>FlashVideoDownloader
+除了下载视频外，更强大的地方在于可以下载flash</li>
+</ol>
+</blockquote>
+<p>三、云同步类</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Xmarks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一流的书签管理，多浏览器同步</li>
+<li>LastPass
+Xmarks的兄弟产品，在线密码管理，简化登录步骤</li>
+<li>ReadItLater
+一键收藏，想快速离开电脑回到工作，必备扩展 ...</li></ol></blockquote> <a class="btn btn-info xsmall" href="../posts/2012/Mar/firefox-addon.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Feb/archlinux-intro.html"><h2>ArchLinux入门浅谈</h2></a>
+        <div class= "well small"> Fri 24 February 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。</p>
+<div class="section" id="arch">
+<h2>为什么用Arch？</h2>
+<p>这方面的文章相当多，一搜一大把，我就不做什么总结发言了，写几点自己的想法。其实弊人最早接触的linux发行版是ubuntu和debian，当时ubuntu很被看好，不过还没流行到现在这个程度。那是我第一次被一个完全免费而且漂亮的东西打动了，期间零零碎碎玩过几次系统，但是由于技术水平有限，一直玩得不怎么顺手。直到最近，我开始越来越讨厌windows的臃肿庞大和功利，希望能够转移到linux平台上，把windows作为对“现实世界的妥协”。虽然debian也是很出色的系统，但是显然它和windows相同的特点就是较为臃肿，杂七杂八的东西自带一大堆（我不很清楚debian有没有精简定制的可能性）。出于这点考虑，我也玩过几天的LFS，注意，我当时不过装过几次linux，断断续续看过linux书籍的几个章节而已，可以想象当时我是怎样的抓耳挠腮吧^_^。当然这次实验以失败告终，我只能继续寻找能让自己足够满意的系统，终于，ArchLinux进入了我的视线。在我看来，Arch有以下几个特点是让我欲罢不能的：</p>
+<ol class="arabic simple">
+<li>极大的定制性。虽然比不上LFS完全的定制性，但是在学习成本上要降下不少，而且LFS对于不致力于研究Linux架构的人似乎没什么必要。</li>
+<li>Pacman和AUR。Gentoo似乎也可以定制，但是每个软件都要编译对于我这样的新手而言那就是上刀山下火海。。。</li>
+<li>完善的文档。我没有接触过其他Linux发行版的文档，无法横向对比，但是就我使用的情况而言 ...</li></ol></div> <a class="btn btn-info xsmall" href="../posts/2012/Feb/archlinux-intro.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Feb/google-reader-tips.html"><h2>Google Reader使用技巧</h2></a>
+        <div class= "well small"> Sat 18 February 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><div><div><div><div><p>Google Reader
+确实是一个不可多得的服务，我用上GR没几天已经爱不释手了。GR非常容易上手，但是要玩转GR，没有使用经验的积累是不可能的，下面我就列举一些自己在
+使用GR过程中体会到的一些技巧，既是自己知识的整理过程，也是一个温故知新的过程。当然，这里面有我自己的心得，不可避免的也有从搜索得来的知识，来源
+较多，恕不列明。</p>
+<p>一、访问技巧</p>
+<p>1、HTTP vs HTTPS
+HTTP和HTTPS的区别从技术层面来说那是可以长篇大论的，通俗的理解就是后者是前者的加密版。应用
+HTTPS，用户和网站之间的交互难以被简单地分析或窃取。由于功夫网的强大，HTTP和HTTPS享受着不同的待遇，Google许多的服务在HTTP
+下时常会被reset（如果你没碰到过那你确实太河蟹了），而HTTPS就要好很多。这是因为HTTP的明文传输会被轻易地检索到敏感词，访问被拒绝。当
+然，魔高一尺，道高一丈，HTTPS也并非万能的，不过在现今的网络环境下，HTTPS应当是我们体验Google强大服务的首选。</p>
+<p>2、IPv4 VS IPv6</p>
+<p>Google的IPv4地址很多，但是仍然饱受GFW骚扰，IPv6是下一代的IP分配方案 ...</p></div></div></div></div> <a class="btn btn-info xsmall" href="../posts/2012/Feb/google-reader-tips.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Feb/latex-pelican.html"><h2>LaTeX for Pelican 测试</h2></a>
+        <div class= "well small"> Sat 18 February 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>本文主要用于测试Pelican与MathJax配合显示数学公式</p>
+<p>毕达哥拉斯定理： <span class="math">\(a^2+b^2=c^2\)</span>
+</p>
+<p>正态分布： <span class="math">\(f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\)</span>
+</p>
+<p>傅里叶变换： <span class="math">\(F\left(\omega\right)=\mathcal{F}\left[f(t)\right]=\int_{-\infty}^{\infty}e^{-i\omega
+t}dt\)</span>
+</p>
+<p>傅里叶逆变换： <span class="math">\(f ...</span></p> <a class="btn btn-info xsmall" href="../posts/2012/Feb/latex-pelican.html">read more</a></div>
+    </div>	
+				
+            <div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="../category/itji-zhu.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>    
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">Archives</a>
+                <li><a href="../tags.html">Tags</a>
+                <li><a href="http://voidmous.github.com/" rel="alternate">Atom feed</a></li>
+                            </ul>
+            </div>
+
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                                <li><a href="../category/itji-zhu.html">IT技术</a></li>
+                                <li><a href="../category/sheng-guang-hua-ying.html">声光画影</a></li>
+                                <li><a href="../category/ke-yan-xue-zhu.html">科研学术</a></li>
+                                <li><a href="../category/ruan-jian-ying-yong.html">软件应用</a></li>
+                                   
+            </ul>
+            </div>
+            
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                            <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                            <li><a href="http://python.org">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                        </ul>
+            </div>
+            
+
+                        <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                                <li><a href="https://github.com/voidmous">Github</a></li>
+                                <li><a href="https://twitter.com/voidmous">Twitter</a></li>
+                                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+                                <li><a href="http://www.renren.com/221168912">Renren</a></li>
+                            </ul>
+            </div>
+            </div>
+            
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="..">幻空轩</a> &copy; voidmous 2012</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<a href="http://github.com/voidmous/"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>

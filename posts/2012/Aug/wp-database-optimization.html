@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>幻空轩</title>
+    <meta name="description" content="">
+    <meta name="author" content="voidmous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../../../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../../../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../../../theme/local.css" rel="stylesheet">
+    <link href="../../../theme/pygments.css" rel="stylesheet">
+
+    <!-- LaTeX mathjax support -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="../../..">幻空轩</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+                    
+                                </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+            <div class='article'>
+        <div class="content-title">
+            <h1>wordpress数据库优化记录</h1>
+            Thu 30 August 2012
+
+by <a class="url fn" href="../../../author/voidmous.html">voidmous</a>
+ 
+
+
+        </div>
+	
+        <div><p>前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。</p>
+<p>基本流程如下：</p>
+<p>1、备份。做任何数据库操作前，做一个临时备份都是必要的。使用phpmyadmin按默认设置导出sql文件下载到本地即可。</p>
+<p>2、删除不必要的插件。不必要的插件应当越少越好，尤其是会写入数据库或者查询数据库的插件。比如我之前使用过的<a class="reference external" href="http://www.6psp.cn/20100917/statpresscn%E6%8F%92%E4%BB%B6%E9%80%A0%E6%88%90%E5%8D%9A%E5%AE%A2%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%EF%BC%8C%E8%B5%B6%E5%BF%AB%E5%88%A0%E9%99%A4.html">statpresscn</a>，这个插件会在数据库中建立一个庞大的wp_statpresscn表，虽然没有前台查询，不过它造成的数据库冗余带来的坏处可远远大于统计功能带来的便利，所以还是删了吧。</p>
+<p>3、删除垃圾数据表。功能比较复杂的插件可能会在数据库中建立新表，删除插件一般不会把这些表顺带删除，所以手动排查垃圾数据表也是必要的。为了防止误删，请一定对照WP
+Codex的<a class="reference external" href="http://codex.wordpress.org/zh-cn:%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0">数据库描述</a>进行修改。</p>
+<p>删除akismet垃圾数据。关于akismet如何产生这些数据可以参考<a class="reference external" href="http://www.solagirl.net/wp-commentmeta-slowing-down-your-blog.html">wp_commentmeta是否正在拖慢你的blog</a>。</p>
+<div class="highlight"><pre><span class="k">delete</span> <span class="k">from</span> <span class="n">wp_commentmeta</span> <span class="k">where</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_as_submitted&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_history&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_rechecking&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_result&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_user&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="err">&#39;</span><span class="n">akismet_user_result</span>
+</pre></div>
+<p>wp_options数据表清理。主要有两部分垃圾数据：其一、已删除的插件选项。大部分插件都不提供完全的删除功能，主要就是针对数据表而言。由于不清楚数据和插件的对应关系，最好不要盲目删除，如果一定要清理，可以尝试用<a class="reference external" href="http://www.mittineague.com/dev/co.php">clean
+options</a>插件，注意备份！其二、没用的RSS Feed
+Cache。以“_transient”开头的数据都是因为用了RSS小工具产生的，作用不大，体积却不小。可以用下面的SQL语句删除：</p>
+<div class="highlight"><pre><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">wp_options</span> <span class="k">WHERE</span> <span class="n">option_name</span> <span class="n">REGEXP</span> <span class="err">&quot;</span><span class="n">_transient_</span>
+</pre></div>
+<p>4、优化数据表。最后还要利用phpmyadmin执行优化数据表，体积还会有所减小。</p>
+</div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+		    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../../../archives.html">Archives</a>
+                <li><a href="../../../tags.html">Tags</a>
+                <li><a href="http://voidmous.github.com/" rel="alternate">Atom feed</a></li>
+                            </ul>
+            </div>
+
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                                <li><a href="../../../category/itji-zhu.html">IT技术</a></li>
+                                <li><a href="../../../category/sheng-guang-hua-ying.html">声光画影</a></li>
+                                <li><a href="../../../category/ke-yan-xue-zhu.html">科研学术</a></li>
+                                <li><a href="../../../category/ruan-jian-ying-yong.html">软件应用</a></li>
+                                   
+            </ul>
+            </div>
+            
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                            <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                            <li><a href="http://python.org">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                        </ul>
+            </div>
+            
+
+                        <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                                <li><a href="https://github.com/voidmous">Github</a></li>
+                                <li><a href="https://twitter.com/voidmous">Twitter</a></li>
+                                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+                                <li><a href="http://www.renren.com/221168912">Renren</a></li>
+                            </ul>
+            </div>
+            </div>
+            
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="../../..">幻空轩</a> &copy; voidmous 2012</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<a href="http://github.com/voidmous/"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>

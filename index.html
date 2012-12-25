@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>幻空轩</title>
+    <meta name="description" content="">
+    <meta name="author" content="voidmous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="./theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="./theme/bootstrap.min.css" rel="stylesheet">
+    <link href="./theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="./theme/local.css" rel="stylesheet">
+    <link href="./theme/pygments.css" rel="stylesheet">
+
+    <!-- LaTeX mathjax support -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href=".">幻空轩</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+                    
+                                </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+                
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="./posts/2012/Sep/cygwin-install-jekyll.html"><h1>cygwin安装jekyll</h1></a>
+            Mon 24 September 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><h2>卸载已安装的ruby</h2>
+<p>用对应的包管理器卸载
+如果是rvm安装的，直接删除目录<code>~/.rvm</code>，然后删除<code>.zshrc</code>和<code>.zlogin</code>文件，去掉<code>.profile</code>和<code>.bash_profile</code>中关于rvm的语句即可。</p>
+<h2>安装rvm</h2>
+<p><a href="https://rvm.io/rvm/install/">安装指南</a></p>
+<div class="codehilite"><pre><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="p">.</span><span class="n">rvm</span><span class="p">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">stable</span> <span class="o">--</span><span class="n">ruby</span>
+</pre></div>
+
+
+<p>检测rvm安装</p>
+<div class="codehilite"><pre><span class="n">type</span> <span class="n">rvm</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n</span> 1
+</pre></div>
+
+
+<p>此时会显示<code>rvm:not found</code>，不用紧，还需要一步：</p>
+<div class="codehilite"><pre><span class="n">source</span> <span class="o">~/</span><span class="p">.</span><span class="n">rvm</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">rvm</span>
+<span class="n">type</span> <span class="n">rvm</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n</span> 1
+</pre></div>
+
+
+<p>现在显示<code>rvm is a function</code>，说明rvm安装成功。
+查看是否还有依赖问题：</p>
+<div class="codehilite"><pre><span class="n">rvm</span> <span class="n">requirements</span>
+</pre></div>
+
+
+<h2>管理ruby环境</h2>
+<p>下面这几步其实不必要了，只是展示一下安装的过程，你也可以安装其它的ruby版本。</p>
+<div class="codehilite"><pre><span class="n">rvm</span> <span class="n">list</span> <span class="n">known</span>
+<span class="n">rvm</span> <span class="n">install</span> 1<span class="p">.</span>9<span class="p">.</span>3
+<span class="n">rvm</span> <span class="n">use</span> 1<span class="p">.</span>9<span class="p">.</span>3 <span class="o">--</span><span class="n">default</span>
+</pre></div>
+
+
+<p>查看安装的版本号和路径</p>
+<div class="codehilite"><pre><span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
+<span class="n">gem</span> <span class="o">-</span><span class="n">v</span>
+<span class="n">which</span> <span class="n">ruby</span>
+<span class="n">which</span> <span class="n">gem</span>
+</pre></div>
+
+
+<h2>安装jekyll</h2>
+<p>用gem安装：</p>
+<div class="codehilite"><pre><span class="n">gem</span> <span class="n">update</span> <span class="o">--</span><span class="n">system</span>
+<span class="n">gem</span> <span class="n">list</span>
+<span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span>
+</pre></div>
+
+
+<p>如果出现<code>spawn.h</code>的错误，这是由于<code>posix-spawn</code>的bug引起的，需要自己编译安装：</p>
+<div class="codehilite"><pre><span class="n">gem</span> <span class="n">install</span> <span class="n">rake</span><span class="o">-</span><span class="n">compiler</span> <span class="o">-</span><span class="n">v</span> 0<span class="p">.</span>7<span class="p">.</span>6
+<span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">rtomayko</span><span class="o">/</span><span class="n">posix</span><span class="o">-</span><span class="n">spawn</span><span class="p">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">posix</span><span class="o">-</span><span class="n">spawn</span>
+<span class="n">rake</span> <span class="n">gem</span>
+<span class="n">gem</span> <span class="n">install</span> <span class="n">pkg</span><span class="o">/</span><span class="n">posix</span><span class="o">-</span><span class="n">spawn</span><span class="o">-</span>0<span class="p">.</span>3<span class="p">.</span>6
+</pre></div>
+
+
+<p>再<code>gem install jekyll</code>就没问题啦。</p>
+<h2>参考页面</h2>
+<p><a href="http://matt.scharley.me/2012/03/10/windows-cygwin-and-jekyll.html">Windows,Cygwin and Jekyll</a></p></div>
+        <hr />
+    </div>
+		
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/Aug/wp-database-optimization.html"><h2>wordpress数据库优化记录</h2></a>
+        <div class= "well small"> Thu 30 August 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。</p>
+<p>基本流程如下：</p>
+<p>1、备份。做任何数据库操作前，做一个临时备份都是必要的。使用phpmyadmin按默认设置导出sql文件下载到本地即可。</p>
+<p>2、删除不必要的插件。不必要的插件应当越少越好，尤其是会写入数据库或者查询数据库的插件。比如我之前使用过的<a class="reference external" href="http://www.6psp.cn/20100917/statpresscn%E6%8F%92%E4%BB%B6%E9%80%A0%E6%88%90%E5%8D%9A%E5%AE%A2%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%EF%BC%8C%E8%B5%B6%E5%BF%AB%E5%88%A0%E9%99%A4.html">statpresscn</a>，这个插件会在数据库中建立一个庞大的wp_statpresscn表，虽然没有前台查询，不过它造成的数据库冗余带来的坏处可远远大于统计功能带来的便利，所以还是删了吧。</p>
+<p>3、删除垃圾数据表。功能比较复杂的插件可能会在数据库中建立新表，删除插件一般不会把这些表顺带删除，所以手动排查垃圾数据表也是必要的。为了防止误删，请一定对照WP
+Codex的<a class="reference external" href="http://codex.wordpress.org/zh-cn:%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0">数据库描述</a>进行修改。</p>
+<p>删除akismet垃圾数据。关于akismet如何产生这些数据可以参考<a class="reference external" href="http://www.solagirl.net/wp-commentmeta-slowing-down-your-blog.html">wp_commentmeta是否正在拖慢你的blog</a>。</p>
+<div class="highlight"><pre><span class="k">delete</span> <span class="k">from</span> <span class="n">wp_commentmeta</span> <span class="k">where</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_as_submitted&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_history&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_rechecking&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_result&#39;</span> <span class="k">or ...</span></pre></div> <a class="btn btn-info xsmall" href="./posts/2012/Aug/wp-database-optimization.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/Jul/matlab-note.html"><h2>《MATLAB M语言高级编程》读书笔记</h2></a>
+        <div class= "well small"> Mon 30 July 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>第一章：M语言基础</p>
+<ul class="simple">
+<li>Matlab是解释型语言，不同于C语言这样的编译型语言，不过Matlab现在也可以编译。</li>
+<li>whos命令查看变量</li>
+<li>给变量赋值之前，不需要定义其类型。Matlab会<strong>自动决定</strong>变量类型，并分配内存空间。</li>
+<li>Matlab支持自动扩维(在<strong>某些操作</strong>下！比如两个不同维的矩阵相加就不会自动扩维，而会报错)，所以几乎所有变量都可以理解为矩阵（对于结构数组、元胞数组最好不要当做矩阵来理解）</li>
+<li>Matlab变量按列存储，C/C++按行存储。Matlab绝对下标索引是按从上到下，从左到右的顺序进行的，初始值为1。这个特性继承自FORTRAN。</li>
+<li>矩阵输入：中括号、逗号、分号、空格的区别。a=[1:5];这样的语句就会产生warning。</li>
+</ul>
+<p>矩阵索引示意图</p>
+<img alt="http://img.voidmous.net/2012/07/20120702204224.png" class="align-center" src="http://img.voidmous.net/2012/07/20120702204224.png" />
+<p>这一张图基本就讲清楚了所有的情况，注意A([9 14;10
+15])这样的索引方式。想一想A([8 12;10 ...</p> <a class="btn btn-info xsmall" href="./posts/2012/Jul/matlab-note.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/Jul/linux-usb-mount.html"><h2>Linux外置硬盘加载方案</h2></a>
+        <div class= "well small"> Tue 17 July 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的<a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab">fstab
+wiki</a>。简单地说就是现在/media目录下创建好要加载到的目标目录，然后在fstab中添加常连的外置硬盘mount条目即可。</p>
+<p>这个方案是我最开始采用的，没有太大问题，但是还不完美。主要是最近我的外置硬盘接口似乎有点松动，所以用段时间后会自动掉线，这时系统又会自动搜索加载，麻烦在于自动加载的目录和我所设的目录不一致了，这样所有对该硬盘下文件的操作就会“找不到目标”。典型的例子就是用播放器播放外置硬盘的歌曲，掉线重连后播放器就找不到曲目，只能又去手动加载，十分费劲。</p>
+<p>Linux下自动加载usb外置硬盘会mount到/media/$partition
+label目录下（起码我在Arch和Linux
+Mint下是如此），因此，你可以把手工设置的目录名称和外置硬盘分区的label修改成一致即可，这样就算掉线重连，文件位置不改变也就不会出现错误啦。想法是好的，不过可惜，如果系统检测到有同名的目录它就会创建一个带_的一个新目录作为挂载点，这条路也行不通。（也许可以修改哪里的设置或者权限可以达到这个目的？）</p>
+<p>目前只能不采用手动挂载而采用自动搜索挂载，这样其实也没太大的缺点，总比不断手动修改挂载点强。</p>
+<p>另外外置硬盘分区的label可以用Gparted修改，先卸载要修改的硬盘 ...</p> <a class="btn btn-info xsmall" href="./posts/2012/Jul/linux-usb-mount.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/Jul/henon-matlab-analysis.html"><h2>用MATLAB分析Henon映射</h2></a>
+        <div class= "well small"> Mon 09 July 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>Henon映射是动力系统研究中很常见的离散映射，因为它具有的混沌特性而闻名。映射方程如下：
+\[\left\{\begin{array}\~x_{n+1}=y_n+1-a\times~x_n^2 \\ y_{n+1}=bx_n \\ \end{array} \right. \]</p>
+<p>不同的a、b参数下该映射具有不同的性质，可能出现混沌、断续或者收敛到周期轨道上不同的情况。取a=1.4，b=0.3时会产生著名的henon吸引子。</p>
+<img alt="http://img.voidmous.net/2012/07/henon1.png" src="http://img.voidmous.net/2012/07/henon1.png" />
+<p>Henon吸引子，横轴为x，纵轴为y，其实就是所有迭代的点产生的图案，形状比较怪异。</p>
+<img alt="http://img.voidmous.net/2012/07/henon2.png" src="http://img.voidmous.net/2012/07/henon2.png" />
+<p>b=0.3时的分岔图，不同a值下x可能在几个值间变化，也可能在许多值之间变化，即产生了混沌。顺便吐槽下Matlab生成的图片太不精细了，暂时还不知道用什么方法能提高图片细节。</p>
+<p>Matlab源代码：</p>
+<div class="highlight"><pre><span class="c">% By voidmous&lt;voidmous@gmail.com ...</span></pre></div> <a class="btn btn-info xsmall" href="./posts/2012/Jul/henon-matlab-analysis.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/Jul/MS-Word-label.html"><h2>MS Word题注与交叉引用</h2></a>
+        <div class= "well small"> Thu 05 July 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>MS Word作为微软的拳头产品，虽然乏善可陈，但是仍然稳坐国内市场头把交椅，就算是在高校，这种局面也好不了多少。最近用Word写了份简短的文档，没什么花哨的东西，就是些公式和交叉引用、参考文献啥的，还是要请出Google大神才搞定。中间关于域以及题注上的有些细节问题没有完全搞懂，看来还是要系统地看看Word教程（谁说Word易用的，不学能用吗？！）。</p>
+<p>关于公式多说两句，Word自带的公式编辑器3.0实在是太简单了，要输入空集符号都不行，要输复杂点的公式简直找虐。第三方的mathtype印象中比自带的显示效果还要差，虽然功能似乎强大点。Aurora是基于LaTeX的，输入公式确实快捷，效果也最好，但是担心会出现兼容性问题，转换成图片的话和mathtype一样都不够原生态。总之公式的美观、输入快捷和兼容性三者在Word上兼得。</p>
+<p>Zotero在Word内插入参考文献其实是添加了域代码，通过域来更新文献内容以及索引。所谓域，可以理解为一个变量寄存器，根据它在文档中所处的位置产生数据。比如第几张图，第几个表，这时就相当于一个计数器（其实LaTeX里面的Counter更好理解）。大部分域操作都可以手工操作完成，比较重要的快捷键有：F9
+更新域；Ctrl+Shift+F9把域转化为文本（确定文章不会再修改时使用，注意备份，慎用！）</p>
+<p>Word里面的题注和LaTeX里面的label差不多，其实题注也就是为对象加上一个标签 ...</p> <a class="btn btn-info xsmall" href="./posts/2012/Jul/MS-Word-label.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/Jun/zotero-bib-blog.html"><h2>利用Zotero为博文添加参考文献</h2></a>
+        <div class= "well small"> Fri 29 June 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>对于技术类文章而言，添加必要的参考文献体现的是对他人劳动成果的尊重。即便你不会全文转载别人的文章而不标明出处，但是严格的说，学习了别人的方法或者观点也不能据为己有，标注参考文献就是向原创致敬的方法之一。目前而言，许多加了参考文献的文章都是怎么简单怎么来，没有个统一的格式，也不方便读者查阅。其实规范并不是没有，许多学术期刊对引用网页这样的媒体都有说明，我国<a class="reference external" href="http://gradschool.ustc.edu.cn/ylb/material/xw/wdxz/19.pdf">参考文献标准</a>也有说明。从我较短的使用过程来看，GB/T&nbsp;7714-2005标准设计得比较简洁紧凑，适合中文、英文以及混排的情况，看上去比较舒服。</p>
+<p>收集、管理文献的工具我首推Zotero，主要就在于它和Firefox结合得很好，对国际国内各大学术期刊数据库都支持得不错，和Google
+Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a class="reference external" href="http://blog.yesmryang.net/zotero-usage/">文献管理软件Zotero的一点使用感受</a>》。</p>
+<p>利用Zotero的导出功能实际已经可以生成很好的参考文献了，不过美中不足的是导出的只是纯文本，没有任何格式化，所以读者仍然要自己手动去查找参考文献，这可不是我这样的懒人想干的事，于是干脆自己动手写了下面这个style，基本功能已经实现，在外观和功能上可能还有提升的空间。</p>
+<p>Blogit是我基于<a class="reference external" href="http://www.zotero.org/styles/chinese-gb7714-2005-numeric">Chinese Std GB/T 7714-2005
+(numeric)</a>这个style文件，参考<a class="reference external" href="http://www.zotero.org/styles/radiopaedia">radiopaedia</a>鼓捣出来的一个结合体。一方面保留了国标的规范 ...</p> <a class="btn btn-info xsmall" href="./posts/2012/Jun/zotero-bib-blog.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/Jun/MIT-BIH-manual.html"><h2>MIT-BIH开放数据库使用指南</h2></a>
+        <div class= "well small"> Fri 15 June 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>最近因为项目任务要分析心电图数据，采用的是<a class="reference external" href="http://ecg.mit.edu/">MIT-BIH</a>开放数据库（或称PhysioBank数据库）。这个数据库不仅提供了经过筛选的各方面的生理数据集<a class="reference external" href="http://www.physionet.org/physiobank/">PhysioBank</a>，而且也提供了开源的数据处理和可视化工具<a class="reference external" href="http://www.physionet.org/physiotools/">PhysioToolkit</a>。对我这样的非医学类学生而言，光是看见那些医学术语就够头痛的了，还要掌握这样一套专门的基于Linux的工具，确实是个不小的挑战。好在我要完成的部分不需要很深入，所以马马虎虎也摸着些门道。不敢说会用，但是起码碰到问题方向在哪我已经清楚了，这里把这个数据库的使用简单介绍一下，方便新来的同学快速上手。当然如果你英语好的话，大可以自己慢慢翻文档，这也是要深入了解的惟一途径。</p>
+<p>首先说说数据库。你可以到<a class="reference external" href="http://www.physionet.org/physiobank/database/">分类页面</a>查找有没有自己感兴趣的数据集，上面都有比较详细的介绍。找到合适的数据后在对应页面直接将文件另存为就可以下载，当然这是比较笨的办法。推荐使用wget或者rsync来下载。wget可以用于下载单独的数据集，这样速度较快也比较快捷。例如下载mitdb：</p>
+<div class="highlight"><pre>wget -r -np http://physionet.org/physiobank/database/mitdb/
+</pre></div>
+<p>中间的<em>physionet.org</em>可以替换成离你最近的<a class="reference external" href="http://www.physionet.org/mirrors/">镜像</a>地址（好像西交的挂了，直接用原镜像吧 ...</p> <a class="btn btn-info xsmall" href="./posts/2012/Jun/MIT-BIH-manual.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/May/universal-browser-keyboard-shortcuts.html"><h2>47个通用网页浏览器快捷键</h2></a>
+        <div class= "well small"> Fri 25 May 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>本文翻译自<a class="reference external" href="http://www.howtogeek.com/114518/47-keyboard-shortcuts-that-work-in-all-web-browsers/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=210512&amp;utm_content=emailsidebar">howtogeek</a>，总结得不错。不过从评论来看，似乎对opera支持不大好，读者请自行尝试。
+<img alt="image0" src="https://lh6.googleusercontent.com/x_pKkyiVelXIkdeWhGCILaf8h-qGWggeKW5FfL1HarCYRLC2WaxlouSELjisZcwrI8ziLYWGJLssOF3eOMmufgNHobGjRv3L0TQX_U86UeDW9jbYDjQ" /></p>
+<p>每个主流的网络浏览器都有一部分相同的快捷键设置。无论你使用Mozilla
+Firefox，Google Chrome，Apple
+Safari或者Opera——这些键盘快捷键应该都是有效的。每个浏览器都有自己特有的快捷键，不过学会使用通用的键位在不同浏览器或者电脑间切换时就非常有用。下面的列表同时也包括几个鼠标快捷键。</p>
+<div class="section" id="id2">
+<h2><strong>标签</strong></h2>
+<p>按Ctrl +1-8 切换到指定的标签，从左边算起。 CTRL +9
+切换到最后一个标签。<img alt="image1" src="https://lh4.googleusercontent.com/hxcCzImXVO3k2Ic_HxI5vR3kDc2rsKi1mIQvQvC9l8XtDy2pmnlWOA6rnfDJn4GXqyL_iJ_PQN8NK2EBw5RdA8v8cyWmhFaSZ16l6Qd7OiRGXCDUVA0" /></p>
+<p>Ctrl + Tab
+切换到下一个标签——换句话说，切换到右边的选项卡。（CTRL + PAGE UP
+也可以，但在IE下无效。）</p>
+<p>Ctrl + Shift + Tab
+切换到前一个标签——换句话说，切换到左边的选项卡。 （CTRL + PAGE DOWN
+也可以，但IE下无效。）</p>
+<p>CTRL + W，CTRL + F4 ...</p></div> <a class="btn btn-info xsmall" href="./posts/2012/May/universal-browser-keyboard-shortcuts.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/May/runge-kutta-ode.html"><h2>Runge Kutta方法求解微分方程</h2></a>
+        <div class= "well small"> Tue 08 May 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。
+将一阶常微分方程初值问题写成如下形式：
+\[\left\{\begin{array}\~y^{'}=f(x,y) \\y(x_0)=y_0 \\
+\end{array}\right.\] 四阶Runge Kutta公式如下：
+\[\left\{\begin{array}{l}y_{n+1}=y_n+\frac{h}{6}(K_1+2K_2+2K_3+K_4)\\x_{n+1}=x_n+1\\K_1=f(x_n,y_n)\\K_2=f(x_n ...</p> <a class="btn btn-info xsmall" href="./posts/2012/May/runge-kutta-ode.html">read more</a></div>
+    </div>	
+				
+            <div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="./index.html">1</a></li>
+    <li class=""><a href="./index2.html">2</a></li>
+
+    <li class="next"><a href="./index2.html">Next &rarr;</a></li>
+
+</ul>
+</div>    
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="./archives.html">Archives</a>
+                <li><a href="./tags.html">Tags</a>
+                <li><a href="http://voidmous.github.com/" rel="alternate">Atom feed</a></li>
+                            </ul>
+            </div>
+
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                                <li><a href="./category/itji-zhu.html">IT技术</a></li>
+                                <li><a href="./category/sheng-guang-hua-ying.html">声光画影</a></li>
+                                <li><a href="./category/ke-yan-xue-zhu.html">科研学术</a></li>
+                                <li><a href="./category/ruan-jian-ying-yong.html">软件应用</a></li>
+                                   
+            </ul>
+            </div>
+            
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                            <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                            <li><a href="http://python.org">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                        </ul>
+            </div>
+            
+
+                        <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                                <li><a href="https://github.com/voidmous">Github</a></li>
+                                <li><a href="https://twitter.com/voidmous">Twitter</a></li>
+                                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+                                <li><a href="http://www.renren.com/221168912">Renren</a></li>
+                            </ul>
+            </div>
+            </div>
+            
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href=".">幻空轩</a> &copy; voidmous 2012</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<a href="http://github.com/voidmous/"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>
