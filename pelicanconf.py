@@ -35,4 +35,5 @@ SOCIAL = (('Github', 'https://github.com/voidmous'),
 DEFAULT_PAGINATION = 10
 
 # https://github.com/getpelican/pelican/wiki/Tips-n-Tricks
-FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),)
+FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),
+                 ('extra/CNAME', 'CNAME'),)
