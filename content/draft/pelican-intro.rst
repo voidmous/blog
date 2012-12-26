@@ -25,6 +25,7 @@ Pelican是一个静态博客生成器，
 * 如何改变post链接地址？
 
 * 如何快速同步到gh-pages?
+
 首先安装ghp-import
 
 .. code:: python
@@ -33,7 +34,7 @@ Pelican是一个静态博客生成器，
 
 Pelican自带的Makefile已经添加了ghp-import支持，只需要执行以下命令即可：
 
-.. code:: shell
+.. code:: bash
 
   make html
   make github
@@ -41,4 +42,3 @@ Pelican自带的Makefile已经添加了ghp-import支持，只需要执行以下�
 参考资源
 --------
 
-`

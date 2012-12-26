@@ -10,6 +10,9 @@ LOCALE =  "C" # This option is needed for above 2 options
 
 TIMEZONE = 'Europe/Paris'
 
+# Cloud Service Account
+GOOGLE_ANALYTICS = "UA-37279313-1"
+
 DEFAULT_LANG = 'cn'
 
 # Misc
