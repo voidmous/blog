@@ -2,7 +2,6 @@
 reST指南
 ============
 :author: voidmous
-:status: draft
 :date: 2012-12-25
 :slug: rst-manual
 
@@ -32,7 +31,7 @@ __ http://wiki.venj.me/restructuredtext-quick-reference
 `Cheat Sheet <http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt>`_
   小型的cheatsheet，如果已经熟悉了基本语法，一页纸的参考手册就够了。
 
-除了docutils官方文档，sphinx文档中也包含了 `reST的介绍 <http://sphinx-doc.org/rest.html>`_ （ `中文版本`__ ），可以一读。
+除了docutils官方文档，sphinx文档中也包含了 `reST的介绍 <http://sphinx-doc.org/rest.html>`_ （ `中文版本`__ ），Python的 `resT介绍 <http://docs.python.org/documenting/rest.html>`_ ，可以一读。
 
 __ http://www.cppexample.com/other/rest.html
 
