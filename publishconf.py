@@ -5,7 +5,7 @@ import sys
 sys.path.append('.')
 from pelicanconf import *
 
-SITEURL = 'http://voidmous.github.com'
+SITEURL = 'http://www.joshuazhang.info'
 
 #DELETE_OUTPUT_DIRECTORY = True
 
@@ -15,4 +15,4 @@ SITEURL = 'http://voidmous.github.com'
 #RELATIVE_URLS = False
 
 #DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+GOOGLE_ANALYTICS = "UA-37267039-1"
