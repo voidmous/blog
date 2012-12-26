@@ -58,8 +58,8 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="./posts/2012/Sep/cygwin-install-jekyll.html"><h1>cygwin安装jekyll</h1></a>
-            Mon 24 September 2012
+            <a href="./posts/2012/Dec/rst-manual.html"><h1>reST指南</h1></a>
+            Tue 25 December 2012
 
 by <a class="url fn" href="./author/voidmous.html">voidmous</a>
  
@@ -68,7 +68,65 @@ by <a class="url fn" href="./author/voidmous.html">voidmous</a>
  
         </div>
         
-        <div><h2>卸载已安装的ruby</h2>
+        <div><div class="section" id="id1">
+<h2>reST简介</h2>
+</div>
+<div class="section" id="id2">
+<h2>学习资源</h2>
+<p>docutils官方的文档已经写得很详尽了，应当作为初学者优先参考的资料。主要有以下几部分：</p>
+<dl class="docutils">
+<dt><a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a></dt>
+<dd>官方介绍</dd>
+<dt><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickstart.html">A ReStructuredText Primer</a></dt>
+<dd>初学者指南，文章非常简短，十分钟内即可了解reST最基本的功能和语法，推荐新手完整阅读。</dd>
+<dt><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></dt>
+<dd>reST标记说明，文章很长，写得很详细，适用于进行深入了解。</dd>
+<dt><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">Quick reStructuredText</a></dt>
+<dd>reST快速参考，虽然也很长，但是方便查阅。如果你和我一样想要快速上手，这是一个不错的选择。你甚至可以打印出来，随时翻看。 <a class="reference external" href="http://wiki.venj.me/restructuredtext-quick-reference">中文版本</a>  适合拿来对比阅读。</dd>
+</dl>
+<dl class="docutils">
+<dt><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">Cheat Sheet</a></dt>
+<dd>小型的cheatsheet，如果已经熟悉了基本语法，一页纸的参考手册就够了。</dd>
+</dl>
+<p>除了docutils官方文档，sphinx文档中也包含了 <a class="reference external" href="http://sphinx-doc.org/rest.html">reST的介绍</a> （ <a class="reference external" href="http://www.cppexample.com/other/rest.html">中文版本</a> ），Python的 <a class="reference external" href="http://docs.python.org/documenting/rest.html">resT介绍</a> ，可以一读。</p>
+<p>其他网友写的介绍文章，非本文可比：</p>
+<ul class="simple">
+<li><a class="reference external" href="http://wiki.jerrypeng.me/rest-tjlug/">可爱的reStructuredText</a></li>
+<li><a class="reference external" href="http://wowubuntu.com/restructuredtext-sphinx.html">文档与笔记利器 reStructuredText 和 Sphinx</a></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>编辑器环境</h2>
+<p>如果你只想尝试一下，看看效果，或者需要一个现成的“可以胡来”的测试平台，那推荐你用在线编辑器 <a class="reference external" href="http://rst.ninjs.org/">Online reST Editor</a> 。等你在上面玩熟了再搭建自己的平台。</p>
+</div>
+<div class="section" id="id9">
+<h2>常见错误</h2>
+<ul class="simple">
+<li>行内语法要注意前后空格，行间语法要注意前后空行</li>
+<li>外部链接应注意中间的空格</li>
+<li>多个target重复冲突的问题？？ 见 <a class="reference external" href="http://stackoverflow.com/questions/5464627/how-to-have-same-text-in-two-links-with-restructured-text">这里</a></li>
+</ul>
+</div>
+</div>
+        <hr />
+    </div>
+		
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="./posts/2012/Sep/cygwin-install-jekyll.html"><h2>cygwin安装jekyll</h2></a>
+        <div class= "well small"> Mon 24 September 2012
+
+by <a class="url fn" href="./author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2>卸载已安装的ruby</h2>
 <p>用对应的包管理器卸载
 如果是rvm安装的，直接删除目录<code>~/.rvm</code>，然后删除<code>.zshrc</code>和<code>.zlogin</code>文件，去掉<code>.profile</code>和<code>.bash_profile</code>中关于rvm的语句即可。</p>
 <h2>安装rvm</h2>
@@ -88,51 +146,9 @@ by <a class="url fn" href="./author/voidmous.html">voidmous</a>
 </pre></div>
 
 
-<p>现在显示<code>rvm is a function</code>，说明rvm安装成功。
-查看是否还有依赖问题：</p>
-<div class="codehilite"><pre><span class="n">rvm</span> <span class="n">requirements</span>
-</pre></div>
-
-
-<h2>管理ruby环境</h2>
-<p>下面这几步其实不必要了，只是展示一下安装的过程，你也可以安装其它的ruby版本。</p>
-<div class="codehilite"><pre><span class="n">rvm</span> <span class="n">list</span> <span class="n">known</span>
-<span class="n">rvm</span> <span class="n">install</span> 1<span class="p">.</span>9<span class="p">.</span>3
-<span class="n">rvm</span> <span class="n">use</span> 1<span class="p">.</span>9<span class="p">.</span>3 <span class="o">--</span><span class="n">default</span>
-</pre></div>
-
-
-<p>查看安装的版本号和路径</p>
-<div class="codehilite"><pre><span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
-<span class="n">gem</span> <span class="o">-</span><span class="n">v</span>
-<span class="n">which</span> <span class="n">ruby</span>
-<span class="n">which</span> <span class="n">gem</span>
-</pre></div>
-
-
-<h2>安装jekyll</h2>
-<p>用gem安装：</p>
-<div class="codehilite"><pre><span class="n">gem</span> <span class="n">update</span> <span class="o">--</span><span class="n">system</span>
-<span class="n">gem</span> <span class="n">list</span>
-<span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span>
-</pre></div>
-
-
-<p>如果出现<code>spawn.h</code>的错误，这是由于<code>posix-spawn</code>的bug引起的，需要自己编译安装：</p>
-<div class="codehilite"><pre><span class="n">gem</span> <span class="n">install</span> <span class="n">rake</span><span class="o">-</span><span class="n">compiler</span> <span class="o">-</span><span class="n">v</span> 0<span class="p">.</span>7<span class="p">.</span>6
-<span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">rtomayko</span><span class="o">/</span><span class="n">posix</span><span class="o">-</span><span class="n">spawn</span><span class="p">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">posix</span><span class="o">-</span><span class="n">spawn</span>
-<span class="n">rake</span> <span class="n">gem</span>
-<span class="n">gem</span> <span class="n">install</span> <span class="n">pkg</span><span class="o">/</span><span class="n">posix</span><span class="o">-</span><span class="n">spawn</span><span class="o">-</span>0<span class="p">.</span>3<span class="p">.</span>6
-</pre></div>
-
-
-<p>再<code>gem install jekyll</code>就没问题啦。</p>
-<h2>参考页面</h2>
-<p><a href="http://matt.scharley.me/2012/03/10/windows-cygwin-and-jekyll.html">Windows,Cygwin and Jekyll</a></p></div>
-        <hr />
-    </div>
-		
+<p>现在显示<code>rvm ...</code></p> <a class="btn btn-info xsmall" href="./posts/2012/Sep/cygwin-install-jekyll.html">read more</a></div>
+    </div>	
+				
     
  
         
@@ -339,34 +355,13 @@ Safari或者Opera——这些键盘快捷键应该都是有效的。每个浏览
 <p>CTRL + W，CTRL + F4 ...</p></div> <a class="btn btn-info xsmall" href="./posts/2012/May/universal-browser-keyboard-shortcuts.html">read more</a></div>
     </div>	
 				
-    
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="./posts/2012/May/runge-kutta-ode.html"><h2>Runge Kutta方法求解微分方程</h2></a>
-        <div class= "well small"> Tue 08 May 2012
-
-by <a class="url fn" href="./author/voidmous.html">voidmous</a>
- 
-
-
- </div>
-        <div class="summary"><p>普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。
-将一阶常微分方程初值问题写成如下形式：
-\[\left\{\begin{array}\~y^{'}=f(x,y) \\y(x_0)=y_0 \\
-\end{array}\right.\] 四阶Runge Kutta公式如下：
-\[\left\{\begin{array}{l}y_{n+1}=y_n+\frac{h}{6}(K_1+2K_2+2K_3+K_4)\\x_{n+1}=x_n+1\\K_1=f(x_n,y_n)\\K_2=f(x_n ...</p> <a class="btn btn-info xsmall" href="./posts/2012/May/runge-kutta-ode.html">read more</a></div>
-    </div>	
-				
             <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr; Previous</a></li>
 
     <li class="active"><a href="./index.html">1</a></li>
     <li class=""><a href="./index2.html">2</a></li>
+    <li class=""><a href="./index3.html">3</a></li>
 
     <li class="next"><a href="./index2.html">Next &rarr;</a></li>
 
@@ -398,6 +393,7 @@ by <a class="url fn" href="./author/voidmous.html">voidmous</a>
                 </li>
                 
                                 <li><a href="./category/itji-zhu.html">IT技术</a></li>
+                                <li><a href="./category/draft.html">draft</a></li>
                                 <li><a href="./category/sheng-guang-hua-ying.html">声光画影</a></li>
                                 <li><a href="./category/ke-yan-xue-zhu.html">科研学术</a></li>
                                 <li><a href="./category/ruan-jian-ying-yong.html">软件应用</a></li>
