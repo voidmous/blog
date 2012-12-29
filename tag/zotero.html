@@ -75,7 +75,7 @@ Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a c
 <p>利用Zotero的导出功能实际已经可以生成很好的参考文献了，不过美中不足的是导出的只是纯文本，没有任何格式化，所以读者仍然要自己手动去查找参考文献，这可不是我这样的懒人想干的事，于是干脆自己动手写了下面这个style，基本功能已经实现，在外观和功能上可能还有提升的空间。</p>
 <p>Blogit是我基于<a class="reference external" href="http://www.zotero.org/styles/chinese-gb7714-2005-numeric">Chinese Std GB/T 7714-2005
 (numeric)</a>这个style文件，参考<a class="reference external" href="http://www.zotero.org/styles/radiopaedia">radiopaedia</a>鼓捣出来的一个结合体。一方面保留了国标的规范，同时加上了源网页和DOI（<a class="reference external" href="http://dx.doi.org/">hdx.doi.org</a>）或者ISBN（<a class="reference external" href="http://www.worldcat.org/wcpa/isbn/">www.worldcat.org</a>）的超链接，方便在网页上直接跳转查看，不用复制粘贴再搜索这么麻烦了。利用此style配合Zotero导出的代码包含超链接，可以直接粘贴到文章源代码上。</p>
-<p>Blogit源代码：<a class="reference external" href="./img/Blogit20120627.rar">Blogit20120627</a></p>
+<p>Blogit源代码：<a class="reference external" href="/static/img/wp/Blogit20120627.rar">Blogit20120627</a></p>
 <p>Zotero的style文件为<a class="reference external" href="http://citationstyles.org/">CSL</a>格式，其实质为xml，所以自己看看就可以摸到些门道。Windows下直接用Notepad++即可编辑，不推荐直接用记事本编辑，因为CSL是Unix文本格式，所以用记事本查看会没有换行。编辑过程中可以直接在Firefox标签页<a class="reference external" href="chrome://zotero/content/tools/cslpreview.xul">chrome://zotero/content/tools/cslpreview.xul</a>中预览，当前选中的文献在所有可用的style作用下生成的参考文献代码都可以看到，方便比较和进一步修改。修改编辑后一定要用<a class="reference external" href="https://github.com/citation-style-language/styles/wiki/Validation">验证工具</a>验证是否有错，推荐用在线的<a class="reference external" href="http://simonster.github.com/csl-validator.js/">csl-validator.js</a>。验证无误后即可用Zotero导入该style，如果已经导入那么覆盖原有文件即可。</p>
 <p>几点说明：</p>
 <p>1、一般来说，源网页和DOI、ISBN指向的网页很可能是同一个，所以如果你嫌太多超链接很难看，那么也可以去除源网页的链接，只要在Zotero设置Citation

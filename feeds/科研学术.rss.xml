@@ -9,7 +9,7 @@
 &lt;li&gt;矩阵输入：中括号、逗号、分号、空格的区别。a=[1:5];这样的语句就会产生warning。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;矩阵索引示意图&lt;/p&gt;
-&lt;img alt="./img/20120702204224.png" class="align-center" src="./img/20120702204224.png" /&gt;
+&lt;img alt="/static/img/wp/20120702204224.png" class="align-center" src="/static/img/wp/20120702204224.png" /&gt;
 &lt;p&gt;这一张图基本就讲清楚了所有的情况，注意A([9 14;10
 15])这样的索引方式。想一想A([8 12;10 11])是什么，A([8:10;10:12])又是什么？
 进一步想想这个程序的结果是什么：&lt;/p&gt;
@@ -94,7 +94,7 @@
 &lt;li&gt;在M文件中包含子函数的方法？&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Matlab函数文件格式：&lt;/p&gt;
-&lt;img alt="./img/Image5.png" class="align-center" src="./img/Image5.png" /&gt;
+&lt;img alt="/static/img/wp/Image5.png" class="align-center" src="/static/img/wp/Image5.png" /&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;在线帮助部分可用help查询得到，H1 help line部分用lookfor命令查询得到。&lt;/li&gt;
 &lt;li&gt;在线帮助不可出现空行，空行后面的内容不在作为在线帮助。&lt;/li&gt;
@@ -115,9 +115,9 @@
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Mon, 30 Jul 2012 21:04:00 +0200</pubDate><guid>tag:www.joshuazhang.info,2012-07-30:posts/2012/Jul/matlab-note.html</guid><category>Matlab</category><category>笔记</category><category></category></item><item><title>用MATLAB分析Henon映射</title><link>http://www.joshuazhang.info/posts/2012/Jul/henon-matlab-analysis.html</link><description>&lt;p&gt;Henon映射是动力系统研究中很常见的离散映射，因为它具有的混沌特性而闻名。映射方程如下：
 \[\left\{\begin{array}\~x_{n+1}=y_n+1-a\times~x_n^2 \\ y_{n+1}=bx_n \\ \end{array} \right. \]&lt;/p&gt;
 &lt;p&gt;不同的a、b参数下该映射具有不同的性质，可能出现混沌、断续或者收敛到周期轨道上不同的情况。取a=1.4，b=0.3时会产生著名的henon吸引子。&lt;/p&gt;
-&lt;img alt="./img/henon1.png" src="./img/henon1.png" /&gt;
+&lt;img alt="/static/img/wp/henon1.png" src="/static/img/wp/henon1.png" /&gt;
 &lt;p&gt;Henon吸引子，横轴为x，纵轴为y，其实就是所有迭代的点产生的图案，形状比较怪异。&lt;/p&gt;
-&lt;img alt="./img/henon2.png" src="./img/henon2.png" /&gt;
+&lt;img alt="/static/img/wp/henon2.png" src="/static/img/wp/henon2.png" /&gt;
 &lt;p&gt;b=0.3时的分岔图，不同a值下x可能在几个值间变化，也可能在许多值之间变化，即产生了混沌。顺便吐槽下Matlab生成的图片太不精细了，暂时还不知道用什么方法能提高图片细节。&lt;/p&gt;
 &lt;p&gt;Matlab源代码：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;% By voidmous&amp;lt;voidmous@gmail.com&amp;gt;&lt;/span&gt;
@@ -160,7 +160,7 @@ Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《&lt;
 &lt;p&gt;利用Zotero的导出功能实际已经可以生成很好的参考文献了，不过美中不足的是导出的只是纯文本，没有任何格式化，所以读者仍然要自己手动去查找参考文献，这可不是我这样的懒人想干的事，于是干脆自己动手写了下面这个style，基本功能已经实现，在外观和功能上可能还有提升的空间。&lt;/p&gt;
 &lt;p&gt;Blogit是我基于&lt;a class="reference external" href="http://www.zotero.org/styles/chinese-gb7714-2005-numeric"&gt;Chinese Std GB/T 7714-2005
 (numeric)&lt;/a&gt;这个style文件，参考&lt;a class="reference external" href="http://www.zotero.org/styles/radiopaedia"&gt;radiopaedia&lt;/a&gt;鼓捣出来的一个结合体。一方面保留了国标的规范，同时加上了源网页和DOI（&lt;a class="reference external" href="http://dx.doi.org/"&gt;hdx.doi.org&lt;/a&gt;）或者ISBN（&lt;a class="reference external" href="http://www.worldcat.org/wcpa/isbn/"&gt;www.worldcat.org&lt;/a&gt;）的超链接，方便在网页上直接跳转查看，不用复制粘贴再搜索这么麻烦了。利用此style配合Zotero导出的代码包含超链接，可以直接粘贴到文章源代码上。&lt;/p&gt;
-&lt;p&gt;Blogit源代码：&lt;a class="reference external" href="./img/Blogit20120627.rar"&gt;Blogit20120627&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Blogit源代码：&lt;a class="reference external" href="/static/img/wp/Blogit20120627.rar"&gt;Blogit20120627&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Zotero的style文件为&lt;a class="reference external" href="http://citationstyles.org/"&gt;CSL&lt;/a&gt;格式，其实质为xml，所以自己看看就可以摸到些门道。Windows下直接用Notepad++即可编辑，不推荐直接用记事本编辑，因为CSL是Unix文本格式，所以用记事本查看会没有换行。编辑过程中可以直接在Firefox标签页&lt;a class="reference external" href="chrome://zotero/content/tools/cslpreview.xul"&gt;chrome://zotero/content/tools/cslpreview.xul&lt;/a&gt;中预览，当前选中的文献在所有可用的style作用下生成的参考文献代码都可以看到，方便比较和进一步修改。修改编辑后一定要用&lt;a class="reference external" href="https://github.com/citation-style-language/styles/wiki/Validation"&gt;验证工具&lt;/a&gt;验证是否有错，推荐用在线的&lt;a class="reference external" href="http://simonster.github.com/csl-validator.js/"&gt;csl-validator.js&lt;/a&gt;。验证无误后即可用Zotero导入该style，如果已经导入那么覆盖原有文件即可。&lt;/p&gt;
 &lt;p&gt;几点说明：&lt;/p&gt;
 &lt;p&gt;1、一般来说，源网页和DOI、ISBN指向的网页很可能是同一个，所以如果你嫌太多超链接很难看，那么也可以去除源网页的链接，只要在Zotero设置Citation
