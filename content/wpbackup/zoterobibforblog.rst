@@ -52,7 +52,7 @@ with dde23`_\ [J]. .
 .. _radiopaedia: http://www.zotero.org/styles/radiopaedia
 .. _hdx.doi.org: http://dx.doi.org/
 .. _www.worldcat.org: http://www.worldcat.org/wcpa/isbn/
-.. _Blogit20120627: http://voidmous.net/blog/wp-content/uploads/2012/06/Blogit20120627.rar
+.. _Blogit20120627: ./img/Blogit20120627.rar
 .. _CSL: http://citationstyles.org/
 .. _`chrome://zotero/content/tools/cslpreview.xul`: chrome://zotero/content/tools/cslpreview.xul
 .. _验证工具: https://github.com/citation-style-language/styles/wiki/Validation
