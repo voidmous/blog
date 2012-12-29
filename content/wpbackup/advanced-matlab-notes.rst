@@ -16,7 +16,7 @@
 
 矩阵索引示意图 
 
-.. image:: ./img/20120702204224.png
+.. image:: /static/img/wp/20120702204224.png
    :align: center
 
 这一张图基本就讲清楚了所有的情况，注意A([9 14;10
@@ -64,7 +64,7 @@
 
 Matlab函数文件格式：
 
-.. image:: ./img/Image5.png
+.. image:: /static/img/wp/Image5.png
    :align: center
 
 - 在线帮助部分可用help查询得到，H1 help line部分用lookfor命令查询得到。
