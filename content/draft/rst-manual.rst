@@ -43,7 +43,7 @@ __ http://www.cppexample.com/other/rest.html
 编辑器环境
 ----------
 
-如果你只想尝试一下，看看效果，或者需要一个现成的“可以胡来”的测试平台，那推荐你用在线编辑器 `Online reST Editor <http://rst.ninjs.org/>`_ 。等你在上面玩熟了再搭建自己的平台。
+如果你只想尝试一下，看看效果，或者需要一个现成的“可以胡来”的测试平台，那推荐你用在线编辑器 `Online reST Editor <http://rst.ninjs.org/>`_ 。等你在上面玩熟了再搭建自己的工具平台。
 
 
 常见错误
