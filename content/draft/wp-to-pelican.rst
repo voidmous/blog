@@ -2,7 +2,8 @@
 ####################
 :author: voidmous
 :date: 2012-12-10
-:tags: WordPress, Pelican
+:tags: 
+, Pelican
 :status: draft
 :slug: wp-to-pelican
 
