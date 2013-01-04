@@ -3,7 +3,7 @@ WordPress文章编辑发布方案
 =========================
 
 :author: voidmous
-:date: 2012-12-22
+:date: 2013-01-04
 :tags: WordPress
 :category: Internet
 :slug: wp-publish-method
