@@ -28,7 +28,7 @@
 &lt;/div&gt;
 &lt;div class="section" id="id8"&gt;
 &lt;h2&gt;编辑器环境&lt;/h2&gt;
-&lt;p&gt;如果你只想尝试一下，看看效果，或者需要一个现成的“可以胡来”的测试平台，那推荐你用在线编辑器 &lt;a class="reference external" href="http://rst.ninjs.org/"&gt;Online reST Editor&lt;/a&gt; 。等你在上面玩熟了再搭建自己的平台。&lt;/p&gt;
+&lt;p&gt;如果你只想尝试一下，看看效果，或者需要一个现成的“可以胡来”的测试平台，那推荐你用在线编辑器 &lt;a class="reference external" href="http://rst.ninjs.org/"&gt;Online reST Editor&lt;/a&gt; 。等你在上面玩熟了再搭建自己的工具平台。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="id9"&gt;
 &lt;h2&gt;常见错误&lt;/h2&gt;
