@@ -4,6 +4,7 @@ reST指南
 :author: voidmous
 :date: 2012-12-25
 :slug: rst-manual
+:status: draft
 
 reST简介
 --------
