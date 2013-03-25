@@ -6,7 +6,7 @@ WordPress文章编辑发布方案
 :date: 2013-01-04
 :tags: WordPress
 :category: Internet
-:slug: wp-publish-method
+:slug: wp-edit-publish-plan
 
 我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话,想要了解其它的方案，这篇文章也许会有帮助。首先要说明的是编辑和发布是两个阶段，如果再详细点还应该包括修改阶段，下面的一些发布流程往往只能照顾到某一个方面，而在另一个方面就相形见绌，总有这样那样的瑕疵。基本上，WordPress的编辑发布方案有这么几大类：
 
@@ -22,7 +22,7 @@ WordPress文章编辑发布方案
 
 专用的就有大名鼎鼎的WLW，这应该是许多人坚守Windows平台的原因之一吧。其它如qumana、thingamablog等，虽然可用，但是功能不完善，体验也不好。特别值得一提的是浏览器插件 `ScribeFireNext <https://addons.mozilla.org/en-us/firefox/addon/scribefire-next/>`_ ，比起WLW也未逊色多少，如果要跨平台的话可以一试。Linux下可以尝试 `这些 <http://paranimage.com/6-under-linux-blog-editor/>`_ 。
 
-通用的也很多，这里又分两类：WYSIWYG和源码编辑器。所见即所得的比如M$ Office中的 `Word编辑器 <http://www.dongbinbin.com/2012/07/wordfabuboke/>`_ 就可以作为发布终端，`OneNote <http://hi.baidu.com/yumi44444/item/52e203d0c0f5d2e0b3f77789>`_ 也是选择之一。源码编辑器其实就是指VIM和emacs啦。用这两款编辑器发布文章往往可以使用一些轻量级标记语言，从而简化写作过程，但是修改过程可能很让人恼火。
+通用的也很多，这里又分两类：WYSIWYG和代码编辑器。所见即所得的比如M$ Office中的 `Word编辑器 <http://www.dongbinbin.com/2012/07/wordfabuboke/>`_ 就可以作为发布终端，`OneNote <http://hi.baidu.com/yumi44444/item/52e203d0c0f5d2e0b3f77789>`_ 也是选择之一。代码编辑器其实就是指VIM和emacs啦。用这两款编辑器发布文章往往可以使用一些轻量级标记语言，从而简化写作过程，但是修改过程可能很让人恼火。
 
 云服务中转
 ----------
