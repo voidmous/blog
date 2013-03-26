@@ -52,78 +52,34 @@
     <div class="row">
 
         <div class="span9">
-                
-
-        
-
-
-    <div class='article'>
+            <div class='article'>
         <div class="content-title">
-            <a href="../posts/2012/Dec/rst-manual.html"><h1>reST指南</h1></a>
-            Tue 25 December 2012
+            <h1>Markdown语法笔记</h1>
+            Wed 27 March 2013
 
 by <a class="url fn" href="../author/voidmous.html">voidmous</a>
  
 
 
- 
         </div>
-        
-        <div><div class="section" id="id1">
-<h2>reST简介</h2>
-</div>
-<div class="section" id="id2">
-<h2>学习资源</h2>
-<p>docutils官方的文档已经写得很详尽了，应当作为初学者优先参考的资料。主要有以下几部分：</p>
-<dl class="docutils">
-<dt><a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a></dt>
-<dd>官方介绍</dd>
-<dt><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickstart.html">A ReStructuredText Primer</a></dt>
-<dd>初学者指南，文章非常简短，十分钟内即可了解reST最基本的功能和语法，推荐新手完整阅读。</dd>
-<dt><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></dt>
-<dd>reST标记说明，文章很长，写得很详细，适用于进行深入了解。</dd>
-<dt><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">Quick reStructuredText</a></dt>
-<dd>reST快速参考，虽然也很长，但是方便查阅。如果你和我一样想要快速上手，这是一个不错的选择。你甚至可以打印出来，随时翻看。 <a class="reference external" href="http://wiki.venj.me/restructuredtext-quick-reference">中文版本</a>  适合拿来对比阅读。</dd>
-</dl>
-<dl class="docutils">
-<dt><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt">Cheat Sheet</a></dt>
-<dd>小型的cheatsheet，如果已经熟悉了基本语法，一页纸的参考手册就够了。</dd>
-</dl>
-<p>除了docutils官方文档，sphinx文档中也包含了 <a class="reference external" href="http://sphinx-doc.org/rest.html">reST的介绍</a> （ <a class="reference external" href="http://www.cppexample.com/other/rest.html">中文版本</a> ），Python的 <a class="reference external" href="http://docs.python.org/documenting/rest.html">resT介绍</a> ，可以一读。</p>
-<p>其他网友写的介绍文章，非本文可比：</p>
-<ul class="simple">
-<li><a class="reference external" href="http://wiki.jerrypeng.me/rest-tjlug/">可爱的reStructuredText</a></li>
-<li><a class="reference external" href="http://wowubuntu.com/restructuredtext-sphinx.html">文档与笔记利器 reStructuredText 和 Sphinx</a></li>
-</ul>
-</div>
-<div class="section" id="id8">
-<h2>编辑器环境</h2>
-<p>如果你只想尝试一下，看看效果，或者需要一个现成的“可以胡来”的测试平台，那推荐你用在线编辑器 <a class="reference external" href="http://rst.ninjs.org/">Online reST Editor</a> 。等你在上面玩熟了再搭建自己的工具平台。</p>
-</div>
-<div class="section" id="id9">
-<h2>常见错误</h2>
-<ul class="simple">
-<li>行内语法要注意前后空格，行间语法要注意前后空行</li>
-<li>外部链接应注意中间的空格</li>
-<li>多个target重复冲突的问题？？ 见 <a class="reference external" href="http://stackoverflow.com/questions/5464627/how-to-have-same-text-in-two-links-with-restructured-text">这里</a></li>
-</ul>
-</div>
-</div>
-        <hr />
-    </div>
-		
-            <div class="pagination">
-<ul>
-    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
-
-    <li class="active"><a href="../category/draft.html">1</a></li>
-
-    <li class="next disabled"><a href="#">&rarr; Next</a></li>
-
-</ul>
-</div>    
- 
-  
+	
+        <div><p>这是我自己学习Markdown语法的一个备忘，主要是一些难以理解或者易错的地方。更详细的可以参考 <a href="http://wowubuntu.com/markdown/basic.html">Markdown快速入门</a>和 <a href="http://wowubuntu.com/markdown/basic.html">Markdown语法说明</a> </p>
+<h3>基本语法</h3>
+<p>HTML标签可以直接在md文本中书写，不必区分。某些区块元素标签比如<code>&lt;table&gt;,&lt;pre&gt;</code>需要前后空行且开始结尾不能缩进。HTML标签和md语法互相嵌套的情况比较复杂，不过这种需求比较少。</p>
+<p>Markdown对<code>&lt;</code>和<code>&amp;</code>字符的处理比较智能，会自动根据所处的位置做相应的转换，对于作者而言是很自然的，按照习惯书写即可。</p>
+<p>Markdown以空行分段且段落不需要手工缩进。</p>
+<p>两种标题语法Setext和atx都支持，如何选择合适的标题层次？</p>
+<p>区块引用使用<code>&gt;</code>，类比gmail的回复引用。</p>
+<p>在列表中空行会导致每个项目都被<code>&lt;p&gt;</code>标签包起来。</p>
+<p>连续的缩进行或者段落会被当作代码块处理，注意前后空行。</p>
+<p>链接、图片都有行内和参考两种形式。参考标记可以是数字或者字符甚至空白和标点符号，不区分大小写。参考链接或图片的定义推荐放在引用段落的后面，方便查看。参考式链接的有点在于增强了去除正文的链接内容，使之更具可读性。</p>
+<p>目前Markdown无法指定图片宽高，需要普通的<code>&lt;img&gt;</code>标签。</p>
+<p>反斜杠作为逃逸符？</p></div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+		    </div>
         </div>
         
         <div class="span3">
@@ -136,7 +92,8 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
             
                 <li><a href="../archives.html">Archives</a>
                 <li><a href="../tags.html">Tags</a>
-                <li><a href="http://www.joshuazhang.info/" rel="alternate">Atom feed</a></li>
+                <li><a href="http://www.joshuazhang.info/feeds/atom.xml" rel="alternate">Atom feed</a></li>
+                                <li><a href="http://www.joshuazhang.info/feeds/rss.xml" rel="alternate">RSS feed</a></li>
                             </ul>
             </div>
 
@@ -149,7 +106,6 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
                 
                                 <li><a href="../category/itji-zhu.html">IT技术</a></li>
                                 <li><a href="../category/internet.html">Internet</a></li>
-                                <li><a href="../category/draft.html">draft</a></li>
                                 <li><a href="../category/sheng-guang-hua-ying.html">声光画影</a></li>
                                 <li><a href="../category/ke-yan-xue-zhu.html">科研学术</a></li>
                                 <li><a href="../category/ruan-jian-ying-yong.html">软件应用</a></li>

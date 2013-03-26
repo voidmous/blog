@@ -59,7 +59,7 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="./posts/2013/Jan/wp-publish-method.html"><h1>WordPress文章编辑发布方案</h1></a>
+            <a href="./posts/2013/Jan/wp-edit-publish-plan.html"><h1>WordPress文章编辑发布方案</h1></a>
             Fri 04 January 2013
 
 by <a class="url fn" href="./author/voidmous.html">voidmous</a>
@@ -78,7 +78,7 @@ by <a class="url fn" href="./author/voidmous.html">voidmous</a>
 <h2>编辑器终端</h2>
 <p>包括两大类：专用的和通用的。</p>
 <p>专用的就有大名鼎鼎的WLW，这应该是许多人坚守Windows平台的原因之一吧。其它如qumana、thingamablog等，虽然可用，但是功能不完善，体验也不好。特别值得一提的是浏览器插件 <a class="reference external" href="https://addons.mozilla.org/en-us/firefox/addon/scribefire-next/">ScribeFireNext</a> ，比起WLW也未逊色多少，如果要跨平台的话可以一试。Linux下可以尝试 <a class="reference external" href="http://paranimage.com/6-under-linux-blog-editor/">这些</a> 。</p>
-<p>通用的也很多，这里又分两类：WYSIWYG和源码编辑器。所见即所得的比如M$ Office中的 <a class="reference external" href="http://www.dongbinbin.com/2012/07/wordfabuboke/">Word编辑器</a> 就可以作为发布终端，<a class="reference external" href="http://hi.baidu.com/yumi44444/item/52e203d0c0f5d2e0b3f77789">OneNote</a> 也是选择之一。源码编辑器其实就是指VIM和emacs啦。用这两款编辑器发布文章往往可以使用一些轻量级标记语言，从而简化写作过程，但是修改过程可能很让人恼火。</p>
+<p>通用的也很多，这里又分两类：WYSIWYG和代码编辑器。所见即所得的比如M$ Office中的 <a class="reference external" href="http://www.dongbinbin.com/2012/07/wordfabuboke/">Word编辑器</a> 就可以作为发布终端，<a class="reference external" href="http://hi.baidu.com/yumi44444/item/52e203d0c0f5d2e0b3f77789">OneNote</a> 也是选择之一。代码编辑器其实就是指VIM和emacs啦。用这两款编辑器发布文章往往可以使用一些轻量级标记语言，从而简化写作过程，但是修改过程可能很让人恼火。</p>
 </div>
 <div class="section" id="id4">
 <h2>云服务中转</h2>
@@ -98,7 +98,7 @@ by <a class="url fn" href="./author/voidmous.html">voidmous</a>
 <li>延时发布机制。好的文章往往并非一蹴而就的，构思、动笔、不断的修改和打磨是正常的，这就需要草稿能够很好地保存且易于修改。</li>
 <li>图片发布转存。文章里的图片、附件应当能够正确地上传到指定的地址且url可以自由定制。</li>
 </ul>
-<p>基本上我的要求难以同时得到满足，所以有这么一个折腾的理由，我也就顺理成章地转到了Pelican上去了。静态博客当然也有它的缺点，不过暂时我对它的喜爱还是第一位的。</p>
+<p>基本上我的要求难以同时得到满足，所以有这么一个折腾的理由，我也就顺理成章地转到了Pelican上去了。静态博客当然也有它的缺点，不过暂时而言我对它的喜爱还是多一点的。</p>
 </div>
 </div>
         <hr />
@@ -374,7 +374,8 @@ Safari或者Opera——这些键盘快捷键应该都是有效的。每个浏览
             
                 <li><a href="./archives.html">Archives</a>
                 <li><a href="./tags.html">Tags</a>
-                <li><a href="http://www.joshuazhang.info/" rel="alternate">Atom feed</a></li>
+                <li><a href="http://www.joshuazhang.info/feeds/atom.xml" rel="alternate">Atom feed</a></li>
+                                <li><a href="http://www.joshuazhang.info/feeds/rss.xml" rel="alternate">RSS feed</a></li>
                             </ul>
             </div>
 
