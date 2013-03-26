@@ -1,9 +1,10 @@
 Title: Cygwin安装设置笔记
 Date: 2013-03-25 23:12
 Tags: cygwin,
-Category: uncategoriezed
+Category: Computer
 Slug: cygwin-setup-notes
 Author: voidmous
+Status: draft
 Summary: Installation notes for cygwin.
 
 ## 基本Cygwin系统安装
@@ -132,3 +133,7 @@ easy_install Markdown
 util-linux(more)，bash-completion，procps(top)，inetutils(telnet)
 
 cygcheck
+
+## cygwin/X配置
+
+我个人用cygwin/X主要是想用emacs的GUI，此外小程序的GUI也会用到，但是cygwin/X目前虽然可以调出windows的输入法却无法输入，目前可用的方案也许只有[这个](http://cn.bbs.comp.linux.narkive.com/JrQG9Hge/cygwin-x ) （未测试）。

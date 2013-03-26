@@ -15,6 +15,9 @@ GOOGLE_ANALYTICS = "UA-37279313-1"
 
 DEFAULT_LANG = 'cn'
 
+# Python-Markdown extensions to be included
+MD_EXTENSIONS = ['codehilite','extra']
+
 # Misc
 GITHUB_URL= 'http://github.com/voidmous/'
 PDF_GENERATOR = False
@@ -23,6 +26,8 @@ PDF_GENERATOR = False
 THEME = "./themes/tuxlite_tbs"
 
 # RSS and ATOM
+FEED_ATOM = 'feeds/atom.xml'
+FEED_RSS = 'feeds/rss.xml'
 FEED_ALL_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 
@@ -38,6 +43,8 @@ SOCIAL = (('Github', 'https://github.com/voidmous'),
           ('Weibo', 'http://weibo.com/u/1760438435'),
           ('Renren', 'http://www.renren.com/221168912'),)
 
+# Pagination
+DEFAULT_ORPHANS = 0
 DEFAULT_PAGINATION = 10
 
 STATIC_PATHS = ['img']
