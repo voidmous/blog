@@ -17,6 +17,9 @@
     <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
     <link href="../theme/local.css" rel="stylesheet">
     <link href="../theme/pygments.css" rel="stylesheet">
+    
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="../theme/codehilite.css" rel="stylesheet">
 
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -54,7 +57,7 @@
         <div class="span9">
             <div class='article'>
         <div class="content-title">
-            <h1>Pelican 简介</h1>
+            <h1>Pelican简介</h1>
             Tue 25 December 2012
 
 by <a class="url fn" href="../author/voidmous.html">voidmous</a>
@@ -71,22 +74,72 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <h2>安装</h2>
 </div>
 <div class="section" id="id3">
+<h2>编辑文章</h2>
+<p>代码高亮：</p>
+<p>pelican使用pygments来处理代码高亮</p>
+<ul class="simple">
+<li>reST格式高亮</li>
+</ul>
+<p>reST格式可以采用`code-block`原语，编辑时注意前后空行以及缩进与必要的空格（python在这方面很严格）</p>
+<div class="highlight"><pre><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> identifier
+
+   &lt;indented code block goes here&gt;
+</pre></div>
+<p>输出的html代码为：</p>
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;highlight&quot;</span><span class="nt">&gt;&lt;pre&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;p&quot;</span><span class="nt">&gt;</span>..<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;ow&quot;</span><span class="nt">&gt;</span>code-block<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;p&quot;</span><span class="nt">&gt;</span>::<span class="nt">&lt;/span&gt;</span> identifier
+
+   <span class="ni">&amp;lt;</span>indented code block goes here<span class="ni">&amp;gt;</span>
+<span class="nt">&lt;/pre&gt;&lt;/div&gt;</span>
+</pre></div>
+<p>注意这里CSS类是`highlight`。</p>
+<ul class="simple">
+<li>Markdown高亮</li>
+</ul>
+<p>Markdown需要经过python-markdown处理，并且需要codehilite扩展的支持，示例如下：</p>
+<p>方案一：</p>
+<div class="highlight"><pre>Some text.
+
+:::python
+    def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+</pre></div>
+<p>输出的html代码为：</p>
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Some text.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;codehilite&quot;</span><span class="nt">&gt;&lt;pre&gt;</span>
+<span class="nt">&lt;/pre&gt;&lt;/div&gt;</span>
+</pre></div>
+<p>方案二：</p>
+<div class="highlight"><pre>Some text.
+
+```python
+def factorial(n):
+if n == 0:
+    return 1
+else:
+    return n * factorial(n - 1)
+```
+</pre></div>
+<p>两种方案输出的CSS类都是`codehilite`而不是`highlight`，另外第一种方案必须缩进，第二种则不必。</p>
+</div>
+<div class="section" id="id4">
 <h2>常见问题</h2>
 <ul class="simple">
 <li>如何改变post链接地址？</li>
 <li>如何快速同步到gh-pages?</li>
 </ul>
 <p>首先安装ghp-import</p>
-<pre class="code python literal-block">
-<span class="name">pip</span> <span class="name">install</span> <span class="name">ghp</span><span class="operator">-</span><span class="keyword namespace">import</span>
-</pre>
+<div class="highlight"><pre>pip install ghp-import
+</pre></div>
 <p>Pelican自带的Makefile已经添加了ghp-import支持，只需要执行以下命令即可：</p>
 <pre class="code bash literal-block">
 make html
 make github
 </pre>
 </div>
-<div class="section" id="id4">
+<div class="section" id="id5">
 <h2>参考资源</h2>
 </div>
 </div>

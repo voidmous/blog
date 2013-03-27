@@ -17,6 +17,9 @@
     <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
     <link href="../theme/local.css" rel="stylesheet">
     <link href="../theme/pygments.css" rel="stylesheet">
+    
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="../theme/codehilite.css" rel="stylesheet">
 
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -72,18 +75,18 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 如果是rvm安装的，直接删除目录<code>~/.rvm</code>，然后删除<code>.zshrc</code>和<code>.zlogin</code>文件，去掉<code>.profile</code>和<code>.bash_profile</code>中关于rvm的语句即可。</p>
 <h2>安装rvm</h2>
 <p><a href="https://rvm.io/rvm/install/">安装指南</a></p>
-<div class="codehilite"><pre><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="p">.</span><span class="n">rvm</span><span class="p">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">stable</span> <span class="o">--</span><span class="n">ruby</span>
+<div class="codehilite"><pre>curl -L https://get.rvm.io | bash -s stable --ruby
 </pre></div>
 
 
 <p>检测rvm安装</p>
-<div class="codehilite"><pre><span class="n">type</span> <span class="n">rvm</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n</span> 1
+<div class="codehilite"><pre><span class="nb">type </span>rvm | head -n 1
 </pre></div>
 
 
 <p>此时会显示<code>rvm:not found</code>，不用紧，还需要一步：</p>
-<div class="codehilite"><pre><span class="n">source</span> <span class="o">~/</span><span class="p">.</span><span class="n">rvm</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">rvm</span>
-<span class="n">type</span> <span class="n">rvm</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n</span> 1
+<div class="codehilite"><pre><span class="nb">source</span> ~/.rvm/scripts/rvm
+<span class="nb">type </span>rvm | head -n 1
 </pre></div>
 
 

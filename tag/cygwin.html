@@ -17,6 +17,9 @@
     <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
     <link href="../theme/local.css" rel="stylesheet">
     <link href="../theme/pygments.css" rel="stylesheet">
+    
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="../theme/codehilite.css" rel="stylesheet">
 
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -74,57 +77,57 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 如果是rvm安装的，直接删除目录<code>~/.rvm</code>，然后删除<code>.zshrc</code>和<code>.zlogin</code>文件，去掉<code>.profile</code>和<code>.bash_profile</code>中关于rvm的语句即可。</p>
 <h2>安装rvm</h2>
 <p><a href="https://rvm.io/rvm/install/">安装指南</a></p>
-<div class="codehilite"><pre><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="p">.</span><span class="n">rvm</span><span class="p">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="n">stable</span> <span class="o">--</span><span class="n">ruby</span>
+<div class="codehilite"><pre>curl -L https://get.rvm.io | bash -s stable --ruby
 </pre></div>
 
 
 <p>检测rvm安装</p>
-<div class="codehilite"><pre><span class="n">type</span> <span class="n">rvm</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n</span> 1
+<div class="codehilite"><pre><span class="nb">type </span>rvm | head -n 1
 </pre></div>
 
 
 <p>此时会显示<code>rvm:not found</code>，不用紧，还需要一步：</p>
-<div class="codehilite"><pre><span class="n">source</span> <span class="o">~/</span><span class="p">.</span><span class="n">rvm</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">rvm</span>
-<span class="n">type</span> <span class="n">rvm</span> <span class="o">|</span> <span class="n">head</span> <span class="o">-</span><span class="n">n</span> 1
+<div class="codehilite"><pre><span class="nb">source</span> ~/.rvm/scripts/rvm
+<span class="nb">type </span>rvm | head -n 1
 </pre></div>
 
 
 <p>现在显示<code>rvm is a function</code>，说明rvm安装成功。
 查看是否还有依赖问题：</p>
-<div class="codehilite"><pre><span class="n">rvm</span> <span class="n">requirements</span>
+<div class="codehilite"><pre>rvm requirements
 </pre></div>
 
 
 <h2>管理ruby环境</h2>
 <p>下面这几步其实不必要了，只是展示一下安装的过程，你也可以安装其它的ruby版本。</p>
-<div class="codehilite"><pre><span class="n">rvm</span> <span class="n">list</span> <span class="n">known</span>
-<span class="n">rvm</span> <span class="n">install</span> 1<span class="p">.</span>9<span class="p">.</span>3
-<span class="n">rvm</span> <span class="n">use</span> 1<span class="p">.</span>9<span class="p">.</span>3 <span class="o">--</span><span class="n">default</span>
+<div class="codehilite"><pre>rvm list known
+rvm install 1.9.3
+rvm use 1.9.3 --default
 </pre></div>
 
 
 <p>查看安装的版本号和路径</p>
-<div class="codehilite"><pre><span class="n">ruby</span> <span class="o">-</span><span class="n">v</span>
-<span class="n">gem</span> <span class="o">-</span><span class="n">v</span>
-<span class="n">which</span> <span class="n">ruby</span>
-<span class="n">which</span> <span class="n">gem</span>
+<div class="codehilite"><pre>ruby -v
+gem -v
+which ruby
+which gem
 </pre></div>
 
 
 <h2>安装jekyll</h2>
 <p>用gem安装：</p>
-<div class="codehilite"><pre><span class="n">gem</span> <span class="n">update</span> <span class="o">--</span><span class="n">system</span>
-<span class="n">gem</span> <span class="n">list</span>
-<span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span>
+<div class="codehilite"><pre>gem update --system
+gem list
+gem install jekyll
 </pre></div>
 
 
 <p>如果出现<code>spawn.h</code>的错误，这是由于<code>posix-spawn</code>的bug引起的，需要自己编译安装：</p>
-<div class="codehilite"><pre><span class="n">gem</span> <span class="n">install</span> <span class="n">rake</span><span class="o">-</span><span class="n">compiler</span> <span class="o">-</span><span class="n">v</span> 0<span class="p">.</span>7<span class="p">.</span>6
-<span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">rtomayko</span><span class="o">/</span><span class="n">posix</span><span class="o">-</span><span class="n">spawn</span><span class="p">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">posix</span><span class="o">-</span><span class="n">spawn</span>
-<span class="n">rake</span> <span class="n">gem</span>
-<span class="n">gem</span> <span class="n">install</span> <span class="n">pkg</span><span class="o">/</span><span class="n">posix</span><span class="o">-</span><span class="n">spawn</span><span class="o">-</span>0<span class="p">.</span>3<span class="p">.</span>6
+<div class="codehilite"><pre>gem install rake-compiler -v 0.7.6
+git clone git://github.com/rtomayko/posix-spawn.git
+<span class="nb">cd </span>posix-spawn
+rake gem
+gem install pkg/posix-spawn-0.3.6
 </pre></div>
 
 

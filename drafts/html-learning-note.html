@@ -55,50 +55,98 @@
     <div class="row">
 
         <div class="span9">
-                
-
-        
-
-
-    <div class='article'>
+            <div class='article'>
         <div class="content-title">
-            <a href="../posts/2012/Feb/latex-pelican.html"><h1>LaTeX for Pelican 测试</h1></a>
-            Sat 18 February 2012
+            <h1>HTML learning note</h1>
+            Wed 27 March 2013
 
 by <a class="url fn" href="../author/voidmous.html">voidmous</a>
  
 
 
- 
         </div>
-        
-        <div><p>本文主要用于测试Pelican与MathJax配合显示数学公式</p>
-<p>毕达哥拉斯定理： <span class="math">\(a^2+b^2=c^2\)</span>
-</p>
-<p>正态分布： <span class="math">\(f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\)</span>
-</p>
-<p>傅里叶变换： <span class="math">\(F\left(\omega\right)=\mathcal{F}\left[f(t)\right]=\int_{-\infty}^{\infty}e^{-i\omega
-t}dt\)</span>
-</p>
-<p>傅里叶逆变换： <span class="math">\(f\left(t\right)=\mathcal{F}^{-1}\left[F\left(\omega\right)\right]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F\left(\omega\right)e^{i\omega t}d\omega\)</span>
-</p>
-<p>MathJax的语法基本与latex一致，可以参考wikipedia的latex书写语法规范<a class="reference external" href="http://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">Help:数学公式</a></p>
-</div>
-        <hr />
-    </div>
-		
-            <div class="pagination">
-<ul>
-    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+	
+        <div><h2>基本html语法</h2>
+<h3>代码结构</h3>
+<p>一个简单的html框架：</p>
+<div class="codehilite"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
 
-    <li class="active"><a href="../tag/ce-shi.html">1</a></li>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>
+        title
+        <span class="nt">&lt;/title&gt;</span>
 
-    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;p&gt;</span>par1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>par2<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
 
-</ul>
-</div>    
- 
-  
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<h3>标签</h3>
+<p>有序列表(Ordered List)：</p>
+<div class="codehilite"><pre><span class="nt">&lt;ol&gt;</span>
+    <span class="nt">&lt;li&gt;</span>person 1<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>person 2<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Matt Damon<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+</pre></div>
+
+
+<p>无序列表标签是ul(Unordered List)。</p>
+<p>注释代码：</p>
+<div class="codehilite"><pre><span class="c">&lt;!-- This is an example of comment --&gt;</span>
+</pre></div>
+
+
+<h3>标签属性</h3>
+<p><code>a</code>标签中的<code>href</code>或<code>img</code>标签中的<code>src</code>都是属性，一般形式可以这么写：</p>
+<div class="codehilite"><pre><span class="nt">&lt;label</span> <span class="na">attr=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>content<span class="nt">&lt;/label&gt;</span>
+</pre></div>
+
+
+<p>一些标签效果：</p>
+<div class="codehilite"><pre><span class="nt">&lt;p</span> <span class="na">style =</span><span class="err"> </span><span class="s">&quot;color:red; font-size:20px; font-family:Garamond&quot;</span><span class="nt">&gt;</span>some text<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+
+
+<p>输出:
+<p style = "color:red; font-size:20px; font-family:Garamond">some text</p></p>
+<p>其它还有<code>background-color</code>,<code>text-align</code></p>
+<h3>表格</h3>
+<p><code>table</code>,<code>tr</code>,<code>td</code>,<code>thead</code>,<code>tbody</code>,<code>th</code>
+<code>div</code>(Short for division)用于进行网页的块设置。
+<code>span</code>用于改变某部分文字的属性。</p>
+<h2>Cascading Style Sheets</h2>
+<p>为什么要将内容和表现分离？
+<em> 对多个元素赋予同样的表现形式
+</em> 对多个HTML文件用一个CSS文件统一格式化</p>
+<p>CSS的插入方法：
+1. 用<code>style</code>标签（放在<code>head</code>标签内）
+2. 独立文件，并在<code>head</code>标签内加入：</p>
+<div class="codehilite"><pre><span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;stylesheet.css&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+
+
+<p>CSS三要素：<code>selector</code>,<code>property</code>,<code>value</code></p>
+<div class="codehilite"><pre><span class="nt">p</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>CSS注释：</p>
+<div class="codehilite"><pre><span class="c">/* This is an example comment */</span>
+</pre></div></div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+		    </div>
         </div>
         
         <div class="span3">

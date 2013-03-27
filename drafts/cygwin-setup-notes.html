@@ -17,6 +17,9 @@
     <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
     <link href="../theme/local.css" rel="stylesheet">
     <link href="../theme/pygments.css" rel="stylesheet">
+    
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="../theme/codehilite.css" rel="stylesheet">
 
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -104,31 +107,31 @@ make -v
 
 
 <p>vimrc设置：</p>
-<div class="codehilite"><pre><span class="s2">&quot;开启语法高亮</span>
-<span class="s2">syntax on</span>
-<span class="s2">&quot;</span>依文件类型设置自动缩进
-filetype indent plugin on
-<span class="s2">&quot;显示当前的行号列号：</span>
-<span class="s2">set ruler</span>
-<span class="s2">&quot;</span>在状态栏显示正在输入的命令
-<span class="nb">set </span>showcmd
-<span class="s2">&quot;关闭/打开配对括号高亮 有问题？？？</span>
-<span class="s2">&quot;</span>NoMatchParen
-<span class="s2">&quot;DoMatchParen</span>
-<span class="s2">&quot;</span>为深色背景调整配色
-<span class="nb">set </span><span class="nv">background</span><span class="o">=</span>dark
-<span class="s2">&quot;显示行号：</span>
-<span class="s2">set number</span>
-<span class="s2">&quot;</span>为方便复制，用&lt;F2&gt;开启/关闭行号显示:
-nnoremap &lt;F2&gt; :set nonumber!&lt;CR&gt;:set <span class="nv">foldcolumn</span><span class="o">=</span>0&lt;CR&gt;
-<span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
-<span class="s2">&quot;</span>Python相关配置
-<span class="s2">&quot; 自动检测文件类型并加载相应的设置</span>
-<span class="s2">filetype plugin indent on</span>
-<span class="s2">autocmd FileType python setlocal et sta sw=4 sts=4</span>
-<span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
-<span class="err">&quot;</span>Cygwin相关设置
-<span class="nb">set </span><span class="nv">backspace</span><span class="o">=</span>indent,eol,start
+<div class="codehilite"><pre><span class="c">&quot;开启语法高亮</span>
+<span class="nb">syntax</span> <span class="k">on</span>
+<span class="c">&quot;依文件类型设置自动缩进</span>
+<span class="k">filetype</span> indent plugin <span class="k">on</span>
+<span class="c">&quot;显示当前的行号列号：</span>
+<span class="k">set</span> <span class="nb">ruler</span>
+<span class="c">&quot;在状态栏显示正在输入的命令</span>
+<span class="k">set</span> <span class="nb">showcmd</span>
+<span class="c">&quot;关闭/打开配对括号高亮 有问题？？？</span>
+<span class="c">&quot;NoMatchParen</span>
+<span class="c">&quot;DoMatchParen</span>
+<span class="c">&quot;为深色背景调整配色</span>
+<span class="k">set</span> <span class="nb">background</span><span class="p">=</span><span class="nb">dark</span>
+<span class="c">&quot;显示行号：</span>
+<span class="k">set</span> <span class="k">number</span>
+<span class="c">&quot;为方便复制，用&lt;F2&gt;开启/关闭行号显示:</span>
+<span class="nb">nnoremap</span> <span class="p">&lt;</span>F2<span class="p">&gt;</span> :<span class="k">set</span> <span class="nb">nonumber</span><span class="p">!&lt;</span>CR<span class="p">&gt;</span>:<span class="k">set</span> <span class="nb">foldcolumn</span><span class="p">=</span><span class="m">0</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+<span class="c">&quot;Python相关配置</span>
+<span class="c">&quot; 自动检测文件类型并加载相应的设置</span>
+<span class="k">filetype</span> plugin indent <span class="k">on</span>
+autocmd <span class="nb">FileType</span> python <span class="k">setlocal</span> <span class="nb">et</span> <span class="k">sta</span> <span class="k">sw</span><span class="p">=</span><span class="m">4</span> <span class="k">sts</span><span class="p">=</span><span class="m">4</span>
+<span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+<span class="c">&quot;Cygwin相关设置</span>
+<span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span>indent<span class="p">,</span><span class="nb">eol</span><span class="p">,</span><span class="k">start</span>
 </pre></div>
 
 
@@ -171,9 +174,10 @@ python ez_setup.py
 </pre></div>
 
 
-<p>安装python-markdown：</p>
-<div class="codehilite"><pre>easy_install ElementTree
-easy_install Markdown
+<p>推荐安装pip，具体见<a href="http://stackoverflow.com/questions/3220404/why-use-pip-over-easy-install">这里</a></p>
+<div class="codehilite"><pre><span class="nv">$ </span>curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+<span class="nv">$ </span><span class="o">[</span>sudo<span class="o">]</span> python get-pip.py
+<span class="nv">$ </span>pip install Markdown
 </pre></div>
 
 
