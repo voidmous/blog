@@ -1,7 +1,7 @@
 Title: HTML learning note
-Date: 2013-03-27
-Category:
-Tags:
+Date: 2013-03-27 21:53
+Category:Programming
+Tags:HTML, CSS
 Status: draft
 
 ## 基本html语法
@@ -44,15 +44,17 @@ Status: draft
 
 注释代码：
 
-    :::html
-    <!-- This is an example of comment -->
+```html
+<!-- This is an example of comment -->
+```
 
 ### 标签属性
 
 `a`标签中的`href`或`img`标签中的`src`都是属性，一般形式可以这么写：
 
-    :::html
-    <label attr="">content</label>
+```html
+<label attr="">content</label>
+```
 
 一些标签效果：
 
@@ -86,14 +88,14 @@ CSS的插入方法：
 
 CSS三要素：`selector`,`property`,`value`
 
-    :::html
+    :::css
     p {
         color: red;
     }
 
 CSS注释：
 
-    :::html
+    :::css
     /* This is an example comment */
 
 

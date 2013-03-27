@@ -23,7 +23,7 @@ Summary: Installation notes for cygwin.
 
 安装apt-cyg(cygwin下的类似apt-get包管理工具):
 
-    :::bash
+    :::sh
     svn --force export http://apt-cyg.googlecode.com/svn/trunk/ /bin/
     chmod+x /bin/apt-cyg
     apt-cyg --help
@@ -34,10 +34,13 @@ Summary: Installation notes for cygwin.
     git config --global user.email you@yourdomain.example.com
 
 安装binutils、gcc4、gdb、make以及vim
+
 ```bash
 apt-cyg install binutils gcc4 gdb make vim
 ```
+
 查看安装是否成功
+
 ```bash
 gcc -v
 gdb -v
@@ -47,14 +50,16 @@ make -v
 ## 基本设置
 bash设置：
 编辑~/.bashrc，加入以下内容：
+
 ```bash
 alias ls='ls --color=auto'
 PS1="\[\e[32m\]\u:\[\e[33m\]\w\[\e[0m\]\$ "
 LANG=en_US.UTF-8
 ```
+
 vimrc设置：
 
-```bash
+```vim
 "开启语法高亮
 syntax on
 "依文件类型设置自动缩进

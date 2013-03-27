@@ -17,5 +17,7 @@ CYGWIN使用笔记
   mkgroup -l -d > /etc/group 
 
 参考网页：
+
 http://stackoverflow.com/questions/1494658/how-can-i-change-my-cygwin-home-folder-after-installation
+
 http://cygwin.com/faq/faq-nochunks.html#faq.setup.home
