@@ -45,7 +45,7 @@ SOCIAL = (('Github', 'https://github.com/voidmous'),
 
 # Pagination
 DEFAULT_ORPHANS = 0
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
 
 STATIC_PATHS = ['img']
 
