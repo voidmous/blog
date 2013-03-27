@@ -23,16 +23,15 @@ Summary: Installation notes for cygwin.
 
 安装apt-cyg(cygwin下的类似apt-get包管理工具):
 
-```bash
-svn --force export http://apt-cyg.googlecode.com/svn/trunk/ /bin/
-chmod+x /bin/apt-cyg
-apt-cyg --help
-apt-cyg -m mirrorurl  % 设置apt-cyg使用的镜像地址
-apt-cyg install openssl
-apt-cyg install git mercurial % 源代码管理工具
-git config --global user.name "Your Name Comes Here"
-git config --global user.email you@yourdomain.example.com
-```
+    :::bash
+    svn --force export http://apt-cyg.googlecode.com/svn/trunk/ /bin/
+    chmod+x /bin/apt-cyg
+    apt-cyg --help
+    apt-cyg -m mirrorurl  % 设置apt-cyg使用的镜像地址
+    apt-cyg install openssl
+    apt-cyg install git mercurial % 源代码管理工具
+    git config --global user.name "Your Name Comes Here"
+    git config --global user.email you@yourdomain.example.com
 
 安装binutils、gcc4、gdb、make以及vim
 ```bash
@@ -122,10 +121,12 @@ make install
 wget http://peak.telecommunity.com/dist/ez_setup.py
 python ez_setup.py
 ```
-安装python-markdown：
+
+推荐安装pip，具体见[这里](http://stackoverflow.com/questions/3220404/why-use-pip-over-easy-install)
 ```bash
-easy_install ElementTree
-easy_install Markdown
+$ curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+$ [sudo] python get-pip.py
+$ pip install Markdown
 ```
 
 ## 其它有用工具
