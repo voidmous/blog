@@ -74,3 +74,6 @@ h3 { margin-top: 2.5em; }
 .social a[href*='rss.xml']:before {content: url('./images/icons/rss.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='stackoverflow.com']:before {content: url('./images/icons/stackoverflow.png'); margin-right: 2px; vertical-align: -3px;}
 .social a[href*='twitter.com']:before {content: url('./images/icons/twitter.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='douban.com']:before {content: url('./images/icons/douban.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='weibo.com']:before {content: url('./images/icons/weibo.png'); margin-right: 2px; vertical-align: -3px;}
+.social a[href*='renren.com']:before {content: url('./images/icons/renren.png'); margin-right: 2px; vertical-align: -3px;}

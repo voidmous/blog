@@ -59,20 +59,145 @@
  
 
     <div class='article'>
-        <a href="../posts/2012/Jun/zotero-bib-blog.html"><h2>利用Zotero为博文添加参考文献</h2></a>
-        <div class= "well small"> Fri 29 June 2012
+        <a href="../posts/2012/Apr/linux-manual.html"><h2>Linux帮助系统常见技巧</h2></a>
+        <div class= "well small"> Wed 04 April 2012
 
 by <a class="url fn" href="../author/voidmous.html">voidmous</a>
  
 
 
  </div>
-        <div class="summary"><p>对于技术类文章而言，添加必要的参考文献体现的是对他人劳动成果的尊重。即便你不会全文转载别人的文章而不标明出处，但是严格的说，学习了别人的方法或者观点也不能据为己有，标注参考文献就是向原创致敬的方法之一。目前而言，许多加了参考文献的文章都是怎么简单怎么来，没有个统一的格式，也不方便读者查阅。其实规范并不是没有，许多学术期刊对引用网页这样的媒体都有说明，我国<a class="reference external" href="http://gradschool.ustc.edu.cn/ylb/material/xw/wdxz/19.pdf">参考文献标准</a>也有说明。从我较短的使用过程来看，GB/T&nbsp;7714-2005标准设计得比较简洁紧凑，适合中文、英文以及混排的情况，看上去比较舒服。</p>
-<p>收集、管理文献的工具我首推Zotero，主要就在于它和Firefox结合得很好，对国际国内各大学术期刊数据库都支持得不错，和Google
-Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a class="reference external" href="http://blog.yesmryang.net/zotero-usage/">文献管理软件Zotero的一点使用感受</a>》。</p>
-<p>利用Zotero的导出功能实际已经可以生成很好的参考文献了，不过美中不足的是导出的只是纯文本，没有任何格式化，所以读者仍然要自己手动去查找参考文献，这可不是我这样的懒人想干的事，于是干脆自己动手写了下面这个style，基本功能已经实现，在外观和功能上可能还有提升的空间。</p>
-<p>Blogit是我基于<a class="reference external" href="http://www.zotero.org/styles/chinese-gb7714-2005-numeric">Chinese Std GB/T 7714-2005
-(numeric)</a>这个style文件，参考<a class="reference external" href="http://www.zotero.org/styles/radiopaedia">radiopaedia</a>鼓捣出来的一个结合体。一方面保留了国标的规范 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jun/zotero-bib-blog.html">read more</a></div>
+        <div class="summary"><p>Linux下命令实在太多，学习命令行最佳途径当然是通过手册（manual），新手对帮助系统有所了解可以更快地上手Linux基本管理操作。</p>
+<ul class="simple">
+<li>man cmdname</li>
+</ul>
+<p>这是最基本的用法了，也是最有效的方法。man
+page主要是面向unix程序员，因此事无巨细，对于常见的操作其实并不需要细看，了解书写格式，挑出几个选项就可以了。</p>
+<ul class="simple">
+<li>cmdname --help或者cmdname -h</li>
+</ul>
+<p>相比上一条，这个对于新手更加适用，因为它只显示最常用的选项，文字也更精简，真正可以让你快速参考。另外还要说明的是，许多打包的可执行安装文件都可以用这条命令显示安装帮助，如一些后缀名为bin或者run的文件，在安装前有必要阅读一下。这条命令只能作用于外部命令，shell内部命令无法使用（虽然还是有输出文字）。判断一条命令是外部或者内部命令，可以用type
+cmdname查询某个命令或者help查看所有内部命令。</p>
+<ul class="simple">
+<li>whatis cmdname</li>
+</ul>
+<p>whatis命令显示的其实是manpage的名称一栏的注释，你可以试试man
+whatis和whatis
+whatis看看区别所在。如果只是想简单了解某条命令的用处，用whatis就再合适不过了。（whatis
+man会出现三个带选项的man命令，为什么？）</p>
+<ul class="simple">
+<li>info cmdname</li>
+</ul>
+<p>info命令显示的帮助更加详尽，信息量更大，同时界面更加友好。不过不怎么常用</p>
+<ul class="simple">
+<li>manual系统 ...</li></ul> <a class="btn btn-info xsmall" href="../posts/2012/Apr/linux-manual.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Jul/linux-usb-mount.html"><h2>Linux外置硬盘加载方案</h2></a>
+        <div class= "well small"> Tue 17 July 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的<a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab">fstab
+wiki</a>。简单地说就是现在/media目录下创建好要加载到的目标目录，然后在fstab中添加常连的外置硬盘mount条目即可。</p>
+<p>这个方案是我最开始采用的，没有太大问题，但是还不完美。主要是最近我的外置硬盘接口似乎有点松动，所以用段时间后会自动掉线，这时系统又会自动搜索加载，麻烦在于自动加载的目录和我所设的目录不一致了，这样所有对该硬盘下文件的操作就会“找不到目标”。典型的例子就是用播放器播放外置硬盘的歌曲，掉线重连后播放器就找不到曲目，只能又去手动加载，十分费劲。</p>
+<p>Linux下自动加载usb外置硬盘会mount到/media/$partition
+label目录下（起码我在Arch和Linux
+Mint下是如此），因此，你可以把手工设置的目录名称和外置硬盘分区的label修改成一致即可，这样就算掉线重连，文件位置不改变也就不会出现错误啦。想法是好的，不过可惜，如果系统检测到有同名的目录它就会创建一个带_的一个新目录作为挂载点，这条路也行不通。（也许可以修改哪里的设置或者权限可以达到这个目的？）</p>
+<p>目前只能不采用手动挂载而采用自动搜索挂载，这样其实也没太大的缺点，总比不断手动修改挂载点强。</p>
+<p>另外外置硬盘分区的label可以用Gparted修改，先卸载要修改的硬盘 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jul/linux-usb-mount.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Jul/matlab-note.html"><h2>《MATLAB M语言高级编程》读书笔记</h2></a>
+        <div class= "well small"> Mon 30 July 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>第一章：M语言基础</p>
+<ul class="simple">
+<li>Matlab是解释型语言，不同于C语言这样的编译型语言，不过Matlab现在也可以编译。</li>
+<li>whos命令查看变量</li>
+<li>给变量赋值之前，不需要定义其类型。Matlab会<strong>自动决定</strong>变量类型，并分配内存空间。</li>
+<li>Matlab支持自动扩维(在<strong>某些操作</strong>下！比如两个不同维的矩阵相加就不会自动扩维，而会报错)，所以几乎所有变量都可以理解为矩阵（对于结构数组、元胞数组最好不要当做矩阵来理解）</li>
+<li>Matlab变量按列存储，C/C++按行存储。Matlab绝对下标索引是按从上到下，从左到右的顺序进行的，初始值为1。这个特性继承自FORTRAN。</li>
+<li>矩阵输入：中括号、逗号、分号、空格的区别。a=[1:5];这样的语句就会产生warning。</li>
+</ul>
+<p>矩阵索引示意图</p>
+<img alt="/static/img/wp/20120702204224.png" class="align-center" src="/static/img/wp/20120702204224.png" />
+<p>这一张图基本就讲清楚了所有的情况，注意A([9 14;10
+15])这样的索引方式。想一想A([8 12;10 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jul/matlab-note.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/May/runge-kutta-ode.html"><h2>Runge Kutta方法求解微分方程</h2></a>
+        <div class= "well small"> Tue 08 May 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。
+将一阶常微分方程初值问题写成如下形式：
+\[\left\{\begin{array}\~y^{'}=f(x,y) \\y(x_0)=y_0 \\
+\end{array}\right.\] 四阶Runge Kutta公式如下：
+\[\left\{\begin{array}{l}y_{n+1}=y_n+\frac{h}{6}(K_1+2K_2+2K_3+K_4)\\x_{n+1}=x_n+1\\K_1=f(x_n,y_n)\\K_2=f(x_n ...</p> <a class="btn btn-info xsmall" href="../posts/2012/May/runge-kutta-ode.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Mar/science-thought.html"><h2>学术科研的几点思考</h2></a>
+        <div class= "well small"> Tue 13 March 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>虽然自己还是门外汉，但是在学习的不同的阶段，水平不同、视角不同，感受和结论也会不同，三四年后的我如果再看到这篇文章，未必不会受到触动，起码可以让我反思。</p>
+<p>一、科学研究的精神</p>
+<p>1、诚信</p>
+<p>自从德国国防部长古藤贝格博士爆出论文造假的丑闻来，我就果断抛弃了“惟素质论”。即便是在欧洲这样的学术氛围极为严谨的情况也难以避免学术造假的发生，可见诚信仍然是一个世界性的问题。我不打算在这里讨论太多道德的说教，只分析下技术上的问题。</p>
+<p>国内的学生（包括我自己在内），对于引用他人文献没有一个明确的标准，有时候是直接引用，有时候提取下大意再标个引文了事，总之五花八门。从我观看的硕士答辩的情况来看，即便到了研三，这样的问题依然存在，甚至到了会被答辩老师训斥的程度。引用的问题主要集中在下面几点：</p>
+<ul class="simple">
+<li>引用多少文字，以什么方式引用（超过一定字数的引用必须注明，否则视为抄袭！）</li>
+<li>标注的位置（千万不要在章节标题上标注引文，大忌！）</li>
+<li>参考文献格式（事无巨细，期刊第几期、第几卷都需要标清楚，作者名字必须清楚）</li>
+<li>参考的可靠度（国内垃圾文献尽量少引）</li>
+<li>引文数量、中英文比例</li>
+</ul>
+<p>以上几个方面是需要重点注意的，当然，上面几点做好了并不能说明你的论文就是真实可信，还有其它方面的考量 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Mar/science-thought.html">read more</a></div>
     </div>	
 				
             <div class="pagination">
@@ -82,8 +207,10 @@ Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a c
     <li class=""><a href="../author/voidmous.html">1</a></li>
     <li class=""><a href="../author/voidmous2.html">2</a></li>
     <li class="active"><a href="../author/voidmous3.html">3</a></li>
+    <li class=""><a href="../author/voidmous4.html">4</a></li>
+    <li class=""><a href="../author/voidmous5.html">5</a></li>
 
-    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+    <li class="next"><a href="../author/voidmous4.html">Next &rarr;</a></li>
 
 </ul>
 </div>    
@@ -156,7 +283,7 @@ Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a c
     </div>     </div> 
 <footer>
 <br />
-<p><a href="..">幻空轩</a> &copy; voidmous 2012</p>
+<p><a href="..">幻空轩</a> &copy; voidmous 2012 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
 </footer>
 
 </div> <!-- /container -->
