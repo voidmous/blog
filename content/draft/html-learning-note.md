@@ -98,4 +98,102 @@ CSS注释：
     :::css
     /* This is an example comment */
 
+任何html标签都可以成为CSS选择器！
 
+选择器的种类：
+* html元素选择器，支持嵌套和直连
+* 通用（全局？universal）选择器
+* 类选择器
+* ID选择器
+
+多重选择器：
+
+如果html元素有嵌套，要选择内部元素就需要多重选择器。
+
+全局选择器`*`
+
+一个形象的比喻：
+html文档就像一棵大树，`html`标签是树干，`head`和`body`是其上的两支，而`title`又是`head`的分支。每一个标签都是包围它的其它标签的*子孙*。
+
+直连选择器：
+用`>`选择两个直接嵌套的html元素，两者中间不能嵌套其它元素，比如这个示例：
+
+```css
+div > p {
+    color: #7AC5CD;
+}
+```
+
+选择器优先级
+
+越特别的嵌套式选择器（通常更长）具有越高的优先级，它会覆盖已有的低优先级的选择器指定的属性。比嵌套式选择器更特殊的是类选择器和ID选择器。
+
+### 类选择器
+
+定义类
+
+```css
+<div class="square"></div>
+<img class="square"/>
+<td class="square"></td>
+```
+
+CSS指定类属性
+
+```css
+.square {
+    height: 100px;
+    width: 100px;
+}
+```
+
+### ID选择器
+
+用于对一个特别的元素指定不同的样式。
+
+定义ID
+
+```
+<div id="first"></div>
+<div id="second"></div>
+<p id="intro"></p>
+```
+
+指定类属性
+
+```
+#first {
+    height: 50px;
+}
+
+#second {
+    height: 100px;
+}
+
+#intro {
+    color: #FF0000;
+}
+```
+
+### 伪类选择器Pseudo-Class
+
+一个常见的应用是修改点击前和点击后以及鼠标悬停时超链接的不同样式，比如：
+
+```css
+a:hover {
+	color: #cc0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+```
+
+链接的三个伪类选择器分别是`a:link`,`a:visited`,`a:hover`。
+
+其它常用的伪类选择器还有`first-child`，`nth-child`。`first-child`表示它是“其父标签下的第一个子标签”，而不是“同类标签下的第一个”的意思，注意区分。`nth-child`含义类似，用法如下：
+
+```css
+p:nth-child(4) {
+    font-size: 26px;
+}
+```
+表示其父标签下第四个为`<p>`的子标签。
