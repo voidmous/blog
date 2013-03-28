@@ -98,6 +98,7 @@ CSS注释：
     :::css
     /* This is an example comment */
 
+## CSS选择器
 任何html标签都可以成为CSS选择器！
 
 选择器的种类：
@@ -197,3 +198,20 @@ p:nth-child(4) {
 }
 ```
 表示其父标签下第四个为`<p>`的子标签。
+
+## CSS位置
+
+每一个html元素都被放在一个“盒子”中
+The Box Model
+
+![The CSS Box Model, from www.w3c.org](http://i1061.photobucket.com/albums/t480/ericqweinstein/ae09140c.png ) 
+
+一个小技巧——用通用选择器设置所有的border可见：
+
+```
+* {
+    border: 1px solid #0000FF;
+}
+```
+
+
