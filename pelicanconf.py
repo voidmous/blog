@@ -16,7 +16,7 @@ GOOGLE_ANALYTICS = "UA-37279313-1"
 DEFAULT_LANG = 'cn'
 
 # Python-Markdown extensions to be included
-MD_EXTENSIONS = ['codehilite','extra']
+MD_EXTENSIONS = ['codehilite','extra','toc']
 
 # Misc
 GITHUB_URL= 'http://github.com/voidmous/'
