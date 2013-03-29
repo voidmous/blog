@@ -1,13 +1,12 @@
-# Python笔记 #
-
+Title: Python笔记
 Author: voidmous
 Date: 2013-03-29 19:39
 Category: 
 Tags: python
 Status: draft
+Slug: python-note
 
-
-* 优先级： `not`\> `and` \> `and`
+* 优先级： `not`\> `and` \> `or`
 
 * python没有switch，全部用if代替。
 
