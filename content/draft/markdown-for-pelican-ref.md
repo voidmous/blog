@@ -15,7 +15,135 @@ This post is a simple markdown syntax reference for Pelican(the static blog gene
 
 * `Setext` style:
 
-## Extra Features
+~~~~.text
+This is an H1
+=============
+
+This is an H2
+-------------
+~~~~
+
+* `Atx` style:
+
+~~~~.text
+# This is H1 (#)optional
+# This is H2 (#)
+###### This is H6 (######)
+~~~~
+
+### Blockquote
+
+	> This is the first level of quoting.
+	>
+	> > This is nested blockquote.
+	>
+	> Back to the first level.
+
+will output:
+
+> This is the first level of quoting.
+>
+> > This is nested blockquote.
+>
+> Back to the first level.
+
+### List
+
+Unordered list:
+
+~~~~.text
+* Red
++ Green
+- Blue
+~~~~
+
+* Red
++ Green
+- Blue
+
+Ordered list:
+
+~~~~.text
+1. Thor
+2. Ironman
+3. Hulk
+~~~~
+
+1. Thor
+2. Ironman
+3. Hulk
+
+### Code block
+
+~~~~.text
+    Some text.
+	
+	code goes here.
+~~~~
+
+### Horizontal rules
+
+`***` or `---` or `___`
+
+* * * * * * * * * * * *
+
+### Image
+
+Inline style:
+
+    ![Alt text](/path/to/img.jpg "Optional title")
+
+Reference style:
+
+    ![Alt text][id]
+	[id]: url/to/image  "Optional title attribute"
+
+### Link
+
+<pre>
+* This is an [Google](http://google.com/ "Googlelink") inline link.
+
+* This is an [Google][id] reference-style link.
+[id]: http://google.com/  "Optional Title Here"
+
+* See my [About](/about/) page for details.
+
+* An implict [Google][] link.
+[Google]: http://google.com/
+
+* An autolink <http://google.com/>
+
+* Email link <address@gmail.com>
+</pre>
+
+
+* This is an [Google](http://google.com/ "Googlelink") inline link.
+
+* This is an [Google][id] reference-style link.
+[id]: http://google.com/  "Optional Title Here"
+
+* See my [About](/about/) page for details.
+
+* An implict [Google][] link.
+[Google]: http://google.com/
+
+* An autolink <http://google.com/>
+
+* Email link <address@gmail.com>
+
+### Phrase Emphasis
+
+`*stupid*` or `_stupid_` will output *stupid*.
+
+`**stupid**` or `__stupid__` will output __stupid__.
+
+### Manual Line Breaks
+
+### Blackslash Escape
+
+\\ can escape following symbols: `` \`*_{}[]()#+-.! ``
+
+## Extra Features From Python-Markdown
 
 Default features supported by Python-Markdown, i.e. `extra` and `codehilite` extension function. Consult [here](http://pythonhosted.org/Markdown/ ) for more details. If you want to add more features, you should change the setting `MD_EXTENSIONS (['codehilite','extra'])`.
 
@@ -25,7 +153,7 @@ Default features supported by Python-Markdown, i.e. `extra` and `codehilite` ext
 
 ### Definition Lists
 
-	:::markdown
+	:::text
 	Apple
 	:   Pomaceous fruit of plants of the genus Malus in 
 		the family Rosaceae.
@@ -42,8 +170,8 @@ Orange
 
 ### Fenced Code Blocks
 
-	:::html
-	~~~~~~~~~~~~~~~~~~~~
+	:::text
+	~~~~~~~~~~~~~~~~~~~~.python
 	def factorial(n):
 	if n == 0:
 		return 1
@@ -52,9 +180,9 @@ Orange
 	~~~~~~~~~~~~~~~~~~~~
 
 
-Output:
+will output:
 
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~.python
 def factorial(n):
 if n == 0:
 	return 1
@@ -62,7 +190,7 @@ else:
 	return n * factorial(n - 1)
 ~~~~~~~~~~~~~~~~~~~~
 
-
+    :::text
 	~~~~{.python}
 	def factorial(n):
 	if n == 0:
@@ -72,7 +200,7 @@ else:
 	~~~~
 
 
-Output:
+will output:
 
 ~~~~{.python}
 def factorial(n):
@@ -82,11 +210,12 @@ else:
 	return n * factorial(n - 1)
 ~~~~
 
+	:::.text
 	~~~~.html
 	<p style="color: red">HTML Document</p>
 	~~~~
 
-Output:
+will output:
 
 ~~~~.html
 <p style="color: red">HTML Document</p>
@@ -94,6 +223,7 @@ Output:
 
 Github's tilde syntax:
 
+    :::text
 	```python
 	def factorial(n):
 	if n == 0:
@@ -102,7 +232,7 @@ Github's tilde syntax:
 		return n * factorial(n - 1)
 	```
 
-Output:
+will output:
 
 ```python
 def factorial(n):
@@ -165,7 +295,7 @@ Content Cell  | Content Cell
 
 ### Metadata for post
 
-	:::markdown
+	:::text
 	Title: Blog Title
 	Date: 2010-12-03 10:20
 	Tags: thats, awesome

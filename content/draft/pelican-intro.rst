@@ -57,7 +57,7 @@ Markdown需要经过python-markdown处理，并且需要codehilite扩展的支�
 
     Some text.
 
-    :::python
+        :::python
 	def factorial(n):
         if n == 0:
             return 1
