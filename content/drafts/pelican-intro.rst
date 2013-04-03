@@ -16,8 +16,16 @@ Pelican是一个静态博客生成器，
 
 
 
-安装
-----
+安装Pelican
+-----------
+
+推荐在Linux或者Cygwin下使用Pelican，首先保证系统安装有python和 `pip <http://www.pip-installer.org>`_ 。官方文档推荐在virtualenv下安装Pelican，不过如果你没有用python开发的需求或者和我一样嫌麻烦，也可以直接安装：
+
+.. code:: bash
+
+   $ pip install pelican
+   $ pip install Markdown
+
 
 编辑文章
 --------
