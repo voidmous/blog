@@ -26,4 +26,17 @@ deb-src http://emacs.naquadah.org/ unstable/
 
 如何重载`.emacs`？
 
-参考<http://stackoverflow.com/questions/2580650/how-can-
+推荐用`M-x load-file`,还有一些其他方式如`M-x eval-buffer`，有什么区别?
+参考<http://stackoverflow.com/questions/2580650/how-can-i-reload-emacs-after-changing-it>
+
+
+## 常用package
+
+### YASnippet
+
+YASnippet是一个模板系统，利用它可以把一个缩写词快速扩展成一句话、一个函数甚至一篇文章，而且扩展的内容支持参数。这么说并不直观，你可以观看 [此视频](http://yasnippet.googlecode.com/files/yasnippet.avi ) 来理解。
+
+项目主页： <https://github.com/capitaomorte/yasnippet>
+文档主页： <http://capitaomorte.github.io/yasnippet/>部分内容过时。
+
+yasnippet的snippet加载路径在变量`yas-snippet-dirs`中设置，你可以通过`C-h v RET yas-snippet-dirs RET`来查看说明。如果利用el-get的默认recipe安装那么路径包括`~/.emacs.d/snippets`和`~/.emacs.d/el-get/yasnippet/snippets`。你自定义的snippets可以放到前一个目录下，它会覆盖后一个目录下同名的snippet。
