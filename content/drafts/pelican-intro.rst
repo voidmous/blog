@@ -30,6 +30,21 @@ Pelican是一个静态博客生成器，
 编辑文章
 --------
 
+常用元数据：
+
+.. code:: text
+
+   :title:
+   :author:
+   :date:
+   :category:
+   :tags:
+   :slug: use this to specify url
+   :summary: Short summary 
+   :status: draft/hidden/published
+
+
+
 代码高亮：
 
 pelican使用pygments来处理代码高亮

@@ -100,7 +100,8 @@ Reference style:
 
 ### Link
 
-<pre>
+~~~~.text
+
 * This is an [Google](http://google.com/ "Googlelink") inline link.
 
 * This is an [Google][id] reference-style link.
@@ -114,8 +115,8 @@ Reference style:
 * An autolink <http://google.com/>
 
 * Email link <address@gmail.com>
-</pre>
 
+~~~~
 
 * This is an [Google](http://google.com/ "Googlelink") inline link.
 
@@ -171,24 +172,24 @@ Orange
 ### Fenced Code Blocks
 
 	:::text
-	~~~~~~~~~~~~~~~~~~~~.python
+	~~~~.python
 	def factorial(n):
 	if n == 0:
 		return 1
 	else:
 		return n * factorial(n - 1)
-	~~~~~~~~~~~~~~~~~~~~
+	~~~~
 
 
 will output:
 
-~~~~~~~~~~~~~~~~~~~~.python
+~~~~.python
 def factorial(n):
 if n == 0:
 	return 1
 else:
 	return n * factorial(n - 1)
-~~~~~~~~~~~~~~~~~~~~
+~~~~
 
     :::text
 	~~~~{.python}
@@ -210,10 +211,13 @@ else:
 	return n * factorial(n - 1)
 ~~~~
 
-	:::.text
-	~~~~.html
-	<p style="color: red">HTML Document</p>
-	~~~~
+~~~~.text
+
+~~~~.html
+<p style="color: red">HTML Document</p>
+~~~~
+
+~~~~
 
 will output:
 
