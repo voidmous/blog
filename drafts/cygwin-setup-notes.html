@@ -14,13 +14,15 @@
 
     <!-- Le styles -->
     <link href="../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/bootstrap.responsive.min.css" rel="stylesheet">
     <link href="../theme/local.css" rel="stylesheet">
     <link href="../theme/pygments.css" rel="stylesheet">
     
+    <!-- My custom styles -->
+    <!-- Table and misc styles -->
+    <link href="../theme/custom.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
     <link href="../theme/codehilite.css" rel="stylesheet">
-
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -66,19 +68,43 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 
         </div>
 	
-        <div><h2>基本Cygwin系统安装</h2>
-<p>下载最新的<a href="http://cygwin.com/setup.exe">setup.exe</a></p>
-<p>选择安装目录，推荐D:\cygwin（路径中最好不要带空格，cygwin是绿色的？）</p>
-<p>将setup.exe放到该目录下（推荐），以后要安装什么可能还会用到。</p>
-<p>创建一个packages子目录，用于存放下载下来的安装包（可选，用apt-cyg的话和setup.exe貌似不用同一个目录）</p>
-<p>安装默认基本包,注意额外安装subversion和wget，为安装apt-cyg做准备。X什么的先不用装，可用性不高，需要了再装上不迟。</p>
-<h2>安装编译环境</h2>
-<p>安装apt-cyg(cygwin下的类似apt-get包管理工具):</p>
-<div class="codehilite"><pre>svn --force <span class="nb">export </span>http://apt-cyg.googlecode.com/svn/trunk/ /bin/
-chmod+x /bin/apt-cyg
-apt-cyg --help
-apt-cyg -m mirrorurl  % 设置apt-cyg使用的镜像地址
-apt-cyg install openssl
+        <div><div class="toc">
+<ul>
+<li><a href="#cygwin">基本Cygwin系统安装</a></li>
+<li><a href="#_1">安装编译环境</a></li>
+<li><a href="#_2">基本设置</a><ul>
+<li><a href="#bash">bash设置</a></li>
+<li><a href="#vim">vim设置</a></li>
+<li><a href="#mintty">mintty设置</a></li>
+</ul>
+</li>
+<li><a href="#_3">安装其它工具</a></li>
+<li><a href="#_4">其它有用工具</a></li>
+<li><a href="#_5">常见问题</a><ul>
+<li><a href="#rebase">Rebase</a></li>
+<li><a href="#cygcheck">cygcheck</a></li>
+</ul>
+</li>
+<li><a href="#cygwinx">Cygwin/X配置</a></li>
+</ul>
+</div>
+<h2 id="cygwin">基本Cygwin系统安装</h2>
+<p>下载最新的<a href="http://cygwin.com/setup.exe">setup.exe</a>运行之。</p>
+<p>选择安装目录，推荐D:\cygwin（路径中最好不要带空格，cygwin是绿色的，重装后仍然可以使用，需要<a href="http://hi.baidu.com/hawk_kt/item/2d2e2f6faeb470167cdecc73">配置用户</a>）,注意选择一个较快的源。</p>
+<p>安装完成后将setup.exe放到cygwin目录下，以后要安装什么可能还会用到。</p>
+<p>在cygwin下创建一个packages子目录，用于存放下载下来的安装包（可选，apt-cyg和setup.exe的下载目录不同）</p>
+<p>安装默认基本包,注意额外安装subversion和wget，为安装apt-cyg做准备。Xorg什么的先不用装，可用性不高，需要了再装上不迟。</p>
+<h2 id="_1">安装编译环境</h2>
+<p>cygwin自带的安装工具使用起来太繁琐，于是就有了类似apt-get的包管理器<a href="https://code.google.com/p/apt-cyg/%20apt-cyg%20google%20code">apt-cyg</a>，实乃广大cygwin玩家的福音。安装apt-cyg:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>svn --force <span class="nb">export </span>http://apt-cyg.googlecode.com/svn/trunk/ /bin/
+<span class="nv">$ </span>chmod+x /bin/apt-cyg
+<span class="nv">$ </span>apt-cyg --help
+<span class="nv">$ </span>apt-cyg -m mirrorurl  % 设置apt-cyg使用的镜像地址
+</pre></div>
+
+
+<p>安装一些必备的工具：</p>
+<div class="codehilite"><pre>apt-cyg install openssl openssh
 apt-cyg install git mercurial % 源代码管理工具
 git config --global user.name <span class="s2">&quot;Your Name Comes Here&quot;</span>
 git config --global user.email you@yourdomain.example.com
@@ -97,51 +123,23 @@ make -v
 </pre></div>
 
 
-<h2>基本设置</h2>
-<p>bash设置：
-编辑~/.bashrc，加入以下内容：</p>
+<h2 id="_2">基本设置</h2>
+<h3 id="bash">bash设置</h3>
+<p>编辑~/.bashrc，加入以下内容(根据自己的喜好配置)：</p>
 <div class="codehilite"><pre><span class="nb">alias </span><span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls --color=auto&#39;</span>
 <span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;\[\e[32m\]\u:\[\e[33m\]\w\[\e[0m\]\$ &quot;</span>
 <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
 </pre></div>
 
 
-<p>vimrc设置：</p>
-<div class="codehilite"><pre><span class="c">&quot;开启语法高亮</span>
-<span class="nb">syntax</span> <span class="k">on</span>
-<span class="c">&quot;依文件类型设置自动缩进</span>
-<span class="k">filetype</span> indent plugin <span class="k">on</span>
-<span class="c">&quot;显示当前的行号列号：</span>
-<span class="k">set</span> <span class="nb">ruler</span>
-<span class="c">&quot;在状态栏显示正在输入的命令</span>
-<span class="k">set</span> <span class="nb">showcmd</span>
-<span class="c">&quot;关闭/打开配对括号高亮 有问题？？？</span>
-<span class="c">&quot;NoMatchParen</span>
-<span class="c">&quot;DoMatchParen</span>
-<span class="c">&quot;为深色背景调整配色</span>
-<span class="k">set</span> <span class="nb">background</span><span class="p">=</span><span class="nb">dark</span>
-<span class="c">&quot;显示行号：</span>
-<span class="k">set</span> <span class="k">number</span>
-<span class="c">&quot;为方便复制，用&lt;F2&gt;开启/关闭行号显示:</span>
-<span class="nb">nnoremap</span> <span class="p">&lt;</span>F2<span class="p">&gt;</span> :<span class="k">set</span> <span class="nb">nonumber</span><span class="p">!&lt;</span>CR<span class="p">&gt;</span>:<span class="k">set</span> <span class="nb">foldcolumn</span><span class="p">=</span><span class="m">0</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
-<span class="c">&quot;Python相关配置</span>
-<span class="c">&quot; 自动检测文件类型并加载相应的设置</span>
-<span class="k">filetype</span> plugin indent <span class="k">on</span>
-autocmd <span class="nb">FileType</span> python <span class="k">setlocal</span> <span class="nb">et</span> <span class="k">sta</span> <span class="k">sw</span><span class="p">=</span><span class="m">4</span> <span class="k">sts</span><span class="p">=</span><span class="m">4</span>
-<span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
-<span class="c">&quot;Cygwin相关设置</span>
-<span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span>indent<span class="p">,</span><span class="nb">eol</span><span class="p">,</span><span class="k">start</span>
+<h3 id="vim">vim设置</h3>
+<div class="codehilite"><pre>&quot;<span class="n">Cygwin</span>相关设置
+<span class="n">set</span> <span class="n">backspace</span><span class="p">=</span><span class="n">indent</span><span class="p">,</span><span class="n">eol</span><span class="p">,</span><span class="n">start</span>
 </pre></div>
 
 
-<p>安装openssh：</p>
-<div class="codehilite"><pre><span class="n">apt</span><span class="o">-</span><span class="n">cyg</span> <span class="n">install</span> <span class="n">openssh</span>
-</pre></div>
-
-
-<p>mintty设置
-在终端标题栏右键选择“Options”就可以设置mintty的显示效果，主要修改几个方面：
+<h3 id="mintty">mintty设置</h3>
+<p>在终端标题栏右键选择“Options”就可以设置mintty的显示效果，主要修改几个方面：
 字体，推荐<a href="http://levien.com/type/myfonts/inconsolata.html">Inconsolata</a>或者其它的<a href="http://www.lowing.org/fonts/">编程字体</a>，这些字体保证可以清晰地区别0和“o”。
 终端窗口大小，按照屏幕大小自己调整。
 透明度，high级别在win7下看着比较舒服。
@@ -155,9 +153,8 @@ alt+Enter 全屏
 </pre></div>
 
 
-<h2>安装其它工具</h2>
-<p>编译安装<a href="http://riverslee.com/project/cyg-hotkey/">cyg-hotkey</a> 
-cyg-hotkey用以呼出cygwin默认的mintty终端，实现类似linux下的tilda下拉终端功能，使用起来还是很顺手的。默认快捷键为F7。</p>
+<h2 id="_3">安装其它工具</h2>
+<p><a href="http://riverslee.com/project/cyg-hotkey/">cyg-hotkey</a>使mintty变成一个类似tilda的呼叫式终端，默认用快捷键F7来调出和隐藏mintty，使用起来还是很顺手的。</p>
 <div class="codehilite"><pre>hg clone https://bitbucket.org/riverscn/cyg-hotkey
 <span class="nb">cd </span>cyg-hotkey
 make all
@@ -165,9 +162,7 @@ make install
 </pre></div>
 
 
-<p>以后就可以用安装目录下的cyg-hotkey来调出终端。</p>
-<p>安装git
-可能需要rebase</p>
+<p>将cyg-hotkey的快捷方式放到开始菜单的启动目录里，让它开机自动启动。如果要更换快捷键，可以修改源码重新编译。</p>
 <p>安装python easy_install：</p>
 <div class="codehilite"><pre>wget http://peak.telecommunity.com/dist/ez_setup.py
 python ez_setup.py
@@ -181,11 +176,16 @@ python ez_setup.py
 </pre></div>
 
 
-<h2>其它有用工具</h2>
+<h2 id="_4">其它有用工具</h2>
 <p>util-linux(more)，bash-completion，procps(top)，inetutils(telnet)</p>
 <p>cygcheck</p>
-<h2>cygwin/X配置</h2>
-<p>我个人用cygwin/X主要是想用emacs的GUI，此外小程序的GUI也会用到，但是cygwin/X目前虽然可以调出windows的输入法却无法输入，目前可用的方案也许只有<a href="http://cn.bbs.comp.linux.narkive.com/JrQG9Hge/cygwin-x">这个</a> （未测试）。</p></div>
+<h2 id="_5">常见问题</h2>
+<h3 id="rebase"><a href="http://cygwin.wikia.com/wiki/Rebaseall">Rebase</a></h3>
+<p>在更新或者安装了某些包以后，如果出现问题，可能需要rebase来解决。</p>
+<h3 id="cygcheck">cygcheck</h3>
+<p>如果apt-cyg安装过程中断，再安装时会发生与dll相关的错误，这时可以用cygcheck命令追踪问题</p>
+<h2 id="cygwinx">Cygwin/X配置</h2>
+<p>我个人用cygwin/X主要是想用emacs的GUI，此外小程序的GUI也会用到，但是cygwin/X目前虽然可以调出windows的输入法却无法输入中文，目前可用的方案也许只有<a href="http://cn.bbs.comp.linux.narkive.com/JrQG9Hge/cygwin-x">这个</a>（未测试）。</p></div>
 	
         <hr>
     	   
@@ -215,8 +215,10 @@ python ez_setup.py
                 Categories
                 </li>
                 
+                                <li><a href="../category/.html"></a></li>
                                 <li><a href="../category/itji-zhu.html">IT技术</a></li>
                                 <li><a href="../category/internet.html">Internet</a></li>
+                                <li><a href="../category/programming.html">programming</a></li>
                                 <li><a href="../category/sheng-guang-hua-ying.html">声光画影</a></li>
                                 <li><a href="../category/ke-yan-xue-zhu.html">科研学术</a></li>
                                 <li><a href="../category/ruan-jian-ying-yong.html">软件应用</a></li>

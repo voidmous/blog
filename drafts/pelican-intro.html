@@ -14,13 +14,15 @@
 
     <!-- Le styles -->
     <link href="../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/bootstrap.responsive.min.css" rel="stylesheet">
     <link href="../theme/local.css" rel="stylesheet">
     <link href="../theme/pygments.css" rel="stylesheet">
     
+    <!-- My custom styles -->
+    <!-- Table and misc styles -->
+    <link href="../theme/custom.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
     <link href="../theme/codehilite.css" rel="stylesheet">
-
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -71,10 +73,26 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <p>Pelican是一个静态博客生成器，</p>
 </div>
 <div class="section" id="id2">
-<h2>安装</h2>
+<h2>安装Pelican</h2>
+<p>推荐在Linux或者Cygwin下使用Pelican，首先保证系统安装有python和 <a class="reference external" href="http://www.pip-installer.org">pip</a> 。官方文档推荐在virtualenv下安装Pelican，不过如果你没有用python开发的需求或者和我一样嫌麻烦，也可以直接安装：</p>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>pip install pelican
+<span class="name variable">$ </span>pip install Markdown
+</pre>
 </div>
 <div class="section" id="id3">
 <h2>编辑文章</h2>
+<p>常用元数据：</p>
+<pre class="code text literal-block">
+:title:
+:author:
+:date:
+:category:
+:tags:
+:slug: use this to specify url
+:summary: Short summary
+:status: draft/hidden/published
+</pre>
 <p>代码高亮：</p>
 <p>pelican使用pygments来处理代码高亮</p>
 <ul class="simple">
@@ -99,7 +117,7 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <p>方案一：</p>
 <div class="highlight"><pre>Some text.
 
-:::python
+    :::python
     def factorial(n):
     if n == 0:
         return 1
@@ -172,8 +190,10 @@ make github
                 Categories
                 </li>
                 
+                                <li><a href="../category/.html"></a></li>
                                 <li><a href="../category/itji-zhu.html">IT技术</a></li>
                                 <li><a href="../category/internet.html">Internet</a></li>
+                                <li><a href="../category/programming.html">programming</a></li>
                                 <li><a href="../category/sheng-guang-hua-ying.html">声光画影</a></li>
                                 <li><a href="../category/ke-yan-xue-zhu.html">科研学术</a></li>
                                 <li><a href="../category/ruan-jian-ying-yong.html">软件应用</a></li>

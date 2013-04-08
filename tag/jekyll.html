@@ -14,13 +14,15 @@
 
     <!-- Le styles -->
     <link href="../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/bootstrap.responsive.min.css" rel="stylesheet">
     <link href="../theme/local.css" rel="stylesheet">
     <link href="../theme/pygments.css" rel="stylesheet">
     
+    <!-- My custom styles -->
+    <!-- Table and misc styles -->
+    <link href="../theme/custom.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
     <link href="../theme/codehilite.css" rel="stylesheet">
-
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -72,10 +74,10 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
  
         </div>
         
-        <div><h2>卸载已安装的ruby</h2>
+        <div><h2 id="ruby">卸载已安装的ruby</h2>
 <p>用对应的包管理器卸载
 如果是rvm安装的，直接删除目录<code>~/.rvm</code>，然后删除<code>.zshrc</code>和<code>.zlogin</code>文件，去掉<code>.profile</code>和<code>.bash_profile</code>中关于rvm的语句即可。</p>
-<h2>安装rvm</h2>
+<h2 id="rvm">安装rvm</h2>
 <p><a href="https://rvm.io/rvm/install/">安装指南</a></p>
 <div class="codehilite"><pre>curl -L https://get.rvm.io | bash -s stable --ruby
 </pre></div>
@@ -98,7 +100,7 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 </pre></div>
 
 
-<h2>管理ruby环境</h2>
+<h2 id="ruby_1">管理ruby环境</h2>
 <p>下面这几步其实不必要了，只是展示一下安装的过程，你也可以安装其它的ruby版本。</p>
 <div class="codehilite"><pre>rvm list known
 rvm install 1.9.3
@@ -114,7 +116,7 @@ which gem
 </pre></div>
 
 
-<h2>安装jekyll</h2>
+<h2 id="jekyll">安装jekyll</h2>
 <p>用gem安装：</p>
 <div class="codehilite"><pre>gem update --system
 gem list
@@ -132,7 +134,7 @@ gem install pkg/posix-spawn-0.3.6
 
 
 <p>再<code>gem install jekyll</code>就没问题啦。</p>
-<h2>参考页面</h2>
+<h2 id="_1">参考页面</h2>
 <p><a href="http://matt.scharley.me/2012/03/10/windows-cygwin-and-jekyll.html">Windows,Cygwin and Jekyll</a></p></div>
         <hr />
     </div>
@@ -173,8 +175,10 @@ gem install pkg/posix-spawn-0.3.6
                 Categories
                 </li>
                 
+                                <li><a href="../category/.html"></a></li>
                                 <li><a href="../category/itji-zhu.html">IT技术</a></li>
                                 <li><a href="../category/internet.html">Internet</a></li>
+                                <li><a href="../category/programming.html">programming</a></li>
                                 <li><a href="../category/sheng-guang-hua-ying.html">声光画影</a></li>
                                 <li><a href="../category/ke-yan-xue-zhu.html">科研学术</a></li>
                                 <li><a href="../category/ruan-jian-ying-yong.html">软件应用</a></li>

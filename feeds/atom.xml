@@ -1,5 +1,401 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>幻空轩</title><link href="http://www.joshuazhang.info/" rel="alternate"></link><link href="http://www.joshuazhang.info/feeds/atom.xml" rel="self"></link><id>http://www.joshuazhang.info/</id><updated>2013-01-04T00:00:00+01:00</updated><entry><title>WordPress文章编辑发布方案</title><link href="http://www.joshuazhang.info/posts/2013/Jan/wp-edit-publish-plan.html" rel="alternate"></link><updated>2013-01-04T00:00:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2013-01-04:posts/2013/Jan/wp-edit-publish-plan.html</id><summary type="html">&lt;p&gt;我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话,想要了解其它的方案，这篇文章也许会有帮助。首先要说明的是编辑和发布是两个阶段，如果再详细点还应该包括修改阶段，下面的一些发布流程往往只能照顾到某一个方面，而在另一个方面就相形见绌，总有这样那样的瑕疵。基本上，WordPress的编辑发布方案有这么几大类：&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>幻空轩</title><link href="http://www.joshuazhang.info/" rel="alternate"></link><link href="http://www.joshuazhang.info/feeds/atom.xml" rel="self"></link><id>http://www.joshuazhang.info/</id><updated>2013-04-07T15:38:00+02:00</updated><entry><title>El-get——emacs包管理利器</title><link href="http://www.joshuazhang.info/posts/2013/Apr/el-get-intro.html" rel="alternate"></link><updated>2013-04-07T15:38:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2013-04-07:posts/2013/Apr/el-get-intro.html</id><summary type="html">&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#el-get-vs-elpa"&gt;El-get vs ELPA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#el-get"&gt;安装el-get&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#el-get_1"&gt;配置el-get&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#github"&gt;Github同步&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_1"&gt;参考文章&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="el-get-vs-elpa"&gt;El-get vs ELPA&lt;/h2&gt;
+&lt;p&gt;Emacs24已经集成了&lt;code&gt;package.el&lt;/code&gt;，可以安装多个源下的宏包。不过El-get宣称支持多种安装方式，ELPA方法只是其中一种。从我使用的情况来看，el-get似乎速度更快。另外，el-get安装的包不再需要手动&lt;code&gt;(require 'somepackage)&lt;/code&gt;，它会自动管理所有安装包的加载和初始化，当然配置还是需要的，不过这已经方便不少了。我个人ELPA用得较少，就不比较了，有时间再把两者比较一下。&lt;/p&gt;
+&lt;h2 id="el-get"&gt;安装el-get&lt;/h2&gt;
+&lt;p&gt;el-get现在处于活跃的开发阶段，因此推荐使用更新维护更活跃的&lt;code&gt;master branch&lt;/code&gt;，安装只需要把如下命令拷贝到emacs的&lt;code&gt;*scrach*&lt;/code&gt;buffer，然后&lt;code&gt;C-j&lt;/code&gt;或者&lt;code&gt;M-x eval-print-last-exp&lt;/code&gt;运行，el-get就会自动下载安装了。&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c1"&gt;;; So the idea is that you copy/paste this code into your *scratch* buffer,&lt;/span&gt;
+&lt;span class="c1"&gt;;; hit C-j, and you have a working developper edition of el-get.&lt;/span&gt;
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;url-retrieve&lt;/span&gt;
+ &lt;span class="s"&gt;&amp;quot;https://raw.github.com/dimitri/el-get/master/el-get-install.el&amp;quot;&lt;/span&gt;
+ &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;el-get-master-branch&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;goto-char&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point-max&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;eval-print-last-sexp&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;安装完毕，如果要手动安装package，可以&lt;code&gt;M-x el-get-install RET packagename&lt;/code&gt;，喝口茶的功夫估计就好啦。&lt;/p&gt;
+&lt;h2 id="el-get_1"&gt;配置el-get&lt;/h2&gt;
+&lt;p&gt;将下列代码加入配置文件，emacs每次启动时就会检查el-get是否已经安装，未安装则自动下载安装。&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;add-to-list&lt;/span&gt; &lt;span class="ss"&gt;&amp;#39;load-path&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;~/.emacs.d/el-get/el-get&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;unless&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;require&lt;/span&gt; &lt;span class="ss"&gt;&amp;#39;el-get&lt;/span&gt; &lt;span class="nv"&gt;nil&lt;/span&gt; &lt;span class="ss"&gt;&amp;#39;noerror&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;with-current-buffer&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;url-retrieve-synchronously&lt;/span&gt;
+       &lt;span class="s"&gt;&amp;quot;https://raw.github.com/dimitri/el-get/master/el-get-install.el&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;let &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;el-get-master-branch&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;goto-char&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;point-max&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;eval-print-last-sexp&lt;/span&gt;&lt;span class="p"&gt;))))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;el-get&lt;/span&gt; &lt;span class="ss"&gt;&amp;#39;sync&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;想要自动检测并安装需要的宏包，可以使用下面这段代码：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;setq&lt;/span&gt; &lt;span class="nv"&gt;my-el-get-packages&lt;/span&gt;
+&lt;span class="o"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="nv"&gt;el-get&lt;/span&gt;
+    &lt;span class="nv"&gt;auto-complete&lt;/span&gt;
+    &lt;span class="nv"&gt;yasnippet&lt;/span&gt;
+    &lt;span class="nv"&gt;auctex&lt;/span&gt;
+    &lt;span class="nv"&gt;emacs-w3m&lt;/span&gt;
+    &lt;span class="nv"&gt;markdown-mode&lt;/span&gt;
+    &lt;span class="nv"&gt;color-theme&lt;/span&gt;
+    &lt;span class="c1"&gt;;; Any package you like))&lt;/span&gt;
+
+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;el-get&lt;/span&gt; &lt;span class="ss"&gt;&amp;#39;sync&lt;/span&gt; &lt;span class="nv"&gt;my-el-get-packages&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="github"&gt;Github同步&lt;/h2&gt;
+&lt;p&gt;如果想要在不同电脑上共享同样的emacs配置，那么你可以选择dropbox或者更开放的github同步。为了便于git的管理，需要把所有配置文件都放到&lt;code&gt;.emacs.d&lt;/code&gt;目录下，这样只需要&lt;code&gt;ln -s&lt;/code&gt;把该目录链接到用户主目录即可。如果你使用&lt;code&gt;.emacs&lt;/code&gt;配置文件，那么可以把它原封不动地迁徙一下即可：&lt;code&gt;mv .emacs .emacs.d/init.el&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id="_1"&gt;参考文章&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/dimitri/el-get"&gt;el-get@Github&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/"&gt;Package Management in Emacs: The Good, the Bad and the Ugly&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://emacser.com/el-get.htm"&gt;GNU Emacs的终极扩展管理工具 — el-get&lt;/a&gt; &lt;/p&gt;</summary><category term="el-get"></category><category term="emacs"></category></entry><entry><title>Markdown syntax for Pelican Quick Reference</title><link href="http://www.joshuazhang.info/posts/2013/Mar/markdown-for-pelican-ref.html" rel="alternate"></link><updated>2013-03-29T22:13:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2013-03-29:posts/2013/Mar/markdown-for-pelican-ref.html</id><summary type="html">&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#basic-syntax"&gt;Basic Syntax&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#headings"&gt;Headings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#blockquote"&gt;Blockquote&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#list"&gt;List&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#code-block"&gt;Code block&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#horizontal-rules"&gt;Horizontal rules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#image"&gt;Image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#link"&gt;Link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#phrase-emphasis"&gt;Phrase Emphasis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#manual-line-breaks"&gt;Manual Line Breaks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#blackslash-escape"&gt;Blackslash Escape&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#extra-features-from-python-markdown"&gt;Extra Features From Python-Markdown&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#abbreviations"&gt;Abbreviations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#attribute-lists"&gt;Attribute Lists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#definition-lists"&gt;Definition Lists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#fenced-code-blocks"&gt;Fenced Code Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#footnotes"&gt;Footnotes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tables"&gt;Tables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#codehilite"&gt;CodeHilite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#metadata-for-post"&gt;Metadata for post&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;This post is a simple markdown syntax reference for Pelican(the static blog generator that builds this blog), especially coupled with some features from Python-Markdown.&lt;/p&gt;
+&lt;h2 id="basic-syntax"&gt;Basic Syntax&lt;/h2&gt;
+&lt;h3 id="headings"&gt;Headings&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Setext&lt;/code&gt; style:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;This is an H1
+=============
+
+This is an H2
+-------------
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Atx&lt;/code&gt; style:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;# This is H1 (#)optional
+# This is H2 (#)
+###### This is H6 (######)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="blockquote"&gt;Blockquote&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;level&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;quoting&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;nested&lt;/span&gt; &lt;span class="n"&gt;blockquote&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Back&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;level&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will output:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is the first level of quoting.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is nested blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Back to the first level.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="list"&gt;List&lt;/h3&gt;
+&lt;p&gt;Unordered list:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;* Red
++ Green
+- Blue
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Red&lt;/li&gt;
+&lt;li&gt;Green&lt;/li&gt;
+&lt;li&gt;Blue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ordered list:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;1. Thor
+2. Ironman
+3. Hulk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Thor&lt;/li&gt;
+&lt;li&gt;Ironman&lt;/li&gt;
+&lt;li&gt;Hulk&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="code-block"&gt;Code block&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;    Some text.
+
+    code goes here.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="horizontal-rules"&gt;Horizontal rules&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;***&lt;/code&gt; or &lt;code&gt;---&lt;/code&gt; or &lt;code&gt;___&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id="image"&gt;Image&lt;/h3&gt;
+&lt;p&gt;Inline style:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="sx"&gt;![Alt text](/path/to/img.jpg &amp;quot;Optional title&amp;quot;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Reference style:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="sx"&gt;![Alt text][id]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;  &amp;quot;&lt;span class="n"&gt;Optional&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="n"&gt;attribute&lt;/span&gt;&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="link"&gt;Link&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;* This is an [Google](http://google.com/ &amp;quot;Googlelink&amp;quot;) inline link.
+
+* This is an [Google][id] reference-style link.
+[id]: http://google.com/  &amp;quot;Optional Title Here&amp;quot;
+
+* See my [About](/about/) page for details.
+
+* An implict [Google][] link.
+[Google]: http://google.com/
+
+* An autolink &amp;lt;http://google.com/&amp;gt;
+
+* Email link &amp;lt;address@gmail.com&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This is an &lt;a href="http://google.com/" title="Googlelink"&gt;Google&lt;/a&gt; inline link.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;This is an &lt;a href="http://google.com/" title="Optional Title Here"&gt;Google&lt;/a&gt; reference-style link.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;See my &lt;a href="/about/"&gt;About&lt;/a&gt; page for details.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;An implict &lt;a href="http://google.com/"&gt;Google&lt;/a&gt; link.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;An autolink &lt;a href="http://google.com/"&gt;http://google.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Email link &lt;a href="&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#116;&amp;#111;&amp;#58;&amp;#97;&amp;#100;&amp;#100;&amp;#114;&amp;#101;&amp;#115;&amp;#115;&amp;#64;&amp;#103;&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;&amp;#97;&amp;#100;&amp;#100;&amp;#114;&amp;#101;&amp;#115;&amp;#115;&amp;#64;&amp;#103;&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="phrase-emphasis"&gt;Phrase Emphasis&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;*stupid*&lt;/code&gt; or &lt;code&gt;_stupid_&lt;/code&gt; will output &lt;em&gt;stupid&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;**stupid**&lt;/code&gt; or &lt;code&gt;__stupid__&lt;/code&gt; will output &lt;strong&gt;stupid&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="manual-line-breaks"&gt;Manual Line Breaks&lt;/h3&gt;
+&lt;h3 id="blackslash-escape"&gt;Blackslash Escape&lt;/h3&gt;
+&lt;p&gt;\ can escape following symbols: &lt;code&gt;\`*_{}[]()#+-.!&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="extra-features-from-python-markdown"&gt;Extra Features From Python-Markdown&lt;/h2&gt;
+&lt;p&gt;Default features supported by Python-Markdown, i.e. &lt;code&gt;extra&lt;/code&gt; and &lt;code&gt;codehilite&lt;/code&gt; extension function. Consult &lt;a href="http://pythonhosted.org/Markdown/"&gt;here&lt;/a&gt; for more details. If you want to add more features, you should change the setting &lt;code&gt;MD_EXTENSIONS (['codehilite','extra'])&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="abbreviations"&gt;Abbreviations&lt;/h3&gt;
+&lt;h3 id="attribute-lists"&gt;Attribute Lists&lt;/h3&gt;
+&lt;h3 id="definition-lists"&gt;Definition Lists&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;Apple
+:   Pomaceous fruit of plants of the genus Malus in 
+    the family Rosaceae.
+
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;dl&gt;
+&lt;dt&gt;Apple&lt;/dt&gt;
+&lt;dd&gt;Pomaceous fruit of plants of the genus Malus in 
+the family Rosaceae.&lt;/dd&gt;
+&lt;dt&gt;Orange&lt;/dt&gt;
+&lt;dd&gt;The fruit of an evergreen tree of the genus Citrus.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id="fenced-code-blocks"&gt;Fenced Code Blocks&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;~~~~.python
+def factorial(n):
+if n == 0:
+    return 1
+else:
+    return n * factorial(n - 1)
+~~~~
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will output:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;~~~~{.python}
+def factorial(n):
+if n == 0:
+    return 1
+else:
+    return n * factorial(n - 1)
+~~~~
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will output:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;~~~~.html
+&amp;lt;p style=&amp;quot;color: red&amp;quot;&amp;gt;HTML Document&amp;lt;/p&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;will output:
+
+~~~~.html
+&lt;span class="nt"&gt;&amp;lt;p&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;color: red&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;HTML Document&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Github's tilde syntax:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;```python
+def factorial(n):
+if n == 0:
+    return 1
+else:
+    return n * factorial(n - 1)
+```
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will output:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="footnotes"&gt;Footnotes&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;Footnotes[^1] have a label[^label] and a definition[^!DEF].
+
+[^1]: This is a footnote.
+    Paragraph two of the definition.
+
+    &amp;gt; A blockquote with
+    &amp;gt; multiple lines.
+
+        a code block
+
+    A final paragraph.
+
+[^label]: A footnote on &amp;quot;label&amp;quot;
+[^!DEF]: The definition of a footnote.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Footnotes&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; have a label&lt;sup id="fnref:label"&gt;&lt;a class="footnote-ref" href="#fn:label" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; and a definition&lt;sup id="fnref:!DEF"&gt;&lt;a class="footnote-ref" href="#fn:!DEF" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h3 id="tables"&gt;Tables&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;First Header&lt;/th&gt;
+&lt;th&gt;Second Header&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="codehilite"&gt;CodeHilite&lt;/h3&gt;
+&lt;h3 id="metadata-for-post"&gt;Metadata for post&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;Title: Blog Title
+Date: 2010-12-03 10:20
+Tags: thats, awesome
+Category: yeah
+Slug: my-super-post
+Author: authorname
+Summary: Short version for index and feeds
+Status: draft
+
+This is the content of my super blog post.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The slug metadata &lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;This is a footnote.
+Paragraph two of the definition.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A blockquote with
+multiple lines.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="n"&gt;block&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A final paragraph.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:label"&gt;
+&lt;p&gt;A footnote on "label"&amp;#160;&lt;a class="footnote-backref" href="#fnref:label" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:!DEF"&gt;
+&lt;p&gt;The definition of a footnote.&amp;#160;&lt;a class="footnote-backref" href="#fnref:!DEF" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</summary><category term="markdown"></category><category term="pelican"></category></entry><entry><title>WordPress文章编辑发布方案</title><link href="http://www.joshuazhang.info/posts/2013/Jan/wp-edit-publish-plan.html" rel="alternate"></link><updated>2013-01-04T00:00:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2013-01-04:posts/2013/Jan/wp-edit-publish-plan.html</id><summary type="html">&lt;p&gt;我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话,想要了解其它的方案，这篇文章也许会有帮助。首先要说明的是编辑和发布是两个阶段，如果再详细点还应该包括修改阶段，下面的一些发布流程往往只能照顾到某一个方面，而在另一个方面就相形见绌，总有这样那样的瑕疵。基本上，WordPress的编辑发布方案有这么几大类：&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;后台发布&lt;/h2&gt;
 &lt;p&gt;这是默认的，也是便利性、兼容性最好的方案。但是它最大的缺点就在于一个字：慢。这个慢有两个方面，一是后台太笨重，如果你空间本来就不快（比如国外的空间），那加载后台都会等很久；二是WYSIWYG的编辑方式，如果你要搞长篇大论，图文并茂的话，上传图片、预览这些操作都是费事费力的。当然改进的方法也有：使用WP前台编辑插件（什么名字我忘了）、尽量不预览（对html熟悉程度要高）。&lt;/p&gt;
@@ -30,10 +426,10 @@
 &lt;/ul&gt;
 &lt;p&gt;基本上我的要求难以同时得到满足，所以有这么一个折腾的理由，我也就顺理成章地转到了Pelican上去了。静态博客当然也有它的缺点，不过暂时而言我对它的喜爱还是多一点的。&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="WordPress"></category></entry><entry><title>cygwin安装jekyll</title><link href="http://www.joshuazhang.info/posts/2012/Sep/cygwin-install-jekyll.html" rel="alternate"></link><updated>2012-09-24T00:00:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-09-24:posts/2012/Sep/cygwin-install-jekyll.html</id><summary type="html">&lt;h2&gt;卸载已安装的ruby&lt;/h2&gt;
+</summary><category term="WordPress"></category></entry><entry><title>cygwin安装jekyll</title><link href="http://www.joshuazhang.info/posts/2012/Sep/cygwin-install-jekyll.html" rel="alternate"></link><updated>2012-09-24T00:00:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-09-24:posts/2012/Sep/cygwin-install-jekyll.html</id><summary type="html">&lt;h2 id="ruby"&gt;卸载已安装的ruby&lt;/h2&gt;
 &lt;p&gt;用对应的包管理器卸载
 如果是rvm安装的，直接删除目录&lt;code&gt;~/.rvm&lt;/code&gt;，然后删除&lt;code&gt;.zshrc&lt;/code&gt;和&lt;code&gt;.zlogin&lt;/code&gt;文件，去掉&lt;code&gt;.profile&lt;/code&gt;和&lt;code&gt;.bash_profile&lt;/code&gt;中关于rvm的语句即可。&lt;/p&gt;
-&lt;h2&gt;安装rvm&lt;/h2&gt;
+&lt;h2 id="rvm"&gt;安装rvm&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://rvm.io/rvm/install/"&gt;安装指南&lt;/a&gt;&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;curl -L https://get.rvm.io | bash -s stable --ruby
 &lt;/pre&gt;&lt;/div&gt;
@@ -56,7 +452,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;管理ruby环境&lt;/h2&gt;
+&lt;h2 id="ruby_1"&gt;管理ruby环境&lt;/h2&gt;
 &lt;p&gt;下面这几步其实不必要了，只是展示一下安装的过程，你也可以安装其它的ruby版本。&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;rvm list known
 rvm install 1.9.3
@@ -72,7 +468,7 @@ which gem
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;安装jekyll&lt;/h2&gt;
+&lt;h2 id="jekyll"&gt;安装jekyll&lt;/h2&gt;
 &lt;p&gt;用gem安装：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;gem update --system
 gem list
@@ -90,7 +486,7 @@ gem install pkg/posix-spawn-0.3.6
 
 
 &lt;p&gt;再&lt;code&gt;gem install jekyll&lt;/code&gt;就没问题啦。&lt;/p&gt;
-&lt;h2&gt;参考页面&lt;/h2&gt;
+&lt;h2 id="_1"&gt;参考页面&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://matt.scharley.me/2012/03/10/windows-cygwin-and-jekyll.html"&gt;Windows,Cygwin and Jekyll&lt;/a&gt;&lt;/p&gt;</summary><category term="cygwin"></category><category term="jekyll"></category></entry><entry><title>wordpress数据库优化记录</title><link href="http://www.joshuazhang.info/posts/2012/Aug/wp-database-optimization.html" rel="alternate"></link><updated>2012-08-30T20:02:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-08-30:posts/2012/Aug/wp-database-optimization.html</id><summary type="html">&lt;p&gt;前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。&lt;/p&gt;
 &lt;p&gt;基本流程如下：&lt;/p&gt;
 &lt;p&gt;1、备份。做任何数据库操作前，做一个临时备份都是必要的。使用phpmyadmin按默认设置导出sql文件下载到本地即可。&lt;/p&gt;

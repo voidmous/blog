@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>幻空轩</title><link>http://www.joshuazhang.info/</link><description></description><atom:link href="http://www.joshuazhang.info/feeds/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 24 Sep 2012 00:00:00 +0200</lastBuildDate><item><title>cygwin安装jekyll</title><link>http://www.joshuazhang.info/posts/2012/Sep/cygwin-install-jekyll.html</link><description>&lt;h2&gt;卸载已安装的ruby&lt;/h2&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>幻空轩</title><link>http://www.joshuazhang.info/</link><description></description><atom:link href="http://www.joshuazhang.info/feeds/%E8%BD%AF%E4%BB%B6%E5%BA%94%E7%94%A8.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 24 Sep 2012 00:00:00 +0200</lastBuildDate><item><title>cygwin安装jekyll</title><link>http://www.joshuazhang.info/posts/2012/Sep/cygwin-install-jekyll.html</link><description>&lt;h2 id="ruby"&gt;卸载已安装的ruby&lt;/h2&gt;
 &lt;p&gt;用对应的包管理器卸载
 如果是rvm安装的，直接删除目录&lt;code&gt;~/.rvm&lt;/code&gt;，然后删除&lt;code&gt;.zshrc&lt;/code&gt;和&lt;code&gt;.zlogin&lt;/code&gt;文件，去掉&lt;code&gt;.profile&lt;/code&gt;和&lt;code&gt;.bash_profile&lt;/code&gt;中关于rvm的语句即可。&lt;/p&gt;
-&lt;h2&gt;安装rvm&lt;/h2&gt;
+&lt;h2 id="rvm"&gt;安装rvm&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://rvm.io/rvm/install/"&gt;安装指南&lt;/a&gt;&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;curl -L https://get.rvm.io | bash -s stable --ruby
 &lt;/pre&gt;&lt;/div&gt;
@@ -25,7 +25,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;管理ruby环境&lt;/h2&gt;
+&lt;h2 id="ruby_1"&gt;管理ruby环境&lt;/h2&gt;
 &lt;p&gt;下面这几步其实不必要了，只是展示一下安装的过程，你也可以安装其它的ruby版本。&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;rvm list known
 rvm install 1.9.3
@@ -41,7 +41,7 @@ which gem
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;安装jekyll&lt;/h2&gt;
+&lt;h2 id="jekyll"&gt;安装jekyll&lt;/h2&gt;
 &lt;p&gt;用gem安装：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;gem update --system
 gem list
@@ -59,7 +59,7 @@ gem install pkg/posix-spawn-0.3.6
 
 
 &lt;p&gt;再&lt;code&gt;gem install jekyll&lt;/code&gt;就没问题啦。&lt;/p&gt;
-&lt;h2&gt;参考页面&lt;/h2&gt;
+&lt;h2 id="_1"&gt;参考页面&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://matt.scharley.me/2012/03/10/windows-cygwin-and-jekyll.html"&gt;Windows,Cygwin and Jekyll&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Mon, 24 Sep 2012 00:00:00 +0200</pubDate><guid>tag:www.joshuazhang.info,2012-09-24:posts/2012/Sep/cygwin-install-jekyll.html</guid><category>cygwin</category><category>jekyll</category></item><item><title>Linux外置硬盘加载方案</title><link>http://www.joshuazhang.info/posts/2012/Jul/linux-usb-mount.html</link><description>&lt;p&gt;对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab"&gt;fstab
 wiki&lt;/a&gt;。简单地说就是现在/media目录下创建好要加载到的目标目录，然后在fstab中添加常连的外置硬盘mount条目即可。&lt;/p&gt;
 &lt;p&gt;这个方案是我最开始采用的，没有太大问题，但是还不完美。主要是最近我的外置硬盘接口似乎有点松动，所以用段时间后会自动掉线，这时系统又会自动搜索加载，麻烦在于自动加载的目录和我所设的目录不一致了，这样所有对该硬盘下文件的操作就会“找不到目标”。典型的例子就是用播放器播放外置硬盘的歌曲，掉线重连后播放器就找不到曲目，只能又去手动加载，十分费劲。&lt;/p&gt;

@@ -14,13 +14,15 @@
 
     <!-- Le styles -->
     <link href="../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="../theme/bootstrap.responsive.min.css" rel="stylesheet">
     <link href="../theme/local.css" rel="stylesheet">
     <link href="../theme/pygments.css" rel="stylesheet">
     
+    <!-- My custom styles -->
+    <!-- Table and misc styles -->
+    <link href="../theme/custom.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
     <link href="../theme/codehilite.css" rel="stylesheet">
-
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -57,6 +59,32 @@
         <div class="span9">
                 
 
+        
+
+ 
+
+    <div class='article'>
+        <a href="../posts/2012/Feb/latex-pelican.html"><h2>LaTeX for Pelican 测试</h2></a>
+        <div class= "well small"> Sat 18 February 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>本文主要用于测试Pelican与MathJax配合显示数学公式</p>
+<p>毕达哥拉斯定理： <span class="math">\(a^2+b^2=c^2\)</span>
+</p>
+<p>正态分布： <span class="math">\(f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\)</span>
+</p>
+<p>傅里叶变换： <span class="math">\(F\left(\omega\right)=\mathcal{F}\left[f(t)\right]=\int_{-\infty}^{\infty}e^{-i\omega
+t}dt\)</span>
+</p>
+<p>傅里叶逆变换： <span class="math">\(f ...</span></p> <a class="btn btn-info xsmall" href="../posts/2012/Feb/latex-pelican.html">read more</a></div>
+    </div>	
+				
+    
+ 
         
 
  
@@ -128,6 +156,52 @@ Mint下是如此），因此，你可以把手工设置的目录名称和外置�
  
 
     <div class='article'>
+        <a href="../posts/2013/Mar/markdown-for-pelican-ref.html"><h2>Markdown syntax for Pelican Quick Reference</h2></a>
+        <div class= "well small"> Fri 29 March 2013
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><div class="toc">
+<ul>
+<li><a href="#basic-syntax">Basic Syntax</a><ul>
+<li><a href="#headings">Headings</a></li>
+<li><a href="#blockquote">Blockquote</a></li>
+<li><a href="#list">List</a></li>
+<li><a href="#code-block">Code block</a></li>
+<li><a href="#horizontal-rules">Horizontal rules</a></li>
+<li><a href="#image">Image</a></li>
+<li><a href="#link">Link</a></li>
+<li><a href="#phrase-emphasis">Phrase Emphasis</a></li>
+<li><a href="#manual-line-breaks">Manual Line Breaks</a></li>
+<li><a href="#blackslash-escape">Blackslash Escape</a></li>
+</ul>
+</li>
+<li><a href="#extra-features-from-python-markdown">Extra Features From Python-Markdown</a><ul>
+<li><a href="#abbreviations">Abbreviations</a></li>
+<li><a href="#attribute-lists">Attribute Lists</a></li>
+<li><a href="#definition-lists">Definition Lists</a></li>
+<li><a href="#fenced-code-blocks">Fenced Code Blocks</a></li>
+<li><a href="#footnotes">Footnotes</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#codehilite">CodeHilite</a></li>
+<li><a href="#metadata-for-post">Metadata for post</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This post is a simple markdown syntax reference for Pelican(the static blog generator ...</p> <a class="btn btn-info xsmall" href="../posts/2013/Mar/markdown-for-pelican-ref.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
         <a href="../posts/2012/Jul/matlab-note.html"><h2>《MATLAB M语言高级编程》读书笔记</h2></a>
         <div class= "well small"> Mon 30 July 2012
 
@@ -149,58 +223,6 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <img alt="/static/img/wp/20120702204224.png" class="align-center" src="/static/img/wp/20120702204224.png" />
 <p>这一张图基本就讲清楚了所有的情况，注意A([9 14;10
 15])这样的索引方式。想一想A([8 12;10 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jul/matlab-note.html">read more</a></div>
-    </div>	
-				
-    
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="../posts/2012/May/runge-kutta-ode.html"><h2>Runge Kutta方法求解微分方程</h2></a>
-        <div class= "well small"> Tue 08 May 2012
-
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
- 
-
-
- </div>
-        <div class="summary"><p>普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。
-将一阶常微分方程初值问题写成如下形式：
-\[\left\{\begin{array}\~y^{'}=f(x,y) \\y(x_0)=y_0 \\
-\end{array}\right.\] 四阶Runge Kutta公式如下：
-\[\left\{\begin{array}{l}y_{n+1}=y_n+\frac{h}{6}(K_1+2K_2+2K_3+K_4)\\x_{n+1}=x_n+1\\K_1=f(x_n,y_n)\\K_2=f(x_n ...</p> <a class="btn btn-info xsmall" href="../posts/2012/May/runge-kutta-ode.html">read more</a></div>
-    </div>	
-				
-    
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="../posts/2012/Mar/science-thought.html"><h2>学术科研的几点思考</h2></a>
-        <div class= "well small"> Tue 13 March 2012
-
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
- 
-
-
- </div>
-        <div class="summary"><p>虽然自己还是门外汉，但是在学习的不同的阶段，水平不同、视角不同，感受和结论也会不同，三四年后的我如果再看到这篇文章，未必不会受到触动，起码可以让我反思。</p>
-<p>一、科学研究的精神</p>
-<p>1、诚信</p>
-<p>自从德国国防部长古藤贝格博士爆出论文造假的丑闻来，我就果断抛弃了“惟素质论”。即便是在欧洲这样的学术氛围极为严谨的情况也难以避免学术造假的发生，可见诚信仍然是一个世界性的问题。我不打算在这里讨论太多道德的说教，只分析下技术上的问题。</p>
-<p>国内的学生（包括我自己在内），对于引用他人文献没有一个明确的标准，有时候是直接引用，有时候提取下大意再标个引文了事，总之五花八门。从我观看的硕士答辩的情况来看，即便到了研三，这样的问题依然存在，甚至到了会被答辩老师训斥的程度。引用的问题主要集中在下面几点：</p>
-<ul class="simple">
-<li>引用多少文字，以什么方式引用（超过一定字数的引用必须注明，否则视为抄袭！）</li>
-<li>标注的位置（千万不要在章节标题上标注引文，大忌！）</li>
-<li>参考文献格式（事无巨细，期刊第几期、第几卷都需要标清楚，作者名字必须清楚）</li>
-<li>参考的可靠度（国内垃圾文献尽量少引）</li>
-<li>引文数量、中英文比例</li>
-</ul>
-<p>以上几个方面是需要重点注意的，当然，上面几点做好了并不能说明你的论文就是真实可信，还有其它方面的考量 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Mar/science-thought.html">read more</a></div>
     </div>	
 				
             <div class="pagination">
@@ -243,8 +265,10 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
                 Categories
                 </li>
                 
+                                <li><a href="../category/.html"></a></li>
                                 <li><a href="../category/itji-zhu.html">IT技术</a></li>
                                 <li><a href="../category/internet.html">Internet</a></li>
+                                <li><a href="../category/programming.html">programming</a></li>
                                 <li><a href="../category/sheng-guang-hua-ying.html">声光画影</a></li>
                                 <li><a href="../category/ke-yan-xue-zhu.html">科研学术</a></li>
                                 <li><a href="../category/ruan-jian-ying-yong.html">软件应用</a></li>
