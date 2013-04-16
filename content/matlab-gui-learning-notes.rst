@@ -1,7 +1,4 @@
-==================
-Matlab GUI学习笔记
-==================
-
+:title: Matlab GUI学习笔记
 :date: 2013-04-15 19:47
 :author: voidmous
 :category: programming
@@ -11,7 +8,23 @@ Matlab GUI学习笔记
 :summary: 
 :status: draft
 
-本文是matlab GUI教程 `41 Complete GUI Examples <http://www.mathworks.com/matlabcentral/fileexchange/24861-41-complete-gui-examples>`_ 的学习笔记。
+
+基础知识
+----------
+
+* 常见的GUI组件包括菜单、工具条、按钮、列表和滑动条等等。
+* 多数组件需要用户发出控制信号，然后才执行相应的命令，这个动作称为 :code:`callback` 。
+* 常见的触发动作包括：按下按钮、按下鼠标按键、选择菜单项、输入数值或字符串、鼠标滑过组件上方等等。
+* GUI程序为事件驱动型， :code:`callback` 函数的执行是异步的（外部信号触发）。
+* 两种方式构建GUI程序：
+  1. GUIDE(GUI开发环境)，一个交互式（图形的）构建工具。特点是会生成互相耦合的两个文件，其中fig文件储存大部分属性，m文件储存 :code:`callback` 和其它函数。优点是不需要手工指定大量的属性，容易上手。
+  2. 基于代码文本的方式。只有一个m文件储存所有信息，fig文件运行时实时生成。
+* 两种方式可以在一定程度上结合起来：先用GUIDE搭建图形框架，再修改属性和函数。
+
+Learning by examples
+--------------------
+
+下面的内容是matlab GUI教程 `41 Complete GUI Examples <http://www.mathworks.com/matlabcentral/fileexchange/24861-41-complete-gui-examples>`_ 的学习笔记。
 
 GUI1
 ----
