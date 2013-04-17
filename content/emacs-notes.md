@@ -1,8 +1,8 @@
 Title: Emacs笔记
 Author: voidmous
 Date: 2013-04-05 01:17
-Category:
-Tags:
+Category: emacs
+Tags: 
 Status: draft
 Slug: emacs-notes
 Summery:
