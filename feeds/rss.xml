@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>幻空轩</title><link>http://www.joshuazhang.info/</link><description></description><atom:link href="http://www.joshuazhang.info/feeds/rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 07 Apr 2013 15:38:00 +0200</lastBuildDate><item><title>El-get——emacs包管理利器</title><link>http://www.joshuazhang.info/posts/2013/Apr/el-get-intro.html</link><description>&lt;div class="toc"&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>幻空轩</title><link>http://www.joshuazhang.info/</link><description></description><atom:link href="http://www.joshuazhang.info/feeds/rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 18 Apr 2013 19:13:00 +0200</lastBuildDate><item><title>导出Google Reader加星条目到Evernote</title><link>http://www.joshuazhang.info/posts/2013/Apr/export-googlereader-starreditem-to-evernote.html</link><description>&lt;p&gt;Google Reader即将离我们而去，这个决定目前看来没有挽回的可能。我个人对Google的服务也很依赖，Google Reader更是常驻在书签栏，不过与其把力气花在谴责Google的作为，不如寻找更好的替代品和抓紧时间备份积累的订阅源和文章。目前离7月1日尚早，其它在线阅读器还有很长的时间打磨产品，所以替代品的筛选还不急于一时。倒是收藏的文章（加星标的条目）怎么导出似乎没有引起大家的关注，我把自己搜索整理的一些导出方案记录下来并作个比较，虽然没有一一测试，希望我的判断能有些参考价值。&lt;/p&gt;
+&lt;h2 id="_1"&gt;导出方案思路&lt;/h2&gt;
+&lt;p&gt;目前网上可以搜集到的方案有这么几种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.vsharing.com/ligongzi/A1472320.html"&gt;Google Reader的条目转发&lt;/a&gt;。手工转发当然是很蛋疼的，配合ifttt转发对已经加上星标的又没作用，需要更自动化的工具。&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://m.blog.csdn.net/blog/chief1985/6689805"&gt;基于html页面脚本或AHK脚本&lt;/a&gt;。这种方法大多是用脚本刷新页面直接打印为PDF，显然处理过程不怎么“漂亮”，而且输出也丢失了扩展性。&lt;/li&gt;
+&lt;li&gt;基于第三方服务。目前似乎只有&lt;a href="http://blog.wiz.cn/google-reader.html"&gt;为知&lt;/a&gt;可以方便快捷地下载加星标的文章，但程序好像也不怎么给力。feedly貌似也可以直接导入加星标条目。&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.36kr.com/p/201886.html"&gt;RSS&lt;/a&gt;导出。这种方式貌似可以导出订阅源的所有条目，即便该博客已经不存在了。。。这种方法适合导出一个订阅源的所有文章，但缺点还是自动化程度太低。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基于GoogleTakeout的导出数据。虽然关闭了Reader，但是Google对用户还是尽到了自己的责任，提供了一个强大而完备的备份工具，只不过导出的是比较另类的&lt;code&gt;.json&lt;/code&gt;文件。对它们做进一步处理可以得到组织良好的html文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://mescoda.com/2011/12/gr2evernote/"&gt;GR2Evernote — 将Google Reader的分享内容导入Evernote&lt;/a&gt; ，&lt;a href="http://blog.sina.com.cn/s/blog_4afc0d8201017ah3.html"&gt;导出和备份google阅读器喜欢星标评论等历史内容到evernote或者wiz&lt;/a&gt; （未测试）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.appinn.com/convertjson/"&gt;ConvertJSON – 转换 Google Reader 导出数据为网页&lt;/a&gt; （未测试）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我个人更喜欢最后一种思路，因为Google提供的备份文件组织良好，而且保留了重要的由用户操作过的文档数据（加星、分享等）而非全部备份文档数据，这使得导出的数据不会很大同时保留住了精华。这里我要推荐一个python脚本&lt;code&gt;export_gr2evernote&lt;/code&gt;，它的作用是处理&lt;code&gt;json&lt;/code&gt;文件得到Evernote自家的笔记本格式&lt;code&gt;.enex&lt;/code&gt;（也可以得到html格式），这样就可以导入到Evernote中，而Evernote虽小，似乎比Google要有良心一些^-^。&lt;/p&gt;
+&lt;h2 id="export_gr2evernote"&gt;export_gr2evernote&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/kerchen/export_gr2evernote"&gt;@Github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前该项目仍然处在改进中，现在已经有了三种导入处理方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;export2HTMLFiles&lt;/code&gt;，每篇文章都输出为单独的html文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;export2enex&lt;/code&gt;，导出为&lt;code&gt;enex&lt;/code&gt;文件，所有转换都在本地完成，对&lt;code&gt;json&lt;/code&gt;文件大小无限制。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;export_gr2evernote&lt;/code&gt;，利用邮件发送功能导入Evernote，脚本不会进行任何的格式优化，所以在Evernote中显示的效果可能很丑陋，不推荐。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;作者本人推荐用前两种方式之一。&lt;/p&gt;
+&lt;p&gt;处理流程（以Windows下&lt;code&gt;export2enex&lt;/code&gt;为例）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首先确保系统安装了python&lt;/li&gt;
+&lt;li&gt;用GoogleTakeout导出Reader数据，下载压缩包解压。&lt;/li&gt;
+&lt;li&gt;将脚本丢到解压目录，&lt;code&gt;Win+r cmd &amp;lt;RET&amp;gt;&lt;/code&gt;运行Dos窗口， &lt;code&gt;cd&lt;/code&gt;到该目录，运行&lt;code&gt;export2enex.py starred.json &amp;gt; starred.enex&lt;/code&gt;，很快目录下就会出现&lt;code&gt;starred.enex&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Evernote导入&lt;code&gt;starred.enex&lt;/code&gt;文件，注意选择&lt;strong&gt;本地笔记本&lt;/strong&gt;，尤其是文章数很多的情况。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;export2enex.py&lt;/code&gt;这个脚本有个小bug，就是对文章的链接url中的&lt;code&gt;&amp;amp;&lt;/code&gt;字符处理不当（应该转换为&lt;code&gt;&amp;amp;amp;&lt;/code&gt;的形式），导致导出的&lt;code&gt;enex&lt;/code&gt;文件无法被正确导入到Evernote，需要加入如下代码到合适位置：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;amp;&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;msg_url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;msg_url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;msg_url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;amp;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;amp;amp;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Thu, 18 Apr 2013 19:13:00 +0200</pubDate><guid>tag:www.joshuazhang.info,2013-04-18:posts/2013/Apr/export-googlereader-starreditem-to-evernote.html</guid><category>Google Reader</category><category>Evernote</category></item><item><title>El-get——emacs包管理利器</title><link>http://www.joshuazhang.info/posts/2013/Apr/el-get-intro.html</link><description>&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#el-get-vs-elpa"&gt;El-get vs ELPA&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#el-get"&gt;安装el-get&lt;/a&gt;&lt;/li&gt;
@@ -1277,24 +1313,24 @@ Google书签产品，某些方面输于Delicious&lt;/li&gt;
 ，解释了让大部分统计学入门者感到困惑的一个经典问题。&lt;/p&gt;
 &lt;p&gt;假如你正同时上几门课并且刚刚通过考试拿到成绩。很自然的，我们想了解班里其他学生的情况好让你的成绩有个参照。平均值或中位数可以告诉我们所有成绩的“中心值”或者“中间数”，但是它们很难体现成绩的分布或者变化。&lt;/p&gt;
 &lt;p&gt;我们来看一个小例子。假如5名学生参加三门课程获得的成绩如下：&lt;/p&gt;
-&lt;table border="1"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th&gt;&lt;p&gt;课程1&lt;/p&gt;
-&lt;/th&gt;&lt;th&gt;&lt;p&gt;课程2&lt;/p&gt;
-&lt;/th&gt;&lt;th&gt;&lt;p&gt;课程3&lt;/p&gt;
-&lt;/th&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;82&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;82&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;67&lt;/p&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;78&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;82&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;66&lt;/p&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;70&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;82&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;66&lt;/p&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;58&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;42&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;66&lt;/p&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;42&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;42&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;65&lt;/p&gt;
+&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th&gt;课程1
+&lt;/th&gt;&lt;th&gt;课程2
+&lt;/th&gt;&lt;th&gt;课程3
+&lt;/th&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;67
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;78
+&lt;/td&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;66
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;70
+&lt;/td&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;66
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;58
+&lt;/td&gt;&lt;td&gt;42
+&lt;/td&gt;&lt;td&gt;66
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;42
+&lt;/td&gt;&lt;td&gt;42
+&lt;/td&gt;&lt;td&gt;65
 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;每一个课程都有一个平均值，\(\overline{x}\)，且都为66，尽管如此，不同课程成绩的波动仍然有很大的差异。对这种波动的测量的其中一种方法是极差，也就是最大值与最小值之差。本例中，前两门课程极差均为82-42=40而第三门课程极差为67-65=2。因为课程1和课程2有相同的极差但是它们的偏差明显不同，所以极差不是一个测量偏差的理想指标。我们还可以这样看待偏差，课程3中所有的成绩都和平均值比较接近，课程1中有些接近而有些远离，课程2中所有成绩都远离均值。按照这样的观点我们可以引入标准差的概念。&lt;/p&gt;
 &lt;p&gt;首先来看看课程1，对每个学生计算其成绩与平均分的差值。&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
@@ -1302,10 +1338,12 @@ Google书签产品，某些方面输于Delicious&lt;/li&gt;
 &lt;col width="24%" /&gt;
 &lt;col width="76%" /&gt;
 &lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td&gt;课程1&lt;/td&gt;
-&lt;td&gt;\(x_1-\overline{x}\)&lt;/td&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;课程1&lt;/th&gt;
+&lt;th class="head"&gt;\(x_1-\overline{x}\)&lt;/th&gt;
 &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
 &lt;tr&gt;&lt;td&gt;82&lt;/td&gt;
 &lt;td&gt;16&lt;/td&gt;
 &lt;/tr&gt;
@@ -1331,11 +1369,13 @@ deviation），即\(md=\frac{\sum|x_1-\overline{x}|}{n}\),n为课程的学生数
 &lt;col width="41%" /&gt;
 &lt;col width="46%" /&gt;
 &lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td&gt;课程1&lt;/td&gt;
-&lt;td&gt;\(x_1-\overline{x}\)&lt;/td&gt;
-&lt;td&gt;\((x_1-\overline{x})^2\)&lt;/td&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;课程1&lt;/th&gt;
+&lt;th class="head"&gt;\(x_1-\overline{x}\)&lt;/th&gt;
+&lt;th class="head"&gt;\((x_1-\overline{x})^2\)&lt;/th&gt;
 &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
 &lt;tr&gt;&lt;td&gt;82&lt;/td&gt;
 &lt;td&gt;16&lt;/td&gt;
 &lt;td&gt;256&lt;/td&gt;
@@ -1388,7 +1428,7 @@ x_1}{N}\)，类似的方差为\(\sigma=\sqrt{\frac{\sum(x_1-\mu)^2}{N}}\)。注�
 &lt;p&gt;有博士生做了本文作者建议的实验并且给出了&lt;a class="reference external" href="http://mathcentral.uregina.ca/RR/database/RR.09.95/javier.xls"&gt;excel表格&lt;/a&gt;，部分截图如下：&lt;/p&gt;
 &lt;img alt="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" src="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" /&gt;
 &lt;p&gt;补充：实际上n和n-1的选择问题用数学理论很容易解释，那就是n-1时样本方差的期望值就是总体方差（对样本方差求期望，简单推导即可得到）。造成大部分人困惑的原因就是n-1没有n看上去那么自然，同时对于总体和样本的概念以及它们的地位有所混淆。这篇文章其实讲的很浅显，但是国外教授对于简单问题往往会给出大量的篇幅，这与国内教材动辄大篇数学公式的风格大不一致。我们不能简单地说两种模式孰高孰低，但是国人受到苏联模式的影响如此深远，却始终成不了数学大国，恐怕是时候改变下思路了。&lt;/p&gt;
-&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Tue, 21 Feb 2012 01:08:00 +0100</pubDate><guid>tag:www.joshuazhang.info,2012-02-21:posts/2012/Feb/standard-deviation.html</guid><category>估计</category><category>总体</category><category>无偏</category><category>标准差</category><category>统计学</category></item><item><title>Google Reader使用技巧</title><link>http://www.joshuazhang.info/posts/2012/Feb/google-reader-tips.html</link><description>&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Google Reader
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Tue, 21 Feb 2012 01:08:00 +0100</pubDate><guid>tag:www.joshuazhang.info,2012-02-21:posts/2012/Feb/standard-deviation.html</guid><category>估计</category><category>总体</category><category>无偏</category><category>标准差</category><category>统计学</category></item><item><title>Google Reader使用技巧</title><link>http://www.joshuazhang.info/posts/2012/Feb/google-reader-tips.html</link><description>&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Google Reader
 确实是一个不可多得的服务，我用上GR没几天已经爱不释手了。GR非常容易上手，但是要玩转GR，没有使用经验的积累是不可能的，下面我就列举一些自己在
 使用GR过程中体会到的一些技巧，既是自己知识的整理过程，也是一个温故知新的过程。当然，这里面有我自己的心得，不可避免的也有从搜索得来的知识，来源
 较多，恕不列明。&lt;/p&gt;

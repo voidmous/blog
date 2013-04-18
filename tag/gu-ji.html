@@ -78,24 +78,24 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 ，解释了让大部分统计学入门者感到困惑的一个经典问题。</p>
 <p>假如你正同时上几门课并且刚刚通过考试拿到成绩。很自然的，我们想了解班里其他学生的情况好让你的成绩有个参照。平均值或中位数可以告诉我们所有成绩的“中心值”或者“中间数”，但是它们很难体现成绩的分布或者变化。</p>
 <p>我们来看一个小例子。假如5名学生参加三门课程获得的成绩如下：</p>
-<table border="1"><tbody><tr><th><p>课程1</p>
-</th><th><p>课程2</p>
-</th><th><p>课程3</p>
-</th></tr><tr align="center"><td><p>82</p>
-</td><td><p>82</p>
-</td><td><p>67</p>
-</td></tr><tr align="center"><td><p>78</p>
-</td><td><p>82</p>
-</td><td><p>66</p>
-</td></tr><tr align="center"><td><p>70</p>
-</td><td><p>82</p>
-</td><td><p>66</p>
-</td></tr><tr align="center"><td><p>58</p>
-</td><td><p>42</p>
-</td><td><p>66</p>
-</td></tr><tr align="center"><td><p>42</p>
-</td><td><p>42</p>
-</td><td><p>65</p>
+<table><tbody><tr><th>课程1
+</th><th>课程2
+</th><th>课程3
+</th></tr><tr align="center"><td>82
+</td><td>82
+</td><td>67
+</td></tr><tr align="center"><td>78
+</td><td>82
+</td><td>66
+</td></tr><tr align="center"><td>70
+</td><td>82
+</td><td>66
+</td></tr><tr align="center"><td>58
+</td><td>42
+</td><td>66
+</td></tr><tr align="center"><td>42
+</td><td>42
+</td><td>65
 </td></tr></tbody></table><p>每一个课程都有一个平均值，\(\overline{x}\)，且都为66，尽管如此，不同课程成绩的波动仍然有很大的差异。对这种波动的测量的其中一种方法是极差，也就是最大值与最小值之差。本例中，前两门课程极差均为82-42=40而第三门课程极差为67-65=2。因为课程1和课程2有相同的极差但是它们的偏差明显不同，所以极差不是一个测量偏差的理想指标。我们还可以这样看待偏差，课程3中所有的成绩都和平均值比较接近，课程1中有些接近而有些远离，课程2中所有成绩都远离均值。按照这样的观点我们可以引入标准差的概念。</p>
 <p>首先来看看课程1，对每个学生计算其成绩与平均分的差值。</p>
 <table border="1" class="docutils">
@@ -103,10 +103,12 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <col width="24%" />
 <col width="76%" />
 </colgroup>
-<tbody valign="top">
-<tr><td>课程1</td>
-<td>\(x_1-\overline{x}\)</td>
+<thead valign="bottom">
+<tr><th class="head">课程1</th>
+<th class="head">\(x_1-\overline{x}\)</th>
 </tr>
+</thead>
+<tbody valign="top">
 <tr><td>82</td>
 <td>16</td>
 </tr>
@@ -132,11 +134,13 @@ deviation），即\(md=\frac{\sum|x_1-\overline{x}|}{n}\),n为课程的学生数
 <col width="41%" />
 <col width="46%" />
 </colgroup>
-<tbody valign="top">
-<tr><td>课程1</td>
-<td>\(x_1-\overline{x}\)</td>
-<td>\((x_1-\overline{x})^2\)</td>
+<thead valign="bottom">
+<tr><th class="head">课程1</th>
+<th class="head">\(x_1-\overline{x}\)</th>
+<th class="head">\((x_1-\overline{x})^2\)</th>
 </tr>
+</thead>
+<tbody valign="top">
 <tr><td>82</td>
 <td>16</td>
 <td>256</td>
@@ -189,7 +193,7 @@ x_1}{N}\)，类似的方差为\(\sigma=\sqrt{\frac{\sum(x_1-\mu)^2}{N}}\)。注�
 <p>有博士生做了本文作者建议的实验并且给出了<a class="reference external" href="http://mathcentral.uregina.ca/RR/database/RR.09.95/javier.xls">excel表格</a>，部分截图如下：</p>
 <img alt="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" src="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" />
 <p>补充：实际上n和n-1的选择问题用数学理论很容易解释，那就是n-1时样本方差的期望值就是总体方差（对样本方差求期望，简单推导即可得到）。造成大部分人困惑的原因就是n-1没有n看上去那么自然，同时对于总体和样本的概念以及它们的地位有所混淆。这篇文章其实讲的很浅显，但是国外教授对于简单问题往往会给出大量的篇幅，这与国内教材动辄大篇数学公式的风格大不一致。我们不能简单地说两种模式孰高孰低，但是国人受到苏联模式的影响如此深远，却始终成不了数学大国，恐怕是时候改变下思路了。</p>
-</p></div>
+</div>
         <hr />
     </div>
 		

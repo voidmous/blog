@@ -291,24 +291,24 @@ Runge-Kutta[M]. 2010.&lt;/p&gt;
 ，解释了让大部分统计学入门者感到困惑的一个经典问题。&lt;/p&gt;
 &lt;p&gt;假如你正同时上几门课并且刚刚通过考试拿到成绩。很自然的，我们想了解班里其他学生的情况好让你的成绩有个参照。平均值或中位数可以告诉我们所有成绩的“中心值”或者“中间数”，但是它们很难体现成绩的分布或者变化。&lt;/p&gt;
 &lt;p&gt;我们来看一个小例子。假如5名学生参加三门课程获得的成绩如下：&lt;/p&gt;
-&lt;table border="1"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th&gt;&lt;p&gt;课程1&lt;/p&gt;
-&lt;/th&gt;&lt;th&gt;&lt;p&gt;课程2&lt;/p&gt;
-&lt;/th&gt;&lt;th&gt;&lt;p&gt;课程3&lt;/p&gt;
-&lt;/th&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;82&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;82&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;67&lt;/p&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;78&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;82&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;66&lt;/p&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;70&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;82&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;66&lt;/p&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;58&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;42&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;66&lt;/p&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;&lt;p&gt;42&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;42&lt;/p&gt;
-&lt;/td&gt;&lt;td&gt;&lt;p&gt;65&lt;/p&gt;
+&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th&gt;课程1
+&lt;/th&gt;&lt;th&gt;课程2
+&lt;/th&gt;&lt;th&gt;课程3
+&lt;/th&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;67
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;78
+&lt;/td&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;66
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;70
+&lt;/td&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;66
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;58
+&lt;/td&gt;&lt;td&gt;42
+&lt;/td&gt;&lt;td&gt;66
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;42
+&lt;/td&gt;&lt;td&gt;42
+&lt;/td&gt;&lt;td&gt;65
 &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;每一个课程都有一个平均值，\(\overline{x}\)，且都为66，尽管如此，不同课程成绩的波动仍然有很大的差异。对这种波动的测量的其中一种方法是极差，也就是最大值与最小值之差。本例中，前两门课程极差均为82-42=40而第三门课程极差为67-65=2。因为课程1和课程2有相同的极差但是它们的偏差明显不同，所以极差不是一个测量偏差的理想指标。我们还可以这样看待偏差，课程3中所有的成绩都和平均值比较接近，课程1中有些接近而有些远离，课程2中所有成绩都远离均值。按照这样的观点我们可以引入标准差的概念。&lt;/p&gt;
 &lt;p&gt;首先来看看课程1，对每个学生计算其成绩与平均分的差值。&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
@@ -316,10 +316,12 @@ Runge-Kutta[M]. 2010.&lt;/p&gt;
 &lt;col width="24%" /&gt;
 &lt;col width="76%" /&gt;
 &lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td&gt;课程1&lt;/td&gt;
-&lt;td&gt;\(x_1-\overline{x}\)&lt;/td&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;课程1&lt;/th&gt;
+&lt;th class="head"&gt;\(x_1-\overline{x}\)&lt;/th&gt;
 &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
 &lt;tr&gt;&lt;td&gt;82&lt;/td&gt;
 &lt;td&gt;16&lt;/td&gt;
 &lt;/tr&gt;
@@ -345,11 +347,13 @@ deviation），即\(md=\frac{\sum|x_1-\overline{x}|}{n}\),n为课程的学生数
 &lt;col width="41%" /&gt;
 &lt;col width="46%" /&gt;
 &lt;/colgroup&gt;
-&lt;tbody valign="top"&gt;
-&lt;tr&gt;&lt;td&gt;课程1&lt;/td&gt;
-&lt;td&gt;\(x_1-\overline{x}\)&lt;/td&gt;
-&lt;td&gt;\((x_1-\overline{x})^2\)&lt;/td&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;课程1&lt;/th&gt;
+&lt;th class="head"&gt;\(x_1-\overline{x}\)&lt;/th&gt;
+&lt;th class="head"&gt;\((x_1-\overline{x})^2\)&lt;/th&gt;
 &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
 &lt;tr&gt;&lt;td&gt;82&lt;/td&gt;
 &lt;td&gt;16&lt;/td&gt;
 &lt;td&gt;256&lt;/td&gt;
@@ -402,4 +406,4 @@ x_1}{N}\)，类似的方差为\(\sigma=\sqrt{\frac{\sum(x_1-\mu)^2}{N}}\)。注�
 &lt;p&gt;有博士生做了本文作者建议的实验并且给出了&lt;a class="reference external" href="http://mathcentral.uregina.ca/RR/database/RR.09.95/javier.xls"&gt;excel表格&lt;/a&gt;，部分截图如下：&lt;/p&gt;
 &lt;img alt="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" src="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" /&gt;
 &lt;p&gt;补充：实际上n和n-1的选择问题用数学理论很容易解释，那就是n-1时样本方差的期望值就是总体方差（对样本方差求期望，简单推导即可得到）。造成大部分人困惑的原因就是n-1没有n看上去那么自然，同时对于总体和样本的概念以及它们的地位有所混淆。这篇文章其实讲的很浅显，但是国外教授对于简单问题往往会给出大量的篇幅，这与国内教材动辄大篇数学公式的风格大不一致。我们不能简单地说两种模式孰高孰低，但是国人受到苏联模式的影响如此深远，却始终成不了数学大国，恐怕是时候改变下思路了。&lt;/p&gt;
-&lt;/p&gt;</summary><category term="估计"></category><category term="总体"></category><category term="无偏"></category><category term="标准差"></category><category term="统计学"></category></entry></feed>
+</summary><category term="估计"></category><category term="总体"></category><category term="无偏"></category><category term="标准差"></category><category term="统计学"></category></entry></feed>
