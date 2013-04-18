@@ -1,5 +1,4 @@
-标准差浅谈
-###########
+:title: 标准差浅谈
 :date: 2012-02-21 01:08
 :category: 科研学术
 :tags: 估计, 总体, 无偏, 标准差, 统计学
@@ -12,253 +11,27 @@
 
 我们来看一个小例子。假如5名学生参加三门课程获得的成绩如下：
 
- 
-
 .. raw:: html
 
-   <table border="1">
-
-.. raw:: html
-
-   <tbody>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-课程1
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <th>
-
-课程2
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <th>
-
-课程3
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr align="center">
-
-.. raw:: html
-
-   <td>
-
-82
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-82
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-67
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr align="center">
-
-.. raw:: html
-
-   <td>
-
-78
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-82
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-66
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr align="center">
-
-.. raw:: html
-
-   <td>
-
-70
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-82
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-66
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr align="center">
-
-.. raw:: html
-
-   <td>
-
-58
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-42
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-66
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr align="center">
-
-.. raw:: html
-
-   <td>
-
-42
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-42
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-65
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </tbody>
-
-.. raw:: html
-
-   </table>
-
- 
+    <table><tbody><tr><th>课程1
+    </th><th>课程2
+    </th><th>课程3
+    </th></tr><tr align="center"><td>82
+    </td><td>82
+    </td><td>67
+    </td></tr><tr align="center"><td>78
+    </td><td>82
+    </td><td>66
+    </td></tr><tr align="center"><td>70
+    </td><td>82
+    </td><td>66
+    </td></tr><tr align="center"><td>58
+    </td><td>42
+    </td><td>66
+    </td></tr><tr align="center"><td>42
+    </td><td>42
+    </td><td>65
+    </td></tr></tbody></table>
 
 每一个课程都有一个平均值，\\(\\overline{x}\\)，且都为66，尽管如此，不同课程成绩的波动仍然有很大的差异。对这种波动的测量的其中一种方法是极差，也就是最大值与最小值之差。本例中，前两门课程极差均为82-42=40而第三门课程极差为67-65=2。因为课程1和课程2有相同的极差但是它们的偏差明显不同，所以极差不是一个测量偏差的理想指标。我们还可以这样看待偏差，课程3中所有的成绩都和平均值比较接近，课程1中有些接近而有些远离，课程2中所有成绩都远离均值。按照这样的观点我们可以引入标准差的概念。
 
@@ -266,7 +39,7 @@
 
 +---------+----------------------------+
 | 课程1   | \\(x\_1-\\overline{x}\\)   |
-+---------+----------------------------+
++=========+============================+
 | 82      | 16                         |
 +---------+----------------------------+
 | 78      | 12                         |
@@ -283,7 +56,7 @@ deviation），即\\(md=\\frac{\\sum\|x\_1-\\overline{x}\|}{n}\\),n为课程的�
 
 +---------+----------------------------+--------------------------------+
 | 课程1   | \\(x\_1-\\overline{x}\\)   | \\((x\_1-\\overline{x})^2\\)   |
-+---------+----------------------------+--------------------------------+
++=========+============================+================================+
 | 82      | 16                         | 256                            |
 +---------+----------------------------+--------------------------------+
 | 78      | 12                         | 144                            |
@@ -353,10 +126,6 @@ x\_1}{N}\\)，类似的方差为\\(\\sigma=\\sqrt{\\frac{\\sum(x\_1-\\mu)^2}{N}}
 .. image:: http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif
 
 补充：实际上n和n-1的选择问题用数学理论很容易解释，那就是n-1时样本方差的期望值就是总体方差（对样本方差求期望，简单推导即可得到）。造成大部分人困惑的原因就是n-1没有n看上去那么自然，同时对于总体和样本的概念以及它们的地位有所混淆。这篇文章其实讲的很浅显，但是国外教授对于简单问题往往会给出大量的篇幅，这与国内教材动辄大篇数学公式的风格大不一致。我们不能简单地说两种模式孰高孰低，但是国人受到苏联模式的影响如此深远，却始终成不了数学大国，恐怕是时候改变下思路了。
-
-.. raw:: html
-
-   </p>
 
 .. _A note on standard deviation: http://mathcentral.uregina.ca/RR/database/RR.09.95/weston2.html
 .. _excel表格: http://mathcentral.uregina.ca/RR/database/RR.09.95/javier.xls
