@@ -19,9 +19,8 @@ Google Reader即将离我们而去，这个决定目前看来没有挽回的可�
 * 基于第三方服务。目前似乎只有[为知](http://blog.wiz.cn/google-reader.html)可以方便快捷地下载加星标的文章，但程序好像也不怎么给力。feedly貌似也可以直接导入加星标条目。
 * [RSS](http://www.36kr.com/p/201886.html )导出。这种方式貌似可以导出订阅源的所有条目，即便该博客已经不存在了。。。这种方法适合导出一个订阅源的所有文章，但缺点还是自动化程度太低。
 * 基于GoogleTakeout的导出数据。虽然关闭了Reader，但是Google对用户还是尽到了自己的责任，提供了一个强大而完备的备份工具，只不过导出的是比较另类的`.json`文件。对它们做进一步处理可以得到组织良好的html文件。
-
-1. [GR2Evernote — 将Google Reader的分享内容导入Evernote](http://mescoda.com/2011/12/gr2evernote/ ) ，[导出和备份google阅读器喜欢星标评论等历史内容到evernote或者wiz](http://blog.sina.com.cn/s/blog_4afc0d8201017ah3.html ) （未测试）
-2. [ConvertJSON – 转换 Google Reader 导出数据为网页](http://www.appinn.com/convertjson/ ) （未测试）
+ 1. [GR2Evernote — 将Google Reader的分享内容导入Evernote](http://mescoda.com/2011/12/gr2evernote/ ) ，[导出和备份google阅读器喜欢星标评论等历史内容到evernote或者wiz](http://blog.sina.com.cn/s/blog_4afc0d8201017ah3.html ) （未测试）
+ 2. [ConvertJSON – 转换 Google Reader 导出数据为网页](http://www.appinn.com/convertjson/ ) （未测试）
 
 我个人更喜欢最后一种思路，因为Google提供的备份文件组织良好，而且保留了重要的由用户操作过的文档数据（加星、分享等）而非全部备份文档数据，这使得导出的数据不会很大同时保留住了精华。这里我要推荐一个python脚本`export_gr2evernote`，它的作用是处理`json`文件得到Evernote自家的笔记本格式`.enex`（也可以得到html格式），这样就可以导入到Evernote中，而Evernote虽小，似乎比Google要有良心一些^-^。
 
@@ -35,7 +34,7 @@ Google Reader即将离我们而去，这个决定目前看来没有挽回的可�
 * `export2enex`，导出为`enex`文件，所有转换都在本地完成，对`json`文件大小无限制。
 * `export_gr2evernote`，利用邮件发送功能导入Evernote，脚本不会进行任何的格式优化，所以在Evernote中显示的效果可能很丑陋，不推荐。
 
-作者本人推荐用前两种方式之一。
+作者本人推荐用前两种方式之一。从我个人测试的情况来看，导入的`enex`笔记完全保存了GR中文章的样式，图片、视频都能正常显示和观看，最重要的是整个流程十分简单快捷。
 
 处理流程（以Windows下`export2enex`为例）：
 
