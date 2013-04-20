@@ -1,8 +1,8 @@
 我的Firefox扩展总结
 ###################
 :date: 2012-03-01 13:50
-:category: IT技术
-:tags: Firefox, 总结, 扩展
+:category: software
+:tags: Firefox, 
 :slug: firefox-addon
 
 一、浏览优化类

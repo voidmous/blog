@@ -1,7 +1,7 @@
 47个通用网页浏览器快捷键
 ##########################
 :date: 2012-05-25 13:15
-:category: 软件应用
+:category: software
 :tags: 快捷键, 浏览器, 通用
 :slug: universal-browser-keyboard-shortcuts
 

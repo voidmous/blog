@@ -1,8 +1,8 @@
 Linux外置硬盘加载方案
 #####################
 :date: 2012-07-17 16:20
-:category: 软件应用
-:tags: fstab, Linux, mount, 外置硬盘, 挂载
+:category: software
+:tags: linux, mount, 
 :slug: linux-usb-mount
 
 对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的\ `fstab

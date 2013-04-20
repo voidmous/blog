@@ -1,7 +1,7 @@
 MIT-BIH开放数据库使用指南
 ###########################
 :date: 2012-06-15 21:14
-:category: 科研学术
+:category: research
 :tags: Matlab, MIT-BIH, PhysioBank, WFDB, 入门, 心电, 指南, 数据库
 :slug: MIT-BIH-manual
 
