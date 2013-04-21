@@ -1,7 +1,7 @@
 Runge Kutta方法求解微分方程
 ###########################
 :date: 2012-05-08 07:06
-:category: 科研学术
+:category: Math
 :tags: Matlab, Runge Kutta, 数值方法, 洛伦兹方程, 龙格库塔
 :slug: runge-kutta-ode
 

@@ -1,7 +1,7 @@
 ArchLinux入门浅谈
 #################
 :date: 2012-02-24 12:43
-:category: IT技术
+:category: Technique
 :tags: Archlinux, wiki, 入门, 安装, 手册, 技巧
 :slug: archlinux-intro
 

@@ -1,7 +1,7 @@
 我的Firefox扩展总结
 ###################
 :date: 2012-03-01 13:50
-:category: software
+:category: Technique
 :tags: Firefox, 
 :slug: firefox-addon
 

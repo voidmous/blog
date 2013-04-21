@@ -1,7 +1,7 @@
 Title: Cygwin安装设置笔记
 Date: 2013-03-25 23:12
 Tags: cygwin,
-Category: Computer
+Category: Technique
 Slug: cygwin-setup-notes
 Author: voidmous
 Status: draft

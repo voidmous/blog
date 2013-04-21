@@ -1,8 +1,8 @@
 LaTeX for Pelican 测试
 ############################
 :date: 2012-02-18 05:48
-:category: IT技术
-:tags: LaTeX, 测试
+:category: Technique
+:tags: LaTeX, Pelican, MathJax
 :slug: latex-pelican
 
 本文主要用于测试Pelican与MathJax配合显示数学公式

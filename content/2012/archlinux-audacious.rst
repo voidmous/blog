@@ -1,7 +1,7 @@
 Archlinux下编译Audacious(cue、ape支持)
 ######################################
 :date: 2012-03-20 16:25
-:category: IT技术
+:category: Technique
 :tags: Archlinux, audacious, 编译
 :slug: archlinux-audacious
 

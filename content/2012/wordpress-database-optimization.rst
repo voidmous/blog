@@ -1,7 +1,7 @@
 wordpress数据库优化记录
 #######################
 :date: 2012-08-30 20:02
-:category: IT技术
+:category: Technique
 :tags: WordPress, 优化, 数据库
 :slug: wp-database-optimization
 

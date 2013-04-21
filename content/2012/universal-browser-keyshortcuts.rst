@@ -1,8 +1,8 @@
 47个通用网页浏览器快捷键
 ##########################
 :date: 2012-05-25 13:15
-:category: software
-:tags: 快捷键, 浏览器, 通用
+:category: Technique
+:tags: Keyboard Shortcuts, Internet Browser
 :slug: universal-browser-keyboard-shortcuts
 
 本文翻译自\ `howtogeek`_\ ，总结得不错。不过从评论来看，似乎对opera支持不大好，读者请自行尝试。

@@ -1,6 +1,6 @@
 :title: 标准差浅谈
 :date: 2012-02-21 01:08
-:category: 科研学术
+:category: Math
 :tags: 估计, 总体, 无偏, 标准差, 统计学
 :slug: standard-deviation
 

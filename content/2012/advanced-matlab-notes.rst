@@ -1,7 +1,7 @@
 《MATLAB M语言高级编程》读书笔记
 ##################################
 :date: 2012-07-30 21:04
-:category: programming
+:category: Technique
 :tags: Matlab, 
 :slug: matlab-note
 

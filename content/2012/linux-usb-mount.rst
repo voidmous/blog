@@ -1,7 +1,7 @@
 Linux外置硬盘加载方案
 #####################
 :date: 2012-07-17 16:20
-:category: software
+:category: Technique
 :tags: linux, mount, 
 :slug: linux-usb-mount
 

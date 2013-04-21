@@ -1,7 +1,7 @@
 MS Word题注与交叉引用
 ######################
 :date: 2012-07-05 19:51
-:category: 软件应用
+:category: Technique
 :tags: MS Word, 交叉引用, 参考文献, 域, 题注
 :slug: MS-Word-label
 
