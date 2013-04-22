@@ -3,7 +3,7 @@
 
 AUTHOR = u"voidmous"
 SITENAME = u"幻空轩"
-SITEURL = 'http://www.joshuazhang.info'
+SITEURL = 'http://www.joshuazhang.net'
 ARTICLE_URL = 'posts/{date:%Y}/{date:%b}/{slug}.html'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{slug}.html'
 LOCALE =  "C" # This option is needed for above 2 options
