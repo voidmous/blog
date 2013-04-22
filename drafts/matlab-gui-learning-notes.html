@@ -88,18 +88,18 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <div class="section" id="gui1">
 <h2>GUI1</h2>
 <p><code>figure</code> 命令创建一个空白窗口，<code>uicontrol</code> 创建一个控件，并由 <code>style</code> 属性控制控件类型。代码示例：</p>
-<div class="highlight"><pre><span class="n">S</span><span class="p">.</span><span class="n">fh</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;pixels&#39;</span><span class="p">,...</span>
-             <span class="s">&#39;position&#39;</span><span class="p">,[</span>500 500 200 260<span class="p">],...</span>
-             <span class="s">&#39;menubar&#39;</span><span class="p">,</span><span class="s">&#39;none&#39;</span><span class="p">,...</span>
-             <span class="s">&#39;name&#39;</span><span class="p">,</span><span class="s">&#39;GUI_1&#39;</span><span class="p">,...</span>
-             <span class="s">&#39;numbertitle&#39;</span><span class="p">,</span><span class="s">&#39;off&#39;</span><span class="p">,...</span>
+<div class="highlight"><pre><span class="n">S</span><span class="p">.</span><span class="n">fh</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;pixels&#39;</span><span class="p">,</span><span class="c">...</span>
+             <span class="s">&#39;position&#39;</span><span class="p">,[</span><span class="mi">500</span> <span class="mi">500</span> <span class="mi">200</span> <span class="mi">260</span><span class="p">],</span><span class="c">...</span>
+             <span class="s">&#39;menubar&#39;</span><span class="p">,</span><span class="s">&#39;none&#39;</span><span class="p">,</span><span class="c">...</span>
+             <span class="s">&#39;name&#39;</span><span class="p">,</span><span class="s">&#39;GUI_1&#39;</span><span class="p">,</span><span class="c">...</span>
+             <span class="s">&#39;numbertitle&#39;</span><span class="p">,</span><span class="s">&#39;off&#39;</span><span class="p">,</span><span class="c">...</span>
              <span class="s">&#39;resize&#39;</span><span class="p">,</span><span class="s">&#39;off&#39;</span><span class="p">);</span>
 
-<span class="n">S</span><span class="p">.</span><span class="n">ls</span> <span class="p">=</span> <span class="n">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;list&#39;</span><span class="p">,...</span>
-             <span class="s">&#39;unit&#39;</span><span class="p">,</span><span class="s">&#39;pix&#39;</span><span class="p">,...</span>
-             <span class="s">&#39;position&#39;</span><span class="p">,[</span>10 60 180 180<span class="p">],...</span>
-             <span class="s">&#39;min&#39;</span><span class="p">,</span>0<span class="p">,</span><span class="s">&#39;max&#39;</span><span class="p">,</span>2<span class="p">,...</span>
-             <span class="s">&#39;fontsize&#39;</span><span class="p">,</span>14<span class="p">,...</span>
+<span class="n">S</span><span class="p">.</span><span class="n">ls</span> <span class="p">=</span> <span class="n">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;list&#39;</span><span class="p">,</span><span class="c">...</span>
+             <span class="s">&#39;unit&#39;</span><span class="p">,</span><span class="s">&#39;pix&#39;</span><span class="p">,</span><span class="c">...</span>
+             <span class="s">&#39;position&#39;</span><span class="p">,[</span><span class="mi">10</span> <span class="mi">60</span> <span class="mi">180</span> <span class="mi">180</span><span class="p">],</span><span class="c">...</span>
+             <span class="s">&#39;min&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;max&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="c">...</span>
+             <span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="c">...</span>
              <span class="s">&#39;string&#39;</span><span class="p">,{</span><span class="s">&#39;one&#39;</span><span class="p">;</span><span class="s">&#39;two&#39;</span><span class="p">;</span><span class="s">&#39;three&#39;</span><span class="p">;</span><span class="s">&#39;four&#39;</span><span class="p">});</span>
 </pre></div>
 <p>窗口或控件位置与大小由 <code>position</code> 控制，例如： <code>'position',[500 500 200 260]</code> ，其中前两个数控制窗口或空间的左下角坐标，后两个控制其大小。窗口位置总是相对于屏幕左下角计算的，而控件则相对窗口左下角计算。 控件的动作触发的函数由 <code>callback</code> 属性定义，例如：<code>'callback',{&#64;pb_call,S}</code> 。</p>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>幻空轩</title><link href="http://www.joshuazhang.info/" rel="alternate"></link><link href="http://www.joshuazhang.info/feeds/IT%E6%8A%80%E6%9C%AF.atom.xml" rel="self"></link><id>http://www.joshuazhang.info/</id><updated>2012-08-30T20:02:00+02:00</updated><entry><title>wordpress数据库优化记录</title><link href="http://www.joshuazhang.info/posts/2012/Aug/wp-database-optimization.html" rel="alternate"></link><updated>2012-08-30T20:02:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-08-30:posts/2012/Aug/wp-database-optimization.html</id><summary type="html">&lt;p&gt;前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。&lt;/p&gt;
+&lt;p&gt;基本流程如下：&lt;/p&gt;
+&lt;p&gt;1、备份。做任何数据库操作前，做一个临时备份都是必要的。使用phpmyadmin按默认设置导出sql文件下载到本地即可。&lt;/p&gt;
+&lt;p&gt;2、删除不必要的插件。不必要的插件应当越少越好，尤其是会写入数据库或者查询数据库的插件。比如我之前使用过的&lt;a class="reference external" href="http://www.6psp.cn/20100917/statpresscn%E6%8F%92%E4%BB%B6%E9%80%A0%E6%88%90%E5%8D%9A%E5%AE%A2%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%EF%BC%8C%E8%B5%B6%E5%BF%AB%E5%88%A0%E9%99%A4.html"&gt;statpresscn&lt;/a&gt;，这个插件会在数据库中建立一个庞大的wp_statpresscn表，虽然没有前台查询，不过它造成的数据库冗余带来的坏处可远远大于统计功能带来的便利，所以还是删了吧。&lt;/p&gt;
+&lt;p&gt;3、删除垃圾数据表。功能比较复杂的插件可能会在数据库中建立新表，删除插件一般不会把这些表顺带删除，所以手动排查垃圾数据表也是必要的。为了防止误删，请一定对照WP
+Codex的&lt;a class="reference external" href="http://codex.wordpress.org/zh-cn:%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0"&gt;数据库描述&lt;/a&gt;进行修改。&lt;/p&gt;
+&lt;p&gt;删除akismet垃圾数据。关于akismet如何产生这些数据可以参考&lt;a class="reference external" href="http://www.solagirl.net/wp-commentmeta-slowing-down-your-blog.html"&gt;wp_commentmeta是否正在拖慢你的blog&lt;/a&gt;。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;delete&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;wp_commentmeta&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt; &lt;span class="n"&gt;meta_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;akismet_as_submitted&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="n"&gt;meta_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;akismet_history&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="n"&gt;meta_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;akismet_rechecking&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="n"&gt;meta_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;akismet_result&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="n"&gt;meta_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;akismet_user&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="n"&gt;meta_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;akismet_user_result&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;wp_options数据表清理。主要有两部分垃圾数据：其一、已删除的插件选项。大部分插件都不提供完全的删除功能，主要就是针对数据表而言。由于不清楚数据和插件的对应关系，最好不要盲目删除，如果一定要清理，可以尝试用&lt;a class="reference external" href="http://www.mittineague.com/dev/co.php"&gt;clean
+options&lt;/a&gt;插件，注意备份！其二、没用的RSS Feed
+Cache。以“_transient”开头的数据都是因为用了RSS小工具产生的，作用不大，体积却不小。可以用下面的SQL语句删除：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;DELETE&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;wp_options&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;option_name&lt;/span&gt; &lt;span class="n"&gt;REGEXP&lt;/span&gt; &lt;span class="err"&gt;&amp;quot;&lt;/span&gt;&lt;span class="n"&gt;_transient_&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;4、优化数据表。最后还要利用phpmyadmin执行优化数据表，体积还会有所减小。&lt;/p&gt;
+</summary><category term="WordPress"></category><category term="优化"></category><category term="数据库"></category></entry><entry><title>几款云存储服务比较</title><link href="http://www.joshuazhang.info/posts/2012/Apr/cloud-storage-comparison.html" rel="alternate"></link><updated>2012-04-13T02:29:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-04-13:posts/2012/Apr/cloud-storage-comparison.html</id><summary type="html">&lt;p&gt;所谓云存储服务，通俗点说就是网盘啦。不过现在各种免费网盘的服务其实并不仅限于存储，社交分享、同步备份都是很常见的功能，所以用云的概念可能更加合适（现在还称不上真正的云，但是趋势已经可以看出来了）。我个人用过国内国外的几个云存储服务，现在拿它们比较一番，顺便思考下云时代，什么样的存储才是我们（起码是我）真正所需的。&lt;/p&gt;
+&lt;p&gt;首先还是把范围确定，我所说的云存储并非Rapidshare，hotfile，城通网盘此类以快速文件分享作为主打功能的网盘，而是指具备同步功能以打造用户的私有资料、信息云为目标的网盘。这样的概念可能有点泛，现在的网络存储基本都还没实现这样的目标，但是是否具备这样的野心还是可以看出来的。&lt;/p&gt;
+&lt;p&gt;再来分析下必要的功能需求（此处仅对我而言）：&lt;/p&gt;
+&lt;p&gt;同步功能。这是目前而言最重要也是最差异化的功能。对我这样寝室、实验室两头跑的人来说，用U盘可不是什么方便的事情，有同步功能我就可以在两头处理同一个文件而不用把工作地点锁定在某一个地方。同时，有一份网络备份可比什么U盘备份强。&lt;/p&gt;
+&lt;p&gt;分享功能。这个我认为是从网盘时代遗传下来的功能，我个人并不常用，但是它也是不可或缺的，因为以此途径发布文件是最简单的事情，虽然目前暂时我没有这方面的需求。&lt;/p&gt;
+&lt;p&gt;多平台共享。现在电子设备越来越多，操作系统也五花八门，兼顾主流平台应该是必须的。不过对于我而言，Linux平台的支持非常重要，尽管它并非主流。&lt;/p&gt;
+&lt;p&gt;下面我简单比较下几个云存储服务：&lt;/p&gt;
+&lt;p&gt;1、&lt;a class="reference external" href="https://www.dropbox.com/"&gt;Dropbox&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Dropbox作为这个方面的老大是当仁不让的，当然我有充足的理由。首先Dropbox的同步稳定性非常好，不会出现同步出错的情况，这说明它的同步管理机制十分优秀。同时，Dropbox专注于同步存储功能的优化，一些细化的功能往往最先在Dropbox上产生，比如选择同步机制。Dropbox并非不注重分享和功能的扩展，实际上，作为国外老牌的服务，dropbox早已经渗透进各式各样的集成服务中，比如这篇《&lt;a class="reference external" href="http://www.williamlong.info/archives/2044.html"&gt;Dropbox免费网盘高级使用技巧&lt;/a&gt;》和《&lt;a class="reference external" href="http://lusongsong.com/info/post/106.html"&gt;Dropbox有哪些另类应用？&lt;/a&gt;》应该可以给人不少启发，原来网盘还可以这样用（国内的服务还没法这样应用）！我自己就用Dropbox作为博客的备份空间，使用Wordpress插件&lt;a class="reference external" href="http://backwpup.com/"&gt;BackWPup&lt;/a&gt;就可以实现。Dropbox提供了这么优秀的服务，同时它还原生支持Linux平台，怎么能不让人心动呢。&lt;/p&gt;
+&lt;p&gt;当然由于某些众所周知的原因，国内如果想体验这么优秀的服务是需要花&lt;a class="reference external" href="http://www.williamlong.info/archives/2585.html"&gt;一些周章&lt;/a&gt;的，但是我可以担保，如果你愿意有一些初期的投入，那么你后期的回报会是相当可观的。通过&lt;a class="reference external" href="http://db.tt/xGiyH7Ef"&gt;我的邀请链接&lt;/a&gt;开始吧。&lt;/p&gt;
+&lt;p&gt;2、&lt;a class="reference external" href="http://www.yun.io/"&gt;Yunio&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;国内最先支持Linux的云存储服务（比坚果发布还要早）。这是我目前主力的存储服务。当然它相比于Dropbox惟一的优点就在于它位于国内，速度让人满意，同时它的初始免费空间相对较大，对于新用户比较友好。当然它还是有一些不让人满意的地方，比如会出现同步冲突的情况，这时候它会自动生成冲突文件的一个备份，那么你可能需要手动删除。不过这种情况多发生在你对文件存在频繁读写的情况下（我在某段时间内曾用Yunio同步firefox的profile，现在不需要了，因为firefox已经内置同步功能），一般的文件读写还是很稳定的。所以，如果你需要Linux平台支持，同时对Dropbox的强大和困境不感冒，那么我推荐你使用Yunio，从&lt;a class="reference external" href="http://www.williamlong.info/archives/2044.html"&gt;我的邀请链接&lt;/a&gt;开始吧。&lt;/p&gt;
+&lt;p&gt;3、&lt;a class="reference external" href="https://jianguoyun.com"&gt;坚果云&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;坚果云官网其实早已经搭建好了，但是一直都未发布，内测了相当长时间，而一发布就宣布支持Linux，这当然对Linuxer而言是绝好的消息。从他们的做事风格来看，用户体验和需求是他们的最终追求，所以我还是很看好这个团队，善用佳软也在&lt;a class="reference external" href="http://xbeta.info/jianguo.htm"&gt;关注他们&lt;/a&gt;。他们提供的云存储也很别具一格，在其它云存储都以超大的免费空间作为卖点的时候，他们却不走寻常路：限流量不限空间。如果你的ISP对你限流量不限带宽你可能会抓狂，那么免费的云存储呢？该团队对这个的解释是想把坚果云打造成“数据保险柜”，而非“临时货仓”。这个理念应该说是很前卫的，用免费服务来打造收费品质，这对于一个小型企业而言很有挑战，如果你支持这种勇气，那么你可以通过&lt;a class="reference external" href="https://jianguoyun.com/d/ref/SZidYrFINROTwjEBjbi0jw"&gt;我的邀请链接&lt;/a&gt;来支持他们。&lt;/p&gt;
+&lt;p&gt;4、&lt;a class="reference external" href="http://www.kuaipan.cn/"&gt;金山快盘&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;金山作为国内数一数二的软件公司，目前也一头扎入了“云海”中。从金山一贯的服务品质历史你可以对他们的产品抱有绝对的信心（最近的WPS
+for
+Linux更是给众Linuxer打了一记强心针），从我自己使用的情况看来确实如此。它的优势就在于金山打造的云服务体系，配合金山快写你完全可以把它打造成一个在线文档编辑平台。金山快盘一直都在进步，起码在Windows平台上国内的产品我认为他们已经做到最好了，如果你喜欢Windows平台，那么我推荐金山快盘，从&lt;a class="reference external" href="http://www.kuaipan.cn/index.php?ac=account&amp;amp;op=register&amp;amp;channel=m1xnys"&gt;我的邀请链接&lt;/a&gt;进入吧。&lt;/p&gt;
+&lt;p&gt;5、其它网盘&lt;/p&gt;
+&lt;p&gt;国内网盘最近如雨后春笋般冒出头来，不能不说是广大消费者的福音，我们可能多了选择的困惑，但是没有了选择我们就走入困境了。对于我上面没提到的云存储服务，并非它们做得不好（当然不能说它们做到了一流），只是含有某些方面的欠缺，起码不符合我现有的需求和标杆，但是它们不一定不适合你，只有你自己真正用过某个产品，你才拥有评判的权利，我对这些网盘用得不多，就不误人子弟了。&lt;/p&gt;
+</summary><category term="Dropbox"></category><category term="云存储"></category><category term="同步"></category><category term="比较"></category></entry><entry><title>Linux帮助系统常见技巧</title><link href="http://www.joshuazhang.info/posts/2012/Apr/linux-manual.html" rel="alternate"></link><updated>2012-04-04T08:55:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-04-04:posts/2012/Apr/linux-manual.html</id><summary type="html">&lt;p&gt;Linux下命令实在太多，学习命令行最佳途径当然是通过手册（manual），新手对帮助系统有所了解可以更快地上手Linux基本管理操作。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;man cmdname&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这是最基本的用法了，也是最有效的方法。man
+page主要是面向unix程序员，因此事无巨细，对于常见的操作其实并不需要细看，了解书写格式，挑出几个选项就可以了。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;cmdname --help或者cmdname -h&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相比上一条，这个对于新手更加适用，因为它只显示最常用的选项，文字也更精简，真正可以让你快速参考。另外还要说明的是，许多打包的可执行安装文件都可以用这条命令显示安装帮助，如一些后缀名为bin或者run的文件，在安装前有必要阅读一下。这条命令只能作用于外部命令，shell内部命令无法使用（虽然还是有输出文字）。判断一条命令是外部或者内部命令，可以用type
+cmdname查询某个命令或者help查看所有内部命令。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;whatis cmdname&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;whatis命令显示的其实是manpage的名称一栏的注释，你可以试试man
+whatis和whatis
+whatis看看区别所在。如果只是想简单了解某条命令的用处，用whatis就再合适不过了。（whatis
+man会出现三个带选项的man命令，为什么？）&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;info cmdname&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;info命令显示的帮助更加详尽，信息量更大，同时界面更加友好。不过不怎么常用&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;manual系统&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每个命令的manpages其实包括8个章节，它们包括不同的内容，如下表：&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="10%" /&gt;
+&lt;col width="27%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;col width="17%" /&gt;
+&lt;col width="17%" /&gt;
+&lt;col width="17%" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;章节&lt;/td&gt;
+&lt;td&gt;描述&lt;/td&gt;
+&lt;td&gt;普通用户&lt;/td&gt;
+&lt;td&gt;软件开发人员&lt;/td&gt;
+&lt;td&gt;文档组织人员&lt;/td&gt;
+&lt;td&gt;系统管理人员&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;用户命令&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;系统调用&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;语言函数库调用&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;设备和网络界面&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;文件格式&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;游戏和示范&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;troff的环境、表格和宏&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;关于系统维护的命令&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;✓&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;9&lt;/td&gt;
+&lt;td&gt;其它&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;在不同需求的情况下应当查看不同的章节，要查看指定的章节可以用man -sx
+cmdname或者man x cmdname，其中x为章节对应的数字。比如查看库函数man -s3
+open。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;常用快捷键&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;快捷键帮助h(man状态下)&lt;/p&gt;
+&lt;p&gt;退出q&lt;/p&gt;
+&lt;p&gt;下一屏space或者f(forward)，上一屏b(backward)&lt;/p&gt;
+&lt;p&gt;下一行j，上一行k&lt;/p&gt;
+&lt;p&gt;前向搜索/pattern，反向搜索?pattern&lt;/p&gt;
+&lt;p&gt;下一个匹配n，上一个匹配N&lt;/p&gt;
+&lt;p&gt;风格其实和vim相似，比如Ctrl+f也是下一页。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;man目录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;/usr/share/doc/man/&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;中文manpages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/lidaobing/manpages-zh"&gt;manpages-zh项目&lt;/a&gt;，安装后即可查看常用命令的中文manpage，不过似乎中文排版有点问题，看起来有点丑陋。&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;彩色manpage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;黑底白色的大量文字看久了很累，可以考虑自定义彩色的manpage，编辑～/.bashrc：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# colorful man page&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;`which less` -s&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;BROWSER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$PAGER&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_mb&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[01;34m&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_md&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[01;34m&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_me&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[0m&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_se&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[0m&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_so&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[01;44;33m&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_ue&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[0m&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_us&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[01;33m&amp;#39;&lt;/span&gt;这样一个简单可用的彩色manpage就搞定了，当然你也可以自己参照修改。
+&lt;/pre&gt;&lt;/div&gt;
+</summary><category term="Linux"></category><category term="man"></category><category term="技巧"></category></entry><entry><title>Archlinux下编译Audacious(cue、ape支持)</title><link href="http://www.joshuazhang.info/posts/2012/Mar/archlinux-audacious.html" rel="alternate"></link><updated>2012-03-20T16:25:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-03-20:posts/2012/Mar/archlinux-audacious.html</id><summary type="html">&lt;ul class="simple"&gt;
+&lt;li&gt;首先安装需求：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Glib 2, GTK+ 2, Pango, Cairo, libmcs(AUR), libmowgli(AUR)&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;为了支持cue，还需要安装libcue&lt;/li&gt;
+&lt;li&gt;下载audacious源码包与插件包： &lt;a class="reference external" href="http://audacious-media-player.org/download"&gt;下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;解压audacious源码包，然后常规三步曲&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;./configure
+&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;再解压audacious插件源码包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;此时直接configure会出错，错误提示：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+checking for AUDACIOUS... no
+configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
+&lt;/pre&gt;
+&lt;p&gt;根据google到的方法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PKG_CONFIG_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/lib/pkgconfig:&lt;span class="nv"&gt;$PKG_CONFIG_PATH&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/lib:&lt;span class="nv"&gt;$LD_LIBRARY_PATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;后续问题：
+ape不支持，dts不支持&lt;/p&gt;
+</summary><category term="Archlinux"></category><category term="audacious"></category><category term="编译"></category></entry><entry><title>我的Firefox扩展总结</title><link href="http://www.joshuazhang.info/posts/2012/Mar/firefox-addon.html" rel="alternate"></link><updated>2012-03-01T13:50:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-03-01:posts/2012/Mar/firefox-addon.html</id><summary type="html">&lt;p&gt;一、浏览优化类&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Adblock Plus&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 清除广告就靠它了。&lt;/li&gt;
+&lt;li&gt;AutoPager
+自动翻页。不想成为鼠标手？该插件必装。&lt;/li&gt;
+&lt;li&gt;Flashblock
+加快网页加载速度，屏蔽恼人的flash广告和自动播放功能&lt;/li&gt;
+&lt;li&gt;GreaseMonkey&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 用脚本实现对个别站点的自定义配置&lt;/li&gt;
+&lt;li&gt;Stylish
+与GreaseMonkey类似，自定义CSS。GR的新界面很低效，配合该插件可以完美解决。&lt;/li&gt;
+&lt;li&gt;iReader
+重新布局文章，优化浏览体验。较少适用，需要网页符合规范。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;二、下载工具类&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;DownThemAll
+坚守FF的原因之一，非常稳定高速的下载体验&lt;/li&gt;
+&lt;li&gt;DownloadStatusbar&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 下载状态查看，必备的基本扩展&lt;/li&gt;
+&lt;li&gt;NetVideoHunter&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 在线视频下载利器&lt;/li&gt;
+&lt;li&gt;FlashVideoDownloader
+除了下载视频外，更强大的地方在于可以下载flash&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;三、云同步类&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Xmarks&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 一流的书签管理，多浏览器同步&lt;/li&gt;
+&lt;li&gt;LastPass
+Xmarks的兄弟产品，在线密码管理，简化登录步骤&lt;/li&gt;
+&lt;li&gt;ReadItLater
+一键收藏，想快速离开电脑回到工作，必备扩展&lt;/li&gt;
+&lt;li&gt;Evernote Web Clipper&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Evernote是最强大的PKM软件，没有之一&lt;/li&gt;
+&lt;li&gt;Delicious Bookmarks&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 书签分享，社交功能强大&lt;/li&gt;
+&lt;li&gt;Gmarks
+Google书签产品，某些方面输于Delicious&lt;/li&gt;
+&lt;li&gt;SpringPad&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 类似Evernote的PKM服务&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;四、工具类&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Firebug
+试用过几次，非常强大的网页调试工具&lt;/li&gt;
+&lt;li&gt;ScribeFire
+博客发布工具，目前跨平台博客发布工具首选&lt;/li&gt;
+&lt;li&gt;AutoProxy&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 代理工具，易用而强大&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;</summary><category term="Firefox"></category><category term="总结"></category><category term="扩展"></category></entry><entry><title>ArchLinux入门浅谈</title><link href="http://www.joshuazhang.info/posts/2012/Feb/archlinux-intro.html" rel="alternate"></link><updated>2012-02-24T12:43:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-02-24:posts/2012/Feb/archlinux-intro.html</id><summary type="html">&lt;p&gt;这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。&lt;/p&gt;
+&lt;div class="section" id="arch"&gt;
+&lt;h2&gt;为什么用Arch？&lt;/h2&gt;
+&lt;p&gt;这方面的文章相当多，一搜一大把，我就不做什么总结发言了，写几点自己的想法。其实弊人最早接触的linux发行版是ubuntu和debian，当时ubuntu很被看好，不过还没流行到现在这个程度。那是我第一次被一个完全免费而且漂亮的东西打动了，期间零零碎碎玩过几次系统，但是由于技术水平有限，一直玩得不怎么顺手。直到最近，我开始越来越讨厌windows的臃肿庞大和功利，希望能够转移到linux平台上，把windows作为对“现实世界的妥协”。虽然debian也是很出色的系统，但是显然它和windows相同的特点就是较为臃肿，杂七杂八的东西自带一大堆（我不很清楚debian有没有精简定制的可能性）。出于这点考虑，我也玩过几天的LFS，注意，我当时不过装过几次linux，断断续续看过linux书籍的几个章节而已，可以想象当时我是怎样的抓耳挠腮吧^_^。当然这次实验以失败告终，我只能继续寻找能让自己足够满意的系统，终于，ArchLinux进入了我的视线。在我看来，Arch有以下几个特点是让我欲罢不能的：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;极大的定制性。虽然比不上LFS完全的定制性，但是在学习成本上要降下不少，而且LFS对于不致力于研究Linux架构的人似乎没什么必要。&lt;/li&gt;
+&lt;li&gt;Pacman和AUR。Gentoo似乎也可以定制，但是每个软件都要编译对于我这样的新手而言那就是上刀山下火海。。。&lt;/li&gt;
+&lt;li&gt;完善的文档。我没有接触过其他Linux发行版的文档，无法横向对比，但是就我使用的情况而言，wiki组织得很有条理，细节也非常清楚，如果你带有学习的心态，那么Arch不会让你失望。（这里有一个&lt;a class="reference external" href="http://www.cyberciti.biz/tips/linux-unix-bsd-documentations.html"&gt;比较&lt;/a&gt;，Arch的文档居然拍第二）&lt;/li&gt;
+&lt;li&gt;搭积木。既然是“玩”Linux，那么从无到有是最让人兴奋的，相比有些发行版直接向你展示一个半成品，自己从基础开始搭建出一幢大楼会让人充满成就感。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;个人的使用感受就是如此，技术层面我暂时还说不出什么更深的东西，Linux是需要积累的。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;如何入门？&lt;/h2&gt;
+&lt;p&gt;虚拟机是必要的。即使你有一定的Linux基础，仍然需要在虚拟环境下感受一下整个的组装过程，同时考虑可能碰到的问题和解决方案并做好记录（关键问题记录即可，不需要事无巨细，下面会谈到）。&lt;/p&gt;
+&lt;p&gt;当然实际的安装更加必要，尤其是设计到驱动和X的部分，很有可能你就会在这儿倒下。&lt;/p&gt;
+&lt;p&gt;不同于某些流行的发行版，Arch没有什么书籍可以参考，如果一定要说有的话也只有这本&lt;a class="reference external" href="http://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=7&amp;amp;ved=0CGIQFjAG&amp;amp;url=http%3A%2F%2Ftuxweet.linux.org.tr%2Fgetfile%2Fpid%3Apublic_250721%2Farch.pdf&amp;amp;ei=gHZHT5_eM62tiQel09SnDg&amp;amp;usg=AFQjCNH7_1Q5VGEdo98g8prZra0-D5msFw&amp;amp;sig2=3SPyg8TUbP0d6IBaY0G4DQ"&gt;Arch Linux Handbook&lt;/a&gt;。但是我们应当注意到这本书发布于2009年，由于Arch更新地非常快，因此书中很多内容已经不符合现在的情况，过程虽然相似，但是如果在细节上马虎，那么很有可能出现难以解决的问题（对于从地基开始搭建的系统更是如此）。所以这本书仅能作为参考，千万不能如标题所言作为手册。&lt;/p&gt;
+&lt;p&gt;中文资料也有不少，主要是网页，最经典的是&lt;a class="reference external" href="http://linuxtoy.org/archives/the-perfect-linux-desktop-arch-linux-2007-08-2-1.html"&gt;打造完美的 Linux 桌面&lt;/a&gt;，同样的，里面的某些命令也严重过时。&lt;/p&gt;
+&lt;p&gt;不要沮丧，初学者应当坚定一个信念，最好的文档就是官方wiki，它由最活跃的Arch用户打造，实时性、正确性都有保障，应当作为我们的最权威指南。里面大部分是英文，部分有中文（这里提一下，部分页面中文翻译相对英文原文有延时，如果参考中文手册出现问题，建议参考英文），玩Linux就应该做好挑战自己英语水平的准备，呵呵。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;如何使用手册？&lt;/h2&gt;
+&lt;p&gt;这个问题困扰了我很久，虽然我有两台电脑可以自由使用，但是它们在空间上相距太远，无法做到让我边安装边参考。我也想过将wiki打印出来，但是在最初的安装中发现打印的总是不够，你需要不停地链接到其它文章，所以只能作罢（当然如果你熟练了，那么需要参考的文章就少了，但那就不是入门者的问题了）。&lt;/p&gt;
+&lt;p&gt;这个问题在安装基本系统时最为突出，因为一旦装好了GUI和网络驱动，那你可以方便地在浏览器中参考，但是如果GUI安装出现问题那就相当麻烦（网络有问题那安装arch就没啥意义了，除非你只需要基本工具），总不能重启切到windows搜索再来吧？&lt;/p&gt;
+&lt;p&gt;实际上这个问题Arch的维护人员早就替你解决了，这主要分两个阶段：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;安装基本系统时。如果你足够细心，那么你会看到Arch的提示，在Arch的ISO文件里就存了一份最新的Offical Installation Guide en，位于/usr/share/aif/docs/official_installation_guide_en，用vi或者nano打开即可。你可能会问，我打开了文档那我怎么继续安装呢？不要忘了，Linux有多个终端，你可以Ctrl+ALT+F2在第二个终端看文档，再Ctrl+ALT+F1切换会终端1,还可以用ALT+F7看安装实时日志，现在知道Linux多用户终端的好处了吧。&lt;/li&gt;
+&lt;li&gt;配置系统GUI时。这个时候初学者如果手头没有参考手册，面对黑压压的终端完全无从操作。这时只要你网络配置正常，那么你照样可以参考wiki。当然这时是没法用Firefox或者Chrome的，但我们有lynx，它是一个终端的网络浏览器，支持在字符界面下查看网页或者上网（直接用pacman命令安装），为了效率考虑，我们直接把wiki下载下来，而不要去上网刷新了。这同样很简单：&lt;tt class="docutils literal"&gt;pacman &lt;span class="pre"&gt;-S&lt;/span&gt; &lt;span class="pre"&gt;arch-wiki-docs&lt;/span&gt; &lt;span class="pre"&gt;arch-wiki-lite&lt;/span&gt;&lt;/tt&gt;。其中arch-wiki-docs是网页，arch-wiki-lite是文本，推荐用lynx浏览网页版（因为在字符终端下有高亮，Geek味马上就来了！）。PS：安装后直接打开/usr/share/doc/arch-wiki/html/index.html就可以了，lynx有搜索功能，非常实用。同样的你也需要在不同终端下切换文档和工作空间。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;有了这个工具，安装过程就不再黑暗，我甚至都不想切到图形界面去了^_^（有zhcon这还真没有什么难的）。只要善用该方法，安装Arch时不再需要大量的文档准备工作，只要对目标配置了解即可，边参考边装系统，多装几遍自然就熟悉了，除了重要的问题做点记录外，基本不需要准备小本子了。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;如何找到适合的软件？&lt;/h2&gt;
+&lt;p&gt;Arch默认的包管理工具是pacman，主要有两个配置文件：/etc/pacman.conf和/etc/pacman.d/mirrorlist。pacman可以安装的软件可以到&lt;a class="reference external" href="http://www.archlinux.org/packages"&gt;这里&lt;/a&gt;搜索。AUR包含的软件可以到&lt;a class="reference external" href="https://aur.archlinux.org"&gt;这里&lt;/a&gt;搜索。应当善用这两个搜索，当然你也可以命令行方式搜索，不过要注意源的配置。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;学习什么？&lt;/h2&gt;
+&lt;p&gt;不同Linux有不同特点，这些特点决定了用户在该发行版下大量的时间在干什么，比如Ubuntu用于娱乐，Debian用于编程，Gentoo用于管理服务器。对我而言，学习Linux主要目的在于熟悉工作平台，写LaTeX文档以及偶尔编程（当前的目标），所以折腾X和软件（Arch高度的定制性保证了我可以方便地折腾各种WM和DE）、提高LaTeX水平以及Matlab和C语言编程是我可以着力的方向。当然，适当的娱乐同样需要，Mplayer的使用以及Wine平台都需要了解。&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="Archlinux"></category><category term="wiki"></category><category term="入门"></category><category term="安装"></category><category term="手册"></category><category term="技巧"></category></entry><entry><title>Google Reader使用技巧</title><link href="http://www.joshuazhang.info/posts/2012/Feb/google-reader-tips.html" rel="alternate"></link><updated>2012-02-18T16:14:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-02-18:posts/2012/Feb/google-reader-tips.html</id><summary type="html">&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Google Reader
+确实是一个不可多得的服务，我用上GR没几天已经爱不释手了。GR非常容易上手，但是要玩转GR，没有使用经验的积累是不可能的，下面我就列举一些自己在
+使用GR过程中体会到的一些技巧，既是自己知识的整理过程，也是一个温故知新的过程。当然，这里面有我自己的心得，不可避免的也有从搜索得来的知识，来源
+较多，恕不列明。&lt;/p&gt;
+&lt;p&gt;一、访问技巧&lt;/p&gt;
+&lt;p&gt;1、HTTP vs HTTPS
+HTTP和HTTPS的区别从技术层面来说那是可以长篇大论的，通俗的理解就是后者是前者的加密版。应用
+HTTPS，用户和网站之间的交互难以被简单地分析或窃取。由于功夫网的强大，HTTP和HTTPS享受着不同的待遇，Google许多的服务在HTTP
+下时常会被reset（如果你没碰到过那你确实太河蟹了），而HTTPS就要好很多。这是因为HTTP的明文传输会被轻易地检索到敏感词，访问被拒绝。当
+然，魔高一尺，道高一丈，HTTPS也并非万能的，不过在现今的网络环境下，HTTPS应当是我们体验Google强大服务的首选。&lt;/p&gt;
+&lt;p&gt;2、IPv4 VS IPv6&lt;/p&gt;
+&lt;p&gt;Google的IPv4地址很多，但是仍然饱受GFW骚扰，IPv6是下一代的IP分配方案，已经在大学间普及。教育网的用户使用IPv6访问Google是相当方便的，强烈推荐。&lt;/p&gt;
+&lt;p&gt;二、快捷键技巧&lt;/p&gt;
+&lt;p&gt;GR每天都会更新上百条新文章，如果我一条一条地点开看，不知道会是我的
+DeathAdder先坏还是我的食指先坏。让人欣慰的是，Google
+Reader是支持快捷键的，而且显然这些快捷键是精心设计过的，谁用谁知道~&lt;/p&gt;
+&lt;p&gt;1、GR的快捷键很多，但是最重要的只有一条，那就是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;strong&gt;?：快捷键帮助&lt;/strong&gt;&lt;/blockquote&gt;
+&lt;p&gt;只要你记住了这一条，并且不断查阅，GR的快捷键就可以迅速掌握。&lt;/p&gt;
+&lt;p&gt;2、视图 GR的条目有两种视图模式，用1和2两个快捷键可以切换：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;1:切换至扩展视图（全文列表）&lt;/li&gt;
+&lt;li&gt;2:切换至列表视图（摘要列表）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;3、跳转&lt;/p&gt;
+&lt;p&gt;这是GR最基本的操作之一，GR起码有3个快捷键可以实现，它们分别是:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;空格：下一个条目或页面&lt;/li&gt;
+&lt;li&gt;j/k：下一个/上一个条目&lt;/li&gt;
+&lt;li&gt;n/p：向下/向上扫描条目（仅列表）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;三者的区别也很明显：空格是智能跳转，GR会判断当前需要跳转内容还是跳转条目，j/k是全文跳转，n/p则是条目间跳转。空格显然是多数情况下最佳的选择。&lt;/p&gt;
+&lt;p&gt;很多情况下我们需要跳转到原文以看到更多信息，快捷键为：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;v：查看原始内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GR会在新页面开启原文网页，新手又有问题了，那我怎么返回GR呢，难道又得把手移到鼠标去操作？这也太没效率了。实际上，这里附送两个浏览器通用标签快捷键（至少FF，Chrome和IE测试可用）：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Ctrl+TAB：切换标签（再加上Shift可以往回切换）&lt;/li&gt;
+&lt;li&gt;Ctrl+W：关闭当前标签&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;怎么样？有了这两个快捷键，我们的操作就不会被打乱了。&lt;/p&gt;
+&lt;p&gt;4、阅读
+信息时代阅读越来越浅，很多内容我们都是一扫而过，实际上很多网文还是需要仔细地品味的。如果我们要认真阅读，但是GR的侧边栏和标题总是会让我们分心，怎么办？贴心的Google为我们带来两个快捷键解决这个问题：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;u：隐藏/取消隐藏左侧模块&lt;/li&gt;
+&lt;li&gt;f：切换至全屏模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;笔者更常用f，看到精美的文章，f键切换到全屏就可以慢慢地观看了。如果搭配Firefox或者Chrome，默认的阅读空间就很大了，全屏后更加清爽。&lt;/p&gt;
+&lt;p&gt;三、订阅&lt;/p&gt;
+&lt;p&gt;互联网如此浩瀚，没人敢说自己了解了其中的千分之一，总有无数的好网站在你眼前错过，好的RSS源也是如此。那么如何发现好的订阅源？Google当然替你想到了，GR探索里面就推荐了不少好的源，你也可以搜索到自己想要关注的东东。GR甚至还会根据你已经订阅的源分析你的喜好然后推荐你可能会喜欢的源，根据我的经验，这些推荐都值得一看。&lt;/p&gt;
+&lt;p&gt;很多网站只提供摘要RSS，老让我们快捷键跳过去再切回来太蛋疼了，于是各种全文RSS转换工具应运而生。我用过的工具也不多，但是有几个转换引擎值得推荐:&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://fulltextrssfeed.com"&gt;FullText Rss Feed&lt;/a&gt;（第一推荐，似乎没有失手过，中文支持完美）&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://mrss.dokoda.jp/"&gt;mrss.dokoda.jp&lt;/a&gt;（用得较少，但是还可以）&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://fivefilters.org/content-only/"&gt;fivefilters.org&lt;/a&gt;（转收费了，免费限制较多，其它工具也可以一看）&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><category term="Google Reader"></category><category term="快捷键"></category><category term="技巧"></category></entry><entry><title>LaTeX for Pelican 测试</title><link href="http://www.joshuazhang.info/posts/2012/Feb/latex-pelican.html" rel="alternate"></link><updated>2012-02-18T05:48:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.info,2012-02-18:posts/2012/Feb/latex-pelican.html</id><summary type="html">&lt;p&gt;本文主要用于测试Pelican与MathJax配合显示数学公式&lt;/p&gt;
+&lt;p&gt;毕达哥拉斯定理： &lt;span class="math"&gt;\(a^2+b^2=c^2\)&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;正态分布： &lt;span class="math"&gt;\(f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\)&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;傅里叶变换： &lt;span class="math"&gt;\(F\left(\omega\right)=\mathcal{F}\left[f(t)\right]=\int_{-\infty}^{\infty}e^{-i\omega
+t}dt\)&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;傅里叶逆变换： &lt;span class="math"&gt;\(f\left(t\right)=\mathcal{F}^{-1}\left[F\left(\omega\right)\right]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F\left(\omega\right)e^{i\omega t}d\omega\)&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;MathJax的语法基本与latex一致，可以参考wikipedia的latex书写语法规范&lt;a class="reference external" href="http://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"&gt;Help:数学公式&lt;/a&gt;&lt;/p&gt;
+</summary><category term="LaTeX"></category><category term="测试"></category></entry></feed>
