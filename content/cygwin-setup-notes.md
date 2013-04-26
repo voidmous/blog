@@ -147,3 +147,4 @@ Cygwin下使用Emacs
 * 使用Xming+emacs-X11？未测试
 
 参考： <http://stackoverflow.com/questions/2075504/how-to-best-integrate-emacs-and-cygwin>
+EmacsW32：<http://ourcomments.org/Emacs/EmacsW32.html>
