@@ -34,23 +34,23 @@ cygwin自带的安装工具使用起来太繁琐，于是就有了类似apt-get�
 安装一些必备的工具：
 
     :::sh
-    apt-cyg install openssl openssh
-    apt-cyg install git mercurial % 源代码管理工具
-    git config --global user.name "Your Name Comes Here"
-    git config --global user.email you@yourdomain.example.com
+    $ apt-cyg install openssl openssh
+    $ apt-cyg install git mercurial % 源代码管理工具
+    $ git config --global user.name "Your Name Comes Here"
+    $ git config --global user.email you@yourdomain.example.com
 
 安装binutils、gcc4、gdb、make以及vim
 
 ~~~.bash
-apt-cyg install binutils gcc4 gdb make vim
+$ apt-cyg install binutils gcc4 gdb make vim
 ~~~
 
 查看安装是否成功
 
 ~~~.bash
-gcc -v
-gdb -v
-make -v
+$ gcc -v
+$ gdb -v
+$ make -v
 ~~~
 
 ## 基本设置
@@ -136,3 +136,14 @@ cygcheck
 ## Cygwin/X配置
 
 我个人用cygwin/X主要是想用emacs的GUI，此外小程序的GUI也会用到，但是cygwin/X目前虽然可以调出windows的输入法却无法输入中文，目前可用的方案也许只有[这个](http://cn.bbs.comp.linux.narkive.com/JrQG9Hge/cygwin-x )（未测试）。
+
+Cygwin下使用Emacs
+
+有这么几种方案：
+
+* 使用命令行下的emacs
+* 使用Cygwin/X下的emacs-X11
+* 使用emacs-w32
+* 使用Xming+emacs-X11？未测试
+
+参考： <http://stackoverflow.com/questions/2075504/how-to-best-integrate-emacs-and-cygwin>
