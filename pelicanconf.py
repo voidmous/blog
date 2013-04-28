@@ -11,6 +11,7 @@ LOCALE =  "C" # This option is needed for above 2 options
 TIMEZONE = 'Europe/Paris'
 
 # Cloud Service Account
+DISQUS_SITENAME = "joshuazhangblog"
 GOOGLE_ANALYTICS = "UA-37279313-1"
 
 DEFAULT_LANG = 'cn'
