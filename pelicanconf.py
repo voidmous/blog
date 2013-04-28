@@ -12,7 +12,7 @@ TIMEZONE = 'Europe/Paris'
 
 # Cloud Service Account
 DISQUS_SITENAME = "joshuazhangblog"
-GOOGLE_ANALYTICS = "UA-37279313-1"
+GOOGLE_ANALYTICS = "UA-40506321-1"
 
 DEFAULT_LANG = 'cn'
 
