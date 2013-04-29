@@ -88,51 +88,39 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <div class="section" id="gui1">
 <h2>GUI1</h2>
 <p><code>figure</code> 命令创建一个空白窗口，<code>uicontrol</code> 创建一个控件，并由 <code>style</code> 属性控制控件类型。代码示例：</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/home/xhzhang/git-repo/blog/content/matlab-gui-learning-notes.rst</tt>, line 34)</p>
-<p>Content block expected for the &quot;code-block&quot; directive; none found.</p>
-<pre class="literal-block">
-.. code-block:: matlab
+<div class="highlight"><pre><span class="k">function</span><span class="w"> </span>[] <span class="p">=</span><span class="w"> </span><span class="nf">GUI_1</span><span class="p">()</span><span class="w"></span>
 
-</pre>
-</div>
-<p>function [] = GUI_1()</p>
-<dl class="docutils">
-<dt>S.fh = figure('units','pixels',...</dt>
-<dd>'position',[500 500 200 260],...
-'menubar','none',...
-'name','GUI_1',...
-'numbertitle','off',...
-'resize','off');</dd>
-<dt>S.ls = uicontrol('style','list',...</dt>
-<dd>'unit','pix',...
-'position',[10 60 180 180],...
-'min',0,'max',2,...
-'fontsize',14,...
-'string',{'one';'two';'three';'four'});</dd>
-<dt>S.pb = uicontrol('style','push',...</dt>
-<dd>'units','pix',...
-'position',[10 10 180 40],...
-'fontsize',14,...
-'string','Delete String',...
-'callback',{&#64;pb_call,S});</dd>
-</dl>
-<p>function [] = pb_call(varargin)
-% Callback for pushbutton, deletes one line from listbox.
-S = varargin{3};  % Get the structure.
-L = get(S.ls,{'string','value'});  % Get the users choice.</p>
-<p>% We need to make sure we don't try to assign an empty string.
-if ~isempty(L{1})</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">/home/xhzhang/git-repo/blog/content/matlab-gui-learning-notes.rst</tt>, line 65)</p>
-Unexpected indentation.</div>
-<blockquote>
-L{1}(L{2}(:)) = [];  % Delete the selected strings.
-set(S.ls,'string',L{1},'val',1) % Set the new string.</blockquote>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/xhzhang/git-repo/blog/content/matlab-gui-learning-notes.rst</tt>, line 67)</p>
-Block quote ends without a blank line; unexpected unindent.</div>
-<p>end</p>
+<span class="n">S</span><span class="p">.</span><span class="n">fh</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;pixels&#39;</span><span class="p">,</span><span class="c">...</span>
+              <span class="s">&#39;position&#39;</span><span class="p">,[</span><span class="mi">500</span> <span class="mi">500</span> <span class="mi">200</span> <span class="mi">260</span><span class="p">],</span><span class="c">...</span>
+              <span class="s">&#39;menubar&#39;</span><span class="p">,</span><span class="s">&#39;none&#39;</span><span class="p">,</span><span class="c">...</span>
+              <span class="s">&#39;name&#39;</span><span class="p">,</span><span class="s">&#39;GUI_1&#39;</span><span class="p">,</span><span class="c">...</span>
+              <span class="s">&#39;numbertitle&#39;</span><span class="p">,</span><span class="s">&#39;off&#39;</span><span class="p">,</span><span class="c">...</span>
+              <span class="s">&#39;resize&#39;</span><span class="p">,</span><span class="s">&#39;off&#39;</span><span class="p">);</span>
+
+<span class="n">S</span><span class="p">.</span><span class="n">ls</span> <span class="p">=</span> <span class="n">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;list&#39;</span><span class="p">,</span><span class="c">...</span>
+                 <span class="s">&#39;unit&#39;</span><span class="p">,</span><span class="s">&#39;pix&#39;</span><span class="p">,</span><span class="c">...</span>
+                 <span class="s">&#39;position&#39;</span><span class="p">,[</span><span class="mi">10</span> <span class="mi">60</span> <span class="mi">180</span> <span class="mi">180</span><span class="p">],</span><span class="c">...</span>
+                 <span class="s">&#39;min&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;max&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="c">...</span>
+                 <span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="c">...</span>
+                 <span class="s">&#39;string&#39;</span><span class="p">,{</span><span class="s">&#39;one&#39;</span><span class="p">;</span><span class="s">&#39;two&#39;</span><span class="p">;</span><span class="s">&#39;three&#39;</span><span class="p">;</span><span class="s">&#39;four&#39;</span><span class="p">});</span>
+<span class="n">S</span><span class="p">.</span><span class="n">pb</span> <span class="p">=</span> <span class="n">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;push&#39;</span><span class="p">,</span><span class="c">...</span>
+                 <span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;pix&#39;</span><span class="p">,</span><span class="c">...</span>
+                 <span class="s">&#39;position&#39;</span><span class="p">,[</span><span class="mi">10</span> <span class="mi">10</span> <span class="mi">180</span> <span class="mi">40</span><span class="p">],</span><span class="c">...</span>
+                 <span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="c">...</span>
+                 <span class="s">&#39;string&#39;</span><span class="p">,</span><span class="s">&#39;Delete String&#39;</span><span class="p">,</span><span class="c">...</span>
+                 <span class="s">&#39;callback&#39;</span><span class="p">,{@</span><span class="n">pb_call</span><span class="p">,</span><span class="n">S</span><span class="p">});</span>
+
+<span class="k">function</span><span class="w"> </span>[] <span class="p">=</span><span class="w"> </span><span class="nf">pb_call</span><span class="p">(</span>varargin<span class="p">)</span><span class="w"></span>
+<span class="c">% Callback for pushbutton, deletes one line from listbox.</span>
+<span class="n">S</span> <span class="p">=</span> <span class="n">varargin</span><span class="p">{</span><span class="mi">3</span><span class="p">};</span>  <span class="c">% Get the structure.</span>
+<span class="n">L</span> <span class="p">=</span> <span class="n">get</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="n">ls</span><span class="p">,{</span><span class="s">&#39;string&#39;</span><span class="p">,</span><span class="s">&#39;value&#39;</span><span class="p">});</span>  <span class="c">% Get the users choice.</span>
+
+<span class="c">% We need to make sure we don&#39;t try to assign an empty string.</span>
+<span class="k">if</span> <span class="o">~</span><span class="nb">isempty</span><span class="p">(</span><span class="n">L</span><span class="p">{</span><span class="mi">1</span><span class="p">})</span>
+    <span class="n">L</span><span class="p">{</span><span class="mi">1</span><span class="p">}(</span><span class="n">L</span><span class="p">{</span><span class="mi">2</span><span class="p">}(:))</span> <span class="p">=</span> <span class="p">[];</span>  <span class="c">% Delete the selected strings.</span>
+    <span class="n">set</span><span class="p">(</span><span class="n">S</span><span class="p">.</span><span class="n">ls</span><span class="p">,</span><span class="s">&#39;string&#39;</span><span class="p">,</span><span class="n">L</span><span class="p">{</span><span class="mi">1</span><span class="p">},</span><span class="s">&#39;val&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c">% Set the new string.</span>
+<span class="k">end</span>
+</pre></div>
 <p>窗口或控件位置与大小由 <code>position</code> 控制，例如： <code>'position',[500 500 200 260]</code> ，其中前两个数控制窗口或空间的左下角坐标，后两个控制其大小。窗口位置总是相对于屏幕左下角计算的，而控件则相对窗口左下角计算。 控件的动作触发的函数由 <code>callback</code> 属性定义，例如：<code>'callback',{&#64;pb_call,S}</code> 。</p>
 <div class="section" id="id2">
 <h3>问题</h3>
