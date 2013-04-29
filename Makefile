@@ -7,8 +7,8 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-FTP_HOST=localhost
-FTP_USER=anonymous
+FTP_HOST=blog.joshuazhang.net
+FTP_USER=voidmous
 FTP_TARGET_DIR=/
 
 SSH_HOST=localhost
@@ -67,7 +67,7 @@ dropbox_upload: publish
 	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
 
 ftp_upload: publish
-	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
+	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R --only-newer --verbose $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 github: publish
 	ghp-import $(OUTPUTDIR)
