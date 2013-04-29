@@ -67,7 +67,7 @@ dropbox_upload: publish
 	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
 
 ftp_upload: publish
-	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R --only-newer --verbose $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
+	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R --only-newer --ignore-time --verbose $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 github: publish
 	ghp-import $(OUTPUTDIR)
