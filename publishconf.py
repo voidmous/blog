@@ -11,6 +11,10 @@ SITEURL = 'http://www.joshuazhang.net'
 
 # Following items are often useful when publishing
 
+# Cloud Service Account
+DISQUS_SITENAME = "joshuazhangblog"
+GOOGLE_ANALYTICS = "UA-40506321-1"
+
 # Uncomment following line for absolute URLs in production:
 #RELATIVE_URLS = False
 

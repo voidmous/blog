@@ -4,7 +4,7 @@ Date: 2013-04-07 15:38
 Category: Technique
 Tags: el-get, Emacs
 Slug: el-get-intro
-Summary:
+Summary: Emacs el-get 包管理器介绍
 Status: published
 
 [TOC]

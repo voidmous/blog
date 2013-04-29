@@ -137,7 +137,7 @@ cygcheck
 
 我个人用cygwin/X主要是想用emacs的GUI，此外小程序的GUI也会用到，但是cygwin/X目前虽然可以调出windows的输入法却无法输入中文，目前可用的方案也许只有[这个](http://cn.bbs.comp.linux.narkive.com/JrQG9Hge/cygwin-x )（未测试）。
 
-Cygwin下使用Emacs
+## Cygwin下使用Emacs
 
 有这么几种方案：
 

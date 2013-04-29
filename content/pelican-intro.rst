@@ -1,7 +1,4 @@
-============
-Pelican简介
-============
-
+:title: Pelican简介
 :author: voidmous
 :date: 2012-12-25 11:18
 :category: Programming

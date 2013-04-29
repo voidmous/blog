@@ -9,11 +9,6 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{slug}.html'
 LOCALE =  "C" # This option is needed for above 2 options
 
 TIMEZONE = 'Europe/Paris'
-
-# Cloud Service Account
-DISQUS_SITENAME = "joshuazhangblog"
-GOOGLE_ANALYTICS = "UA-40506321-1"
-
 DEFAULT_LANG = 'cn'
 
 # Python-Markdown extensions to be included
@@ -28,9 +23,7 @@ THEME = "./themes/tuxlite_tbs"
 
 # RSS and ATOM
 FEED_ATOM = 'feeds/atom.xml'
-FEED_RSS = 'feeds/rss.xml'
-FEED_ALL_RSS = 'feeds/all.rss.xml'
-CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
+CATEGORY_FEED_ATOM = 'feeds/%s.ATOM.xml'
 
 # Blogroll
 LINKS =  (('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
