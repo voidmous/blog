@@ -14,11 +14,45 @@ Status: draft
 * 使用在线的 [Debian Sources List Generator](http://debgen.simplylinux.ch/ ) 生成合适的sources.list，当然也可以手工编辑
 * `apitude update`
 
+我现在使用的源列表：
+
+```
+deb http://ftp.us.debian.org/debian stable main #contrib non-free
+deb http://security.debian.org/ squeeze/updates main #contrib non-free
+```
+
 ## 安装编译环境
 
 ```
-$ aptitude install build-essential automake autoconf
+# aptitude install build-essential automake autoconf
 ```
+
+## 用户管理
+
+添加新账户new，用于ssh登陆与管理。
+
+```
+# groupadd new
+# useradd -m -g new -s /bin/bash new
+# passwd new
+```
+
+以后可以使用`su root`为普通账户提权，或者用`visudo`为用户添加sudo权限。
+
+## SSH配置
+
+一般服务器已经默认安装好了opensshd，所以只需要修改配置文件。为了安全，一般修改两个设置，一是默认端口，二是禁止root登陆（注意先添加好普通账户）。修改默认端口后登录时要指定新端口。
+
+```
+# vi /etc/ssh/sshd_config
+# service ssh restart
+```
+
+两处设置分别为`Port 2222`和`PermitRootLogin no`。
+
+### SSH密钥登录
+
+参考 [SSH密钥登录让Linux VPS/服务器更安全](http://www.vpser.net/security/linux-ssh-authorized-keys-login.html ) 
 
 ## 更新python
 
@@ -26,7 +60,7 @@ $ aptitude install build-essential automake autoconf
 
 ## 安装lnmp
 
-参考<lnmp.org>
+参考 <lnmp.org>
 
 
 
