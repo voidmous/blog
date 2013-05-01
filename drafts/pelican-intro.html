@@ -71,28 +71,28 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
         <div><div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#id1" id="id14">Pelican是什么</a></li>
-<li><a class="reference internal" href="#id2" id="id15">安装Pelican</a></li>
-<li><a class="reference internal" href="#id3" id="id16">启动博客</a></li>
-<li><a class="reference internal" href="#id4" id="id17">编辑文章</a></li>
-<li><a class="reference internal" href="#meta-data" id="id18">Meta-data</a><ul>
-<li><a class="reference internal" href="#id5" id="id19">代码高亮</a></li>
-<li><a class="reference internal" href="#id6" id="id20">内链</a></li>
+<li><a class="reference internal" href="#pelican" id="id13">Pelican是什么</a></li>
+<li><a class="reference internal" href="#id1" id="id14">安装Pelican</a></li>
+<li><a class="reference internal" href="#id2" id="id15">启动博客</a></li>
+<li><a class="reference internal" href="#id3" id="id16">编辑文章</a></li>
+<li><a class="reference internal" href="#meta-data" id="id17">Meta-data</a><ul>
+<li><a class="reference internal" href="#id4" id="id18">代码高亮</a></li>
+<li><a class="reference internal" href="#id5" id="id19">内链</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id7" id="id21">基本设置</a><ul>
-<li><a class="reference internal" href="#id8" id="id22">绝对链接</a></li>
-<li><a class="reference internal" href="#id9" id="id23">使用主题</a></li>
+<li><a class="reference internal" href="#id6" id="id20">基本设置</a><ul>
+<li><a class="reference internal" href="#id7" id="id21">绝对链接</a></li>
+<li><a class="reference internal" href="#id8" id="id22">使用主题</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id10" id="id24">从其它博客导入</a></li>
-<li><a class="reference internal" href="#id11" id="id25">多语言</a></li>
-<li><a class="reference internal" href="#id12" id="id26">常见问题</a></li>
-<li><a class="reference internal" href="#id13" id="id27">参考资源</a></li>
+<li><a class="reference internal" href="#id9" id="id23">从其它博客导入</a></li>
+<li><a class="reference internal" href="#id10" id="id24">多语言</a></li>
+<li><a class="reference internal" href="#id11" id="id25">常见问题</a></li>
+<li><a class="reference internal" href="#id12" id="id26">参考资源</a></li>
 </ul>
 </div>
-<div class="section" id="id1">
-<h2><a class="toc-backref" href="#id14">Pelican是什么</a></h2>
+<div class="section" id="pelican">
+<h2><a class="toc-backref" href="#id13">Pelican是什么</a></h2>
 <p>Pelican是一个静态博客生成器，具有常见博客系统如WordPress的基本功能，在功能、速度、开放性上更符合Geek们的口味。</p>
 <p>静态博客的优点：</p>
 <ul class="simple">
@@ -118,16 +118,16 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <li>多种常用第三方服务集成：Github、Disqus、Google Analytics、Twitter</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2><a class="toc-backref" href="#id15">安装Pelican</a></h2>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id14">安装Pelican</a></h2>
 <p>推荐在Linux或者Cygwin下使用Pelican，首先保证系统安装有python和 <a class="reference external" href="http://www.pip-installer.org">pip</a> 。官方文档推荐在virtualenv下安装Pelican，不过如果你没有用python开发的需求或者和我一样嫌麻烦，也可以直接安装：</p>
 <pre class="code bash literal-block">
 <span class="name variable">$ </span>pip install pelican
 <span class="name variable">$ </span>pip install Markdown
 </pre>
 </div>
-<div class="section" id="id3">
-<h2><a class="toc-backref" href="#id16">启动博客</a></h2>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id15">启动博客</a></h2>
 <p>首先创建一个博客目录用于存放所有的文件，比如 <code>~/pelicanblog</code> ，然后执行 <code>pelican-quickstart</code> 回答几个基本的问题，执行完毕在目录下就生成了基础的文件和目录如下：</p>
 <ul class="simple">
 <li>content/，默认posts文档（*.rst *.md *.html等等）存放目录</li>
@@ -148,11 +148,11 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <li>make github，发布到 <code>gh-pages</code></li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2><a class="toc-backref" href="#id17">编辑文章</a></h2>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id16">编辑文章</a></h2>
 </div>
 <div class="section" id="meta-data">
-<h2><a class="toc-backref" href="#id18">Meta-data</a></h2>
+<h2><a class="toc-backref" href="#id17">Meta-data</a></h2>
 <p>常用元数据(reST)：</p>
 <pre class="code text literal-block">
 :title: the post title
@@ -166,8 +166,8 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 </pre>
 <p>处于draft状态的文章也会被转换为html但是会输出到 <code>outputdir/drafts/</code> 而且不会出现在输出的任何页面中。当然你自己仍然可以通过地址 <code>http://domainname.com/drafts/slug.html</code> 来访问。</p>
 <p>Markdown也采用同样的元数据，不过形式为 <code>Title: title</code> 。</p>
-<div class="section" id="id5">
-<h3><a class="toc-backref" href="#id19">代码高亮</a></h3>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id18">代码高亮</a></h3>
 <p>pelican使用pygments来处理代码高亮</p>
 <ul class="simple">
 <li>reST格式高亮</li>
@@ -216,31 +216,31 @@ else:
 </pre></div>
 <p>两种方案输出的CSS类都是`codehilite`而不是`highlight`，另外第一种方案必须缩进，第二种则不必。</p>
 </div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id19">内链</a></h3>
+</div>
+</div>
 <div class="section" id="id6">
-<h3><a class="toc-backref" href="#id20">内链</a></h3>
-</div>
-</div>
+<h2><a class="toc-backref" href="#id20">基本设置</a></h2>
 <div class="section" id="id7">
-<h2><a class="toc-backref" href="#id21">基本设置</a></h2>
-<div class="section" id="id8">
-<h3><a class="toc-backref" href="#id22">绝对链接</a></h3>
+<h3><a class="toc-backref" href="#id21">绝对链接</a></h3>
 </div>
-<div class="section" id="id9">
-<h3><a class="toc-backref" href="#id23">使用主题</a></h3>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id22">使用主题</a></h3>
 <p>下载网友分享的自定义主题：</p>
 <div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/getpelican/pelican-themes BLOGDIR/themes
 </pre></div>
 <p>在 <code>pelicanconf.py</code> 中添加 <code>THEME = &quot;./themes/THEMENAME</code></p>
 </div>
 </div>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id23">从其它博客导入</a></h2>
+</div>
 <div class="section" id="id10">
-<h2><a class="toc-backref" href="#id24">从其它博客导入</a></h2>
+<h2><a class="toc-backref" href="#id24">多语言</a></h2>
 </div>
 <div class="section" id="id11">
-<h2><a class="toc-backref" href="#id25">多语言</a></h2>
-</div>
-<div class="section" id="id12">
-<h2><a class="toc-backref" href="#id26">常见问题</a></h2>
+<h2><a class="toc-backref" href="#id25">常见问题</a></h2>
 <ul class="simple">
 <li>如何改变post链接地址？</li>
 <li>如何快速同步到gh-pages?</li>
@@ -254,8 +254,8 @@ make html
 make github
 </pre>
 </div>
-<div class="section" id="id13">
-<h2><a class="toc-backref" href="#id27">参考资源</a></h2>
+<div class="section" id="id12">
+<h2><a class="toc-backref" href="#id26">参考资源</a></h2>
 </div>
 </div>
 	
@@ -287,7 +287,6 @@ make github
                 <li><a href="../archives.html">Archives</a>
                 <li><a href="../tags.html">Tags</a>
                 <li><a href="http://www.joshuazhang.net/feeds/atom.xml" rel="alternate">Atom feed</a></li>
-                                <li><a href="http://www.joshuazhang.net/feeds/rss.xml" rel="alternate">RSS feed</a></li>
                             </ul>
             </div>
 

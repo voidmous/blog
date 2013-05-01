@@ -64,6 +64,28 @@
  
 
     <div class='article'>
+        <a href="../posts/2012/Jun/MIT-BIH-manual.html"><h2>MIT-BIH开放数据库使用指南</h2></a>
+        <div class= "well small"> Fri 15 June 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>最近因为项目任务要分析心电图数据，采用的是<a class="reference external" href="http://ecg.mit.edu/">MIT-BIH</a>开放数据库（或称PhysioBank数据库）。这个数据库不仅提供了经过筛选的各方面的生理数据集<a class="reference external" href="http://www.physionet.org/physiobank/">PhysioBank</a>，而且也提供了开源的数据处理和可视化工具<a class="reference external" href="http://www.physionet.org/physiotools/">PhysioToolkit</a>。对我这样的非医学类学生而言，光是看见那些医学术语就够头痛的了，还要掌握这样一套专门的基于Linux的工具，确实是个不小的挑战。好在我要完成的部分不需要很深入，所以马马虎虎也摸着些门道。不敢说会用，但是起码碰到问题方向在哪我已经清楚了，这里把这个数据库的使用简单介绍一下，方便新来的同学快速上手。当然如果你英语好的话，大可以自己慢慢翻文档，这也是要深入了解的惟一途径。</p>
+<p>首先说说数据库。你可以到<a class="reference external" href="http://www.physionet.org/physiobank/database/">分类页面</a>查找有没有自己感兴趣的数据集，上面都有比较详细的介绍。找到合适的数据后在对应页面直接将文件另存为就可以下载，当然这是比较笨的办法。推荐使用wget或者rsync来下载。wget可以用于下载单独的数据集，这样速度较快也比较快捷。例如下载mitdb：</p>
+<div class="highlight"><pre>wget -r -np http://physionet.org/physiobank/database/mitdb/
+</pre></div>
+<p>中间的<em>physionet.org</em>可以替换成离你最近的<a class="reference external" href="http://www.physionet.org/mirrors/">镜像</a>地址（好像西交的挂了，直接用原镜像吧 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jun/MIT-BIH-manual.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
         <a href="../posts/2012/May/universal-browser-keyboard-shortcuts.html"><h2>47个通用网页浏览器快捷键</h2></a>
         <div class= "well small"> Fri 25 May 2012
 
@@ -197,57 +219,6 @@ configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
 <span class="nb">export ...</span></pre></div> <a class="btn btn-info xsmall" href="../posts/2012/Mar/archlinux-audacious.html">read more</a></div>
     </div>	
 				
-    
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="../posts/2012/Mar/firefox-addon.html"><h2>我的Firefox扩展总结</h2></a>
-        <div class= "well small"> Thu 01 March 2012
-
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
- 
-
-
- </div>
-        <div class="summary"><p>一、浏览优化类</p>
-<blockquote>
-<ol class="arabic simple">
-<li>Adblock Plus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 清除广告就靠它了。</li>
-<li>AutoPager
-自动翻页。不想成为鼠标手？该插件必装。</li>
-<li>Flashblock
-加快网页加载速度，屏蔽恼人的flash广告和自动播放功能</li>
-<li>GreaseMonkey&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 用脚本实现对个别站点的自定义配置</li>
-<li>Stylish
-与GreaseMonkey类似，自定义CSS。GR的新界面很低效，配合该插件可以完美解决。</li>
-<li>iReader
-重新布局文章，优化浏览体验。较少适用，需要网页符合规范。</li>
-</ol>
-</blockquote>
-<p>二、下载工具类</p>
-<blockquote>
-<ol class="arabic simple">
-<li>DownThemAll
-坚守FF的原因之一，非常稳定高速的下载体验</li>
-<li>DownloadStatusbar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下载状态查看，必备的基本扩展</li>
-<li>NetVideoHunter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在线视频下载利器</li>
-<li>FlashVideoDownloader
-除了下载视频外，更强大的地方在于可以下载flash</li>
-</ol>
-</blockquote>
-<p>三、云同步类</p>
-<blockquote>
-<ol class="arabic simple">
-<li>Xmarks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一流的书签管理，多浏览器同步</li>
-<li>LastPass
-Xmarks的兄弟产品，在线密码管理，简化登录步骤</li>
-<li>ReadItLater
-一键收藏，想快速离开电脑回到工作，必备扩展 ...</li></ol></blockquote> <a class="btn btn-info xsmall" href="../posts/2012/Mar/firefox-addon.html">read more</a></div>
-    </div>	
-				
             <div class="pagination">
 <ul>
     <li class="prev"><a href="../category/technique2.html">&larr; Previous</a></li>
@@ -276,7 +247,6 @@ Xmarks的兄弟产品，在线密码管理，简化登录步骤</li>
                 <li><a href="../archives.html">Archives</a>
                 <li><a href="../tags.html">Tags</a>
                 <li><a href="http://www.joshuazhang.net/feeds/atom.xml" rel="alternate">Atom feed</a></li>
-                                <li><a href="http://www.joshuazhang.net/feeds/rss.xml" rel="alternate">RSS feed</a></li>
                             </ul>
             </div>
 

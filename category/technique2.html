@@ -64,6 +64,31 @@
  
 
     <div class='article'>
+        <a href="../posts/2012/Aug/wp-database-optimization.html"><h2>wordpress数据库优化记录</h2></a>
+        <div class= "well small"> Thu 30 August 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。</p>
+<p>基本流程如下：</p>
+<p>1、备份。做任何数据库操作前，做一个临时备份都是必要的。使用phpmyadmin按默认设置导出sql文件下载到本地即可。</p>
+<p>2、删除不必要的插件。不必要的插件应当越少越好，尤其是会写入数据库或者查询数据库的插件。比如我之前使用过的<a class="reference external" href="http://www.6psp.cn/20100917/statpresscn%E6%8F%92%E4%BB%B6%E9%80%A0%E6%88%90%E5%8D%9A%E5%AE%A2%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%EF%BC%8C%E8%B5%B6%E5%BF%AB%E5%88%A0%E9%99%A4.html">statpresscn</a>，这个插件会在数据库中建立一个庞大的wp_statpresscn表，虽然没有前台查询，不过它造成的数据库冗余带来的坏处可远远大于统计功能带来的便利，所以还是删了吧。</p>
+<p>3、删除垃圾数据表。功能比较复杂的插件可能会在数据库中建立新表，删除插件一般不会把这些表顺带删除，所以手动排查垃圾数据表也是必要的。为了防止误删，请一定对照WP
+Codex的<a class="reference external" href="http://codex.wordpress.org/zh-cn:%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0">数据库描述</a>进行修改。</p>
+<p>删除akismet垃圾数据。关于akismet如何产生这些数据可以参考<a class="reference external" href="http://www.solagirl.net/wp-commentmeta-slowing-down-your-blog.html">wp_commentmeta是否正在拖慢你的blog</a>。</p>
+<div class="highlight"><pre><span class="k">delete</span> <span class="k">from</span> <span class="n">wp_commentmeta</span> <span class="k">where</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_as_submitted&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_history&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_rechecking&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_result&#39;</span> <span class="k">or ...</span></pre></div> <a class="btn btn-info xsmall" href="../posts/2012/Aug/wp-database-optimization.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
         <a href="../posts/2012/Jul/matlab-note.html"><h2>《MATLAB M语言高级编程》读书笔记</h2></a>
         <div class= "well small"> Mon 30 July 2012
 
@@ -157,28 +182,6 @@ Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a c
 (numeric)</a>这个style文件，参考<a class="reference external" href="http://www.zotero.org/styles/radiopaedia">radiopaedia</a>鼓捣出来的一个结合体。一方面保留了国标的规范 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jun/zotero-bib-blog.html">read more</a></div>
     </div>	
 				
-    
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="../posts/2012/Jun/MIT-BIH-manual.html"><h2>MIT-BIH开放数据库使用指南</h2></a>
-        <div class= "well small"> Fri 15 June 2012
-
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
- 
-
-
- </div>
-        <div class="summary"><p>最近因为项目任务要分析心电图数据，采用的是<a class="reference external" href="http://ecg.mit.edu/">MIT-BIH</a>开放数据库（或称PhysioBank数据库）。这个数据库不仅提供了经过筛选的各方面的生理数据集<a class="reference external" href="http://www.physionet.org/physiobank/">PhysioBank</a>，而且也提供了开源的数据处理和可视化工具<a class="reference external" href="http://www.physionet.org/physiotools/">PhysioToolkit</a>。对我这样的非医学类学生而言，光是看见那些医学术语就够头痛的了，还要掌握这样一套专门的基于Linux的工具，确实是个不小的挑战。好在我要完成的部分不需要很深入，所以马马虎虎也摸着些门道。不敢说会用，但是起码碰到问题方向在哪我已经清楚了，这里把这个数据库的使用简单介绍一下，方便新来的同学快速上手。当然如果你英语好的话，大可以自己慢慢翻文档，这也是要深入了解的惟一途径。</p>
-<p>首先说说数据库。你可以到<a class="reference external" href="http://www.physionet.org/physiobank/database/">分类页面</a>查找有没有自己感兴趣的数据集，上面都有比较详细的介绍。找到合适的数据后在对应页面直接将文件另存为就可以下载，当然这是比较笨的办法。推荐使用wget或者rsync来下载。wget可以用于下载单独的数据集，这样速度较快也比较快捷。例如下载mitdb：</p>
-<div class="highlight"><pre>wget -r -np http://physionet.org/physiobank/database/mitdb/
-</pre></div>
-<p>中间的<em>physionet.org</em>可以替换成离你最近的<a class="reference external" href="http://www.physionet.org/mirrors/">镜像</a>地址（好像西交的挂了，直接用原镜像吧 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jun/MIT-BIH-manual.html">read more</a></div>
-    </div>	
-				
             <div class="pagination">
 <ul>
     <li class="prev"><a href="../category/technique.html">&larr; Previous</a></li>
@@ -207,7 +210,6 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
                 <li><a href="../archives.html">Archives</a>
                 <li><a href="../tags.html">Tags</a>
                 <li><a href="http://www.joshuazhang.net/feeds/atom.xml" rel="alternate">Atom feed</a></li>
-                                <li><a href="http://www.joshuazhang.net/feeds/rss.xml" rel="alternate">RSS feed</a></li>
                             </ul>
             </div>
 

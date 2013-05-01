@@ -74,15 +74,40 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <li>使用在线的 <a href="http://debgen.simplylinux.ch/">Debian Sources List Generator</a> 生成合适的sources.list，当然也可以手工编辑</li>
 <li><code>apitude update</code></li>
 </ul>
-<h2 id="_2">安装编译环境</h2>
-<div class="codehilite"><pre><span class="err">$</span> <span class="n">aptitude</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">automake</span> <span class="n">autoconf</span>
+<p>我现在使用的源列表：</p>
+<div class="codehilite"><pre><span class="k">deb</span> <span class="s">http://ftp.us.debian.org/debian</span> <span class="kp">stable</span> <span class="kp">main</span> <span class="c">#contrib non-free</span>
+<span class="k">deb</span> <span class="s">http://security.debian.org/</span> <span class="kp">squeeze/updates</span> <span class="kp">main</span> <span class="c">#contrib non-free</span>
 </pre></div>
 
 
+<h2 id="_2">安装编译环境</h2>
+<div class="codehilite"><pre><span class="c"># aptitude install build-essential automake autoconf</span>
+</pre></div>
+
+
+<h2 id="_3">用户管理</h2>
+<p>添加新账户new，用于ssh登陆与管理。</p>
+<div class="codehilite"><pre><span class="c"># groupadd new</span>
+<span class="c"># useradd -m -g new -s /bin/bash new</span>
+<span class="c"># passwd new</span>
+</pre></div>
+
+
+<p>以后可以使用<code>su root</code>为普通账户提权，或者用<code>visudo</code>为用户添加sudo权限。</p>
+<h2 id="ssh">SSH配置</h2>
+<p>一般服务器已经默认安装好了opensshd，所以只需要修改配置文件。为了安全，一般修改两个设置，一是默认端口，二是禁止root登陆（注意先添加好普通账户）。修改默认端口后登录时要指定新端口。</p>
+<div class="codehilite"><pre><span class="c"># vi /etc/ssh/sshd_config</span>
+<span class="c"># service ssh restart</span>
+</pre></div>
+
+
+<p>两处设置分别为<code>Port 2222</code>和<code>PermitRootLogin no</code>。</p>
+<h3 id="ssh_1">SSH密钥登录</h3>
+<p>参考 <a href="http://www.vpser.net/security/linux-ssh-authorized-keys-login.html">SSH密钥登录让Linux VPS/服务器更安全</a> </p>
 <h2 id="python">更新python</h2>
 <p>服务器系统往往软件比较老，python可能是2.5或2.6版的，有强迫症的孩子可以手动更新到新版本。</p>
 <h2 id="lnmp">安装lnmp</h2>
-<p>参考<lnmp.org></p></div>
+<p>参考 <lnmp.org></p></div>
 	
         <hr>
     	   
@@ -112,7 +137,6 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
                 <li><a href="../archives.html">Archives</a>
                 <li><a href="../tags.html">Tags</a>
                 <li><a href="http://www.joshuazhang.net/feeds/atom.xml" rel="alternate">Atom feed</a></li>
-                                <li><a href="http://www.joshuazhang.net/feeds/rss.xml" rel="alternate">RSS feed</a></li>
                             </ul>
             </div>
 
