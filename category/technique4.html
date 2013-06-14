@@ -64,6 +64,46 @@
  
 
     <div class='article'>
+        <a href="../posts/2012/Mar/archlinux-audacious.html"><h2>Archlinux下编译Audacious(cue、ape支持)</h2></a>
+        <div class= "well small"> Tue 20 March 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><ul class="simple">
+<li>首先安装需求：</li>
+</ul>
+<p>Glib 2, GTK+ 2, Pango, Cairo, libmcs(AUR), libmowgli(AUR)</p>
+<ul class="simple">
+<li>为了支持cue，还需要安装libcue</li>
+<li>下载audacious源码包与插件包： <a class="reference external" href="http://audacious-media-player.org/download">下载地址</a></li>
+<li>解压audacious源码包，然后常规三步曲</li>
+</ul>
+<div class="highlight"><pre><span class="nv">$ </span>./configure
+<span class="nv">$ </span>sudo make <span class="o">&amp;&amp;</span> make install
+</pre></div>
+<ul class="simple">
+<li>再解压audacious插件源码包</li>
+</ul>
+<p>此时直接configure会出错，错误提示：</p>
+<pre class="literal-block">
+checking for AUDACIOUS... no
+configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
+</pre>
+<p>根据google到的方法：</p>
+<div class="highlight"><pre><span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/local/lib/pkgconfig:<span class="nv">$PKG_CONFIG_PATH</span>
+<span class="nb">export ...</span></pre></div> <a class="btn btn-info xsmall" href="../posts/2012/Mar/archlinux-audacious.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
         <a href="../posts/2012/Mar/firefox-addon.html"><h2>我的Firefox扩展总结</h2></a>
         <div class= "well small"> Thu 01 March 2012
 

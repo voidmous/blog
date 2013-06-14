@@ -64,6 +64,46 @@
  
 
     <div class='article'>
+        <a href="../posts/2012/Feb/standard-deviation.html"><h2>标准差浅谈</h2></a>
+        <div class= "well small"> Tue 21 February 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><p>本文翻译自 <a class="reference external" href="http://mathcentral.uregina.ca/RR/database/RR.09.95/weston2.html">A note on standard deviation</a>
+，解释了让大部分统计学入门者感到困惑的一个经典问题。</p>
+<p>假如你正同时上几门课并且刚刚通过考试拿到成绩。很自然的，我们想了解班里其他学生的情况好让你的成绩有个参照。平均值或中位数可以告诉我们所有成绩的“中心值”或者“中间数”，但是它们很难体现成绩的分布或者变化。</p>
+<p>我们来看一个小例子。假如5名学生参加三门课程获得的成绩如下：</p>
+<table><tbody><tr><th>课程1
+</th><th>课程2
+</th><th>课程3
+</th></tr><tr align="center"><td>82
+</td><td>82
+</td><td>67
+</td></tr><tr align="center"><td>78
+</td><td>82
+</td><td>66
+</td></tr><tr align="center"><td>70
+</td><td>82
+</td><td>66
+</td></tr><tr align="center"><td>58
+</td><td>42
+</td><td>66
+</td></tr><tr align="center"><td>42
+</td><td>42
+</td><td>65
+</td></tr></tbody></table><p>每一个课程都有一个平均值，\(\overline{x}\)，且都为66，尽管如此，不同课程成绩的波动仍然有很大的差异。对这种波动的测量的其中一种方法是极差，也就是最大值与最小值之差。本例中，前两门课程极差均为82-42=40而第三门课程极差为67-65=2。因为课程1和课程2有相同的极差但是它们的偏差明显不同，所以极差不是一个测量偏差的理想指标。我们还可以这样看待偏差 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Feb/standard-deviation.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
         <a href="../posts/2012/May/universal-browser-keyboard-shortcuts.html"><h2>47个通用网页浏览器快捷键</h2></a>
         <div class= "well small"> Fri 25 May 2012
 
@@ -216,29 +256,6 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <p>专用的就有大名鼎鼎的WLW，这应该是许多人坚守Windows平台的原因之一吧。其它如qumana、thingamablog等，虽然可用，但是功能不完善，体验也不好。特别值得一提的是浏览器插件 <a class="reference external" href="https://addons.mozilla.org/en-us/firefox/addon/scribefire-next/">ScribeFireNext</a> ，比起WLW也未逊色多少，如果要跨平台的话可以一试。Linux下可以尝试 <a class="reference external" href="http://paranimage.com/6-under-linux-blog-editor/">这些 ...</a></p></div> <a class="btn btn-info xsmall" href="../posts/2013/Jan/wp-edit-publish-plan.html">read more</a></div>
     </div>	
 				
-    
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="../posts/2012/Jun/zotero-bib-blog.html"><h2>利用Zotero为博文添加参考文献</h2></a>
-        <div class= "well small"> Fri 29 June 2012
-
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
- 
-
-
- </div>
-        <div class="summary"><p>对于技术类文章而言，添加必要的参考文献体现的是对他人劳动成果的尊重。即便你不会全文转载别人的文章而不标明出处，但是严格的说，学习了别人的方法或者观点也不能据为己有，标注参考文献就是向原创致敬的方法之一。目前而言，许多加了参考文献的文章都是怎么简单怎么来，没有个统一的格式，也不方便读者查阅。其实规范并不是没有，许多学术期刊对引用网页这样的媒体都有说明，我国<a class="reference external" href="http://gradschool.ustc.edu.cn/ylb/material/xw/wdxz/19.pdf">参考文献标准</a>也有说明。从我较短的使用过程来看，GB/T&nbsp;7714-2005标准设计得比较简洁紧凑，适合中文、英文以及混排的情况，看上去比较舒服。</p>
-<p>收集、管理文献的工具我首推Zotero，主要就在于它和Firefox结合得很好，对国际国内各大学术期刊数据库都支持得不错，和Google
-Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a class="reference external" href="http://blog.yesmryang.net/zotero-usage/">文献管理软件Zotero的一点使用感受</a>》。</p>
-<p>利用Zotero的导出功能实际已经可以生成很好的参考文献了，不过美中不足的是导出的只是纯文本，没有任何格式化，所以读者仍然要自己手动去查找参考文献，这可不是我这样的懒人想干的事，于是干脆自己动手写了下面这个style，基本功能已经实现，在外观和功能上可能还有提升的空间。</p>
-<p>Blogit是我基于<a class="reference external" href="http://www.zotero.org/styles/chinese-gb7714-2005-numeric">Chinese Std GB/T 7714-2005
-(numeric)</a>这个style文件，参考<a class="reference external" href="http://www.zotero.org/styles/radiopaedia">radiopaedia</a>鼓捣出来的一个结合体。一方面保留了国标的规范 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jun/zotero-bib-blog.html">read more</a></div>
-    </div>	
-				
             <div class="pagination">
 <ul>
     <li class="prev"><a href="../author/voidmous4.html">&larr; Previous</a></li>
@@ -248,8 +265,9 @@ Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a c
     <li class=""><a href="../author/voidmous3.html">3</a></li>
     <li class=""><a href="../author/voidmous4.html">4</a></li>
     <li class="active"><a href="../author/voidmous5.html">5</a></li>
+    <li class=""><a href="../author/voidmous6.html">6</a></li>
 
-    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+    <li class="next"><a href="../author/voidmous6.html">Next &rarr;</a></li>
 
 </ul>
 </div>    

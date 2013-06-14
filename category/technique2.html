@@ -64,6 +64,44 @@
  
 
     <div class='article'>
+        <a href="../posts/2012/Sep/cygwin-install-jekyll.html"><h2>cygwin安装jekyll</h2></a>
+        <div class= "well small"> Mon 24 September 2012
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+ </div>
+        <div class="summary"><h2 id="ruby">卸载已安装的ruby</h2>
+<p>用对应的包管理器卸载
+如果是rvm安装的，直接删除目录<code>~/.rvm</code>，然后删除<code>.zshrc</code>和<code>.zlogin</code>文件，去掉<code>.profile</code>和<code>.bash_profile</code>中关于rvm的语句即可。</p>
+<h2 id="rvm">安装rvm</h2>
+<p><a href="https://rvm.io/rvm/install/">安装指南</a></p>
+<div class="codehilite"><pre>curl -L https://get.rvm.io | bash -s stable --ruby
+</pre></div>
+
+
+<p>检测rvm安装</p>
+<div class="codehilite"><pre><span class="nb">type </span>rvm | head -n 1
+</pre></div>
+
+
+<p>此时会显示<code>rvm:not found</code>，不用紧，还需要一步：</p>
+<div class="codehilite"><pre><span class="nb">source</span> ~/.rvm/scripts/rvm
+<span class="nb">type </span>rvm | head -n 1
+</pre></div>
+
+
+<p>现在显示<code>rvm ...</code></p> <a class="btn btn-info xsmall" href="../posts/2012/Sep/cygwin-install-jekyll.html">read more</a></div>
+    </div>	
+				
+    
+ 
+        
+
+ 
+
+    <div class='article'>
         <a href="../posts/2012/Aug/wp-database-optimization.html"><h2>wordpress数据库优化记录</h2></a>
         <div class= "well small"> Thu 30 August 2012
 
@@ -157,29 +195,6 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
 <p>Zotero在Word内插入参考文献其实是添加了域代码，通过域来更新文献内容以及索引。所谓域，可以理解为一个变量寄存器，根据它在文档中所处的位置产生数据。比如第几张图，第几个表，这时就相当于一个计数器（其实LaTeX里面的Counter更好理解）。大部分域操作都可以手工操作完成，比较重要的快捷键有：F9
 更新域；Ctrl+Shift+F9把域转化为文本（确定文章不会再修改时使用，注意备份，慎用！）</p>
 <p>Word里面的题注和LaTeX里面的label差不多，其实题注也就是为对象加上一个标签 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jul/MS-Word-label.html">read more</a></div>
-    </div>	
-				
-    
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="../posts/2012/Jun/zotero-bib-blog.html"><h2>利用Zotero为博文添加参考文献</h2></a>
-        <div class= "well small"> Fri 29 June 2012
-
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
- 
-
-
- </div>
-        <div class="summary"><p>对于技术类文章而言，添加必要的参考文献体现的是对他人劳动成果的尊重。即便你不会全文转载别人的文章而不标明出处，但是严格的说，学习了别人的方法或者观点也不能据为己有，标注参考文献就是向原创致敬的方法之一。目前而言，许多加了参考文献的文章都是怎么简单怎么来，没有个统一的格式，也不方便读者查阅。其实规范并不是没有，许多学术期刊对引用网页这样的媒体都有说明，我国<a class="reference external" href="http://gradschool.ustc.edu.cn/ylb/material/xw/wdxz/19.pdf">参考文献标准</a>也有说明。从我较短的使用过程来看，GB/T&nbsp;7714-2005标准设计得比较简洁紧凑，适合中文、英文以及混排的情况，看上去比较舒服。</p>
-<p>收集、管理文献的工具我首推Zotero，主要就在于它和Firefox结合得很好，对国际国内各大学术期刊数据库都支持得不错，和Google
-Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a class="reference external" href="http://blog.yesmryang.net/zotero-usage/">文献管理软件Zotero的一点使用感受</a>》。</p>
-<p>利用Zotero的导出功能实际已经可以生成很好的参考文献了，不过美中不足的是导出的只是纯文本，没有任何格式化，所以读者仍然要自己手动去查找参考文献，这可不是我这样的懒人想干的事，于是干脆自己动手写了下面这个style，基本功能已经实现，在外观和功能上可能还有提升的空间。</p>
-<p>Blogit是我基于<a class="reference external" href="http://www.zotero.org/styles/chinese-gb7714-2005-numeric">Chinese Std GB/T 7714-2005
-(numeric)</a>这个style文件，参考<a class="reference external" href="http://www.zotero.org/styles/radiopaedia">radiopaedia</a>鼓捣出来的一个结合体。一方面保留了国标的规范 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jun/zotero-bib-blog.html">read more</a></div>
     </div>	
 				
             <div class="pagination">
