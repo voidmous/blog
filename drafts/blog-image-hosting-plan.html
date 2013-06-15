@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>幻空轩</title>
+    <meta name="description" content="">
+    <meta name="author" content="voidmous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="../theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../theme/bootstrap.min.css" rel="stylesheet">
+    <link href="../theme/bootstrap.responsive.min.css" rel="stylesheet">
+    <link href="../theme/local.css" rel="stylesheet">
+    <link href="../theme/pygments.css" rel="stylesheet">
+    
+    <!-- My custom styles -->
+    <!-- Table and misc styles -->
+    <link href="../theme/custom.css" rel="stylesheet">
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="../theme/codehilite.css" rel="stylesheet">
+    <!-- LaTeX mathjax support -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="..">幻空轩</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+                    
+                                </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+            <div class='article'>
+        <div class="content-title">
+            <h1>博客图床规划</h1>
+            Sun 28 April 2013
+
+by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+ 
+
+
+        </div>
+	
+        <div><div class="toc">
+<ul></ul>
+</div>
+<p>从开始折腾WordPress到切换为静态网站，我就一直在纠结图片编辑和保存的问题。这包括两个方面：一是保持编辑文章时的流畅度，尤其是需要插入大量图片时；二是规划一个扩展性好的图片URL和对应的物理地址。第一个问题主要涉及到文章编辑，这方面Windows Live Writer最符合我的需求，但可惜它不能满足我其它的需求，在我的另一篇文章 <a href="http://www.joshuazhang.net/posts/2013/Jan/wp-edit-publish-plan.html">WordPress文章编辑发布方案</a> 中有所阐述，这里我不多说了。第二个问题其实就是规划图床(虽然说是图床，但是其实也包括了附件、CSS、JS等文件)的问题，是本文探讨的中心。</p>
+<p>在读图时代，单图胜万言实在是每个博客作者都应该牢记在心的金玉良言，实际上其它文章类别也是如此。不过，博客图片的成本可要远远高于文字（创作成本、流量空间成本、管理成本等）。我把博客图床规划时需要考虑的问题总结如下：</p>
+<ul>
+<li>数据安全性。对一个博客而言，数据的重要性是不言而喻的，如果图片随时可能丢失或损坏，没有人可以睡得安稳。</li>
+<li>备份成本。如果无法保证数据时刻处于安全的状态，那么只能自己勤快地备份了，高度自动化的备份流程可以省不少心。</li>
+<li>流量、空间等资源限制。大量的图片托管在一个可靠的服务器上是省心但是伤钱的事情，不是高帅富也可以用其它方案逆袭。</li>
+<li>可迁移性。写一个博客可以折腾的事多了去了（实际上这也是乐趣之一），包括域名、空间、博客引擎、服务器环境等等，总不能每次手动去改URL吧。</li>
+<li></li>
+</ul>
+<p>常见方案：</p>
+<ul>
+<li>不分家</li>
+<li>第三方图床（绑定/不绑定域名）</li>
+<li>自建分离图床</li>
+</ul></div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'joshuazhangblog'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="../archives.html">Archives</a>
+                <li><a href="../tags.html">Tags</a>
+                <li><a href="http://www.joshuazhang.net/feeds/atom.xml" rel="alternate">Atom feed</a></li>
+                                <li><a href="http://www.joshuazhang.net/feeds/rss.xml" rel="alternate">RSS feed</a></li>
+                            </ul>
+            </div>
+
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                                <li><a href="../category/.html"></a></li>
+                                <li><a href="../category/art-critic.html">Art critic</a></li>
+                                <li><a href="../category/math.html">Math</a></li>
+                                <li><a href="../category/technique.html">Technique</a></li>
+                                <li><a href="../category/thoughts.html">Thoughts</a></li>
+                                   
+            </ul>
+            </div>
+            
+
+                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                            <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+                            <li><a href="http://python.org">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
+                        </ul>
+            </div>
+            
+
+                        <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                                <li><a href="https://github.com/voidmous">Github</a></li>
+                                <li><a href="https://twitter.com/voidmous">Twitter</a></li>
+                                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+                                <li><a href="http://www.renren.com/221168912">Renren</a></li>
+                            </ul>
+            </div>
+            </div>
+            
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="..">幻空轩</a> &copy; voidmous 2012 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+<a href="http://github.com/voidmous/"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>
