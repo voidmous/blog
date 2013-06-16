@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>幻空轩</title><link>http://www.joshuazhang.net/</link><description></description><atom:link href="http://www.joshuazhang.net/feeds/.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 29 Mar 2013 22:13:00 +0100</lastBuildDate><item><title>Markdown syntax for Pelican Quick Reference</title><link>http://www.joshuazhang.net/posts/2013/Mar/markdown-for-pelican-ref.html</link><description>&lt;div class="toc"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>幻空轩</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/.ATOM.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2013-03-29T22:13:00+01:00</updated><entry><title>Markdown syntax for Pelican Quick Reference</title><link href="http://www.joshuazhang.net/posts/2013/Mar/markdown-for-pelican-ref.html" rel="alternate"></link><updated>2013-03-29T22:13:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-03-29:posts/2013/Mar/markdown-for-pelican-ref.html</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#basic-syntax"&gt;Basic Syntax&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#headings"&gt;Headings&lt;/a&gt;&lt;/li&gt;
@@ -104,13 +104,13 @@ This is an H2
 &lt;hr /&gt;
 &lt;h3 id="image"&gt;Image&lt;/h3&gt;
 &lt;p&gt;Inline style:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;img&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Optional title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="sx"&gt;![Alt text](/path/to/img.jpg &amp;quot;Optional title&amp;quot;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Reference style:&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;  &lt;span class="s"&gt;&amp;quot;Optional title attribute&amp;quot;&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="sx"&gt;![Alt text][id]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;  &amp;quot;&lt;span class="n"&gt;Optional&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="n"&gt;attribute&lt;/span&gt;&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -222,10 +222,10 @@ else:
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nx"&gt;will&lt;/span&gt; &lt;span class="nb"&gt;output&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;will output:
 
-&lt;span class="err"&gt;~~~~&lt;/span&gt;&lt;span class="bp"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;html&lt;/span&gt;
-&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;color: red&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;HTML&lt;/span&gt; &lt;span class="nb"&gt;Document&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+~~~~.html
+&lt;span class="nt"&gt;&amp;lt;p&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;color: red&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;HTML Document&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -333,4 +333,4 @@ multiple lines.&lt;/p&gt;
 &lt;p&gt;The definition of a footnote.&amp;#160;&lt;a class="footnote-backref" href="#fnref:!DEF" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Fri, 29 Mar 2013 22:13:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2013-03-29:posts/2013/Mar/markdown-for-pelican-ref.html</guid><category>markdown</category><category>pelican</category></item></channel></rss>
+&lt;/div&gt;</summary><category term="markdown"></category><category term="pelican"></category></entry></feed>
