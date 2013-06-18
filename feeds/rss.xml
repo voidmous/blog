@@ -1,114 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>幻空轩</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/Technique.ATOM.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2013-06-14T18:47:00+02:00</updated><entry><title>告别GoogleReader</title><link href="http://www.joshuazhang.net/posts/2013/Jun/goodbay-to-googlereader.html" rel="alternate"></link><updated>2013-06-14T18:47:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-06-14:posts/2013/Jun/goodbay-to-googlereader.html</id><summary type="html">&lt;p&gt;GoogleReader即将于7月1日正式退役，目前看来这是板上钉钉了，在这天到来之前，一些必要的备份转移工作现在已经可以开始了。在开始之前，先得说点场面话。&lt;/p&gt;
-&lt;h2 id="_1"&gt;告别一个时代&lt;/h2&gt;
-&lt;p&gt;在GR弥留之际，写几句不疼不痒的挽联，算是给心头爱将一个名分吧。我2010年才开始深度使用GR，当时深感这是一款伟大的产品，不仅仅是为浏览信息提供了方便，更是为我们从越来越庞大的互联网探索获取信息提供自动化的方法，虽然目前这种自动化智能程度还比较低，但是如果我们10年后不再需要事必躬亲地获取信息而是等待智能的推送，那么我们也不应该忘了GR的一份功劳。虽然Google不是RSS的制定者，也未必最先想到云RSS阅读的点子，但是毋庸置疑GR是普及这一想法并彻底改变我等“信息狂躁症”患者生活的最大功臣。如果认真分析，GR的价值体现在这几个方面：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;免费。技术普及的门槛就是价格，一款免费而具有收费服务品质的产品没人不喜欢。&lt;/li&gt;
-&lt;li&gt;海量数据和高速运算。GR之所以能够傲视群雄就在于它依托了Google的服务器集群。&lt;/li&gt;
-&lt;li&gt;搜索和排序。海量数据是不能用文件夹或者标签管理的，搜索是惟一解决方案；而排序则是我所说的智能推送的雏形。这两点在当下并非产品的重点，但是几年后呢？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;上面几点是GR在同类产品竞争中立于不败之地的法宝，也是很多产品难以复制GR的瓶颈所在。当然取得这么大的优势需要超越别人200%的付出，那就是高企的成本和可怜的收入。从经济角度看，Google砍掉GR并非多么难以理解的事情，而对Google进行道德上的评判，我不觉得很多人有充分的理由。一款免费服务坚持了这么久，为用户带来了这么多便利，即便没有功劳也有苦劳吧，何况Google还为使用者预留了充足的时间准备后路，为什么大众还不领情呢？&lt;/p&gt;
-&lt;p&gt;或许这关系到Google的企业形象。众所周知Google以广告盈利，而广告要发挥应有的作用就需要十分普及的平台，Google的当家产品如搜索、地图、Android都是搭建了一个广告的理想平台，而广告在GR上却失败了。大众一直把Google当成信息科技革命的领头人，而它的产品也确实以免费、创新树立了这样的“无私”形象，但是也许现在的Google已经不是那个敢闯敢干的Google了，帝国的盈利压力让它不得不作出这样的决定。GR是这么一款革命的、具有重大科技价值的产品，并且积累了如果好的人脉和口碑，但是它却向“油盐酱醋茶”低头了。如果做个不恰当的类比，史冬鹏怎么跑都没人关心，刘翔，哼，他没有资本失败。&lt;/p&gt;
-&lt;p&gt;牢骚发完了，生活还要继续，Google也要照用。下面讲讲怎么无痛地告别一个时代。&lt;/p&gt;
-&lt;h2 id="_2"&gt;整理订阅源&lt;/h2&gt;
-&lt;p&gt;如果你和我一样有着几百个订阅源，并且有着众多的子目录，那么管理它们就不是一个轻松愉快的差事。我强烈建议从GR转出之前进行一次系统的整理，因为目前很多替代服务管理订阅源操作很繁琐很费时，甚至根本没有拿得出手的订阅源管理功能，相对而言，GR的操作还是很方便快捷的。&lt;/p&gt;
-&lt;p&gt;对我而言，订阅源管理主要是精简源数目以及删除无收藏价值的加星文章。如果你的订阅源不多，那你可以使用探索功能挖掘一些推荐的源，算是发挥下GR的剩余价值，不过我很怀疑还有多少GR用户没有感到“信息过载”的。许多加星文章年代久远已经失去了收藏价值，不妨大方删除，如果你很懒，那也可以不管它，下面有方便的方法备份这些文章。至于精简源数目，我个人遵循这么几个原则：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;文章性价比。许多源发布频率太高，而深度不够，徒然增大了阅读的压力，比如许多IT新闻源。&lt;/li&gt;
-&lt;li&gt;收藏性。有些网站虽然不再更新，但是文章收藏性很高，我选择让它们默默地躺在那里。&lt;/li&gt;
-&lt;li&gt;源的质量。许多源不提供全文，或者图片经常挂，阅读起来很不省心，这些客观因素可以判它们死刑。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;随着GR关闭，&lt;a href="http://www.williamlong.info/archives/3409.html"&gt;FeedBurner是否会关闭也成了未知数&lt;/a&gt; 。许多博客订阅地址都采用FeedBurner的服务，如果Google足够狠心，那么到时候大批的订阅源会失效。这个问题对订阅者来说还不怎么紧迫，但是对博主或站长而言是时候将订阅地址切换到自己子域名了。&lt;/p&gt;
-&lt;h2 id="_3"&gt;服务转移&lt;/h2&gt;
-&lt;p&gt;虽然其实我们有其它的选择，比如本地阅读器、邮件转发订阅、自建在线阅读器等，但是相信很依赖GR的朋友肯定希望有能至少复制70% GR 功能的在线托管阅读器吧，这方面其实我们的选择也不少，至于是否达到了70%那就见仁见智了。对这些在线服务进行评价，我个人比较看重这几个方面，整理出来仅供参考。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;收费策略。目前而言免费的居多，但是GR死在沙滩上了，大家难免心有余悸，所以有些收费的服务也值得考虑。（其实我很纳闷，GR为什么不转收费呢？难道用户少到连这样的尝试都不可行吗，毕竟GAE都收费了。）&lt;/li&gt;
-&lt;li&gt;操作便利性。如果一款在线阅读器不支持快捷键，那和我自己去网站刷页面有什么区别呢?曾经的 feedly 花哨有余、效率不足，给我留下的印象并不好，不知道有没有改观。&lt;/li&gt;
-&lt;li&gt;速度与界面。访问服务器的速度和抓取文章的速度二者缺一不可，难以想象总是对着 loading 是什么感觉。GR的快一方面还来自于其简洁的界面，它代表更多的信息和更快的过滤。&lt;/li&gt;
-&lt;li&gt;抓取能力与范围。GR的订阅文章更新几乎是实时的，而我试用过的一些其它产品却未能达到这么快速，应该和服务器资源有关。至于范围，身处天朝，GR曾经是一把多么好的梯子，而现在，感觉一夜回到解放前了！因为这一点，许多国内还不错的服务就给pass掉了，如果GFW对你影响不大，那你也可以支持国货。&lt;/li&gt;
-&lt;li&gt;HTTPS支持。对靠谱的网站而言该功能基本是标配了，没有的话真不知道该说什么好。必须的理由见上一条。&lt;/li&gt;
-&lt;li&gt;统计分析功能。也许这并不常用，但是一旦需要你才知道它多么有用。&lt;/li&gt;
-&lt;li&gt;手机端支持。目前对我而言非必需，但是计划赶不上变化，而且手机确实是大势所趋。&lt;/li&gt;
-&lt;li&gt;订阅源管理。如果订阅源很多，总有一天你会在这上面花费大量时间，有方便的管理功能才能感觉幸福。&lt;/li&gt;
-&lt;li&gt;第三方api推送集成。这是扩展阅读器功能的有效方式，GR可是可以自己定制的哦。&lt;/li&gt;
-&lt;li&gt;账户管理与托管服务商可信度。隐私和信息安全很容易被忽略，但最好别忘记。如果要购买收费服务，一定要确认服务托管商的可信度，在混乱的环境下很容易浑水摸鱼。&lt;/li&gt;
-&lt;li&gt;备份导出功能。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;除了上面这些主要的方面，还有一些细节让所有的GR用户欲罢不能，在相同的起跑线和能力上，细节决定成败。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;有些网站没有提供RSS订阅或者隐藏在犄角旮旯里，如果我们直接添加主网址，GR也可以”智能“地分析出订阅地址（智能的方式可能是常见地址模式猜测，或者订阅地址数据库搜索）&lt;/li&gt;
-&lt;li&gt;GR的条目跳转很流畅，也很符合使用者的预期，而很多替代品会跳乱掉甚至失焦。另外，GR的操作条目有很明显的高亮，有些产品就不那么好分辨。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;一些值得测试的在线RSS阅读器及其特点：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://theoldreader.com/"&gt;theoldreader&lt;/a&gt;，快捷键支持最像GR，速度较快，界面简洁性还有提升空间，功能还较简单。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.inoreader.com/"&gt;inoreader&lt;/a&gt;，界面最有GR范，速度有点慢，貌似对GR导入支持很好，开发比较活跃，功能也可很强，服务可靠性待检验。&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://yanobs.com/reader/"&gt;yanobs&lt;/a&gt;，免费版各方面都一般，不支持SSL。。。&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.newszeit.com"&gt;NewsZeit&lt;/a&gt;，基于开源的NewsBlur，免费版功能受限，但速度很快（东京服务器），界面上不如inoreader但强于theoldreader，国人定制支持，更适合国情，可靠性待检验。&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.feedly.com/"&gt;feedly&lt;/a&gt;，未测试&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.newsblur.com/"&gt;NewsBlur&lt;/a&gt;，未测试&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.netvibes.com/"&gt;NetVibes&lt;/a&gt;，未测试&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="_4"&gt;整体备份&lt;/h2&gt;
-&lt;p&gt;即便我们把订阅源转出去了，也一定不要认为可以安枕无忧了。比Google无良的企业比比皆是，说不准哪一天你就发现自己常用的服务消失了，而通知仅仅是一天前或者根本没通知。因此，保险起见，我们不仅可以多测试几个替代服务，同时也要做好订阅源Takeout导出备份。这个操作没有难度，也就不赘述了。&lt;/p&gt;
-&lt;p&gt;麻烦的是加星标文章，很多新的服务不支持从GR导入加星标文章，或者虽然有该功能却有各种问题，为了最大化历史数据的安全，我们可以通过导出的 json 文件将加星标文章导入 Evernote ，具体方法参考 &lt;a href="http://www.joshuazhang.net/posts/2013/Apr/export-googlereader-starreditem-to-evernote.html"&gt;导出Google Reader加星条目到Evernote&lt;/a&gt; 。&lt;/p&gt;</summary><category term="GoogleReader"></category></entry><entry><title>博客图床规划</title><link href="http://www.joshuazhang.net/posts/2013/Apr/blog-image-hosting-plan.html" rel="alternate"></link><updated>2013-04-28T23:55:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-04-28:posts/2013/Apr/blog-image-hosting-plan.html</id><summary type="html">&lt;div class="toc"&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#_1"&gt;要点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_2"&gt;方案&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#_3"&gt;不分家&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_4"&gt;第三方图床托管（不绑定域名）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_5"&gt;第三方托管（绑定域名）&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_6"&gt;自建分离图床&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#_7"&gt;结语&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;p&gt;从开始折腾WordPress到切换为静态网站，我就一直在纠结图片编辑和保存的问题。这包括两个方面：一是保持编辑文章时的流畅度，尤其是需要插入大量图片时；二是规划一个扩展性好的图片URL和对应的物理地址。第一个问题主要涉及到文章编辑，这方面Windows Live Writer最符合我的需求，但可惜它不能满足我其它的需求，在我的另一篇文章 &lt;a href="http://www.joshuazhang.net/posts/2013/Jan/wp-edit-publish-plan.html"&gt;WordPress文章编辑发布方案&lt;/a&gt; 中有所阐述，这里我不多说了。第二个问题其实就是规划图床(虽然说是图床，但是其实也包括了附件、CSS、JS等文件)的问题，是本文探讨的中心。&lt;/p&gt;
-&lt;h2 id="_1"&gt;要点&lt;/h2&gt;
-&lt;p&gt;在读图时代，单图胜万言实在是每个博客作者都应该牢记在心的金玉良言，实际上其它文章类别也是如此。不过，博客图片的成本可要远远高于文字（创作成本、流量空间成本、管理成本等）。我把博客图床规划时需要考虑的问题总结如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;数据安全性。对一个博客而言，数据的重要性是不言而喻的，如果图片随时可能丢失或损坏，没有人可以睡得安稳。对于第三方服务我们还是应该采取保守策略，毕竟连Google都不再是初恋时的Google了。&lt;/li&gt;
-&lt;li&gt;备份成本。如果无法保证数据时刻处于安全的状态，那么只能自己勤快地手工备份了，如果有高度自动化的备份流程可以省不少心。&lt;/li&gt;
-&lt;li&gt;流量、空间等资源限制。大量的图片托管在一个可靠的服务器上是省心但是伤钱的事情，不是高帅富就只能用其它方案逆袭。&lt;/li&gt;
-&lt;li&gt;可迁移性。写一个博客可以折腾的事多了去了（实际上这也是乐趣之一），包括域名、空间、博客引擎、服务器环境等等，总不能每次都去手动改URL吧。&lt;/li&gt;
-&lt;li&gt;可扩展性。博客如果壮大了，就会需要一些新的功能，比如防盗链、图片压缩等，其实也是不得已而为之。这时候能够统一处理所有图片无疑是很方便的。&lt;/li&gt;
-&lt;li&gt;访问速度。考虑到我们在网速上无法与国际接轨，国外优秀的服务往往会因为这点而处于劣势。&lt;/li&gt;
-&lt;li&gt;局域网环境。如果你不知道我在说什么，那我就给你两个关键词：备案、长城。如果你一眼就看懂了，那就在心里默念一个字“凸”吧！&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="_2"&gt;方案&lt;/h2&gt;
-&lt;p&gt;以下我将详细列举比较各种常见方案，由于对于不同的人而言优缺点可能是完全相反的，所以请读者注意这些观点仅供参考。&lt;/p&gt;
-&lt;h3 id="_3"&gt;不分家&lt;/h3&gt;
-&lt;p&gt;即采用博客引擎的默认设置，对于WordPress而言是自动上传到upload文件夹，对多数静态博客而言是使用相对路径访问图片资源，整站生成时会复制到指定目录。这种情况下图片的URL是很规范的，基本上是&lt;code&gt;http://domainname.com/upload or static/xxx.jpg&lt;/code&gt;的形式，在编辑文章时也很方便，但是它把程序和图片绑定在了一起，如果迁移，两者必须保持位置关系，否则就需要修改文章内的引用地址（WordPress可以使用SQL语句，静态博客需要&lt;code&gt;sed&lt;/code&gt;和正则表达式进行转换。）简而言之，该方案适合不折腾、稳定经营博客的用户。&lt;/p&gt;
-&lt;h3 id="_4"&gt;第三方图床托管（不绑定域名）&lt;/h3&gt;
-&lt;p&gt;虽然免费主机现在一抓一大把，但是大空间大流量稳定又省钱的实在打着灯笼也难找，因此把图片分离出去一直都有着很稳定的市场需求，有需求就有hack，在这个领域网民们确实展示除了他们非凡的智慧。简单想想就可以列出很多：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;图片托管商：Picasa、Photobucket、flickr之流&lt;/li&gt;
-&lt;li&gt;各种网盘外链，比如Dropbox&lt;/li&gt;
-&lt;li&gt;各类博客、微博发布平台外链&lt;/li&gt;
-&lt;li&gt;Skydrive、Google doc外链（需繁琐地寻找地址）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;正规的内容管理网站往往会在用无规则的字串掩盖图片的真实地址，甚至改变文件名，不仅仅在文章中看起来丑陋，而且不利于编辑和长期的统一管理；更大的隐患是一旦托管商关闭服务，那么这些老图片都将变成刺眼的红叉，尤其是很少有托管商提供方便的备份导出方法，即便你导出了，那么地址又怎么改呢？基于这些理由，我个人很不喜欢这种方式。&lt;/p&gt;
-&lt;h3 id="_5"&gt;第三方托管（绑定域名）&lt;/h3&gt;
-&lt;p&gt;与第二类方案有区别的地方在于，虽然仍然是第三方托管，但是由于可以绑定域名，所以链接地址得到了规范，而且往往还有成熟的备份策略，主要有这么几种：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;gh-pages等社交编程类服务托管&lt;/li&gt;
-&lt;li&gt;各类云计算平台：Heroku、OpenShift、GAE、SAE&lt;/li&gt;
-&lt;li&gt;Sourceforge（特殊，类似虚拟主机）&lt;/li&gt;
-&lt;li&gt;收费云存储平台：又拍、阿里OSS、华为直链Google Cloud Storage、Amazon S3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本来Dropbox的外链可以绑定域名的，但是由于新的规则中外链地址加入了随机字符，绑定域名已经意义不大，因此放到了第二类方案中。&lt;/p&gt;
-&lt;p&gt;对前三种方法，我想说的是使用者应当感谢开源世界为整个人类的信息交流作出的贡献，如果有能力，你可以贡献自己的代码，如果没有，你也应该常怀感恩之心，毕竟，免费不代表没有价值，甚至有它还有不一般的价值。第四种云存储方案近来十分流行，应该是大势所趋。对我而言，国外两个巨头提供的虽然价格高高在上（也有免费配额），但是仍然十分诱人；至于国内的，备案两个字就让我完全死心了。&lt;/p&gt;
-&lt;p&gt;截至这篇文章完成，我采取的正是gh-pages托管的方式，但是正如我所言，这种只索取不付出的行为会对奉献者产生极大的伤害，因此，寻找更可持续的方式是我现在面临的问题。&lt;/p&gt;
-&lt;h3 id="_6"&gt;自建分离图床&lt;/h3&gt;
-&lt;p&gt;如果想要获得最完全最自由的控制，自建分离图床就是终极的解决方案，当然它的代价就是高昂的技术门槛和管理成本、经济成本。具体而言，你还是可以选择喜欢的方式：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;博客与图片“同床异梦”。虽然在同一个空间下，但是图片绑定到&lt;code&gt;img.domian.com&lt;/code&gt;这样的二级子域名下。&lt;/li&gt;
-&lt;li&gt;博客与图片“分而治之”。这就意味着你需要两个空间，由于两者的文件形式不同，因此管理和备份的方式也不同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这种方案的灵活还体现在你可以自由地选择空间，由于数据库（或者静态网页）体积流量都小，而图片等体积大、流量多，因此可以分别选择不同类型的空间Hosting，甚至是免费空间（只要备份做得到位！）。不同“空间”可以获取的权限不同（ftp、ssh、root），这种差异决定了上传和备份的方式也不相同，因此也可以说这种方式是最折腾人的。&lt;/p&gt;
-&lt;h2 id="_7"&gt;结语&lt;/h2&gt;
-&lt;p&gt;不同的人对于技术的理解、对于博客的追求乃至经济、时间、精力都不相同，因此不能用一套标准来衡量所有的方案，但幸运的是我们还有这很多选择，虽然其中一部分是在恶劣的环境下的产物。用什么方式也许不重要，重要的是我们的付出转化为了一段段文字在这个世界的众多黑暗角落里以0和1的形式奔腾着，它们才是我们的财富。&lt;/p&gt;</summary><category term="Blog"></category><category term=""></category></entry><entry><title>导出Google Reader加星条目到Evernote</title><link href="http://www.joshuazhang.net/posts/2013/Apr/export-googlereader-starreditem-to-evernote.html" rel="alternate"></link><updated>2013-04-18T19:13:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-04-18:posts/2013/Apr/export-googlereader-starreditem-to-evernote.html</id><summary type="html">&lt;p&gt;Google Reader即将离我们而去，这个决定目前看来没有挽回的可能。我个人对Google的服务也很依赖，Google Reader更是常驻在书签栏，不过与其把力气花在谴责Google的作为，不如寻找更好的替代品和抓紧时间备份积累的订阅源和文章。目前离7月1日尚早，其它在线阅读器还有很长的时间打磨产品，所以替代品的筛选还不急于一时。倒是收藏的文章（加星标的条目）怎么导出似乎没有引起大家的关注，我把自己搜索整理的一些导出方案记录下来并作个比较（虽然没有一一测试），希望我的判断能有些参考价值。&lt;/p&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>幻空轩</title><link>http://www.joshuazhang.net/</link><description></description><atom:link href="http://www.joshuazhang.net/feeds/rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 18 Apr 2013 19:13:00 +0200</lastBuildDate><item><title>导出Google Reader加星条目到Evernote</title><link>http://www.joshuazhang.net/posts/2013/Apr/export-googlereader-starreditem-to-evernote.html</link><description>&lt;p&gt;Google Reader即将离我们而去，这个决定目前看来没有挽回的可能。我个人对Google的服务也很依赖，Google Reader更是常驻在书签栏，不过与其把力气花在谴责Google的作为，不如寻找更好的替代品和抓紧时间备份积累的订阅源和文章。目前离7月1日尚早，其它在线阅读器还有很长的时间打磨产品，所以替代品的筛选还不急于一时。倒是收藏的文章（加星标的条目）怎么导出似乎没有引起大家的关注，我把自己搜索整理的一些导出方案记录下来并作个比较（虽然没有一一测试），希望我的判断能有些参考价值。&lt;/p&gt;
 &lt;h2 id="_1"&gt;导出方案思路&lt;/h2&gt;
 &lt;p&gt;目前网上可以搜集到的方案有这么几种：&lt;/p&gt;
 &lt;ul&gt;
@@ -142,7 +33,7 @@
 &lt;p&gt;&lt;code&gt;export2enex.py&lt;/code&gt;这个脚本有个小bug，就是对文章的链接url中的&lt;code&gt;&amp;amp;&lt;/code&gt;字符处理不当（应该转换为&lt;code&gt;&amp;amp;amp;&lt;/code&gt;的形式），导致导出的&lt;code&gt;enex&lt;/code&gt;文件无法被正确导入到Evernote，需要加入如下代码到合适位置：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;amp;&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;msg_url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;msg_url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;msg_url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;amp;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;amp;amp;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="Google Reader"></category><category term="Evernote"></category></entry><entry><title>El-get——emacs包管理利器</title><link href="http://www.joshuazhang.net/posts/2013/Apr/el-get-intro.html" rel="alternate"></link><updated>2013-04-07T15:38:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-04-07:posts/2013/Apr/el-get-intro.html</id><summary type="html">&lt;div class="toc"&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Thu, 18 Apr 2013 19:13:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2013-04-18:posts/2013/Apr/export-googlereader-starreditem-to-evernote.html</guid><category>Google Reader</category><category>Evernote</category></item><item><title>El-get——emacs包管理利器</title><link>http://www.joshuazhang.net/posts/2013/Apr/el-get-intro.html</link><description>&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#el-get-vs-elpa"&gt;El-get vs ELPA&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#el-get"&gt;安装el-get&lt;/a&gt;&lt;/li&gt;
@@ -204,7 +95,341 @@
 &lt;h2 id="_1"&gt;参考文章&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://github.com/dimitri/el-get"&gt;el-get@Github&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;&lt;a href="http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/"&gt;Package Management in Emacs: The Good, the Bad and the Ugly&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://emacser.com/el-get.htm"&gt;GNU Emacs的终极扩展管理工具 — el-get&lt;/a&gt; &lt;/p&gt;</summary><category term="el-get"></category><category term="Emacs"></category></entry><entry><title>WordPress文章编辑发布方案</title><link href="http://www.joshuazhang.net/posts/2013/Jan/wp-edit-publish-plan.html" rel="alternate"></link><updated>2013-01-04T00:00:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-01-04:posts/2013/Jan/wp-edit-publish-plan.html</id><summary type="html">&lt;p&gt;我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话,想要了解其它的方案，这篇文章也许会有帮助。首先要说明的是编辑和发布是两个阶段，如果再详细点还应该包括修改阶段，下面的一些发布流程往往只能照顾到某一个方面，而在另一个方面就相形见绌，总有这样那样的瑕疵。基本上，WordPress的编辑发布方案有这么几大类：&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://emacser.com/el-get.htm"&gt;GNU Emacs的终极扩展管理工具 — el-get&lt;/a&gt; &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Sun, 07 Apr 2013 15:38:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2013-04-07:posts/2013/Apr/el-get-intro.html</guid><category>el-get</category><category>Emacs</category></item><item><title>Markdown syntax for Pelican Quick Reference</title><link>http://www.joshuazhang.net/posts/2013/Mar/markdown-for-pelican-ref.html</link><description>&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#basic-syntax"&gt;Basic Syntax&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#headings"&gt;Headings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#blockquote"&gt;Blockquote&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#list"&gt;List&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#code-block"&gt;Code block&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#horizontal-rules"&gt;Horizontal rules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#image"&gt;Image&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#link"&gt;Link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#phrase-emphasis"&gt;Phrase Emphasis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#manual-line-breaks"&gt;Manual Line Breaks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#blackslash-escape"&gt;Blackslash Escape&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#extra-features-from-python-markdown"&gt;Extra Features From Python-Markdown&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#abbreviations"&gt;Abbreviations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#attribute-lists"&gt;Attribute Lists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#definition-lists"&gt;Definition Lists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#fenced-code-blocks"&gt;Fenced Code Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#footnotes"&gt;Footnotes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tables"&gt;Tables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#codehilite"&gt;CodeHilite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#metadata-for-post"&gt;Metadata for post&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;p&gt;This post is a simple markdown syntax reference for Pelican(the static blog generator that builds this blog), especially coupled with some features from Python-Markdown.&lt;/p&gt;
+&lt;h2 id="basic-syntax"&gt;Basic Syntax&lt;/h2&gt;
+&lt;h3 id="headings"&gt;Headings&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Setext&lt;/code&gt; style:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;This is an H1
+=============
+
+This is an H2
+-------------
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Atx&lt;/code&gt; style:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;# This is H1 (#)optional
+# This is H2 (#)
+###### This is H6 (######)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="blockquote"&gt;Blockquote&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;level&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;quoting&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;is&lt;/span&gt; &lt;span class="n"&gt;nested&lt;/span&gt; &lt;span class="n"&gt;blockquote&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Back&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;first&lt;/span&gt; &lt;span class="n"&gt;level&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will output:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is the first level of quoting.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is nested blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Back to the first level.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="list"&gt;List&lt;/h3&gt;
+&lt;p&gt;Unordered list:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;* Red
++ Green
+- Blue
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Red&lt;/li&gt;
+&lt;li&gt;Green&lt;/li&gt;
+&lt;li&gt;Blue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ordered list:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;1. Thor
+2. Ironman
+3. Hulk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Thor&lt;/li&gt;
+&lt;li&gt;Ironman&lt;/li&gt;
+&lt;li&gt;Hulk&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="code-block"&gt;Code block&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;    Some text.
+
+    code goes here.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="horizontal-rules"&gt;Horizontal rules&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;***&lt;/code&gt; or &lt;code&gt;---&lt;/code&gt; or &lt;code&gt;___&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id="image"&gt;Image&lt;/h3&gt;
+&lt;p&gt;Inline style:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;img&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Optional title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Reference style:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="kt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;image&lt;/span&gt;  &lt;span class="s"&gt;&amp;quot;Optional title attribute&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="link"&gt;Link&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;* This is an [Google](http://google.com/ &amp;quot;Googlelink&amp;quot;) inline link.
+
+* This is an [Google][id] reference-style link.
+[id]: http://google.com/  &amp;quot;Optional Title Here&amp;quot;
+
+* See my [About](/about/) page for details.
+
+* An implict [Google][] link.
+[Google]: http://google.com/
+
+* An autolink &amp;lt;http://google.com/&amp;gt;
+
+* Email link &amp;lt;address@gmail.com&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;This is an &lt;a href="http://google.com/" title="Googlelink"&gt;Google&lt;/a&gt; inline link.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;This is an &lt;a href="http://google.com/" title="Optional Title Here"&gt;Google&lt;/a&gt; reference-style link.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;See my &lt;a href="/about/"&gt;About&lt;/a&gt; page for details.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;An implict &lt;a href="http://google.com/"&gt;Google&lt;/a&gt; link.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;An autolink &lt;a href="http://google.com/"&gt;http://google.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Email link &lt;a href="&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#116;&amp;#111;&amp;#58;&amp;#97;&amp;#100;&amp;#100;&amp;#114;&amp;#101;&amp;#115;&amp;#115;&amp;#64;&amp;#103;&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#46;&amp;#99;&amp;#111;&amp;#109;"&gt;&amp;#97;&amp;#100;&amp;#100;&amp;#114;&amp;#101;&amp;#115;&amp;#115;&amp;#64;&amp;#103;&amp;#109;&amp;#97;&amp;#105;&amp;#108;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="phrase-emphasis"&gt;Phrase Emphasis&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;*stupid*&lt;/code&gt; or &lt;code&gt;_stupid_&lt;/code&gt; will output &lt;em&gt;stupid&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;**stupid**&lt;/code&gt; or &lt;code&gt;__stupid__&lt;/code&gt; will output &lt;strong&gt;stupid&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id="manual-line-breaks"&gt;Manual Line Breaks&lt;/h3&gt;
+&lt;h3 id="blackslash-escape"&gt;Blackslash Escape&lt;/h3&gt;
+&lt;p&gt;\ can escape following symbols: &lt;code&gt;\`*_{}[]()#+-.!&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="extra-features-from-python-markdown"&gt;Extra Features From Python-Markdown&lt;/h2&gt;
+&lt;p&gt;Default features supported by Python-Markdown, i.e. &lt;code&gt;extra&lt;/code&gt; and &lt;code&gt;codehilite&lt;/code&gt; extension function. Consult &lt;a href="http://pythonhosted.org/Markdown/"&gt;here&lt;/a&gt; for more details. If you want to add more features, you should change the setting &lt;code&gt;MD_EXTENSIONS (['codehilite','extra'])&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="abbreviations"&gt;Abbreviations&lt;/h3&gt;
+&lt;h3 id="attribute-lists"&gt;Attribute Lists&lt;/h3&gt;
+&lt;h3 id="definition-lists"&gt;Definition Lists&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;Apple
+:   Pomaceous fruit of plants of the genus Malus in 
+    the family Rosaceae.
+
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;dl&gt;
+&lt;dt&gt;Apple&lt;/dt&gt;
+&lt;dd&gt;Pomaceous fruit of plants of the genus Malus in 
+the family Rosaceae.&lt;/dd&gt;
+&lt;dt&gt;Orange&lt;/dt&gt;
+&lt;dd&gt;The fruit of an evergreen tree of the genus Citrus.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h3 id="fenced-code-blocks"&gt;Fenced Code Blocks&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;~~~~.python
+def factorial(n):
+if n == 0:
+    return 1
+else:
+    return n * factorial(n - 1)
+~~~~
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will output:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;~~~~{.python}
+def factorial(n):
+if n == 0:
+    return 1
+else:
+    return n * factorial(n - 1)
+~~~~
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will output:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;~~~~.html
+&amp;lt;p style=&amp;quot;color: red&amp;quot;&amp;gt;HTML Document&amp;lt;/p&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nx"&gt;will&lt;/span&gt; &lt;span class="nb"&gt;output&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+
+&lt;span class="err"&gt;~~~~&lt;/span&gt;&lt;span class="bp"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;html&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;color: red&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;HTML&lt;/span&gt; &lt;span class="nb"&gt;Document&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Github's tilde syntax:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;```python
+def factorial(n):
+if n == 0:
+    return 1
+else:
+    return n * factorial(n - 1)
+```
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;will output:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;factorial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3 id="footnotes"&gt;Footnotes&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;Footnotes[^1] have a label[^label] and a definition[^!DEF].
+
+[^1]: This is a footnote.
+    Paragraph two of the definition.
+
+    &amp;gt; A blockquote with
+    &amp;gt; multiple lines.
+
+        a code block
+
+    A final paragraph.
+
+[^label]: A footnote on &amp;quot;label&amp;quot;
+[^!DEF]: The definition of a footnote.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Footnotes&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; have a label&lt;sup id="fnref:label"&gt;&lt;a class="footnote-ref" href="#fn:label" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; and a definition&lt;sup id="fnref:!DEF"&gt;&lt;a class="footnote-ref" href="#fn:!DEF" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h3 id="tables"&gt;Tables&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;First Header&lt;/th&gt;
+&lt;th&gt;Second Header&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="codehilite"&gt;CodeHilite&lt;/h3&gt;
+&lt;h3 id="metadata-for-post"&gt;Metadata for post&lt;/h3&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;Title: Blog Title
+Date: 2010-12-03 10:20
+Tags: thats, awesome
+Category: yeah
+Slug: my-super-post
+Author: authorname
+Summary: Short version for index and feeds
+Status: draft
+
+This is the content of my super blog post.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The slug metadata &lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;This is a footnote.
+Paragraph two of the definition.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A blockquote with
+multiple lines.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;code&lt;/span&gt; &lt;span class="n"&gt;block&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A final paragraph.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:label"&gt;
+&lt;p&gt;A footnote on "label"&amp;#160;&lt;a class="footnote-backref" href="#fnref:label" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:!DEF"&gt;
+&lt;p&gt;The definition of a footnote.&amp;#160;&lt;a class="footnote-backref" href="#fnref:!DEF" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Fri, 29 Mar 2013 22:13:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2013-03-29:posts/2013/Mar/markdown-for-pelican-ref.html</guid><category>markdown</category><category>pelican</category></item><item><title>WordPress文章编辑发布方案</title><link>http://www.joshuazhang.net/posts/2013/Jan/wp-edit-publish-plan.html</link><description>&lt;p&gt;我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话,想要了解其它的方案，这篇文章也许会有帮助。首先要说明的是编辑和发布是两个阶段，如果再详细点还应该包括修改阶段，下面的一些发布流程往往只能照顾到某一个方面，而在另一个方面就相形见绌，总有这样那样的瑕疵。基本上，WordPress的编辑发布方案有这么几大类：&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;后台发布&lt;/h2&gt;
 &lt;p&gt;这是默认的，也是便利性、兼容性最好的方案。但是它最大的缺点就在于一个字：慢。这个慢有两个方面，一是后台太笨重，如果你空间本来就不快（比如国外的空间），那加载后台都会等很久；二是WYSIWYG的编辑方式，如果你要搞长篇大论，图文并茂的话，上传图片、预览这些操作都是费事费力的。当然改进的方法也有：使用WP前台编辑插件（什么名字我忘了）、尽量不预览（对html熟悉程度要高）。&lt;/p&gt;
@@ -242,7 +467,7 @@
 &lt;/ul&gt;
 &lt;p&gt;基本上我的要求难以同时得到满足，所以有这么一个折腾的理由，我也就顺理成章地转到了Pelican上去了。静态博客当然也有它的缺点，不过暂时而言我对它的喜爱还是多一点的。&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="WordPress"></category></entry><entry><title>cygwin安装jekyll</title><link href="http://www.joshuazhang.net/posts/2012/Sep/cygwin-install-jekyll.html" rel="alternate"></link><updated>2012-09-24T00:00:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-09-24:posts/2012/Sep/cygwin-install-jekyll.html</id><summary type="html">&lt;h2 id="ruby"&gt;卸载已安装的ruby&lt;/h2&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Fri, 04 Jan 2013 00:00:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2013-01-04:posts/2013/Jan/wp-edit-publish-plan.html</guid><category>WordPress</category></item><item><title>cygwin安装jekyll</title><link>http://www.joshuazhang.net/posts/2012/Sep/cygwin-install-jekyll.html</link><description>&lt;h2 id="ruby"&gt;卸载已安装的ruby&lt;/h2&gt;
 &lt;p&gt;用对应的包管理器卸载
 如果是rvm安装的，直接删除目录&lt;code&gt;~/.rvm&lt;/code&gt;，然后删除&lt;code&gt;.zshrc&lt;/code&gt;和&lt;code&gt;.zlogin&lt;/code&gt;文件，去掉&lt;code&gt;.profile&lt;/code&gt;和&lt;code&gt;.bash_profile&lt;/code&gt;中关于rvm的语句即可。&lt;/p&gt;
 &lt;h2 id="rvm"&gt;安装rvm&lt;/h2&gt;
@@ -303,7 +528,7 @@ gem install pkg/posix-spawn-0.3.6
 
 &lt;p&gt;再&lt;code&gt;gem install jekyll&lt;/code&gt;就没问题啦。&lt;/p&gt;
 &lt;h2 id="_1"&gt;参考页面&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://matt.scharley.me/2012/03/10/windows-cygwin-and-jekyll.html"&gt;Windows,Cygwin and Jekyll&lt;/a&gt;&lt;/p&gt;</summary><category term="cygwin"></category><category term="jekyll"></category></entry><entry><title>wordpress数据库优化记录</title><link href="http://www.joshuazhang.net/posts/2012/Aug/wp-database-optimization.html" rel="alternate"></link><updated>2012-08-30T20:02:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-08-30:posts/2012/Aug/wp-database-optimization.html</id><summary type="html">&lt;p&gt;前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://matt.scharley.me/2012/03/10/windows-cygwin-and-jekyll.html"&gt;Windows,Cygwin and Jekyll&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Mon, 24 Sep 2012 00:00:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-09-24:posts/2012/Sep/cygwin-install-jekyll.html</guid><category>cygwin</category><category>jekyll</category></item><item><title>wordpress数据库优化记录</title><link>http://www.joshuazhang.net/posts/2012/Aug/wp-database-optimization.html</link><description>&lt;p&gt;前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。&lt;/p&gt;
 &lt;p&gt;基本流程如下：&lt;/p&gt;
 &lt;p&gt;1、备份。做任何数据库操作前，做一个临时备份都是必要的。使用phpmyadmin按默认设置导出sql文件下载到本地即可。&lt;/p&gt;
 &lt;p&gt;2、删除不必要的插件。不必要的插件应当越少越好，尤其是会写入数据库或者查询数据库的插件。比如我之前使用过的&lt;a class="reference external" href="http://www.6psp.cn/20100917/statpresscn%E6%8F%92%E4%BB%B6%E9%80%A0%E6%88%90%E5%8D%9A%E5%AE%A2%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%EF%BC%8C%E8%B5%B6%E5%BF%AB%E5%88%A0%E9%99%A4.html"&gt;statpresscn&lt;/a&gt;，这个插件会在数据库中建立一个庞大的wp_statpresscn表，虽然没有前台查询，不过它造成的数据库冗余带来的坏处可远远大于统计功能带来的便利，所以还是删了吧。&lt;/p&gt;
@@ -318,7 +543,7 @@ Cache。以“_transient”开头的数据都是因为用了RSS小工具产生�
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;DELETE&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;wp_options&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;option_name&lt;/span&gt; &lt;span class="n"&gt;REGEXP&lt;/span&gt; &lt;span class="err"&gt;&amp;quot;&lt;/span&gt;&lt;span class="n"&gt;_transient_&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;4、优化数据表。最后还要利用phpmyadmin执行优化数据表，体积还会有所减小。&lt;/p&gt;
-</summary><category term="WordPress"></category><category term="优化"></category><category term="数据库"></category></entry><entry><title>《MATLAB M语言高级编程》读书笔记</title><link href="http://www.joshuazhang.net/posts/2012/Jul/matlab-note.html" rel="alternate"></link><updated>2012-07-30T21:04:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-07-30:posts/2012/Jul/matlab-note.html</id><summary type="html">&lt;p&gt;第一章：M语言基础&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Thu, 30 Aug 2012 20:02:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-08-30:posts/2012/Aug/wp-database-optimization.html</guid><category>WordPress</category><category>优化</category><category>数据库</category></item><item><title>《MATLAB M语言高级编程》读书笔记</title><link>http://www.joshuazhang.net/posts/2012/Jul/matlab-note.html</link><description>&lt;p&gt;第一章：M语言基础&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Matlab是解释型语言，不同于C语言这样的编译型语言，不过Matlab现在也可以编译。&lt;/li&gt;
 &lt;li&gt;whos命令查看变量&lt;/li&gt;
@@ -332,13 +557,13 @@ Cache。以“_transient”开头的数据都是因为用了RSS小工具产生�
 &lt;p&gt;这一张图基本就讲清楚了所有的情况，注意A([9 14;10
 15])这样的索引方式。想一想A([8 12;10 11])是什么，A([8:10;10:12])又是什么？
 进一步想想这个程序的结果是什么：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;1&lt;span class="p"&gt;:&lt;/span&gt;3&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;3&lt;span class="p"&gt;,&lt;/span&gt;1&lt;span class="p"&gt;),:)&lt;/span&gt;
-&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;=[&lt;/span&gt;1&lt;span class="p"&gt;;&lt;/span&gt;2&lt;span class="p"&gt;;&lt;/span&gt;3&lt;span class="p"&gt;];&lt;/span&gt;
-&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="nb"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;1&lt;span class="p"&gt;,&lt;/span&gt;3&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;=[&lt;/span&gt;4&lt;span class="p"&gt;:&lt;/span&gt;6&lt;span class="p"&gt;;&lt;/span&gt;7&lt;span class="p"&gt;:&lt;/span&gt;9&lt;span class="p"&gt;];&lt;/span&gt;
-&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;1&lt;span class="p"&gt;:&lt;/span&gt;4&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;2&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;2&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;1&lt;span class="p"&gt;:&lt;/span&gt;4&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;2&lt;span class="p"&gt;)),:)&lt;/span&gt;
-&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;1&lt;span class="p"&gt;:&lt;/span&gt;9&lt;span class="p"&gt;,&lt;/span&gt;3&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;3&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;1&lt;span class="p"&gt;:&lt;/span&gt;9&lt;span class="p"&gt;,&lt;/span&gt;3&lt;span class="p"&gt;)))&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),:)&lt;/span&gt;
+&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;=[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="nb"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;=[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)),:)&lt;/span&gt;
+&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="nb"&gt;mod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;求B、C用这种方法显得繁琐，用repmat更简洁，不过b、d的求法又很方便了。&lt;/p&gt;
 &lt;ul class="simple"&gt;
@@ -431,7 +656,7 @@ Cache。以“_transient”开头的数据都是因为用了RSS小工具产生�
 &lt;li&gt;使用 nargout命令或者 length(varargout)来检测到底有了多少个输出参数。&lt;/li&gt;
 &lt;li&gt;使用元胞数组内容提取符{}来对可变输出参数赋值。&lt;/li&gt;
 &lt;/ol&gt;
-</summary><category term="Matlab"></category><category term=""></category></entry><entry><title>Linux外置硬盘加载方案</title><link href="http://www.joshuazhang.net/posts/2012/Jul/linux-usb-mount.html" rel="alternate"></link><updated>2012-07-17T16:20:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-07-17:posts/2012/Jul/linux-usb-mount.html</id><summary type="html">&lt;p&gt;对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab"&gt;fstab
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Mon, 30 Jul 2012 21:04:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-07-30:posts/2012/Jul/matlab-note.html</guid><category>Matlab</category><category></category></item><item><title>Linux外置硬盘加载方案</title><link>http://www.joshuazhang.net/posts/2012/Jul/linux-usb-mount.html</link><description>&lt;p&gt;对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab"&gt;fstab
 wiki&lt;/a&gt;。简单地说就是现在/media目录下创建好要加载到的目标目录，然后在fstab中添加常连的外置硬盘mount条目即可。&lt;/p&gt;
 &lt;p&gt;这个方案是我最开始采用的，没有太大问题，但是还不完美。主要是最近我的外置硬盘接口似乎有点松动，所以用段时间后会自动掉线，这时系统又会自动搜索加载，麻烦在于自动加载的目录和我所设的目录不一致了，这样所有对该硬盘下文件的操作就会“找不到目标”。典型的例子就是用播放器播放外置硬盘的歌曲，掉线重连后播放器就找不到曲目，只能又去手动加载，十分费劲。&lt;/p&gt;
 &lt;p&gt;Linux下自动加载usb外置硬盘会mount到/media/$partition
@@ -439,7 +664,49 @@ label目录下（起码我在Arch和Linux
 Mint下是如此），因此，你可以把手工设置的目录名称和外置硬盘分区的label修改成一致即可，这样就算掉线重连，文件位置不改变也就不会出现错误啦。想法是好的，不过可惜，如果系统检测到有同名的目录它就会创建一个带_的一个新目录作为挂载点，这条路也行不通。（也许可以修改哪里的设置或者权限可以达到这个目的？）&lt;/p&gt;
 &lt;p&gt;目前只能不采用手动挂载而采用自动搜索挂载，这样其实也没太大的缺点，总比不断手动修改挂载点强。&lt;/p&gt;
 &lt;p&gt;另外外置硬盘分区的label可以用Gparted修改，先卸载要修改的硬盘，然后右键修改label，再应用这些修改即可。修改成一个简短好识别的id，固定下来以后就不会再有诸如此类的麻烦了。&lt;/p&gt;
-&lt;/p&gt;</summary><category term="linux"></category><category term="mount"></category><category term=""></category></entry><entry><title>MS Word题注与交叉引用</title><link href="http://www.joshuazhang.net/posts/2012/Jul/MS-Word-label.html" rel="alternate"></link><updated>2012-07-05T19:51:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-07-05:posts/2012/Jul/MS-Word-label.html</id><summary type="html">&lt;p&gt;MS Word作为微软的拳头产品，虽然乏善可陈，但是仍然稳坐国内市场头把交椅，就算是在高校，这种局面也好不了多少。最近用Word写了份简短的文档，没什么花哨的东西，就是些公式和交叉引用、参考文献啥的，还是要请出Google大神才搞定。中间关于域以及题注上的有些细节问题没有完全搞懂，看来还是要系统地看看Word教程（谁说Word易用的，不学能用吗？！）。&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Tue, 17 Jul 2012 16:20:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-07-17:posts/2012/Jul/linux-usb-mount.html</guid><category>linux</category><category>mount</category><category></category></item><item><title>用MATLAB分析Henon映射</title><link>http://www.joshuazhang.net/posts/2012/Jul/henon-matlab-analysis.html</link><description>&lt;p&gt;Henon映射是动力系统研究中很常见的离散映射，因为它具有的混沌特性而闻名。映射方程如下：
+\[\left\{\begin{array}\~x_{n+1}=y_n+1-a\times~x_n^2 \\ y_{n+1}=bx_n \\ \end{array} \right. \]&lt;/p&gt;
+&lt;p&gt;不同的a、b参数下该映射具有不同的性质，可能出现混沌、断续或者收敛到周期轨道上不同的情况。取a=1.4，b=0.3时会产生著名的henon吸引子。&lt;/p&gt;
+&lt;img alt="/static/img/wp/henon1.png" src="/static/img/wp/henon1.png" /&gt;
+&lt;p&gt;Henon吸引子，横轴为x，纵轴为y，其实就是所有迭代的点产生的图案，形状比较怪异。&lt;/p&gt;
+&lt;img alt="/static/img/wp/henon2.png" src="/static/img/wp/henon2.png" /&gt;
+&lt;p&gt;b=0.3时的分岔图，不同a值下x可能在几个值间变化，也可能在许多值之间变化，即产生了混沌。顺便吐槽下Matlab生成的图片太不精细了，暂时还不知道用什么方法能提高图片细节。&lt;/p&gt;
+&lt;p&gt;Matlab源代码：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;% By voidmous&amp;lt;voidmous@gmail.com&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;% Henon map analysis&lt;/span&gt;
+&lt;span class="n"&gt;clear&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;clc&lt;/span&gt;
+&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;zeros&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;zeros&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;1.4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;
+   &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;^&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+   &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Henon Attractor&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.97&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;0.001&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;1.5&lt;/span&gt;
+   &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;
+      &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;^&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+      &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+   &lt;span class="k"&gt;end&lt;/span&gt;
+   &lt;span class="n"&gt;scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nb"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;black&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;filled&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+   &lt;span class="n"&gt;hold&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;bifurcation for a&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;参考文献&lt;/p&gt;
+&lt;p&gt;[1]Wikipedia contributors. &lt;a class="reference external" href="http://en.wikipedia.org/w/index.php?title=H%C3%A9non_map&amp;amp;oldid=474794740"&gt;Hénon map&lt;/a&gt;[J]. Wikipedia, the free
+encyclopedia, Wikimedia Foundation, Inc., 2012.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Mon, 09 Jul 2012 18:24:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-07-09:posts/2012/Jul/henon-matlab-analysis.html</guid><category>Henon</category><category>Matlab</category><category>分岔</category><category>吸引子</category><category>映射</category><category>混沌</category></item><item><title>MS Word题注与交叉引用</title><link>http://www.joshuazhang.net/posts/2012/Jul/MS-Word-label.html</link><description>&lt;p&gt;MS Word作为微软的拳头产品，虽然乏善可陈，但是仍然稳坐国内市场头把交椅，就算是在高校，这种局面也好不了多少。最近用Word写了份简短的文档，没什么花哨的东西，就是些公式和交叉引用、参考文献啥的，还是要请出Google大神才搞定。中间关于域以及题注上的有些细节问题没有完全搞懂，看来还是要系统地看看Word教程（谁说Word易用的，不学能用吗？！）。&lt;/p&gt;
 &lt;p&gt;关于公式多说两句，Word自带的公式编辑器3.0实在是太简单了，要输入空集符号都不行，要输复杂点的公式简直找虐。第三方的mathtype印象中比自带的显示效果还要差，虽然功能似乎强大点。Aurora是基于LaTeX的，输入公式确实快捷，效果也最好，但是担心会出现兼容性问题，转换成图片的话和mathtype一样都不够原生态。总之公式的美观、输入快捷和兼容性三者在Word上兼得。&lt;/p&gt;
 &lt;p&gt;Zotero在Word内插入参考文献其实是添加了域代码，通过域来更新文献内容以及索引。所谓域，可以理解为一个变量寄存器，根据它在文档中所处的位置产生数据。比如第几张图，第几个表，这时就相当于一个计数器（其实LaTeX里面的Counter更好理解）。大部分域操作都可以手工操作完成，比较重要的快捷键有：F9
 更新域；Ctrl+Shift+F9把域转化为文本（确定文章不会再修改时使用，注意备份，慎用！）&lt;/p&gt;
@@ -451,7 +718,7 @@ Mint下是如此），因此，你可以把手工设置的目录名称和外置�
 &lt;img alt="/static/img/wp/201207054.png" src="/static/img/wp/201207054.png" /&gt;
 &lt;p&gt;选择标签，在选择引用内容插入即可。很多情况下在标签和数字之间会产生一个空格，这是沿袭了英文里面的设定，中文就不适用，只能手动删除，没找到可以设置的地方。如果你不确定是不是有空格，请在Word选项——显示里面勾上显示所有格式标记，这样，空格就会用一个小黑点标示出来了。&lt;/p&gt;
 &lt;p&gt;总结：Office产品号称易于使用，其实是在不要求高级功能的前提下，一旦要设计些功能，仍然要学习微软的一套设定，花费的时间不一定比LaTeX语言少。微软的自作聪明我就不说了，很多情况下光是修改默认的设置就很麻烦。&lt;/p&gt;
-</summary><category term="MS Word"></category><category term="交叉引用"></category><category term="参考文献"></category><category term="域"></category><category term="题注"></category></entry><entry><title>利用Zotero为博文添加参考文献</title><link href="http://www.joshuazhang.net/posts/2012/Jun/zotero-bib-blog.html" rel="alternate"></link><updated>2012-06-29T19:15:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-06-29:posts/2012/Jun/zotero-bib-blog.html</id><summary type="html">&lt;p&gt;对于技术类文章而言，添加必要的参考文献体现的是对他人劳动成果的尊重。即便你不会全文转载别人的文章而不标明出处，但是严格的说，学习了别人的方法或者观点也不能据为己有，标注参考文献就是向原创致敬的方法之一。目前而言，许多加了参考文献的文章都是怎么简单怎么来，没有个统一的格式，也不方便读者查阅。其实规范并不是没有，许多学术期刊对引用网页这样的媒体都有说明，我国&lt;a class="reference external" href="http://gradschool.ustc.edu.cn/ylb/material/xw/wdxz/19.pdf"&gt;参考文献标准&lt;/a&gt;也有说明。从我较短的使用过程来看，GB/T&amp;nbsp;7714-2005标准设计得比较简洁紧凑，适合中文、英文以及混排的情况，看上去比较舒服。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Thu, 05 Jul 2012 19:51:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-07-05:posts/2012/Jul/MS-Word-label.html</guid><category>MS Word</category><category>交叉引用</category><category>参考文献</category><category>域</category><category>题注</category></item><item><title>利用Zotero为博文添加参考文献</title><link>http://www.joshuazhang.net/posts/2012/Jun/zotero-bib-blog.html</link><description>&lt;p&gt;对于技术类文章而言，添加必要的参考文献体现的是对他人劳动成果的尊重。即便你不会全文转载别人的文章而不标明出处，但是严格的说，学习了别人的方法或者观点也不能据为己有，标注参考文献就是向原创致敬的方法之一。目前而言，许多加了参考文献的文章都是怎么简单怎么来，没有个统一的格式，也不方便读者查阅。其实规范并不是没有，许多学术期刊对引用网页这样的媒体都有说明，我国&lt;a class="reference external" href="http://gradschool.ustc.edu.cn/ylb/material/xw/wdxz/19.pdf"&gt;参考文献标准&lt;/a&gt;也有说明。从我较短的使用过程来看，GB/T&amp;nbsp;7714-2005标准设计得比较简洁紧凑，适合中文、英文以及混排的情况，看上去比较舒服。&lt;/p&gt;
 &lt;p&gt;收集、管理文献的工具我首推Zotero，主要就在于它和Firefox结合得很好，对国际国内各大学术期刊数据库都支持得不错，和Google
 Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《&lt;a class="reference external" href="http://blog.yesmryang.net/zotero-usage/"&gt;文献管理软件Zotero的一点使用感受&lt;/a&gt;》。&lt;/p&gt;
 &lt;p&gt;利用Zotero的导出功能实际已经可以生成很好的参考文献了，不过美中不足的是导出的只是纯文本，没有任何格式化，所以读者仍然要自己手动去查找参考文献，这可不是我这样的懒人想干的事，于是干脆自己动手写了下面这个style，基本功能已经实现，在外观和功能上可能还有提升的空间。&lt;/p&gt;
@@ -477,7 +744,7 @@ Mathematics, 2001, 37(4): 441–458. &lt;a class="reference external" href="http
 with dde23&lt;/a&gt;[J]. .&lt;/p&gt;
 &lt;p&gt;[5] 陈丽安. &lt;a class="reference external" href="http://202.204.193.237/cupbbs/accessory/93/cb00d031-6df1-417b-a9e0-71c1aabff823.pdf"&gt;输出高品质 MATLAB
 图形的方法与技巧&lt;/a&gt;[J]. 计算机应用研究, 2002, 19(1): 154–155.&lt;/p&gt;
-</summary><category term="Zotero"></category><category term="Bibliography"></category></entry><entry><title>MIT-BIH开放数据库使用指南</title><link href="http://www.joshuazhang.net/posts/2012/Jun/MIT-BIH-manual.html" rel="alternate"></link><updated>2012-06-15T21:14:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-06-15:posts/2012/Jun/MIT-BIH-manual.html</id><summary type="html">&lt;p&gt;最近因为项目任务要分析心电图数据，采用的是&lt;a class="reference external" href="http://ecg.mit.edu/"&gt;MIT-BIH&lt;/a&gt;开放数据库（或称PhysioBank数据库）。这个数据库不仅提供了经过筛选的各方面的生理数据集&lt;a class="reference external" href="http://www.physionet.org/physiobank/"&gt;PhysioBank&lt;/a&gt;，而且也提供了开源的数据处理和可视化工具&lt;a class="reference external" href="http://www.physionet.org/physiotools/"&gt;PhysioToolkit&lt;/a&gt;。对我这样的非医学类学生而言，光是看见那些医学术语就够头痛的了，还要掌握这样一套专门的基于Linux的工具，确实是个不小的挑战。好在我要完成的部分不需要很深入，所以马马虎虎也摸着些门道。不敢说会用，但是起码碰到问题方向在哪我已经清楚了，这里把这个数据库的使用简单介绍一下，方便新来的同学快速上手。当然如果你英语好的话，大可以自己慢慢翻文档，这也是要深入了解的惟一途径。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Fri, 29 Jun 2012 19:15:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-06-29:posts/2012/Jun/zotero-bib-blog.html</guid><category>Zotero</category><category>Bibliography</category></item><item><title>MIT-BIH开放数据库使用指南</title><link>http://www.joshuazhang.net/posts/2012/Jun/MIT-BIH-manual.html</link><description>&lt;p&gt;最近因为项目任务要分析心电图数据，采用的是&lt;a class="reference external" href="http://ecg.mit.edu/"&gt;MIT-BIH&lt;/a&gt;开放数据库（或称PhysioBank数据库）。这个数据库不仅提供了经过筛选的各方面的生理数据集&lt;a class="reference external" href="http://www.physionet.org/physiobank/"&gt;PhysioBank&lt;/a&gt;，而且也提供了开源的数据处理和可视化工具&lt;a class="reference external" href="http://www.physionet.org/physiotools/"&gt;PhysioToolkit&lt;/a&gt;。对我这样的非医学类学生而言，光是看见那些医学术语就够头痛的了，还要掌握这样一套专门的基于Linux的工具，确实是个不小的挑战。好在我要完成的部分不需要很深入，所以马马虎虎也摸着些门道。不敢说会用，但是起码碰到问题方向在哪我已经清楚了，这里把这个数据库的使用简单介绍一下，方便新来的同学快速上手。当然如果你英语好的话，大可以自己慢慢翻文档，这也是要深入了解的惟一途径。&lt;/p&gt;
 &lt;p&gt;首先说说数据库。你可以到&lt;a class="reference external" href="http://www.physionet.org/physiobank/database/"&gt;分类页面&lt;/a&gt;查找有没有自己感兴趣的数据集，上面都有比较详细的介绍。找到合适的数据后在对应页面直接将文件另存为就可以下载，当然这是比较笨的办法。推荐使用wget或者rsync来下载。wget可以用于下载单独的数据集，这样速度较快也比较快捷。例如下载mitdb：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;wget -r -np http://physionet.org/physiobank/database/mitdb/
 &lt;/pre&gt;&lt;/div&gt;
@@ -519,7 +786,7 @@ WFDB 的 PhysioBank 数据库读取[J]. 北京生物医学工程, 2011, 30(3):
 &lt;a class="reference external" href="http://www.cqvip.com/qk/81625x/201111/39687170.html"&gt;基于Matlab的MIT-BIH心电信号读取与波形显示的实现&lt;/a&gt;[J]. 中国电子商务,
 (11): 113–113. [9] 宋春丽. &lt;a class="reference external" href="http://www.cqvip.com/Main/Detail.aspx?id=33712105"&gt;怎样识读MIT-BIH中的心电信号&lt;/a&gt;[J].
 科技资讯, (9): 27–27.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="Matlab"></category><category term="MIT-BIH"></category><category term="PhysioBank"></category><category term="WFDB"></category><category term="入门"></category><category term="心电"></category><category term="指南"></category><category term="数据库"></category></entry><entry><title>47个通用网页浏览器快捷键</title><link href="http://www.joshuazhang.net/posts/2012/May/universal-browser-keyboard-shortcuts.html" rel="alternate"></link><updated>2012-05-25T13:15:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-05-25:posts/2012/May/universal-browser-keyboard-shortcuts.html</id><summary type="html">&lt;p&gt;本文翻译自&lt;a class="reference external" href="http://www.howtogeek.com/114518/47-keyboard-shortcuts-that-work-in-all-web-browsers/?utm_source=newsletter&amp;amp;utm_medium=email&amp;amp;utm_campaign=210512&amp;amp;utm_content=emailsidebar"&gt;howtogeek&lt;/a&gt;，总结得不错。不过从评论来看，似乎对opera支持不大好，读者请自行尝试。
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Fri, 15 Jun 2012 21:14:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-06-15:posts/2012/Jun/MIT-BIH-manual.html</guid><category>Matlab</category><category>MIT-BIH</category><category>PhysioBank</category><category>WFDB</category><category>入门</category><category>心电</category><category>指南</category><category>数据库</category></item><item><title>47个通用网页浏览器快捷键</title><link>http://www.joshuazhang.net/posts/2012/May/universal-browser-keyboard-shortcuts.html</link><description>&lt;p&gt;本文翻译自&lt;a class="reference external" href="http://www.howtogeek.com/114518/47-keyboard-shortcuts-that-work-in-all-web-browsers/?utm_source=newsletter&amp;amp;utm_medium=email&amp;amp;utm_campaign=210512&amp;amp;utm_content=emailsidebar"&gt;howtogeek&lt;/a&gt;，总结得不错。不过从评论来看，似乎对opera支持不大好，读者请自行尝试。
 &lt;img alt="image0" src="https://lh6.googleusercontent.com/x_pKkyiVelXIkdeWhGCILaf8h-qGWggeKW5FfL1HarCYRLC2WaxlouSELjisZcwrI8ziLYWGJLssOF3eOMmufgNHobGjRv3L0TQX_U86UeDW9jbYDjQ" /&gt;&lt;/p&gt;
 &lt;p&gt;每个主流的网络浏览器都有一部分相同的快捷键设置。无论你使用Mozilla
 Firefox，Google Chrome，Apple
@@ -596,7 +863,156 @@ End&amp;nbsp; 页面底部。 Middle Click&amp;nbsp; 用鼠标滚动页面。&lt
 从本地打开一个文件 CTRL + U&amp;nbsp; 查看当前网页源代码（IE下无效）。 F12
 打开网页开发工具。（Firefox下无效）。&lt;img alt="image7" src="https://lh6.googleusercontent.com/cmxK7kVzoNOrVO4CuKRsO3PzQe7wprZEoT0szI_WTs2TEDHqk48DxDKqAS5e7M2EgchCQgq1p0Bh55PP6bE8K8Ik5QbbsmWeHX4ya97wfSa4mtheiaE" /&gt;&lt;/p&gt;
 &lt;/p&gt;&lt;/div&gt;
-</summary><category term="Keyboard Shortcuts"></category><category term="Internet Browser"></category></entry><entry><title>几款云存储服务比较</title><link href="http://www.joshuazhang.net/posts/2012/Apr/cloud-storage-comparison.html" rel="alternate"></link><updated>2012-04-13T02:29:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-04-13:posts/2012/Apr/cloud-storage-comparison.html</id><summary type="html">&lt;p&gt;所谓云存储服务，通俗点说就是网盘啦。不过现在各种免费网盘的服务其实并不仅限于存储，社交分享、同步备份都是很常见的功能，所以用云的概念可能更加合适（现在还称不上真正的云，但是趋势已经可以看出来了）。我个人用过国内国外的几个云存储服务，现在拿它们比较一番，顺便思考下云时代，什么样的存储才是我们（起码是我）真正所需的。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Fri, 25 May 2012 13:15:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-05-25:posts/2012/May/universal-browser-keyboard-shortcuts.html</guid><category>Keyboard Shortcuts</category><category>Internet Browser</category></item><item><title>Runge Kutta方法求解微分方程</title><link>http://www.joshuazhang.net/posts/2012/May/runge-kutta-ode.html</link><description>&lt;p&gt;普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。
+将一阶常微分方程初值问题写成如下形式：
+\[\left\{\begin{array}\~y^{'}=f(x,y) \\y(x_0)=y_0 \\
+\end{array}\right.\] 四阶Runge Kutta公式如下：
+\[\left\{\begin{array}{l}y_{n+1}=y_n+\frac{h}{6}(K_1+2K_2+2K_3+K_4)\\x_{n+1}=x_n+1\\K_1=f(x_n,y_n)\\K_2=f(x_n+\frac{h}{2},y_n+\frac{h}{2}K_1)\\K_3=f(x_n+\frac{h}{2},y_n+\frac{h}{2}K_2)\\K_4=f(x_n+h,y_n+hK_3)\end{array}\right.\]
+四阶Runge
+Kutta公式在实际应用时精度较高（4阶精度）而且计算量适中，因此使用较多。
+对于求解微分方程组，可以将方程组写成向量形式，这样上面的4阶Runge
+Kutta公式不需要改变形式，只要把四个参数改成相应的向量形式即可。求解高阶微分方程则可以通过降维方式令\(y^'=x,y^{''}=x^'\)就可以转化为一阶微分方程组的形式。
+利用4阶RK方法求解洛伦兹方程：
+\[\left\{\begin{array}\frac{dx}{dt}=\sigma(y-x)\\
+\frac{dy}{dt}=x(\rho-z)-y\\
+\frac{dz}{dt}=xy-\beta~z\end{array}\right.\]取\(\sigma=10,\beta=\frac{8}{3},\rho=28\)。相空间轨迹如下图：
+&lt;img alt="RK求解lorenz" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/Science/RKlorenz.png" /&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;% By voidmous&lt;/span&gt;
+&lt;span class="c"&gt;% 利用四阶Runge Kutta求解洛伦兹方程&lt;/span&gt;
+&lt;span class="n"&gt;clear&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;clc&lt;/span&gt;
+&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;0.005&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="nb"&gt;beta&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;rho&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;zeros&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;zeros&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;inline&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;[sigma\*(y-x);x\*(rho-z)-y;x\*y-beta\*z]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;y&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;z&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;sigma&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;beta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;rho&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;
+&lt;span class="n"&gt;k1&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;beta&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;rho&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;k2&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;beta&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;rho&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;k3&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;beta&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;rho&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;k4&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;sigma&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;beta&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;rho&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;k1&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k2&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;\*&lt;/span&gt;&lt;span class="n"&gt;k3&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;k4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)=&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="c"&gt;%静态显示洛伦兹变化轨迹 plot3(y(1,:),y(2,:),y(3,:)) view([20,32]);&lt;/span&gt;
+&lt;span class="n"&gt;grid&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="c"&gt;%动画显示绘制过程 %暂时无法调整视角，也许看comet绘制原理有用？&lt;/span&gt;
+&lt;span class="c"&gt;%comet3(y(1,:),y(2,:),y(3,:))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;[1]Wikipedia contributors.
+Runge–Kutta methods[J]. Wikipedia, the free encyclopedia, Wikimedia
+Foundation, Inc., 2012.&lt;/p&gt;
+&lt;p&gt;[2]Simulation of Lorenz ’63 model: 4th order
+Runge-Kutta[M]. 2010.&lt;/p&gt;
+&lt;p&gt;[3]魏诺. 非线性科学基础与应用[M]. 科学出版社,
+2004.&lt;/p&gt;
+&lt;p&gt;[4]Wikipedia contributors. 龙格－库塔法[J].
+维基百科，自由的百科全书, Wikimedia Foundation, Inc., 2012.&lt;/p&gt;
+&lt;p&gt;[5]洛伦兹方程的matlab求解_百度文库[EB/OL]. [2012-05-01].
+&lt;a class="reference external" href="http://wenku.baidu.com/view/169b50c7aa00b52acfc7ca50.html"&gt;http://wenku.baidu.com/view/169b50c7aa00b52acfc7ca50.html&lt;/a&gt;.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Tue, 08 May 2012 07:06:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-05-08:posts/2012/May/runge-kutta-ode.html</guid><category>Matlab</category><category>Runge Kutta</category><category>数值方法</category><category>洛伦兹方程</category><category>龙格库塔</category></item><item><title>迁徙的鸟</title><link>http://www.joshuazhang.net/posts/2012/Apr/winged-migration.html</link><description>&lt;p&gt;《&lt;a class="reference external" href="http://movie.douban.com/subject/1292281/"&gt;迁徙的鸟&lt;/a&gt;》是由法国导演&lt;a class="reference external" href="http://movie.douban.com/celebrity/1010752/"&gt;雅克·贝汉&lt;/a&gt;带领的一个由优秀的飞行员和科学家组成的队伍历时三年完成的影片。全片记录了全球各地各种迁徙鸟类的镜头。片子上映很久了，也一直想看，可惜一直被各种好莱坞大片轰炸，要抽出个文艺的时间真不容易，不过好歹还是看完了。&lt;/p&gt;
+&lt;p&gt;全片解说不多，大部分时间都只是聚焦在鸟类的飞行姿态上，然而这并不让人感觉烦闷，也许真的是我们与自然疏离了。对于这样一部片子，只要带上审美的眼睛、慵懒的耳朵和悠然的心情，你就能够感受到导演团队的良苦用心了。不需要太多的评论，我们就简单的看图说话吧：&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-1.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;片子里面有许多这样的飞行镜头，让我们以平等的角度来欣赏鸟翱翔的姿态，怎会不让我们激动？&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-2.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;绝佳的构图&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-4.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;美妙的姿态&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-0.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;传说中的鸠占雀巢，每天都在上演着&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-5.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;天鹅的舞姿，轻盈而优雅。《天鹅湖》确实从大自然偷师不少。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-6.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;美妙的流线型，“鸟”体工程学。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-7.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;顾盼生姿&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-9.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;水上飞，海陆空三栖品种。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-8.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;怪异的发型，此鸟个性十足。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-11.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;加拿大松鸡，别看我块头大，胸口顶着俩大包，哥真的会飞。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-10.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;铁栏后的落寞。圈养的鸟儿怎能理解自由的快乐。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-12.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;从天而降对付敌人的招式是什么，如来神掌！&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-13.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;最浪漫的事莫过于和你一起迁徙。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-14.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;枪声响起，那些熟睡的观众会否惊起？看到这儿，不禁想起黄子华在栋笃笑演出上讲的一个悖论：那些热爱自然热爱生命的人总是用摄像机残忍地记录下死亡，并美其名曰不要破坏大自然的规律。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-15.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;陷入油污的落群之鸟，想想不断出现的漏油事故，也许我们真的应该给鸟儿一个交代。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-16.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;夕阳西照，生命的活力仍未停歇&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-17.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;不是所有的鸟都胆小，不是所有的人都可以给予这份感动。交流总是始于冒险。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-18.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;展翅翱翔是多少人年少时的梦？&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-20.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;弱小的躯体补偿到的是飞翔的自由&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-21.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;人们关心着遥远距离外的未知生物，却忽视了身边的邻居，这是远视，还是短见？&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-22.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;谁说沙漠是个荒芜的地方？&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-23.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;悲哀的事实是：总有人为了梦想付出生命&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-24.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;虎落平阳被犬欺&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-25.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;警觉的鸟儿：群众的眼睛是雪亮的&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-26.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;南美洲逃出的鹦鹉，智慧不是人类的专长。&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-28.jpg" /&gt;
+&lt;/div&gt;
+&lt;p&gt;累了，总还有个温暖的家。BTW，企鹅竟然也属于鸟纲。&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Mon, 16 Apr 2012 08:15:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-04-16:posts/2012/Apr/winged-migration.html</guid><category>感动</category><category>纪录片</category><category>自然</category><category></category></item><item><title>几款云存储服务比较</title><link>http://www.joshuazhang.net/posts/2012/Apr/cloud-storage-comparison.html</link><description>&lt;p&gt;所谓云存储服务，通俗点说就是网盘啦。不过现在各种免费网盘的服务其实并不仅限于存储，社交分享、同步备份都是很常见的功能，所以用云的概念可能更加合适（现在还称不上真正的云，但是趋势已经可以看出来了）。我个人用过国内国外的几个云存储服务，现在拿它们比较一番，顺便思考下云时代，什么样的存储才是我们（起码是我）真正所需的。&lt;/p&gt;
 &lt;p&gt;首先还是把范围确定，我所说的云存储并非Rapidshare，hotfile，城通网盘此类以快速文件分享作为主打功能的网盘，而是指具备同步功能以打造用户的私有资料、信息云为目标的网盘。这样的概念可能有点泛，现在的网络存储基本都还没实现这样的目标，但是是否具备这样的野心还是可以看出来的。&lt;/p&gt;
 &lt;p&gt;再来分析下必要的功能需求（此处仅对我而言）：&lt;/p&gt;
 &lt;p&gt;同步功能。这是目前而言最重要也是最差异化的功能。对我这样寝室、实验室两头跑的人来说，用U盘可不是什么方便的事情，有同步功能我就可以在两头处理同一个文件而不用把工作地点锁定在某一个地方。同时，有一份网络备份可比什么U盘备份强。&lt;/p&gt;
@@ -616,7 +1032,7 @@ for
 Linux更是给众Linuxer打了一记强心针），从我自己使用的情况看来确实如此。它的优势就在于金山打造的云服务体系，配合金山快写你完全可以把它打造成一个在线文档编辑平台。金山快盘一直都在进步，起码在Windows平台上国内的产品我认为他们已经做到最好了，如果你喜欢Windows平台，那么我推荐金山快盘，从&lt;a class="reference external" href="http://www.kuaipan.cn/index.php?ac=account&amp;amp;op=register&amp;amp;channel=m1xnys"&gt;我的邀请链接&lt;/a&gt;进入吧。&lt;/p&gt;
 &lt;p&gt;5、其它网盘&lt;/p&gt;
 &lt;p&gt;国内网盘最近如雨后春笋般冒出头来，不能不说是广大消费者的福音，我们可能多了选择的困惑，但是没有了选择我们就走入困境了。对于我上面没提到的云存储服务，并非它们做得不好（当然不能说它们做到了一流），只是含有某些方面的欠缺，起码不符合我现有的需求和标杆，但是它们不一定不适合你，只有你自己真正用过某个产品，你才拥有评判的权利，我对这些网盘用得不多，就不误人子弟了。&lt;/p&gt;
-</summary><category term="Dropbox"></category><category term="云存储"></category><category term="同步"></category><category term=""></category></entry><entry><title>Linux帮助系统常见技巧</title><link href="http://www.joshuazhang.net/posts/2012/Apr/linux-manual.html" rel="alternate"></link><updated>2012-04-04T08:55:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-04-04:posts/2012/Apr/linux-manual.html</id><summary type="html">&lt;p&gt;Linux下命令实在太多，学习命令行最佳途径当然是通过手册（manual），新手对帮助系统有所了解可以更快地上手Linux基本管理操作。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Fri, 13 Apr 2012 02:29:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-04-13:posts/2012/Apr/cloud-storage-comparison.html</guid><category>Dropbox</category><category>云存储</category><category>同步</category><category></category></item><item><title>Linux帮助系统常见技巧</title><link>http://www.joshuazhang.net/posts/2012/Apr/linux-manual.html</link><description>&lt;p&gt;Linux下命令实在太多，学习命令行最佳途径当然是通过手册（manual），新手对帮助系统有所了解可以更快地上手Linux基本管理操作。&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;man cmdname&lt;/li&gt;
 &lt;/ul&gt;
@@ -762,7 +1178,7 @@ open。&lt;/p&gt;
 &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_ue&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[0m&amp;#39;&lt;/span&gt;
 &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_us&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[01;33m&amp;#39;&lt;/span&gt;这样一个简单可用的彩色manpage就搞定了，当然你也可以自己参照修改。
 &lt;/pre&gt;&lt;/div&gt;
-</summary><category term="Linux"></category><category term="manpage"></category></entry><entry><title>Archlinux下编译Audacious(cue、ape支持)</title><link href="http://www.joshuazhang.net/posts/2012/Mar/archlinux-audacious.html" rel="alternate"></link><updated>2012-03-20T16:25:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-03-20:posts/2012/Mar/archlinux-audacious.html</id><summary type="html">&lt;ul class="simple"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Wed, 04 Apr 2012 08:55:00 +0200</pubDate><guid>tag:www.joshuazhang.net,2012-04-04:posts/2012/Apr/linux-manual.html</guid><category>Linux</category><category>manpage</category></item><item><title>Archlinux下编译Audacious(cue、ape支持)</title><link>http://www.joshuazhang.net/posts/2012/Mar/archlinux-audacious.html</link><description>&lt;ul class="simple"&gt;
 &lt;li&gt;首先安装需求：&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Glib 2, GTK+ 2, Pango, Cairo, libmcs(AUR), libmowgli(AUR)&lt;/p&gt;
@@ -788,7 +1204,29 @@ configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;后续问题：
 ape不支持，dts不支持&lt;/p&gt;
-</summary><category term="Archlinux"></category><category term="audacious"></category><category term="编译"></category></entry><entry><title>我的Firefox扩展总结</title><link href="http://www.joshuazhang.net/posts/2012/Mar/firefox-addon.html" rel="alternate"></link><updated>2012-03-01T13:50:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-03-01:posts/2012/Mar/firefox-addon.html</id><summary type="html">&lt;p&gt;一、浏览优化类&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Tue, 20 Mar 2012 16:25:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2012-03-20:posts/2012/Mar/archlinux-audacious.html</guid><category>Archlinux</category><category>audacious</category><category>编译</category></item><item><title>学术科研的几点思考</title><link>http://www.joshuazhang.net/posts/2012/Mar/science-thought.html</link><description>&lt;p&gt;虽然自己还是门外汉，但是在学习的不同的阶段，水平不同、视角不同，感受和结论也会不同，三四年后的我如果再看到这篇文章，未必不会受到触动，起码可以让我反思。&lt;/p&gt;
+&lt;p&gt;一、科学研究的精神&lt;/p&gt;
+&lt;p&gt;1、诚信&lt;/p&gt;
+&lt;p&gt;自从德国国防部长古藤贝格博士爆出论文造假的丑闻来，我就果断抛弃了“惟素质论”。即便是在欧洲这样的学术氛围极为严谨的情况也难以避免学术造假的发生，可见诚信仍然是一个世界性的问题。我不打算在这里讨论太多道德的说教，只分析下技术上的问题。&lt;/p&gt;
+&lt;p&gt;国内的学生（包括我自己在内），对于引用他人文献没有一个明确的标准，有时候是直接引用，有时候提取下大意再标个引文了事，总之五花八门。从我观看的硕士答辩的情况来看，即便到了研三，这样的问题依然存在，甚至到了会被答辩老师训斥的程度。引用的问题主要集中在下面几点：&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;引用多少文字，以什么方式引用（超过一定字数的引用必须注明，否则视为抄袭！）&lt;/li&gt;
+&lt;li&gt;标注的位置（千万不要在章节标题上标注引文，大忌！）&lt;/li&gt;
+&lt;li&gt;参考文献格式（事无巨细，期刊第几期、第几卷都需要标清楚，作者名字必须清楚）&lt;/li&gt;
+&lt;li&gt;参考的可靠度（国内垃圾文献尽量少引）&lt;/li&gt;
+&lt;li&gt;引文数量、中英文比例&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上几个方面是需要重点注意的，当然，上面几点做好了并不能说明你的论文就是真实可信，还有其它方面的考量。但是这些方面直接决定了别人看到你文章时在诚信方面的评价。&lt;/p&gt;
+&lt;p&gt;2、创新&lt;/p&gt;
+&lt;p&gt;从小学到高中再到大学，创新的内涵其实一直在被我们不断地缩小，到了毕业答辩的时候，创新就演变成论文的“创新点“了。这从一个方面也体现出创新的难度，尤其是在应试教育的大环境下。&lt;/p&gt;
+&lt;p&gt;对于一篇论文而言，有创新点是别人评价的一个重要方面。现实的情况是很多论文重复着他人的工作，同质化的文章太多，水平怎么也是上不去的。&lt;/p&gt;
+&lt;p&gt;比创新匮乏更让人难以接受的是没有意义的工作，这些工作不仅仅是简单的重复，甚至还达不大前人的水准，无法为世界贡献任何的生产力。&lt;/p&gt;
+&lt;p&gt;二、科学研究的方法&lt;/p&gt;
+&lt;p&gt;1、数学&lt;/p&gt;
+&lt;p&gt;对于工科学生而言，数学对一部分人而言可能是个难题（比如我），大部分人应该是够用的。现在有个不好的趋势就是很多工科学生研究偏重理论，基本上是搞数学去了，我觉得应该承认数学对于工程的重要性，但是还是不能本末倒置。邹谋炎先生写的这篇文章《&lt;a class="reference external" href="http://ishare.iask.sina.com.cn/f/20591744.html"&gt;谈谈工科学生如何学习数学&lt;/a&gt;》对我个人很有启发。&lt;/p&gt;
+&lt;p&gt;2、英语&lt;/p&gt;
+&lt;p&gt;工科学生怎么学习英文都不为过，这是我现阶段最重要的感受。比较下国内和国外的文献，中文文献从各个方面都有很大的差距，甚至个别文献还会出现误导读者的情况（我是有实际体会的）。英文的难度其实主要集中在跨门槛的时候，一旦跨过了，那就海阔天空了&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Tue, 13 Mar 2012 14:56:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2012-03-13:posts/2012/Mar/science-thought.html</guid><category>思考</category><category>科研</category></item><item><title>我的Firefox扩展总结</title><link>http://www.joshuazhang.net/posts/2012/Mar/firefox-addon.html</link><description>&lt;p&gt;一、浏览优化类&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;Adblock Plus&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 清除广告就靠它了。&lt;/li&gt;
@@ -839,7 +1277,7 @@ Google书签产品，某些方面输于Delicious&lt;/li&gt;
 &lt;li&gt;AutoProxy&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 代理工具，易用而强大&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;/p&gt;</summary><category term="Firefox"></category><category term=""></category></entry><entry><title>ArchLinux入门浅谈</title><link href="http://www.joshuazhang.net/posts/2012/Feb/archlinux-intro.html" rel="alternate"></link><updated>2012-02-24T12:43:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-02-24:posts/2012/Feb/archlinux-intro.html</id><summary type="html">&lt;p&gt;这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。&lt;/p&gt;
+&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Thu, 01 Mar 2012 13:50:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2012-03-01:posts/2012/Mar/firefox-addon.html</guid><category>Firefox</category><category></category></item><item><title>ArchLinux入门浅谈</title><link>http://www.joshuazhang.net/posts/2012/Feb/archlinux-intro.html</link><description>&lt;p&gt;这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。&lt;/p&gt;
 &lt;div class="section" id="arch"&gt;
 &lt;h2&gt;为什么用Arch？&lt;/h2&gt;
 &lt;p&gt;这方面的文章相当多，一搜一大把，我就不做什么总结发言了，写几点自己的想法。其实弊人最早接触的linux发行版是ubuntu和debian，当时ubuntu很被看好，不过还没流行到现在这个程度。那是我第一次被一个完全免费而且漂亮的东西打动了，期间零零碎碎玩过几次系统，但是由于技术水平有限，一直玩得不怎么顺手。直到最近，我开始越来越讨厌windows的臃肿庞大和功利，希望能够转移到linux平台上，把windows作为对“现实世界的妥协”。虽然debian也是很出色的系统，但是显然它和windows相同的特点就是较为臃肿，杂七杂八的东西自带一大堆（我不很清楚debian有没有精简定制的可能性）。出于这点考虑，我也玩过几天的LFS，注意，我当时不过装过几次linux，断断续续看过linux书籍的几个章节而已，可以想象当时我是怎样的抓耳挠腮吧^_^。当然这次实验以失败告终，我只能继续寻找能让自己足够满意的系统，终于，ArchLinux进入了我的视线。在我看来，Arch有以下几个特点是让我欲罢不能的：&lt;/p&gt;
@@ -878,7 +1316,126 @@ Google书签产品，某些方面输于Delicious&lt;/li&gt;
 &lt;h2&gt;学习什么？&lt;/h2&gt;
 &lt;p&gt;不同Linux有不同特点，这些特点决定了用户在该发行版下大量的时间在干什么，比如Ubuntu用于娱乐，Debian用于编程，Gentoo用于管理服务器。对我而言，学习Linux主要目的在于熟悉工作平台，写LaTeX文档以及偶尔编程（当前的目标），所以折腾X和软件（Arch高度的定制性保证了我可以方便地折腾各种WM和DE）、提高LaTeX水平以及Matlab和C语言编程是我可以着力的方向。当然，适当的娱乐同样需要，Mplayer的使用以及Wine平台都需要了解。&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="Archlinux"></category><category term="wiki"></category><category term="入门"></category><category term="安装"></category><category term="手册"></category><category term="技巧"></category></entry><entry><title>Google Reader使用技巧</title><link href="http://www.joshuazhang.net/posts/2012/Feb/google-reader-tips.html" rel="alternate"></link><updated>2012-02-18T16:14:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/Feb/google-reader-tips.html</id><summary type="html">&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Google Reader
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Fri, 24 Feb 2012 12:43:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2012-02-24:posts/2012/Feb/archlinux-intro.html</guid><category>Archlinux</category><category>wiki</category><category>入门</category><category>安装</category><category>手册</category><category>技巧</category></item><item><title>标准差浅谈</title><link>http://www.joshuazhang.net/posts/2012/Feb/standard-deviation.html</link><description>&lt;p&gt;本文翻译自 &lt;a class="reference external" href="http://mathcentral.uregina.ca/RR/database/RR.09.95/weston2.html"&gt;A note on standard deviation&lt;/a&gt;
+，解释了让大部分统计学入门者感到困惑的一个经典问题。&lt;/p&gt;
+&lt;p&gt;假如你正同时上几门课并且刚刚通过考试拿到成绩。很自然的，我们想了解班里其他学生的情况好让你的成绩有个参照。平均值或中位数可以告诉我们所有成绩的“中心值”或者“中间数”，但是它们很难体现成绩的分布或者变化。&lt;/p&gt;
+&lt;p&gt;我们来看一个小例子。假如5名学生参加三门课程获得的成绩如下：&lt;/p&gt;
+&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th&gt;课程1
+&lt;/th&gt;&lt;th&gt;课程2
+&lt;/th&gt;&lt;th&gt;课程3
+&lt;/th&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;67
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;78
+&lt;/td&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;66
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;70
+&lt;/td&gt;&lt;td&gt;82
+&lt;/td&gt;&lt;td&gt;66
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;58
+&lt;/td&gt;&lt;td&gt;42
+&lt;/td&gt;&lt;td&gt;66
+&lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;42
+&lt;/td&gt;&lt;td&gt;42
+&lt;/td&gt;&lt;td&gt;65
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;p&gt;每一个课程都有一个平均值，\(\overline{x}\)，且都为66，尽管如此，不同课程成绩的波动仍然有很大的差异。对这种波动的测量的其中一种方法是极差，也就是最大值与最小值之差。本例中，前两门课程极差均为82-42=40而第三门课程极差为67-65=2。因为课程1和课程2有相同的极差但是它们的偏差明显不同，所以极差不是一个测量偏差的理想指标。我们还可以这样看待偏差，课程3中所有的成绩都和平均值比较接近，课程1中有些接近而有些远离，课程2中所有成绩都远离均值。按照这样的观点我们可以引入标准差的概念。&lt;/p&gt;
+&lt;p&gt;首先来看看课程1，对每个学生计算其成绩与平均分的差值。&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="24%" /&gt;
+&lt;col width="76%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;课程1&lt;/th&gt;
+&lt;th class="head"&gt;\(x_1-\overline{x}\)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;82&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;78&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;70&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;58&lt;/td&gt;
+&lt;td&gt;-8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;
+&lt;td&gt;-24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这些差值的平均可以计算得到并作为对偏差的一种度量方式，在此例中其值为0。我们真正需要的其实是每个分数与均值之间的距离。你可以对差值取绝对值再平均，称之为平均差（mean
+deviation），即\(md=\frac{\sum|x_1-\overline{x}|}{n}\),n为课程的学生数。对课程1而言\(md=\frac{64}{5}=12.5\)。另一种处理负差值的方式就是取平方相加。&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="13%" /&gt;
+&lt;col width="41%" /&gt;
+&lt;col width="46%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;课程1&lt;/th&gt;
+&lt;th class="head"&gt;\(x_1-\overline{x}\)&lt;/th&gt;
+&lt;th class="head"&gt;\((x_1-\overline{x})^2\)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;82&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;256&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;78&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;144&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;70&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;58&lt;/td&gt;
+&lt;td&gt;-8&lt;/td&gt;
+&lt;td&gt;64&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;42&lt;/td&gt;
+&lt;td&gt;-24&lt;/td&gt;
+&lt;td&gt;576&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;第三列的和为1056。为了求得标准差s，将该和除以n-1并开方。课程1的方差则为\(s=\sqrt{\frac{\sum(x_1-\overline{x})^2}{n-1}}=\sqrt{\frac{1056}{4}}=16.2\)&lt;/p&gt;
+&lt;p&gt;同样可以计算得到课程2和课程3方差分别为21.9和0.7。课程3分数都靠近均值因此方差非常小；课程1分数分布在42和82之间，方差也相当可观；课程2分数都远离均值，方差因此更大。方差是统计学家最常用的测量数据集偏差的量。&lt;/p&gt;
+&lt;p&gt;我们需要对分母采用n-1做出一个解释。为此我们换一个例子。假设我对北美中学生每天花在数学作业上的时间感兴趣。这里总体就是所有北美的中学生，数目非常大。设人数为N，我真正的兴趣在于这个总体的均值和方差。统计学家习惯于用希腊字母表示总体的量，因此总体均值记为\(\mu=\frac{\sum
+x_1}{N}\)，类似的方差为\(\sigma=\sqrt{\frac{\sum(x_1-\mu)^2}{N}}\)。注意这里分母为N。&lt;/p&gt;
+&lt;p&gt;统计学家通常只选择一个样本，比如n个学生，在这个小数据集上估计\(\mu\)和\(\sigma\)，而不是直接对这么大的总体进行统计。这里n可能是25,30或100或者甚至1000，不过它肯定远小于N。为了估计\(\mu\)很自然地我们可以用样本均值\(\overline{x}\)。同样的为了估计\(\sigma\)似乎用\(\sqrt{\frac{\sum(x_1-\overline{x})^2}{n}}\)也很合理，不过这样计算往往会“低估”\(\sigma\)，尤其是在n比较小的时候。由于这个以及其它技术原因，通常\[s=\sqrt{\frac{\sum(x_1-\overline{x})^2}{n-1}}\]被用来估计\(\sigma\)。&lt;/p&gt;
+&lt;p&gt;如果你有计算器可以直接计算方差的话你可以试着找出它使用的是哪种计算方法。用一个3个数字的数据集-1,0,1，用手工和计算器的方式分别计算方差，看看计算器使用的是哪种计算方法吧。&lt;/p&gt;
+&lt;p&gt;译者注：该文章在网上发表后，有老师希望文章作者对n与n-1的选择问题作出更详尽的解释，本文作者回复邮件称可以用一个小实验来进行验证。这里把回复邮件也做了个简单的翻译：&lt;/p&gt;
+&lt;p&gt;与其对我所说的“其它技术原因”做一个理论上精巧的阐述，我更愿意建议你和你的学生做一个实验以说明“这个数值往往低估了\(\sigma\)值”&lt;/p&gt;
+&lt;p&gt;以及“其它技术原因”是什么。我将在下面的讲述中针对\(\sigma^2\)，而非\(\sigma\)。&lt;/p&gt;
+&lt;p&gt;我们用白豆和黑豆来进行实验。你可以用任何除了使用视觉外难以区分的物体来模拟。你可能需要60到100个这样的物件，其中1/4作为白豆，&lt;/p&gt;
+&lt;p&gt;3/4作为黑豆。假定每个白豆取值为5，黑豆取值为1。这样总体就设置好了。整个总体的比例以及均值、方差都应当向你的学生保密直到实验&lt;/p&gt;
+&lt;p&gt;完成。很简单的，总体的均值为：\[\mu=1(\frac{3}{4})+5(\frac{1}{4})=2\]方差为：\[\sigma^2=(1-2)^2(\frac{3}{4})+(5-2)^2(\frac{1}{4})=3\]&lt;/p&gt;
+&lt;p&gt;学生的任务是要利用一个随机的测试样本来估计豆子的均值及方差。为了让计算保持简单我建议样本数目设为n=3。把豆子放在一个学生无法&lt;/p&gt;
+&lt;p&gt;看到但是可以取出的地方，比如一个袋子或者一个瓶子里，每个人每次随机取出3颗豆子并做样本记录。每个学生记录完后应当将豆子放回。如&lt;/p&gt;
+&lt;p&gt;果你能得到50到60个样本那就最好了，这样你就可以让每个学生选择两个样本并且独立地处理它们。&lt;/p&gt;
+&lt;p&gt;每个学生应当计算他的样本的均值以及方差，并且要计算（方差）两次，一次除以n,一次除以n-1。把学生交给你的结果汇总记录在三栏里面，&lt;/p&gt;
+&lt;p&gt;一栏为均值，一栏为除以n得到的方差，另一栏为除以n-1得到的方差。你会发现均值一栏只有四种不同的数值，其它两栏都只有两种不同的值。&lt;/p&gt;
+&lt;p&gt;这是由于样本值n=3选得比较小的缘故。如果样本值大一点那么每栏可能值得数目就会多一点。&lt;/p&gt;
+&lt;p&gt;我们首先考虑第一栏，即均值。该栏里的每一个数值都是对总体均值的一个估计。现在告诉学生们总体的均值这样他们就可以看到有些估计值太&lt;/p&gt;
+&lt;p&gt;大而另一些太小。再计算该栏所有值的均值。这个均值应当很靠近2，也就是总体的均值。从理论上说，“平均而言”，样本均值和总体均值是&lt;/p&gt;
+&lt;p&gt;相等的。我们把这样的性质称之为无偏，样本均值就是总体均值的一个无偏估计。&lt;/p&gt;
+&lt;p&gt;现在考虑第二和第三栏，计算它们的均值并告诉学生们总体的方差。除以n-1得到的方差的均值应当很接近总体的方差而另一栏的均值就会小得&lt;/p&gt;
+&lt;p&gt;比较多。样本方差（除以n-1）是总体方差的一个无偏估计。样本方差（除以n）是总体方差的一个有偏估计，并且“总是低估\(\sigma\)”。&lt;/p&gt;
+&lt;p&gt;最后一点。当分母为n-1时计算出来的值为总体方差的一个无偏估计。有没有可能存在一个比样本方差更好的对总体方差的估计值呢？你不仅仅&lt;/p&gt;
+&lt;p&gt;希望这个新的估计值是无偏的而且还希望在该栏的所有的新的估计值大部分都接近总体方差。也就是说，你希望新的估计值的方差要小。这是我&lt;/p&gt;
+&lt;p&gt;所说的用样本方差来估计总体方差的“其它技术原因”之一。在所有你可以使用的合理的估计当中，样本均值有着最小的方差。&lt;/p&gt;
+&lt;p&gt;希望这个建议能有帮助。如果你做了这个实验，请告诉我结果如何。&lt;/p&gt;
+&lt;p&gt;有博士生做了本文作者建议的实验并且给出了&lt;a class="reference external" href="http://mathcentral.uregina.ca/RR/database/RR.09.95/javier.xls"&gt;excel表格&lt;/a&gt;，部分截图如下：&lt;/p&gt;
+&lt;img alt="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" src="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" /&gt;
+&lt;p&gt;补充：实际上n和n-1的选择问题用数学理论很容易解释，那就是n-1时样本方差的期望值就是总体方差（对样本方差求期望，简单推导即可得到）。造成大部分人困惑的原因就是n-1没有n看上去那么自然，同时对于总体和样本的概念以及它们的地位有所混淆。这篇文章其实讲的很浅显，但是国外教授对于简单问题往往会给出大量的篇幅，这与国内教材动辄大篇数学公式的风格大不一致。我们不能简单地说两种模式孰高孰低，但是国人受到苏联模式的影响如此深远，却始终成不了数学大国，恐怕是时候改变下思路了。&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Tue, 21 Feb 2012 01:08:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2012-02-21:posts/2012/Feb/standard-deviation.html</guid><category>估计</category><category>总体</category><category>无偏</category><category>标准差</category><category>统计学</category></item><item><title>Google Reader使用技巧</title><link>http://www.joshuazhang.net/posts/2012/Feb/google-reader-tips.html</link><description>&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Google Reader
 确实是一个不可多得的服务，我用上GR没几天已经爱不释手了。GR非常容易上手，但是要玩转GR，没有使用经验的积累是不可能的，下面我就列举一些自己在
 使用GR过程中体会到的一些技巧，既是自己知识的整理过程，也是一个温故知新的过程。当然，这里面有我自己的心得，不可避免的也有从搜索得来的知识，来源
 较多，恕不列明。&lt;/p&gt;
@@ -934,7 +1491,7 @@ Reader是支持快捷键的，而且显然这些快捷键是精心设计过的�
 &lt;p&gt;&lt;a class="reference external" href="http://fulltextrssfeed.com"&gt;FullText Rss Feed&lt;/a&gt;（第一推荐，似乎没有失手过，中文支持完美）&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://mrss.dokoda.jp/"&gt;mrss.dokoda.jp&lt;/a&gt;（用得较少，但是还可以）&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://fivefilters.org/content-only/"&gt;fivefilters.org&lt;/a&gt;（转收费了，免费限制较多，其它工具也可以一看）&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><category term="Google Reader"></category><category term="快捷键"></category><category term="技巧"></category></entry><entry><title>LaTeX for Pelican 测试</title><link href="http://www.joshuazhang.net/posts/2012/Feb/latex-pelican.html" rel="alternate"></link><updated>2012-02-18T05:48:00+01:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/Feb/latex-pelican.html</id><summary type="html">&lt;p&gt;本文主要用于测试Pelican与MathJax配合显示数学公式&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Sat, 18 Feb 2012 16:14:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2012-02-18:posts/2012/Feb/google-reader-tips.html</guid><category>Google Reader</category><category>快捷键</category><category>技巧</category></item><item><title>LaTeX for Pelican 测试</title><link>http://www.joshuazhang.net/posts/2012/Feb/latex-pelican.html</link><description>&lt;p&gt;本文主要用于测试Pelican与MathJax配合显示数学公式&lt;/p&gt;
 &lt;p&gt;毕达哥拉斯定理： &lt;span class="math"&gt;\(a^2+b^2=c^2\)&lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;正态分布： &lt;span class="math"&gt;\(f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\)&lt;/span&gt;
@@ -945,4 +1502,4 @@ t}dt\)&lt;/span&gt;
 &lt;p&gt;傅里叶逆变换： &lt;span class="math"&gt;\(f\left(t\right)=\mathcal{F}^{-1}\left[F\left(\omega\right)\right]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F\left(\omega\right)e^{i\omega t}d\omega\)&lt;/span&gt;
 &lt;/p&gt;
 &lt;p&gt;MathJax的语法基本与latex一致，可以参考wikipedia的latex书写语法规范&lt;a class="reference external" href="http://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"&gt;Help:数学公式&lt;/a&gt;&lt;/p&gt;
-</summary><category term="LaTeX"></category><category term="Pelican"></category><category term="MathJax"></category></entry></feed>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">voidmous</dc:creator><pubDate>Sat, 18 Feb 2012 05:48:00 +0100</pubDate><guid>tag:www.joshuazhang.net,2012-02-18:posts/2012/Feb/latex-pelican.html</guid><category>LaTeX</category><category>Pelican</category><category>MathJax</category></item></channel></rss>
