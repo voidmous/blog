@@ -70,6 +70,8 @@ GoogleReader即将于7月1日正式退役，目前看来这是板上钉钉了，
 * [favo.me](https://www.favo.me/reader/view/ )，界面清爽大气，很简单的快捷键支持，支持GR导入，但是加星条目最大可导入500条。
 * [yoleoreader](https://yoleoreader.com/ )，未测试。
 
+2013-08-25 15:34更新：
+经过这么长时间的调整，雨后春笋般冒出的GR替代服务基本都已经走向成熟，一个详细的列表可以参考 [这里](http://alternativeto.net/software/google-reader/?sort=likes ) ，其中排名第一的 [FeedSpot](http://www.feedspot.com/ ) 值得一试。
 
 ## 整体备份
 
