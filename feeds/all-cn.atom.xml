@@ -51,6 +51,8 @@
 &lt;li&gt;&lt;a href="https://www.favo.me/reader/view/"&gt;favo.me&lt;/a&gt;，界面清爽大气，很简单的快捷键支持，支持GR导入，但是加星条目最大可导入500条。&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://yoleoreader.com/"&gt;yoleoreader&lt;/a&gt;，未测试。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;2013-08-25 15:34更新：
+经过这么长时间的调整，雨后春笋般冒出的GR替代服务基本都已经走向成熟，一个详细的列表可以参考 &lt;a href="http://alternativeto.net/software/google-reader/?sort=likes"&gt;这里&lt;/a&gt; ，其中排名第一的 &lt;a href="http://www.feedspot.com/"&gt;FeedSpot&lt;/a&gt; 值得一试。&lt;/p&gt;
 &lt;h2 id="_4"&gt;整体备份&lt;/h2&gt;
 &lt;p&gt;即便我们把订阅源转出去了，也一定不要认为可以安枕无忧了。比Google无良的企业比比皆是，说不准哪一天你就发现自己常用的服务消失了，而通知仅仅是一天前或者根本没通知。因此，保险起见，我们不仅可以多测试几个替代服务，同时也要做好订阅源Takeout导出备份。这个操作没有难度，也就不赘述了。&lt;/p&gt;
 &lt;p&gt;麻烦的是加星标文章，很多新的服务不支持从GR导入加星标文章，或者虽然有该功能却有各种问题，为了最大化历史数据的安全，我们可以通过导出的 json 文件将加星标文章导入 Evernote ，具体方法参考 &lt;a href="http://www.joshuazhang.net/posts/2013/Apr/export-googlereader-starreditem-to-evernote.html"&gt;导出Google Reader加星条目到Evernote&lt;/a&gt; 。&lt;/p&gt;</summary><category term="GoogleReader"></category></entry><entry><title>博客图床规划</title><link href="http://www.joshuazhang.net/posts/2013/Apr/blog-image-hosting-plan.html" rel="alternate"></link><updated>2013-04-28T23:55:00+02:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-04-28:posts/2013/Apr/blog-image-hosting-plan.html</id><summary type="html">&lt;div class="toc"&gt;
