@@ -1,3 +1,6 @@
 output/
 pelicanconf.pyc
 publishconf.pyc
+bin/
+lib/
+include/

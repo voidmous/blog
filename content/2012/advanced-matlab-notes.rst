@@ -18,6 +18,7 @@
 
 .. image:: /static/img/wp/20120702204224.png
    :align: center
+   :alt: matrix index
 
 这一张图基本就讲清楚了所有的情况，注意A([9 14;10
 15])这样的索引方式。想一想A([8 12;10 11])是什么，A([8:10;10:12])又是什么？
@@ -66,6 +67,7 @@ Matlab函数文件格式：
 
 .. image:: /static/img/wp/Image5.png
    :align: center
+   :alt: matlab function
 
 - 在线帮助部分可用help查询得到，H1 help line部分用lookfor命令查询得到。
 - 在线帮助不可出现空行，空行后面的内容不在作为在线帮助。

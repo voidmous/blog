@@ -11,10 +11,14 @@ Henon映射是动力系统研究中很常见的离散映射，因为它具有的
 不同的a、b参数下该映射具有不同的性质，可能出现混沌、断续或者收敛到周期轨道上不同的情况。取a=1.4，b=0.3时会产生著名的henon吸引子。
 
 .. image:: /static/img/wp/henon1.png
+    :align: center
+    :alt: henon1
 
 Henon吸引子，横轴为x，纵轴为y，其实就是所有迭代的点产生的图案，形状比较怪异。
 
 .. image:: /static/img/wp/henon2.png
+    :align: center
+    :alt: henon2
 
 b=0.3时的分岔图，不同a值下x可能在几个值间变化，也可能在许多值之间变化，即产生了混沌。顺便吐槽下Matlab生成的图片太不精细了，暂时还不知道用什么方法能提高图片细节。
 
