@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>幻空轩</title>
+    <title>JoshuaZhang</title>
     <meta name="description" content="">
-    <meta name="author" content="voidmous">
+    <meta name="author" content="Joshz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="../theme/html5.js"></script>
+    <script src="http://www.joshuazhang.net/theme/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../theme/bootstrap.responsive.min.css" rel="stylesheet">
-    <link href="../theme/local.css" rel="stylesheet">
-    <link href="../theme/pygments.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.responsive.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
     
     <!-- My custom styles -->
     <!-- Table and misc styles -->
-    <link href="../theme/custom.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/custom.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
-    <link href="../theme/codehilite.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -40,12 +40,12 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="..">幻空轩</a>
+        <a class="brand" href="http://www.joshuazhang.net">JoshuaZhang</a>
 
         <div class="nav-collapse">
         <ul class="nav">
-                    
-                                </ul>
+            
+        </ul>
         </div>
         
     </div>
@@ -57,24 +57,53 @@
     <div class="row">
 
         <div class="span9">
-                
+        
 
         
 
 
     <div class='article'>
         <div class="content-title">
-            <a href="../posts/2012/Apr/linux-manual.html"><h1>Linux帮助系统常见技巧</h1></a>
-            Wed 04 April 2012
+            <a href="http://www.joshuazhang.net/posts/2012/linux-usb-mount.html"><h1>Linux外置硬盘加载方案</h1></a>
+周二 17 七月 2012
 
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
  
 
 
  
         </div>
         
-        <div><p>Linux下命令实在太多，学习命令行最佳途径当然是通过手册（manual），新手对帮助系统有所了解可以更快地上手Linux基本管理操作。</p>
+        <div><p>对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的<a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab">fstab
+wiki</a>。简单地说就是现在/media目录下创建好要加载到的目标目录，然后在fstab中添加常连的外置硬盘mount条目即可。</p>
+<p>这个方案是我最开始采用的，没有太大问题，但是还不完美。主要是最近我的外置硬盘接口似乎有点松动，所以用段时间后会自动掉线，这时系统又会自动搜索加载，麻烦在于自动加载的目录和我所设的目录不一致了，这样所有对该硬盘下文件的操作就会“找不到目标”。典型的例子就是用播放器播放外置硬盘的歌曲，掉线重连后播放器就找不到曲目，只能又去手动加载，十分费劲。</p>
+<p>Linux下自动加载usb外置硬盘会mount到/media/$partition
+label目录下（起码我在Arch和Linux
+Mint下是如此），因此，你可以把手工设置的目录名称和外置硬盘分区的label修改成一致即可，这样就算掉线重连，文件位置不改变也就不会出现错误啦。想法是好的，不过可惜，如果系统检测到有同名的目录它就会创建一个带_的一个新目录作为挂载点，这条路也行不通。（也许可以修改哪里的设置或者权限可以达到这个目的？）</p>
+<p>目前只能不采用手动挂载而采用自动搜索挂载，这样其实也没太大的缺点，总比不断手动修改挂载点强。</p>
+<p>另外外置硬盘分区的label可以用Gparted修改，先卸载要修改的硬盘，然后右键修改label，再应用这些修改即可。修改成一个简短好识别的id，固定下来以后就不会再有诸如此类的麻烦了。</p>
+</p></div>
+        <hr />
+    </div>
+		
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="http://www.joshuazhang.net/posts/2012/linux-manual.html"><h2>Linux帮助系统常见技巧</h2></a>
+        <hr>
+        <!-- Don't use any article metadata and summary, it's ugly -->
+        <!-- <div class= "well small"> 周三 04 四月 2012
+
+by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
+ 
+
+
+ </div> -->
+        <!-- <div class="summary"><p>Linux下命令实在太多，学习命令行最佳途径当然是通过手册（manual），新手对帮助系统有所了解可以更快地上手Linux基本管理操作。</p>
 <ul class="simple">
 <li>man cmdname</li>
 </ul>
@@ -97,143 +126,19 @@ man会出现三个带选项的man命令，为什么？）</p>
 </ul>
 <p>info命令显示的帮助更加详尽，信息量更大，同时界面更加友好。不过不怎么常用</p>
 <ul class="simple">
-<li>manual系统</li>
-</ul>
-<p>每个命令的manpages其实包括8个章节，它们包括不同的内容，如下表：</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="10%" />
-<col width="27%" />
-<col width="13%" />
-<col width="17%" />
-<col width="17%" />
-<col width="17%" />
-</colgroup>
-<thead valign="bottom">
-<tr><th class="head">章节</th>
-<th class="head">描述</th>
-<th class="head">普通用户</th>
-<th class="head">软件开发人员</th>
-<th class="head">文档组织人员</th>
-<th class="head">系统管理人员</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr><td>1</td>
-<td>用户命令</td>
-<td>✓</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>✓</td>
-</tr>
-<tr><td>2</td>
-<td>系统调用</td>
-<td>&nbsp;</td>
-<td>✓</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr><td>3</td>
-<td>语言函数库调用</td>
-<td>&nbsp;</td>
-<td>✓</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr><td>4</td>
-<td>设备和网络界面</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>✓</td>
-</tr>
-<tr><td>5</td>
-<td>文件格式</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>✓</td>
-</tr>
-<tr><td>6</td>
-<td>游戏和示范</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr><td>7</td>
-<td>troff的环境、表格和宏</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>✓</td>
-<td>&nbsp;</td>
-</tr>
-<tr><td>8</td>
-<td>关于系统维护的命令</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>✓</td>
-</tr>
-<tr><td>9</td>
-<td>其它</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<p>在不同需求的情况下应当查看不同的章节，要查看指定的章节可以用man -sx
-cmdname或者man x cmdname，其中x为章节对应的数字。比如查看库函数man -s3
-open。</p>
-<ul class="simple">
-<li>常用快捷键</li>
-</ul>
-<p>快捷键帮助h(man状态下)</p>
-<p>退出q</p>
-<p>下一屏space或者f(forward)，上一屏b(backward)</p>
-<p>下一行j，上一行k</p>
-<p>前向搜索/pattern，反向搜索?pattern</p>
-<p>下一个匹配n，上一个匹配N</p>
-<p>风格其实和vim相似，比如Ctrl+f也是下一页。</p>
-<ul class="simple">
-<li>man目录</li>
-</ul>
-<p>/usr/share/doc/man/</p>
-<ul class="simple">
-<li>中文manpages</li>
-</ul>
-<p><a class="reference external" href="https://github.com/lidaobing/manpages-zh">manpages-zh项目</a>，安装后即可查看常用命令的中文manpage，不过似乎中文排版有点问题，看起来有点丑陋。</p>
-<ul class="simple">
-<li>彩色manpage</li>
-</ul>
-<p>黑底白色的大量文字看久了很累，可以考虑自定义彩色的manpage，编辑～/.bashrc：</p>
-<div class="highlight"><pre><span class="c"># colorful man page</span>
-<span class="nb">export </span><span class="nv">PAGER</span><span class="o">=</span><span class="s2">&quot;`which less` -s&quot;</span>
-<span class="nb">export </span><span class="nv">BROWSER</span><span class="o">=</span><span class="s2">&quot;$PAGER&quot;</span>
-<span class="nb">export </span><span class="nv">LESS_TERMCAP_mb</span><span class="o">=</span><span class="s1">$&#39;\E[01;34m&#39;</span>
-<span class="nb">export </span><span class="nv">LESS_TERMCAP_md</span><span class="o">=</span><span class="s1">$&#39;\E[01;34m&#39;</span>
-<span class="nb">export </span><span class="nv">LESS_TERMCAP_me</span><span class="o">=</span><span class="s1">$&#39;\E[0m&#39;</span>
-<span class="nb">export </span><span class="nv">LESS_TERMCAP_se</span><span class="o">=</span><span class="s1">$&#39;\E[0m&#39;</span>
-<span class="nb">export </span><span class="nv">LESS_TERMCAP_so</span><span class="o">=</span><span class="s1">$&#39;\E[01;44;33m&#39;</span>
-<span class="nb">export </span><span class="nv">LESS_TERMCAP_ue</span><span class="o">=</span><span class="s1">$&#39;\E[0m&#39;</span>
-<span class="nb">export </span><span class="nv">LESS_TERMCAP_us</span><span class="o">=</span><span class="s1">$&#39;\E[01;33m&#39;</span>这样一个简单可用的彩色manpage就搞定了，当然你也可以自己参照修改。
-</pre></div>
-</div>
-        <hr />
-    </div>
-		
-            <div class="pagination">
+<li>manual系统 ...</li></ul> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/linux-manual.html">read more</a></div> -->
+    </div>	
+				
+<div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr; Previous</a></li>
 
-    <li class="active"><a href="../tag/linux.html">1</a></li>
+    <li class="active"><a href="http://www.joshuazhang.net/tag/linux.html">1</a></li>
 
     <li class="next disabled"><a href="#">&rarr; Next</a></li>
 
 </ul>
-</div>    
+</div>
  
   
         </div>
@@ -246,63 +151,50 @@ open。</p>
                 Site
                 </li>
             
-                <li><a href="../archives.html">Archives</a>
-                <li><a href="../tags.html">Tags</a>
-                <li><a href="http://www.joshuazhang.net/feeds/atom.xml" rel="alternate">Atom feed</a></li>
-                            </ul>
+                <li><a href="http://www.joshuazhang.net/archives.html">Archives</a>
+                <li><a href="http://www.joshuazhang.net/tags.html">Tags</a>
+                <li><a href="http://www.joshuazhang.net/" rel="alternate">Atom feed</a></li>
+            </ul>
             </div>
 
 
-                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header"> 
                 Categories
                 </li>
                 
-                                <li><a href="../category/.html"></a></li>
-                                <li><a href="../category/art-critic.html">Art critic</a></li>
-                                <li><a href="../category/math.html">Math</a></li>
-                                <li><a href="../category/technique.html">Technique</a></li>
-                                <li><a href="../category/thoughts.html">Thoughts</a></li>
-                                   
+                <li><a href="http://www.joshuazhang.net/category/.html"></a></li>
+                <li><a href="http://www.joshuazhang.net/category/art-critic.html">Art critic</a></li>
+                <li><a href="http://www.joshuazhang.net/category/math.html">Math</a></li>
+                <li><a href="http://www.joshuazhang.net/category/technique.html">Technique</a></li>
+                <li><a href="http://www.joshuazhang.net/category/thoughts.html">Thoughts</a></li>
+                   
             </ul>
             </div>
-            
 
-                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Links
-                </li>
-            
-                            <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
-                            <li><a href="http://python.org">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
-                        </ul>
-            </div>
-            
 
-                        <div class="social">
+
+
+            <div class="social">
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header"> 
                 Social
                 </li>
            
-                                <li><a href="https://github.com/voidmous">Github</a></li>
-                                <li><a href="https://twitter.com/voidmous">Twitter</a></li>
-                                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
-                                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
-                                <li><a href="http://www.renren.com/221168912">Renren</a></li>
-                            </ul>
+                <li><a href="https://github.com/voidmous">Github</a></li>
+                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+            </ul>
             </div>
             </div>
-            
+
         </div>  
     </div>     </div> 
 <footer>
 <br />
-<p><a href="..">幻空轩</a> &copy; voidmous 2012 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
+<p><a href="http://www.joshuazhang.net">JoshuaZhang</a> &copy; Joshz 2012 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
 </footer>
 
 </div> <!-- /container -->

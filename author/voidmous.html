@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>幻空轩</title>
+    <title>JoshuaZhang</title>
     <meta name="description" content="">
-    <meta name="author" content="voidmous">
+    <meta name="author" content="Joshz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
-    <script src="../theme/html5.js"></script>
+    <script src="http://www.joshuazhang.net/theme/html5.js"></script>
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../theme/bootstrap.min.css" rel="stylesheet">
-    <link href="../theme/bootstrap.responsive.min.css" rel="stylesheet">
-    <link href="../theme/local.css" rel="stylesheet">
-    <link href="../theme/pygments.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.responsive.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
     
     <!-- My custom styles -->
     <!-- Table and misc styles -->
-    <link href="../theme/custom.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/custom.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
-    <link href="../theme/codehilite.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
     <!-- LaTeX mathjax support -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
@@ -40,12 +40,12 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="brand" href="..">幻空轩</a>
+        <a class="brand" href="http://www.joshuazhang.net">JoshuaZhang</a>
 
         <div class="nav-collapse">
         <ul class="nav">
-                    
-                                </ul>
+            
+        </ul>
         </div>
         
     </div>
@@ -57,189 +57,229 @@
     <div class="row">
 
         <div class="span9">
-                
+        
 
         
 
 
     <div class='article'>
         <div class="content-title">
-            <a href="../posts/2012/Jun/MIT-BIH-manual.html"><h1>MIT-BIH开放数据库使用指南</h1></a>
-            Fri 15 June 2012
+            <a href="http://www.joshuazhang.net/posts/2013/goodbay-to-googlereader.html"><h1>告别GoogleReader</h1></a>
+周五 14 六月 2013
 
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">voidmous</a>
  
 
 
  
         </div>
         
-        <div><p>最近因为项目任务要分析心电图数据，采用的是<a class="reference external" href="http://ecg.mit.edu/">MIT-BIH</a>开放数据库（或称PhysioBank数据库）。这个数据库不仅提供了经过筛选的各方面的生理数据集<a class="reference external" href="http://www.physionet.org/physiobank/">PhysioBank</a>，而且也提供了开源的数据处理和可视化工具<a class="reference external" href="http://www.physionet.org/physiotools/">PhysioToolkit</a>。对我这样的非医学类学生而言，光是看见那些医学术语就够头痛的了，还要掌握这样一套专门的基于Linux的工具，确实是个不小的挑战。好在我要完成的部分不需要很深入，所以马马虎虎也摸着些门道。不敢说会用，但是起码碰到问题方向在哪我已经清楚了，这里把这个数据库的使用简单介绍一下，方便新来的同学快速上手。当然如果你英语好的话，大可以自己慢慢翻文档，这也是要深入了解的惟一途径。</p>
-<p>首先说说数据库。你可以到<a class="reference external" href="http://www.physionet.org/physiobank/database/">分类页面</a>查找有没有自己感兴趣的数据集，上面都有比较详细的介绍。找到合适的数据后在对应页面直接将文件另存为就可以下载，当然这是比较笨的办法。推荐使用wget或者rsync来下载。wget可以用于下载单独的数据集，这样速度较快也比较快捷。例如下载mitdb：</p>
-<div class="highlight"><pre>wget -r -np http://physionet.org/physiobank/database/mitdb/
-</pre></div>
-<p>中间的<em>physionet.org</em>可以替换成离你最近的<a class="reference external" href="http://www.physionet.org/mirrors/">镜像</a>地址（好像西交的挂了，直接用原镜像吧），<em>mitdb</em>替换成你要下载的数据集缩写名称（可以用<a class="reference external" href="http://www.physionet.org/cgi-bin/atm/ATM">PhysioBank
-ATM</a>查看数据集对应缩写）。rsync用来下载所有数据也是非常方便的，方法看<a class="reference external" href="http://www.physionet.org/faq.shtml#downloading-databases">这里1</a>，当然这样做似乎没多大必要。</p>
-<p>对应这套数据集维护人员也开发了相应的工具包<a class="reference external" href="http://www.physionet.org/physiotools/wfdb.shtml">WFDB</a>,包括三个部分：WFDB库、WFDB命令行工具和WAVE，主要用于读取、分析和可视化数据，一些常用的算法如FFT和熵都已经实现。WFDB库用于在C、C++或者Fortran中读写WFDB兼容格式文件，命令行用于直接处理数据，WAVE可以看做其图形化前端，需要xview支持。软件应该是C语言编写，Linux原生支持，Windows需要Cygwin支持，安装文档都写得很详细了。这套工具很强大，同时也很复杂，文档在<a class="reference external" href="http://www.physionet.org/physiotools/manuals.shtml">这里2</a>，当然需要你对命令行和研究对象都比较熟悉。如果要快速找到自己需要的命令或工具，可以看看这个<a class="reference external" href="http://www.physionet.org/physiotools/software-index.shtml">工具目录</a>，很有帮助。</p>
-<p>如果没有那么高的要求或者不想碰命令行，那么它提供的<a class="reference external" href="http://www.physionet.org/physiotools/matlab/">MATLAB软件包</a>还是可以一用，不过功能就差点意思了，只能做基本的数据I/O，后续的算法都要自己实现，只能将就着用。这个页面除了官方发布的工具其实还有一些第三方编写的程序实现附加的功能，因为都是开源的，所以可以一看，对自己动手的朋友会有帮助。</p>
-<p>这套数据库确实组织得非常好，甚至还开发了在线数据导出工具。如果你被前面各种软件名词吓到，那么下面这个东东估计就是你所需要的：<a class="reference external" href="http://www.physionet.org/cgi-bin/atm/ATM">PhysioBank
-ATM</a>，它的作用就是用浏览器可视化地预览或者导出数据，如图示，左边选择数据设置参数，右边微调选择输出模式。利用它，你就可以远离那些繁琐工具的困扰，点几下鼠标就可以方便地查看数据，然后将理想的数据段导出即可。这个方法适合新手使用，直观、快速才不会拒人于千里之外，哈哈。</p>
-<div class="figure align-center">
-<img alt="PhysioBank ATM" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/Science/20120615201304.png" style="width: 700px;" />
-</div>
-<p>如果你使用了该数据库，并且准备要发文章，那么出于版权考虑，应当注意按照网站的要求进行引用，引用格式见<a class="reference external" href="http://www.physionet.org/citations.shtml">这里3</a>。另外如果某些地方有特别注明，那么也应该按照要求进行引用。因为这个数据库有很强的研究背景，所以有许多论文基于该数据库发表，不妨看看<a class="reference external" href="http://physionet.org/pn-citations.shtml">他人的成果</a>。</p>
-<p>如果你在使用过程中还有什么问题，那么我推荐你先看<a class="reference external" href="http://www.physionet.org/faq.shtml">FAQ</a>，大部分问题在这都能找到答案，此外还有一些<a class="reference external" href="http://physionet.org/tutorials/">教程</a>，涉及到方方面面，也可以看看。</p>
-<p>关于该数据库中文的论文还是比较少，但不是没有，参考文献已经注明。网络上讨论的也不多，但这两篇文章不可不看：《<a class="reference external" href="http://blog.csdn.net/chenyusiyuan/article/details/2027887">MIT-BIH
-ECG 心电数据的下载和读取图解</a>》、《<a class="reference external" href="http://blog.csdn.net/chenyusiyuan/article/details/2040234">MIT-BIH ECG
-信号的数据读取方法和Matlab程序</a>》，对于文件数据格式有较详细的分析。</p>
-<p><strong>参考文献</strong></p>
-<p>[1] 唐文涛. MIT-BIH 生理信号管理及回放系统[D]. 济南: 山东师范大学, 2009.</p>
-<p>[2] 宋喜国, 邓亲恺. MIT-BIH 心率失常数据库的识读及应用[J].
-中国医学物理学杂志, 2004, 21(004): 230–232.
-[3] 徐效文, 曾超, 崔松野, et
-al. <a class="reference external" href="http://www.cqvip.com/qk/91690x/201108/36940878.html">MIT-BIH数据库心电数据重采样研究</a>[J]. 计算机工程与应用, , 47(8):
-245–248.
-[4] 朱泽煌, 胡广书.
-<a class="reference external" href="http://www.cqvip.com/qk/90680x/1993004/1245724.html">MIT—BIH心电数据库的开发及用作检测标准</a>[J]. 中国生物医学工程学报,
-1993, 12(4): 244–249.
-[5] 张乾, 蒋式勤. PhysioBank 数据库及其应用[J].
-中国生物医学工程进展——2007 中国生物医学工程联合学术年会论文集 (下册),
-2007.
-[6] Goldberger A L, Amaral L A N, Glass L, et al. <a class="reference external" href="http://circ.ahajournals.org/content/101/23/e215">PhysioBank,
-PhysioToolkit, and PhysioNet: Components of a New Research Resource for
-Complex Physiologic Signals</a>[J]. Circulation, 2000, 101(23):
-e215–e220. <a class="reference external" href="http://dx.doi.org/10.1161/01.CIR.101.23.e215">doi:10.1161/01.CIR.101.23.e215</a>.
-[7] 张玉霞. 基于 MATLAB 与
-WFDB 的 PhysioBank 数据库读取[J]. 北京生物医学工程, 2011, 30(3):
-318–320.
-[8] 梁伯虎, 张楠, 苏晓东.
-<a class="reference external" href="http://www.cqvip.com/qk/81625x/201111/39687170.html">基于Matlab的MIT-BIH心电信号读取与波形显示的实现</a>[J]. 中国电子商务,
-(11): 113–113. [9] 宋春丽. <a class="reference external" href="http://www.cqvip.com/Main/Detail.aspx?id=33712105">怎样识读MIT-BIH中的心电信号</a>[J].
-科技资讯, (9): 27–27.</p>
-</p></div>
+        <div><p>GoogleReader即将于7月1日正式退役，目前看来这是板上钉钉了，在这天到来之前，一些必要的备份转移工作现在已经可以开始了。在开始之前，先得说点场面话。</p>
+<h2 id="_1">告别一个时代</h2>
+<p>在GR弥留之际，写几句不疼不痒的挽联，算是给心头爱将一个名分吧。我2010年才开始深度使用GR，当时深感这是一款伟大的产品，不仅仅是为浏览信息提供了方便，更是为我们从越来越庞大的互联网探索获取信息提供自动化的方法，虽然目前这种自动化智能程度还比较低，但是如果我们10年后不再需要事必躬亲地获取信息而是等待智能的推送，那么我们也不应该忘了GR的一份功劳。虽然Google不是RSS的制定者，也未必最先想到云RSS阅读的点子，但是毋庸置疑GR是普及这一想法并彻底改变我等“信息狂躁症”患者生活的最大功臣。如果认真分析，GR的价值体现在这几个方面：</p>
+<ul>
+<li>免费。技术普及的门槛就是价格，一款免费而具有收费服务品质的产品没人不喜欢。</li>
+<li>海量数据和高速运算。GR之所以能够傲视群雄就在于它依托了Google的服务器集群。</li>
+<li>搜索和排序。海量数据是不能用文件夹或者标签管理的，搜索是惟一解决方案；而排序则是我所说的智能推送的雏形。这两点在当下并非产品的重点，但是几年后呢？</li>
+</ul>
+<p>上面几点是GR在同类产品竞争中立于不败之地的法宝，也是很多产品难以复制GR的瓶颈所在。当然取得这么大的优势需要超越别人200%的付出，那就是高企的成本和可怜的收入。从经济角度看，Google砍掉GR并非多么难以理解的事情，而对Google进行道德上的评判，我不觉得很多人有充分的理由。一款免费服务坚持了这么久，为用户带来了这么多便利，即便没有功劳也有苦劳吧，何况Google还为使用者预留了充足的时间准备后路，为什么大众还不领情呢？</p>
+<p>或许这关系到Google的企业形象。众所周知Google以广告盈利，而广告要发挥应有的作用就需要十分普及的平台，Google的当家产品如搜索、地图、Android都是搭建了一个广告的理想平台，而广告在GR上却失败了。大众一直把Google当成信息科技革命的领头人，而它的产品也确实以免费、创新树立了这样的“无私”形象，但是也许现在的Google已经不是那个敢闯敢干的Google了，帝国的盈利压力让它不得不作出这样的决定。GR是这么一款革命的、具有重大科技价值的产品，并且积累了如果好的人脉和口碑，但是它却向“油盐酱醋茶”低头了。如果做个不恰当的类比，史冬鹏怎么跑都没人关心，刘翔，哼，他没有资本失败。</p>
+<p>牢骚发完了，生活还要继续，Google也要照用。下面讲讲怎么无痛地告别一个时代。</p>
+<h2 id="_2">整理订阅源</h2>
+<p>如果你和我一样有着几百个订阅源，并且有着众多的子目录，那么管理它们就不是一个轻松愉快的差事。我强烈建议从GR转出之前进行一次系统的整理，因为目前很多替代服务管理订阅源操作很繁琐很费时，甚至根本没有拿得出手的订阅源管理功能，相对而言，GR的操作还是很方便快捷的。</p>
+<p>对我而言，订阅源管理主要是精简源数目以及删除无收藏价值的加星文章。如果你的订阅源不多，那你可以使用探索功能挖掘一些推荐的源，算是发挥下GR的剩余价值，不过我很怀疑还有多少GR用户没有感到“信息过载”的。许多加星文章年代久远已经失去了收藏价值，不妨大方删除，如果你很懒，那也可以不管它，下面有方便的方法备份这些文章。至于精简源数目，我个人遵循这么几个原则：</p>
+<ul>
+<li>文章性价比。许多源发布频率太高，而深度不够，徒然增大了阅读的压力，比如许多IT新闻源。</li>
+<li>收藏性。有些网站虽然不再更新，但是文章收藏性很高，我选择让它们默默地躺在那里。</li>
+<li>源的质量。许多源不提供全文，或者图片经常挂，阅读起来很不省心，这些客观因素可以判它们死刑。</li>
+</ul>
+<p>随着GR关闭，<a href="http://www.williamlong.info/archives/3409.html">FeedBurner是否会关闭也成了未知数</a> 。许多博客订阅地址都采用FeedBurner的服务，如果Google足够狠心，那么到时候大批的订阅源会失效。这个问题对订阅者来说还不怎么紧迫，但是对博主或站长而言是时候将订阅地址切换到自己子域名了。</p>
+<h2 id="_3">服务转移</h2>
+<p>虽然其实我们有其它的选择，比如本地阅读器、邮件转发订阅、自建在线阅读器等，但是相信很依赖GR的朋友肯定希望有能至少复制70% GR 功能的在线托管阅读器吧，这方面其实我们的选择也不少，至于是否达到了70%那就见仁见智了。对这些在线服务进行评价，我个人比较看重这几个方面，整理出来仅供参考。</p>
+<ul>
+<li>收费策略。目前而言免费的居多，但是GR死在沙滩上了，大家难免心有余悸，所以有些收费的服务也值得考虑。（其实我很纳闷，GR为什么不转收费呢？难道用户少到连这样的尝试都不可行吗，毕竟GAE都收费了。）</li>
+<li>操作便利性。如果一款在线阅读器不支持快捷键，那和我自己去网站刷页面有什么区别呢?曾经的 feedly 花哨有余、效率不足，给我留下的印象并不好，不知道有没有改观。</li>
+<li>速度与界面。访问服务器的速度和抓取文章的速度二者缺一不可，难以想象总是对着 loading 是什么感觉。GR的快一方面还来自于其简洁的界面，它代表更多的信息和更快的过滤。</li>
+<li>抓取能力与范围。GR的订阅文章更新几乎是实时的，而我试用过的一些其它产品却未能达到这么快速，应该和服务器资源有关。至于范围，身处天朝，GR曾经是一把多么好的梯子，而现在，感觉一夜回到解放前了！因为这一点，许多国内还不错的服务就给pass掉了，如果GFW对你影响不大，那你也可以支持国货。</li>
+<li>HTTPS支持。对靠谱的网站而言该功能基本是标配了，没有的话真不知道该说什么好。必须的理由见上一条。</li>
+<li>统计分析功能。也许这并不常用，但是一旦需要你才知道它多么有用。</li>
+<li>手机端支持。目前对我而言非必需，但是计划赶不上变化，而且手机确实是大势所趋。</li>
+<li>订阅源管理。如果订阅源很多，总有一天你会在这上面花费大量时间，有方便的管理功能才能感觉幸福。</li>
+<li>第三方api推送集成。这是扩展阅读器功能的有效方式，GR可是可以自己定制的哦。</li>
+<li>账户管理与托管服务商可信度。隐私和信息安全很容易被忽略，但最好别忘记。如果要购买收费服务，一定要确认服务托管商的可信度，在混乱的环境下很容易浑水摸鱼。</li>
+<li>备份导出功能。</li>
+</ul>
+<p>除了上面这些主要的方面，还有一些细节让所有的GR用户欲罢不能，在相同的起跑线和能力上，细节决定成败。</p>
+<ul>
+<li>有些网站没有提供RSS订阅或者隐藏在犄角旮旯里，如果我们直接添加主网址，GR也可以”智能“地分析出订阅地址（智能的方式可能是常见地址模式猜测，或者订阅地址数据库搜索）</li>
+<li>GR的条目跳转很流畅，也很符合使用者的预期，而很多替代品会跳乱掉甚至失焦。另外，GR的操作条目有很明显的高亮，有些产品就不那么好分辨。</li>
+</ul>
+<p>一些值得测试的在线RSS阅读器及其特点：</p>
+<ul>
+<li><a href="http://theoldreader.com/">theoldreader</a>，快捷键支持最像GR，速度较快，界面简洁性还有提升空间，功能还较简单。</li>
+<li><a href="https://www.inoreader.com/">inoreader</a>，界面最有GR范，速度有点慢，貌似对GR导入支持很好，开发比较活跃，功能也可很强，服务可靠性待检验。</li>
+<li><a href="http://yanobs.com/reader/">yanobs</a>，免费版各方面都一般，不支持SSL。。。</li>
+<li><a href="https://www.newszeit.com">NewsZeit</a>，基于开源的NewsBlur，免费版功能受限，但速度很快（东京服务器），界面上不如inoreader但强于theoldreader，国人定制支持，更适合国情，可靠性待检验。</li>
+<li><a href="http://www.feedly.com/">feedly</a>，未测试</li>
+<li><a href="http://www.newsblur.com/">NewsBlur</a>，未测试</li>
+<li><a href="http://www.netvibes.com/">NetVibes</a>，未测试</li>
+<li><a href="https://www.favo.me/reader/view/">favo.me</a>，界面清爽大气，很简单的快捷键支持，支持GR导入，但是加星条目最大可导入500条。</li>
+<li><a href="https://yoleoreader.com/">yoleoreader</a>，未测试。</li>
+</ul>
+<p>2013-08-25 15:34更新：
+经过这么长时间的调整，雨后春笋般冒出的GR替代服务基本都已经走向成熟，一个详细的列表可以参考 <a href="http://alternativeto.net/software/google-reader/?sort=likes">这里</a> ，其中排名第一的 <a href="http://www.feedspot.com/">FeedSpot</a> 值得一试。</p>
+<h2 id="_4">整体备份</h2>
+<p>即便我们把订阅源转出去了，也一定不要认为可以安枕无忧了。比Google无良的企业比比皆是，说不准哪一天你就发现自己常用的服务消失了，而通知仅仅是一天前或者根本没通知。因此，保险起见，我们不仅可以多测试几个替代服务，同时也要做好订阅源Takeout导出备份。这个操作没有难度，也就不赘述了。</p>
+<p>麻烦的是加星标文章，很多新的服务不支持从GR导入加星标文章，或者虽然有该功能却有各种问题，为了最大化历史数据的安全，我们可以通过导出的 json 文件将加星标文章导入 Evernote ，具体方法参考 <a href="http://www.joshuazhang.net/posts/2013/Apr/export-googlereader-starreditem-to-evernote.html">导出Google Reader加星条目到Evernote</a> 。</p></div>
         <hr />
     </div>
 		
-    
+
  
         
 
  
 
     <div class='article'>
-        <a href="../posts/2012/Jul/MS-Word-label.html"><h2>MS Word题注与交叉引用</h2></a>
-        <div class= "well small"> Thu 05 July 2012
+        <a href="http://www.joshuazhang.net/posts/2013/blog-image-hosting-plan.html"><h2>博客图床规划</h2></a>
+        <hr>
+        <!-- Don't use any article metadata and summary, it's ugly -->
+        <!-- <div class= "well small"> 周日 28 四月 2013
 
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">voidmous</a>
  
 
 
- </div>
-        <div class="summary"><p>MS Word作为微软的拳头产品，虽然乏善可陈，但是仍然稳坐国内市场头把交椅，就算是在高校，这种局面也好不了多少。最近用Word写了份简短的文档，没什么花哨的东西，就是些公式和交叉引用、参考文献啥的，还是要请出Google大神才搞定。中间关于域以及题注上的有些细节问题没有完全搞懂，看来还是要系统地看看Word教程（谁说Word易用的，不学能用吗？！）。</p>
-<p>关于公式多说两句，Word自带的公式编辑器3.0实在是太简单了，要输入空集符号都不行，要输复杂点的公式简直找虐。第三方的mathtype印象中比自带的显示效果还要差，虽然功能似乎强大点。Aurora是基于LaTeX的，输入公式确实快捷，效果也最好，但是担心会出现兼容性问题，转换成图片的话和mathtype一样都不够原生态。总之公式的美观、输入快捷和兼容性三者在Word上兼得。</p>
-<p>Zotero在Word内插入参考文献其实是添加了域代码，通过域来更新文献内容以及索引。所谓域，可以理解为一个变量寄存器，根据它在文档中所处的位置产生数据。比如第几张图，第几个表，这时就相当于一个计数器（其实LaTeX里面的Counter更好理解）。大部分域操作都可以手工操作完成，比较重要的快捷键有：F9
-更新域；Ctrl+Shift+F9把域转化为文本（确定文章不会再修改时使用，注意备份，慎用！）</p>
-<p>Word里面的题注和LaTeX里面的label差不多，其实题注也就是为对象加上一个标签 ...</p> <a class="btn btn-info xsmall" href="../posts/2012/Jul/MS-Word-label.html">read more</a></div>
+ </div> -->
+        <!-- <div class="summary"> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2013/blog-image-hosting-plan.html">read more</a></div> -->
     </div>	
 				
-    
+
  
         
 
  
 
     <div class='article'>
-        <a href="../posts/2012/Mar/archlinux-audacious.html"><h2>Archlinux下编译Audacious(cue、ape支持)</h2></a>
-        <div class= "well small"> Tue 20 March 2012
+        <a href="http://www.joshuazhang.net/posts/2013/export-googlereader-starreditem-to-evernote.html"><h2>导出Google Reader加星条目到Evernote</h2></a>
+        <hr>
+        <!-- Don't use any article metadata and summary, it's ugly -->
+        <!-- <div class= "well small"> 周四 18 四月 2013
 
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">voidmous</a>
  
 
 
- </div>
-        <div class="summary"><ul class="simple">
-<li>首先安装需求：</li>
+ </div> -->
+        <!-- <div class="summary"><p>总结了导出GR加星标条目的方案，推荐了export2enex.py脚本</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2013/export-googlereader-starreditem-to-evernote.html">read more</a></div> -->
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="http://www.joshuazhang.net/posts/2013/el-get-intro.html"><h2>El-get——emacs包管理利器</h2></a>
+        <hr>
+        <!-- Don't use any article metadata and summary, it's ugly -->
+        <!-- <div class= "well small"> 周日 07 四月 2013
+
+by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">voidmous</a>
+ 
+
+
+ </div> -->
+        <!-- <div class="summary"><p>Emacs el-get 包管理器介绍</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2013/el-get-intro.html">read more</a></div> -->
+    </div>	
+				
+
+ 
+        
+
+ 
+
+    <div class='article'>
+        <a href="http://www.joshuazhang.net/posts/2013/markdown-for-pelican-ref.html"><h2>Markdown syntax for Pelican Quick Reference</h2></a>
+        <hr>
+        <!-- Don't use any article metadata and summary, it's ugly -->
+        <!-- <div class= "well small"> 周五 29 三月 2013
+
+by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">voidmous</a>
+ 
+
+
+ </div> -->
+        <!-- <div class="summary"><div class="toc">
+<ul>
+<li><a href="#basic-syntax">Basic Syntax</a><ul>
+<li><a href="#headings">Headings</a></li>
+<li><a href="#blockquote">Blockquote</a></li>
+<li><a href="#list">List</a></li>
+<li><a href="#code-block">Code block</a></li>
+<li><a href="#horizontal-rules">Horizontal rules</a></li>
+<li><a href="#image">Image</a></li>
+<li><a href="#link">Link</a></li>
+<li><a href="#phrase-emphasis">Phrase Emphasis</a></li>
+<li><a href="#manual-line-breaks">Manual Line Breaks</a></li>
+<li><a href="#blackslash-escape">Blackslash Escape</a></li>
 </ul>
-<p>Glib 2, GTK+ 2, Pango, Cairo, libmcs(AUR), libmowgli(AUR)</p>
-<ul class="simple">
-<li>为了支持cue，还需要安装libcue</li>
-<li>下载audacious源码包与插件包： <a class="reference external" href="http://audacious-media-player.org/download">下载地址</a></li>
-<li>解压audacious源码包，然后常规三步曲</li>
+</li>
+<li><a href="#extra-features-from-python-markdown">Extra Features From Python-Markdown</a><ul>
+<li><a href="#abbreviations">Abbreviations</a></li>
+<li><a href="#attribute-lists">Attribute Lists</a></li>
+<li><a href="#definition-lists">Definition Lists</a></li>
+<li><a href="#fenced-code-blocks">Fenced Code Blocks</a></li>
+<li><a href="#footnotes">Footnotes</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#codehilite">CodeHilite</a></li>
+<li><a href="#metadata-for-post">Metadata for post</a></li>
 </ul>
-<div class="highlight"><pre><span class="nv">$ </span>./configure
-<span class="nv">$ </span>sudo make <span class="o">&amp;&amp;</span> make install
-</pre></div>
-<ul class="simple">
-<li>再解压audacious插件源码包</li>
+</li>
 </ul>
-<p>此时直接configure会出错，错误提示：</p>
-<pre class="literal-block">
-checking for AUDACIOUS... no
-configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
-</pre>
-<p>根据google到的方法：</p>
-<div class="highlight"><pre><span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/local/lib/pkgconfig:<span class="nv">$PKG_CONFIG_PATH</span>
-<span class="nb">export ...</span></pre></div> <a class="btn btn-info xsmall" href="../posts/2012/Mar/archlinux-audacious.html">read more</a></div>
+</div>
+<p>This post is a simple markdown syntax reference for Pelican(the static blog generator ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2013/markdown-for-pelican-ref.html">read more</a></div> -->
     </div>	
 				
-    
+
  
         
 
  
 
     <div class='article'>
-        <a href="../posts/2012/Feb/archlinux-intro.html"><h2>ArchLinux入门浅谈</h2></a>
-        <div class= "well small"> Fri 24 February 2012
+        <a href="http://www.joshuazhang.net/posts/2013/wp-edit-publish-plan.html"><h2>WordPress文章编辑发布方案</h2></a>
+        <hr>
+        <!-- Don't use any article metadata and summary, it's ugly -->
+        <!-- <div class= "well small"> 周五 04 一月 2013
 
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
+by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">voidmous</a>
  
 
 
- </div>
-        <div class="summary"><p>这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。</p>
-<div class="section" id="arch">
-<h2>为什么用Arch？</h2>
-<p>这方面的文章相当多，一搜一大把，我就不做什么总结发言了，写几点自己的想法。其实弊人最早接触的linux发行版是ubuntu和debian，当时ubuntu很被看好，不过还没流行到现在这个程度。那是我第一次被一个完全免费而且漂亮的东西打动了，期间零零碎碎玩过几次系统，但是由于技术水平有限，一直玩得不怎么顺手。直到最近，我开始越来越讨厌windows的臃肿庞大和功利，希望能够转移到linux平台上，把windows作为对“现实世界的妥协”。虽然debian也是很出色的系统，但是显然它和windows相同的特点就是较为臃肿，杂七杂八的东西自带一大堆（我不很清楚debian有没有精简定制的可能性）。出于这点考虑，我也玩过几天的LFS，注意，我当时不过装过几次linux，断断续续看过linux书籍的几个章节而已，可以想象当时我是怎样的抓耳挠腮吧^_^。当然这次实验以失败告终，我只能继续寻找能让自己足够满意的系统，终于，ArchLinux进入了我的视线。在我看来，Arch有以下几个特点是让我欲罢不能的：</p>
-<ol class="arabic simple">
-<li>极大的定制性。虽然比不上LFS完全的定制性，但是在学习成本上要降下不少，而且LFS对于不致力于研究Linux架构的人似乎没什么必要。</li>
-<li>Pacman和AUR。Gentoo似乎也可以定制，但是每个软件都要编译对于我这样的新手而言那就是上刀山下火海。。。</li>
-<li>完善的文档。我没有接触过其他Linux发行版的文档，无法横向对比，但是就我使用的情况而言 ...</li></ol></div> <a class="btn btn-info xsmall" href="../posts/2012/Feb/archlinux-intro.html">read more</a></div>
+ </div> -->
+        <!-- <div class="summary"><p>我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话,想要了解其它的方案，这篇文章也许会有帮助。首先要说明的是编辑和发布是两个阶段，如果再详细点还应该包括修改阶段，下面的一些发布流程往往只能照顾到某一个方面，而在另一个方面就相形见绌，总有这样那样的瑕疵。基本上，WordPress的编辑发布方案有这么几大类：</p>
+<div class="section" id="id1">
+<h2>后台发布</h2>
+<p>这是默认的，也是便利性、兼容性最好的方案。但是它最大的缺点就在于一个字：慢。这个慢有两个方面，一是后台太笨重，如果你空间本来就不快（比如国外的空间），那加载后台都会等很久；二是WYSIWYG的编辑方式，如果你要搞长篇大论，图文并茂的话，上传图片、预览这些操作都是费事费力的。当然改进的方法也有：使用WP前台编辑插件（什么名字我忘了）、尽量不预览（对html熟悉程度要高）。</p>
+</div>
+<div class="section" id="id2">
+<h2>编辑器终端</h2>
+<p>包括两大类：专用的和通用的。</p>
+<p>专用的就有大名鼎鼎的WLW，这应该是许多人坚守Windows平台的原因之一吧。其它如qumana、thingamablog等，虽然可用，但是功能不完善，体验也不好。特别值得一提的是浏览器插件 <a class="reference external" href="https://addons.mozilla.org/en-us/firefox/addon/scribefire-next/">ScribeFireNext</a> ，比起WLW也未逊色多少，如果要跨平台的话可以一试。Linux下可以尝试 <a class="reference external" href="http://paranimage.com/6-under-linux-blog-editor/">这些 ...</a></p></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2013/wp-edit-publish-plan.html">read more</a></div> -->
     </div>	
 				
-    
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="../posts/2013/Apr/blog-image-hosting-plan.html"><h2>博客图床规划</h2></a>
-        <div class= "well small"> Sun 28 April 2013
-
-by <a class="url fn" href="../author/voidmous.html">voidmous</a>
- 
-
-
- </div>
-        <div class="summary"> <a class="btn btn-info xsmall" href="../posts/2013/Apr/blog-image-hosting-plan.html">read more</a></div>
-    </div>	
-				
-            <div class="pagination">
+<div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr; Previous</a></li>
 
-    <li class="active"><a href="../author/voidmous.html">1</a></li>
-    <li class=""><a href="../author/voidmous2.html">2</a></li>
-    <li class=""><a href="../author/voidmous3.html">3</a></li>
-    <li class=""><a href="../author/voidmous4.html">4</a></li>
-    <li class=""><a href="../author/voidmous5.html">5</a></li>
-    <li class=""><a href="../author/voidmous6.html">6</a></li>
+    <li class="active"><a href="http://www.joshuazhang.net/author/voidmous.html">1</a></li>
 
-    <li class="next"><a href="../author/voidmous2.html">Next &rarr;</a></li>
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
 
 </ul>
-</div>    
+</div>
  
   
         </div>
@@ -252,63 +292,50 @@ by <a class="url fn" href="../author/voidmous.html">voidmous</a>
                 Site
                 </li>
             
-                <li><a href="../archives.html">Archives</a>
-                <li><a href="../tags.html">Tags</a>
-                <li><a href="http://www.joshuazhang.net/feeds/atom.xml" rel="alternate">Atom feed</a></li>
-                            </ul>
+                <li><a href="http://www.joshuazhang.net/archives.html">Archives</a>
+                <li><a href="http://www.joshuazhang.net/tags.html">Tags</a>
+                <li><a href="http://www.joshuazhang.net/" rel="alternate">Atom feed</a></li>
+            </ul>
             </div>
 
 
-                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header"> 
                 Categories
                 </li>
                 
-                                <li><a href="../category/.html"></a></li>
-                                <li><a href="../category/art-critic.html">Art critic</a></li>
-                                <li><a href="../category/math.html">Math</a></li>
-                                <li><a href="../category/technique.html">Technique</a></li>
-                                <li><a href="../category/thoughts.html">Thoughts</a></li>
-                                   
+                <li><a href="http://www.joshuazhang.net/category/.html"></a></li>
+                <li><a href="http://www.joshuazhang.net/category/art-critic.html">Art critic</a></li>
+                <li><a href="http://www.joshuazhang.net/category/math.html">Math</a></li>
+                <li><a href="http://www.joshuazhang.net/category/technique.html">Technique</a></li>
+                <li><a href="http://www.joshuazhang.net/category/thoughts.html">Thoughts</a></li>
+                   
             </ul>
             </div>
-            
 
-                        <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header"> 
-                Links
-                </li>
-            
-                            <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
-                            <li><a href="http://python.org">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org">Jinja2</a></li>
-                        </ul>
-            </div>
-            
 
-                        <div class="social">
+
+
+            <div class="social">
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header"> 
                 Social
                 </li>
            
-                                <li><a href="https://github.com/voidmous">Github</a></li>
-                                <li><a href="https://twitter.com/voidmous">Twitter</a></li>
-                                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
-                                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
-                                <li><a href="http://www.renren.com/221168912">Renren</a></li>
-                            </ul>
+                <li><a href="https://github.com/voidmous">Github</a></li>
+                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+            </ul>
             </div>
             </div>
-            
+
         </div>  
     </div>     </div> 
 <footer>
 <br />
-<p><a href="..">幻空轩</a> &copy; voidmous 2012 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
+<p><a href="http://www.joshuazhang.net">JoshuaZhang</a> &copy; Joshz 2012 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
 </footer>
 
 </div> <!-- /container -->

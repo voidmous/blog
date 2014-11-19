@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JoshuaZhang</title>
+    <meta name="description" content="">
+    <meta name="author" content="Joshz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.joshuazhang.net/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.responsive.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
+    
+    <!-- My custom styles -->
+    <!-- Table and misc styles -->
+    <link href="http://www.joshuazhang.net/theme/custom.css" rel="stylesheet">
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
+    <!-- LaTeX mathjax support -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.joshuazhang.net">JoshuaZhang</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>LaTeX for Pelican 测试</h1>
+周六 18 二月 2012
+
+by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
+ 
+
+
+        </div>
+	
+        <div><p>本文主要用于测试Pelican与MathJax配合显示数学公式</p>
+<p>毕达哥拉斯定理： <span class="formula"><i>a</i><sup>2</sup> + <i>b</i><sup>2</sup> = <i>c</i><sup>2</sup></span></p>
+<p>正态分布： <span class="formula"><i>f</i><span class="symbol">(</span><i>x</i><span class="symbol">)</span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root">2<i>π</i></span><span class="ignored">)</span></span><i>σ</i></span><span class="ignored">)</span></span><i>exp</i><span class="array"><span class="arrayrow"><span class="bracket align-left">⎛</span></span><span class="arrayrow"><span class="bracket align-left">⎝</span></span></span> − <span class="fraction"><span class="ignored">(</span><span class="numerator">(<i>x</i> − <i>μ</i>)<sup>2</sup></span><span class="ignored">)/(</span><span class="denominator">2<i>σ</i><sup>2</sup></span><span class="ignored">)</span></span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎞</span></span><span class="arrayrow"><span class="bracket align-right">⎠</span></span></span></span></p>
+<p>傅里叶变换： <span class="formula"><i>F</i><span class="symbol">(</span><i>ω</i><span class="symbol">)</span> = ℱ<span class="symbol">[</span><i>f</i>(<i>t</i>)<span class="symbol">]</span> = <span class="limits"><span class="limit"><span class="symbol">∫</span></span></span><span class="scripts"><sup class="script">∞</sup><sub class="script"> − ∞</sub></span><i>e</i><sup> − <i>i</i><i>ω</i><i>t</i></sup><i>dt</i></span></p>
+<p>傅里叶逆变换： <span class="formula"><i>f</i><span class="symbol">(</span><i>t</i><span class="symbol">)</span> = ℱ<sup> − 1</sup><span class="symbol">[</span><i>F</i><span class="symbol">(</span><i>ω</i><span class="symbol">)</span><span class="symbol">]</span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">2<i>π</i></span><span class="ignored">)</span></span><span class="limits"><span class="limit"><span class="symbol">∫</span></span></span><span class="scripts"><sup class="script">∞</sup><sub class="script"> − ∞</sub></span><i>F</i><span class="symbol">(</span><i>ω</i><span class="symbol">)</span><i>e</i><sup><i>i</i><i>ω</i><i>t</i></sup><i>d</i><i>ω</i></span></p>
+<p>MathJax的语法基本与latex一致，可以参考wikipedia的latex书写语法规范<a class="reference external" href="http://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">Help:数学公式</a></p>
+</div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'joshuazhangblog'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.joshuazhang.net/archives.html">Archives</a>
+                <li><a href="http://www.joshuazhang.net/tags.html">Tags</a>
+                <li><a href="http://www.joshuazhang.net/" rel="alternate">Atom feed</a></li>
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.joshuazhang.net/category/.html"></a></li>
+                <li><a href="http://www.joshuazhang.net/category/art-critic.html">Art critic</a></li>
+                <li><a href="http://www.joshuazhang.net/category/math.html">Math</a></li>
+                <li><a href="http://www.joshuazhang.net/category/technique.html">Technique</a></li>
+                <li><a href="http://www.joshuazhang.net/category/thoughts.html">Thoughts</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/voidmous">Github</a></li>
+                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.joshuazhang.net">JoshuaZhang</a> &copy; Joshz 2012 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+<a href="http://github.com/voidmous/"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+ 
+</body>
+</html>
