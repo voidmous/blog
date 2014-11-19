@@ -32,16 +32,19 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),)
+# LINKS = (('Pelican', 'http://getpelican.com/'),)
 
 # Social widget
 SOCIAL = (('Github', 'https://github.com/voidmous'),
           ('Douban', 'http://www.douban.com/people/45448149'),
           ('Weibo', 'http://weibo.com/u/1760438435'),)
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# Must set to False in publishconf.py
+RELATIVE_URLS = True
 
-STATIC_PATHS = ['img', 'extra',]
+STATIC_PATHS = ['img', 'extra/robots.txt', 'extra/CNAME',]
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
+                       'extra/robots.txt': {'path': 'robots.txt'},}

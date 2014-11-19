@@ -27,8 +27,10 @@
 
     <div class='article'>
         <a href="{{ SITEURL }}/{{ article.url }}"><h2>{{ article.title }}</h2></a>
-        <div class= "well small"> {% include "metadata.html" %} </div>
-        <div class="summary">{{ article.summary }} <a class="btn btn-info xsmall" href="{{ SITEURL }}/{{ article.url }}">read more</a></div>
+        <hr>
+        <!-- Don't use any article metadata and summary, it's ugly -->
+        <!-- <div class= "well small"> {% include "metadata.html" %} </div> -->
+        <!-- <div class="summary">{{ article.summary }} <a class="btn btn-info xsmall" href="{{ SITEURL }}/{{ article.url }}">read more</a></div> -->
     </div>	
 				
     {% if loop.last and (articles_page.has_previous() or not articles_page.has_previous() and loop.length > 1) %}
