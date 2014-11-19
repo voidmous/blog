@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'voidmous'
-SITENAME = u'幻空轩'
+AUTHOR = u'Joshz'
+SITENAME = u'JoshuaZhang'
 SITEURL = ''
 ARTICLE_URL = 'posts/{date:%Y}/{slug}.html'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{slug}.html'
@@ -35,10 +35,8 @@ LINKS =  (('Pelican', 'http://getpelican.com/'),
 # Social widget
 SOCIAL = (
     ('Github', 'https://github.com/voidmous'),
-    ('Twitter', 'https://twitter.com/voidmous'),
     ('Douban', 'http://www.douban.com/people/45448149'),
     ('Weibo', 'http://weibo.com/u/1760438435'),
-    ('Renren', 'http://www.renren.com/221168912'),)
 
 DEFAULT_PAGINATION = 5
 
