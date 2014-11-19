@@ -1,6 +1,9 @@
+# ignore output html files
 output/
+# ignore compiled pyc files
 pelicanconf.pyc
 publishconf.pyc
+# ignore all virtualenv files
 bin/
 lib/
 include/
