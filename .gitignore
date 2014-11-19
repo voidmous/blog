@@ -3,6 +3,8 @@ output/
 # ignore compiled pyc files
 pelicanconf.pyc
 publishconf.pyc
+# ignore cache dir
+cache/
 # ignore all virtualenv files
 bin/
 lib/
