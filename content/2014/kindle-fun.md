@@ -1,9 +1,11 @@
 Title: Kindle好玩物
 Author: Joshz
 Date: 2014-11-21
-Category: Tech
+Modified:
+Category: Technique
 Tags: Kindle
 Slug: kindle-fun
+Summary:
  
 [TOC]
  

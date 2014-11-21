@@ -1,8 +1,8 @@
 Runge Kutta方法求解微分方程
 ###########################
 :date: 2012-05-08 07:06
-:category: Math
-:tags: Matlab, Runge Kutta, 数值方法, 洛伦兹方程, 龙格库塔
+:category: Technique
+:tags: Matlab, Runge Kutta, 数值方法, 洛伦兹方程, 
 :slug: runge-kutta-ode
 
 普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。

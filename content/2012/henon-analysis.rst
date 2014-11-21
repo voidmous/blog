@@ -1,7 +1,7 @@
 用MATLAB分析Henon映射
 #####################
 :date: 2012-07-09 18:24
-:category: Math
+:category: Technique
 :tags: Henon, Matlab, 分岔, 吸引子, 映射, 混沌
 :slug: henon-matlab-analysis
 
