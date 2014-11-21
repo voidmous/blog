@@ -57,23 +57,17 @@
     <div class="row">
 
         <div class="span9">
-        
-
-        
-
-
     <div class='article'>
         <div class="content-title">
-            <a href="http://www.joshuazhang.net/posts/2014/kindle-fun.html"><h1>Kindle好玩物</h1></a>
+            <h1>Kindle好玩物</h1>
 周五 21 十一月 2014
 
 by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
  
 
 
- 
         </div>
-        
+	
         <div><div class="toc">
 <ul>
 <li><a href="#_1">选购</a><ul>
@@ -210,151 +204,22 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
 <li><a href="http://www.amazon.cn/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&amp;nodeId=200529680">Amazon官方</a></li>
 <li><a href="http://kindlefere.com/update">Kindle伴侣-固件大全</a></li>
 </ul></div>
-        <hr />
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'joshuazhangblog'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-		
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/cygwin-install-jekyll.html"><h2>cygwin安装jekyll</h2></a>
-        <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周一 24 九月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><h2 id="ruby">卸载已安装的ruby</h2>
-<p>用对应的包管理器卸载
-如果是rvm安装的，直接删除目录<code>~/.rvm</code>，然后删除<code>.zshrc</code>和<code>.zlogin</code>文件，去掉<code>.profile</code>和<code>.bash_profile</code>中关于rvm的语句即可。</p>
-<h2 id="rvm">安装rvm</h2>
-<p><a href="https://rvm.io/rvm/install/">安装指南</a></p>
-<div class="codehilite"><pre>curl -L https://get.rvm.io <span class="p">|</span> bash -s stable --ruby
-</pre></div>
-
-
-<p>检测rvm安装</p>
-<div class="codehilite"><pre><span class="nb">type </span>rvm <span class="p">|</span> head -n 1
-</pre></div>
-
-
-<p>此时会显示<code>rvm:not found</code>，不用紧，还需要一步：</p>
-<div class="codehilite"><pre><span class="nb">source</span> ~/.rvm/scripts/rvm
-<span class="nb">type </span>rvm <span class="p">|</span> head -n 1
-</pre></div>
-
-
-<p>现在显示<code>rvm ...</code></p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/cygwin-install-jekyll.html">read more</a></div> -->
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/wp-database-optimization.html"><h2>wordpress数据库优化记录</h2></a>
-        <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周四 30 八月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。</p>
-<p>基本流程如下：</p>
-<p>1、备份。做任何数据库操作前，做一个临时备份都是必要的。使用phpmyadmin按默认设置导出sql文件下载到本地即可。</p>
-<p>2、删除不必要的插件。不必要的插件应当越少越好，尤其是会写入数据库或者查询数据库的插件。比如我之前使用过的<a class="reference external" href="http://www.6psp.cn/20100917/statpresscn%E6%8F%92%E4%BB%B6%E9%80%A0%E6%88%90%E5%8D%9A%E5%AE%A2%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%EF%BC%8C%E8%B5%B6%E5%BF%AB%E5%88%A0%E9%99%A4.html">statpresscn</a>，这个插件会在数据库中建立一个庞大的wp_statpresscn表，虽然没有前台查询，不过它造成的数据库冗余带来的坏处可远远大于统计功能带来的便利，所以还是删了吧。</p>
-<p>3、删除垃圾数据表。功能比较复杂的插件可能会在数据库中建立新表，删除插件一般不会把这些表顺带删除，所以手动排查垃圾数据表也是必要的。为了防止误删，请一定对照WP
-Codex的<a class="reference external" href="http://codex.wordpress.org/zh-cn:%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0">数据库描述</a>进行修改。</p>
-<p>删除akismet垃圾数据。关于akismet如何产生这些数据可以参考<a class="reference external" href="http://www.solagirl.net/wp-commentmeta-slowing-down-your-blog.html">wp_commentmeta是否正在拖慢你的blog</a>。</p>
-<div class="highlight"><pre><span class="k">delete</span> <span class="k">from</span> <span class="n">wp_commentmeta</span> <span class="k">where</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_as_submitted&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_history&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_rechecking&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_result&#39;</span> <span class="k">or ...</span></pre></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/wp-database-optimization.html">read more</a></div> -->
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/matlab-note.html"><h2>《MATLAB M语言高级编程》读书笔记</h2></a>
-        <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周一 30 七月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>第一章：M语言基础</p>
-<ul class="simple">
-<li>Matlab是解释型语言，不同于C语言这样的编译型语言，不过Matlab现在也可以编译。</li>
-<li>whos命令查看变量</li>
-<li>给变量赋值之前，不需要定义其类型。Matlab会<strong>自动决定</strong>变量类型，并分配内存空间。</li>
-<li>Matlab支持自动扩维(在<strong>某些操作</strong>下！比如两个不同维的矩阵相加就不会自动扩维，而会报错)，所以几乎所有变量都可以理解为矩阵（对于结构数组、元胞数组最好不要当做矩阵来理解）</li>
-<li>Matlab变量按列存储，C/C++按行存储。Matlab绝对下标索引是按从上到下，从左到右的顺序进行的，初始值为1。这个特性继承自FORTRAN。</li>
-<li>矩阵输入：中括号、逗号、分号、空格的区别。a=[1:5];这样的语句就会产生warning。</li>
-</ul>
-<p>矩阵索引示意图</p>
-<img alt="matrix index" class="align-center" src="/static/img/wp/20120702204224.png" />
-<p>这一张图基本就讲清楚了所有的情况，注意A([9 14;10
-15])这样的索引方式。想一想A([8 12;10 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/matlab-note.html">read more</a></div> -->
-    </div>	
-				
-
- 
-        
-
- 
-
-    <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/linux-usb-mount.html"><h2>Linux外置硬盘加载方案</h2></a>
-        <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周二 17 七月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的<a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab">fstab
-wiki</a>。简单地说就是现在/media目录下创建好要加载到的目标目录，然后在fstab中添加常连的外置硬盘mount条目即可。</p>
-<p>这个方案是我最开始采用的，没有太大问题，但是还不完美。主要是最近我的外置硬盘接口似乎有点松动，所以用段时间后会自动掉线，这时系统又会自动搜索加载，麻烦在于自动加载的目录和我所设的目录不一致了，这样所有对该硬盘下文件的操作就会“找不到目标”。典型的例子就是用播放器播放外置硬盘的歌曲，掉线重连后播放器就找不到曲目，只能又去手动加载，十分费劲。</p>
-<p>Linux下自动加载usb外置硬盘会mount到/media/$partition
-label目录下（起码我在Arch和Linux
-Mint下是如此），因此，你可以把手工设置的目录名称和外置硬盘分区的label修改成一致即可，这样就算掉线重连，文件位置不改变也就不会出现错误啦。想法是好的，不过可惜，如果系统检测到有同名的目录它就会创建一个带_的一个新目录作为挂载点，这条路也行不通。（也许可以修改哪里的设置或者权限可以达到这个目的？）</p>
-<p>目前只能不采用手动挂载而采用自动搜索挂载，这样其实也没太大的缺点，总比不断手动修改挂载点强。</p>
-<p>另外外置硬盘分区的label可以用Gparted修改，先卸载要修改的硬盘 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/linux-usb-mount.html">read more</a></div> -->
-    </div>	
-				
-<div class="pagination">
-<ul>
-    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
-
-    <li class="active"><a href="http://www.joshuazhang.net/author/joshz.html">1</a></li>
-    <li class=""><a href="http://www.joshuazhang.net/author/joshz2.html">2</a></li>
-    <li class=""><a href="http://www.joshuazhang.net/author/joshz3.html">3</a></li>
-    <li class=""><a href="http://www.joshuazhang.net/author/joshz4.html">4</a></li>
-    <li class=""><a href="http://www.joshuazhang.net/author/joshz5.html">5</a></li>
-
-    <li class="next"><a href="http://www.joshuazhang.net/author/joshz2.html">Next &rarr;</a></li>
-
-</ul>
-</div>
- 
-  
         </div>
         
         <div class="span3">
