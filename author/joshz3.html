@@ -64,21 +64,24 @@
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/runge-kutta-ode.html"><h2>Runge Kutta方法求解微分方程</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2012/linux-usb-mount.html"><h2>Linux外置硬盘加载方案</h2></a>
         <hr>
         <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周二 08 五月 2012
+        <!-- <div class= "well small"> 周二 17 七月 2012
 
 by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
  
 
 
  </div> -->
-        <!-- <div class="summary"><p>普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。
-将一阶常微分方程初值问题写成如下形式：
-\[\left\{\begin{array}\~y^{'}=f(x,y) \\y(x_0)=y_0 \\
-\end{array}\right.\] 四阶Runge Kutta公式如下：
-\[\left\{\begin{array}{l}y_{n+1}=y_n+\frac{h}{6}(K_1+2K_2+2K_3+K_4)\\x_{n+1}=x_n+1\\K_1=f(x_n,y_n)\\K_2=f(x_n ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/runge-kutta-ode.html">read more</a></div> -->
+        <!-- <div class="summary"><p>对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的<a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab">fstab
+wiki</a>。简单地说就是现在/media目录下创建好要加载到的目标目录，然后在fstab中添加常连的外置硬盘mount条目即可。</p>
+<p>这个方案是我最开始采用的，没有太大问题，但是还不完美。主要是最近我的外置硬盘接口似乎有点松动，所以用段时间后会自动掉线，这时系统又会自动搜索加载，麻烦在于自动加载的目录和我所设的目录不一致了，这样所有对该硬盘下文件的操作就会“找不到目标”。典型的例子就是用播放器播放外置硬盘的歌曲，掉线重连后播放器就找不到曲目，只能又去手动加载，十分费劲。</p>
+<p>Linux下自动加载usb外置硬盘会mount到/media/$partition
+label目录下（起码我在Arch和Linux
+Mint下是如此），因此，你可以把手工设置的目录名称和外置硬盘分区的label修改成一致即可，这样就算掉线重连，文件位置不改变也就不会出现错误啦。想法是好的，不过可惜，如果系统检测到有同名的目录它就会创建一个带_的一个新目录作为挂载点，这条路也行不通。（也许可以修改哪里的设置或者权限可以达到这个目的？）</p>
+<p>目前只能不采用手动挂载而采用自动搜索挂载，这样其实也没太大的缺点，总比不断手动修改挂载点强。</p>
+<p>另外外置硬盘分区的label可以用Gparted修改，先卸载要修改的硬盘 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/linux-usb-mount.html">read more</a></div> -->
     </div>	
 				
 
@@ -88,74 +91,25 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/winged-migration.html"><h2>迁徙的鸟</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2012/henon-matlab-analysis.html"><h2>用MATLAB分析Henon映射</h2></a>
         <hr>
         <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周一 16 四月 2012
+        <!-- <div class= "well small"> 周一 09 七月 2012
 
 by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
  
 
 
  </div> -->
-        <!-- <div class="summary"><p>《<a class="reference external" href="http://movie.douban.com/subject/1292281/">迁徙的鸟</a>》是由法国导演<a class="reference external" href="http://movie.douban.com/celebrity/1010752/">雅克·贝汉</a>带领的一个由优秀的飞行员和科学家组成的队伍历时三年完成的影片。全片记录了全球各地各种迁徙鸟类的镜头。片子上映很久了，也一直想看，可惜一直被各种好莱坞大片轰炸，要抽出个文艺的时间真不容易，不过好歹还是看完了。</p>
-<p>全片解说不多，大部分时间都只是聚焦在鸟类的飞行姿态上，然而这并不让人感觉烦闷，也许真的是我们与自然疏离了。对于这样一部片子，只要带上审美的眼睛、慵懒的耳朵和悠然的心情，你就能够感受到导演团队的良苦用心了。不需要太多的评论，我们就简单的看图说话吧：</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-1.jpg" />
-</div>
-<p>片子里面有许多这样的飞行镜头，让我们以平等的角度来欣赏鸟翱翔的姿态，怎会不让我们激动？</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-2.jpg" />
-</div>
-<p>绝佳的构图</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-4.jpg" />
-</div>
-<p>美妙的姿态</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-0.jpg" />
-</div>
-<p>传说中的鸠占雀巢，每天都在上演着</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-5.jpg" />
-</div>
-<p>天鹅的舞姿，轻盈而优雅。《天鹅湖》确实从大自然偷师不少。</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-6.jpg" />
-</div>
-<p>美妙的流线型，“鸟”体工程学。</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-7.jpg" />
-</div>
-<p>顾盼生姿</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-9.jpg" />
-</div>
-<p>水上飞，海陆空三栖品种。</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-8.jpg" />
-</div>
-<p>怪异的发型，此鸟个性十足。</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-11.jpg" />
-</div>
-<p>加拿大松鸡，别看我块头大，胸口顶着俩大包，哥真的会飞。</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-10.jpg" />
-</div>
-<p>铁栏后的落寞。圈养的鸟儿怎能理解自由的快乐。</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-12.jpg" />
-</div>
-<p>从天而降对付敌人的招式是什么，如来神掌！</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-13.jpg" />
-</div>
-<p>最浪漫的事莫过于和你一起迁徙。</p>
-<div class="figure align-center">
-<img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-14.jpg" />
-</div>
-<p>枪声响起 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/winged-migration.html">read more</a></div> -->
+        <!-- <div class="summary"><p>Henon映射是动力系统研究中很常见的离散映射，因为它具有的混沌特性而闻名。映射方程如下：
+\[\left\{\begin{array}\~x_{n+1}=y_n+1-a\times~x_n^2 \\ y_{n+1}=bx_n \\ \end{array} \right. \]</p>
+<p>不同的a、b参数下该映射具有不同的性质，可能出现混沌、断续或者收敛到周期轨道上不同的情况。取a=1.4，b=0.3时会产生著名的henon吸引子。</p>
+<img alt="henon1" class="align-center" src="/static/img/wp/henon1.png" />
+<p>Henon吸引子，横轴为x，纵轴为y，其实就是所有迭代的点产生的图案，形状比较怪异。</p>
+<img alt="henon2" class="align-center" src="/static/img/wp/henon2.png" />
+<p>b=0.3时的分岔图，不同a值下x可能在几个值间变化，也可能在许多值之间变化，即产生了混沌。顺便吐槽下Matlab生成的图片太不精细了，暂时还不知道用什么方法能提高图片细节。</p>
+<p>Matlab源代码：</p>
+<div class="highlight"><pre><span class="c">% By voidmous&lt;voidmous@gmail.com ...</span></pre></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/henon-matlab-analysis.html">read more</a></div> -->
     </div>	
 				
 
@@ -165,25 +119,21 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/cloud-storage-comparison.html"><h2>几款云存储服务比较</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2012/MS-Word-label.html"><h2>MS Word题注与交叉引用</h2></a>
         <hr>
         <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周五 13 四月 2012
+        <!-- <div class= "well small"> 周四 05 七月 2012
 
 by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
  
 
 
  </div> -->
-        <!-- <div class="summary"><p>所谓云存储服务，通俗点说就是网盘啦。不过现在各种免费网盘的服务其实并不仅限于存储，社交分享、同步备份都是很常见的功能，所以用云的概念可能更加合适（现在还称不上真正的云，但是趋势已经可以看出来了）。我个人用过国内国外的几个云存储服务，现在拿它们比较一番，顺便思考下云时代，什么样的存储才是我们（起码是我）真正所需的。</p>
-<p>首先还是把范围确定，我所说的云存储并非Rapidshare，hotfile，城通网盘此类以快速文件分享作为主打功能的网盘，而是指具备同步功能以打造用户的私有资料、信息云为目标的网盘。这样的概念可能有点泛，现在的网络存储基本都还没实现这样的目标，但是是否具备这样的野心还是可以看出来的。</p>
-<p>再来分析下必要的功能需求（此处仅对我而言）：</p>
-<p>同步功能。这是目前而言最重要也是最差异化的功能。对我这样寝室、实验室两头跑的人来说，用U盘可不是什么方便的事情，有同步功能我就可以在两头处理同一个文件而不用把工作地点锁定在某一个地方。同时，有一份网络备份可比什么U盘备份强。</p>
-<p>分享功能。这个我认为是从网盘时代遗传下来的功能，我个人并不常用，但是它也是不可或缺的，因为以此途径发布文件是最简单的事情，虽然目前暂时我没有这方面的需求。</p>
-<p>多平台共享。现在电子设备越来越多，操作系统也五花八门，兼顾主流平台应该是必须的。不过对于我而言，Linux平台的支持非常重要，尽管它并非主流。</p>
-<p>下面我简单比较下几个云存储服务：</p>
-<p>1、<a class="reference external" href="https://www.dropbox.com/">Dropbox</a></p>
-<p>Dropbox作为这个方面的老大是当仁不让的 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/cloud-storage-comparison.html">read more</a></div> -->
+        <!-- <div class="summary"><p>MS Word作为微软的拳头产品，虽然乏善可陈，但是仍然稳坐国内市场头把交椅，就算是在高校，这种局面也好不了多少。最近用Word写了份简短的文档，没什么花哨的东西，就是些公式和交叉引用、参考文献啥的，还是要请出Google大神才搞定。中间关于域以及题注上的有些细节问题没有完全搞懂，看来还是要系统地看看Word教程（谁说Word易用的，不学能用吗？！）。</p>
+<p>关于公式多说两句，Word自带的公式编辑器3.0实在是太简单了，要输入空集符号都不行，要输复杂点的公式简直找虐。第三方的mathtype印象中比自带的显示效果还要差，虽然功能似乎强大点。Aurora是基于LaTeX的，输入公式确实快捷，效果也最好，但是担心会出现兼容性问题，转换成图片的话和mathtype一样都不够原生态。总之公式的美观、输入快捷和兼容性三者在Word上兼得。</p>
+<p>Zotero在Word内插入参考文献其实是添加了域代码，通过域来更新文献内容以及索引。所谓域，可以理解为一个变量寄存器，根据它在文档中所处的位置产生数据。比如第几张图，第几个表，这时就相当于一个计数器（其实LaTeX里面的Counter更好理解）。大部分域操作都可以手工操作完成，比较重要的快捷键有：F9
+更新域；Ctrl+Shift+F9把域转化为文本（确定文章不会再修改时使用，注意备份，慎用！）</p>
+<p>Word里面的题注和LaTeX里面的label差不多，其实题注也就是为对象加上一个标签 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/MS-Word-label.html">read more</a></div> -->
     </div>	
 				
 
@@ -193,40 +143,22 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/linux-manual.html"><h2>Linux帮助系统常见技巧</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2012/zotero-bib-blog.html"><h2>利用Zotero为博文添加参考文献</h2></a>
         <hr>
         <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周三 04 四月 2012
+        <!-- <div class= "well small"> 周五 29 六月 2012
 
 by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
  
 
 
  </div> -->
-        <!-- <div class="summary"><p>Linux下命令实在太多，学习命令行最佳途径当然是通过手册（manual），新手对帮助系统有所了解可以更快地上手Linux基本管理操作。</p>
-<ul class="simple">
-<li>man cmdname</li>
-</ul>
-<p>这是最基本的用法了，也是最有效的方法。man
-page主要是面向unix程序员，因此事无巨细，对于常见的操作其实并不需要细看，了解书写格式，挑出几个选项就可以了。</p>
-<ul class="simple">
-<li>cmdname --help或者cmdname -h</li>
-</ul>
-<p>相比上一条，这个对于新手更加适用，因为它只显示最常用的选项，文字也更精简，真正可以让你快速参考。另外还要说明的是，许多打包的可执行安装文件都可以用这条命令显示安装帮助，如一些后缀名为bin或者run的文件，在安装前有必要阅读一下。这条命令只能作用于外部命令，shell内部命令无法使用（虽然还是有输出文字）。判断一条命令是外部或者内部命令，可以用type
-cmdname查询某个命令或者help查看所有内部命令。</p>
-<ul class="simple">
-<li>whatis cmdname</li>
-</ul>
-<p>whatis命令显示的其实是manpage的名称一栏的注释，你可以试试man
-whatis和whatis
-whatis看看区别所在。如果只是想简单了解某条命令的用处，用whatis就再合适不过了。（whatis
-man会出现三个带选项的man命令，为什么？）</p>
-<ul class="simple">
-<li>info cmdname</li>
-</ul>
-<p>info命令显示的帮助更加详尽，信息量更大，同时界面更加友好。不过不怎么常用</p>
-<ul class="simple">
-<li>manual系统 ...</li></ul> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/linux-manual.html">read more</a></div> -->
+        <!-- <div class="summary"><p>对于技术类文章而言，添加必要的参考文献体现的是对他人劳动成果的尊重。即便你不会全文转载别人的文章而不标明出处，但是严格的说，学习了别人的方法或者观点也不能据为己有，标注参考文献就是向原创致敬的方法之一。目前而言，许多加了参考文献的文章都是怎么简单怎么来，没有个统一的格式，也不方便读者查阅。其实规范并不是没有，许多学术期刊对引用网页这样的媒体都有说明，我国<a class="reference external" href="http://gradschool.ustc.edu.cn/ylb/material/xw/wdxz/19.pdf">参考文献标准</a>也有说明。从我较短的使用过程来看，GB/T&nbsp;7714-2005标准设计得比较简洁紧凑，适合中文、英文以及混排的情况，看上去比较舒服。</p>
+<p>收集、管理文献的工具我首推Zotero，主要就在于它和Firefox结合得很好，对国际国内各大学术期刊数据库都支持得不错，和Google
+Scholar搭配堪称完美。关于Zotero的使用可以看这篇文章：《<a class="reference external" href="http://blog.yesmryang.net/zotero-usage/">文献管理软件Zotero的一点使用感受</a>》。</p>
+<p>利用Zotero的导出功能实际已经可以生成很好的参考文献了，不过美中不足的是导出的只是纯文本，没有任何格式化，所以读者仍然要自己手动去查找参考文献，这可不是我这样的懒人想干的事，于是干脆自己动手写了下面这个style，基本功能已经实现，在外观和功能上可能还有提升的空间。</p>
+<p>Blogit是我基于<a class="reference external" href="http://www.zotero.org/styles/chinese-gb7714-2005-numeric">Chinese Std GB/T 7714-2005
+(numeric)</a>这个style文件，参考<a class="reference external" href="http://www.zotero.org/styles/radiopaedia">radiopaedia</a>鼓捣出来的一个结合体。一方面保留了国标的规范 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/zotero-bib-blog.html">read more</a></div> -->
     </div>	
 				
 
@@ -236,39 +168,21 @@ man会出现三个带选项的man命令，为什么？）</p>
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/archlinux-audacious.html"><h2>Archlinux下编译Audacious(cue、ape支持)</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2012/MIT-BIH-manual.html"><h2>MIT-BIH开放数据库使用指南</h2></a>
         <hr>
         <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周二 20 三月 2012
+        <!-- <div class= "well small"> 周五 15 六月 2012
 
 by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
  
 
 
  </div> -->
-        <!-- <div class="summary"><ul class="simple">
-<li>首先安装需求：</li>
-</ul>
-<p>Glib 2, GTK+ 2, Pango, Cairo, libmcs(AUR), libmowgli(AUR)</p>
-<ul class="simple">
-<li>为了支持cue，还需要安装libcue</li>
-<li>下载audacious源码包与插件包： <a class="reference external" href="http://audacious-media-player.org/download">下载地址</a></li>
-<li>解压audacious源码包，然后常规三步曲</li>
-</ul>
-<div class="highlight"><pre><span class="nv">$ </span>./configure
-<span class="nv">$ </span>sudo make <span class="o">&amp;&amp;</span> make install
+        <!-- <div class="summary"><p>最近因为项目任务要分析心电图数据，采用的是<a class="reference external" href="http://ecg.mit.edu/">MIT-BIH</a>开放数据库（或称PhysioBank数据库）。这个数据库不仅提供了经过筛选的各方面的生理数据集<a class="reference external" href="http://www.physionet.org/physiobank/">PhysioBank</a>，而且也提供了开源的数据处理和可视化工具<a class="reference external" href="http://www.physionet.org/physiotools/">PhysioToolkit</a>。对我这样的非医学类学生而言，光是看见那些医学术语就够头痛的了，还要掌握这样一套专门的基于Linux的工具，确实是个不小的挑战。好在我要完成的部分不需要很深入，所以马马虎虎也摸着些门道。不敢说会用，但是起码碰到问题方向在哪我已经清楚了，这里把这个数据库的使用简单介绍一下，方便新来的同学快速上手。当然如果你英语好的话，大可以自己慢慢翻文档，这也是要深入了解的惟一途径。</p>
+<p>首先说说数据库。你可以到<a class="reference external" href="http://www.physionet.org/physiobank/database/">分类页面</a>查找有没有自己感兴趣的数据集，上面都有比较详细的介绍。找到合适的数据后在对应页面直接将文件另存为就可以下载，当然这是比较笨的办法。推荐使用wget或者rsync来下载。wget可以用于下载单独的数据集，这样速度较快也比较快捷。例如下载mitdb：</p>
+<div class="highlight"><pre>wget -r -np http://physionet.org/physiobank/database/mitdb/
 </pre></div>
-<ul class="simple">
-<li>再解压audacious插件源码包</li>
-</ul>
-<p>此时直接configure会出错，错误提示：</p>
-<pre class="literal-block">
-checking for AUDACIOUS... no
-configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
-</pre>
-<p>根据google到的方法：</p>
-<div class="highlight"><pre><span class="nb">export </span><span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span>/usr/local/lib/pkgconfig:<span class="nv">$PKG_CONFIG_PATH</span>
-<span class="nb">export ...</span></pre></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/archlinux-audacious.html">read more</a></div> -->
+<p>中间的<em>physionet.org</em>可以替换成离你最近的<a class="reference external" href="http://www.physionet.org/mirrors/">镜像</a>地址（好像西交的挂了，直接用原镜像吧 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/MIT-BIH-manual.html">read more</a></div> -->
     </div>	
 				
 <div class="pagination">
@@ -280,6 +194,7 @@ configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
     <li class="active"><a href="http://www.joshuazhang.net/author/joshz3.html">3</a></li>
     <li class=""><a href="http://www.joshuazhang.net/author/joshz4.html">4</a></li>
     <li class=""><a href="http://www.joshuazhang.net/author/joshz5.html">5</a></li>
+    <li class=""><a href="http://www.joshuazhang.net/author/joshz6.html">6</a></li>
 
     <li class="next"><a href="http://www.joshuazhang.net/author/joshz4.html">Next &rarr;</a></li>
 
@@ -311,8 +226,8 @@ configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
                 </li>
                 
                 <li><a href="http://www.joshuazhang.net/category/.html"></a></li>
-                <li><a href="http://www.joshuazhang.net/category/art-critic.html">Art critic</a></li>
                 <li><a href="http://www.joshuazhang.net/category/life.html">Life</a></li>
+                <li><a href="http://www.joshuazhang.net/category/review.html">Review</a></li>
                 <li><a href="http://www.joshuazhang.net/category/technique.html">Technique</a></li>
                    
             </ul>
@@ -339,7 +254,7 @@ configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
     </div>     </div> 
 <footer>
 <br />
-<p><a href="http://www.joshuazhang.net">JoshuaZhang</a> &copy; Joshz 2012 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
+<p><a href="http://www.joshuazhang.net">JoshuaZhang</a> &copy; Joshz 2012-2014 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
 </footer>
 
 </div> <!-- /container -->

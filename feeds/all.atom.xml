@@ -42,11 +42,13 @@
 &lt;li&gt;超长待机使用时间。这与Kindle的定位与软硬件设计是相适应的，很显然，如果读书的时候老是不自觉地去查看电量，那么读书的乐趣何在呢？&lt;/li&gt;
 &lt;li&gt;无干扰阅读环境。一个具有很强自控力的人即便在电脑前也可以疵牙咧嘴地看完一本彩页pdf电子书，但是注意力涣散的人一本纸质书也要磨蹭大半年。人的差异固然存在，不过也不能忽略环境对人注意力的影响，弱化的娱乐和连接功能使得你不能不聚焦在读书这唯一的乐事上，这对很多人是一种莫大的帮助。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;客观地说，Kindle看电子书仍然有不完美的地方（但不是硬性限制），罗列如下：
-&lt;em&gt; 图片支持差。电子书内嵌的图片无法放缩，往往看不到最佳显示效果，因此含大量图片的电子书不推荐在阅读器上阅读。不过在PC/平板上Kindle软件的显示效果不坑爹，所以也不用太担心。这里也要对Amazon软硬件生态一体布局的大手笔点下赞。
-&lt;/em&gt; 公式、源代码支持差。公式往往影响排版的页面切分，源代码则高亮不起来（黑白的还想怎么滴？），因此专业的理工科书籍还是得看纸质版。
-* 电子书的数量和质量。电子书市场现在发展飞快，Amazon也在不断增加电子书覆盖的范围，但目前稍微冷门一点的书籍一般都没有电子版，而且仍然存在排版混乱、文字错误等各种质量问题，相比豆瓣出品还有距离。&lt;/p&gt;
-&lt;p&gt;总结一下，Kindle适合阅读包含大量文字内容的电子书，文史哲类看起来很舒服，理工类电子资源也可以看，但体验还有很大的提升空间。说到这里，你一定看出来了，不光是你在挑产品，Kindle也在挑选合适的主人。&lt;/p&gt;
+&lt;p&gt;客观地说，Kindle看电子书仍然有不完美的地方（但不是硬性限制），罗列如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;图片支持差。电子书内嵌的图片无法放缩，往往看不到最佳显示效果，因此含大量图片的电子书不推荐在阅读器上阅读。不过在PC/平板上Kindle软件的显示效果不坑爹，所以也不用太担心。这里也要对Amazon软硬件生态一体布局的大手笔点下赞。&lt;/li&gt;
+&lt;li&gt;公式、源代码支持差。公式往往影响排版的页面切分，源代码则高亮不起来（黑白的还想怎么滴？），因此专业的理工科书籍还是得看纸质版。&lt;/li&gt;
+&lt;li&gt;电子书的数量和质量。电子书市场现在发展飞快，Amazon也在不断增加电子书覆盖的范围，但目前稍微冷门一点的书籍一般都没有电子版，而且仍然存在排版混乱、文字错误等各种质量问题，相比豆瓣出品还有距离。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总结一下，Kindle适合阅读包含大量文字内容的电子书，文史哲类看起来很舒服，理工类电子资源也可以看，但体验还有很大的提升空间。说到这里，你一定看出来了，不光是你在挑产品，Kindle也在挑选合适的消费者。&lt;/p&gt;
 &lt;h3 id="_2"&gt;产品线&lt;/h3&gt;
 &lt;p&gt;Kindle家族到现在已经颇为庞大，Kindle 3、4、5一脉相承，Kindle Touch和Paperwhite主打触摸屏，DXG的9寸屏则是PDF大杀器（对土豪来说应该&lt;a href="http://store.sony.com/digital-paper-system-zid27-DPTS1/cat-27-catid-digital-paper"&gt;Sony DPTS1&lt;/a&gt;更合适吧）。目前来说，支持背光的KPW基本是入手的首选，国行价格也不怎么坑，还可以开发票^_^。几款新产品的细微区别可以参考&lt;a href="http://kindlefere.com/post/56.html"&gt;一张漫画告诉你 KPW、KV 和新 Kindle 的区别&lt;/a&gt;，萌萌哒。&lt;/p&gt;
 &lt;h2 id="_3"&gt;系统&lt;/h2&gt;
@@ -56,12 +58,14 @@
 &lt;p&gt;目前真正的“第三方”选择是指多看系统。到现在为止我都没用过该系统，所以“手感”我就不评价了。当然我不选择它是有原因的，一是它不兼容Amazon的推送地址，而是用&lt;code&gt;@iduokan.com&lt;/code&gt;，而我大部分推送地址已经使用了Amazon，同时我对Amazon的服务相对更有信心，虽然小米也是很有前途的公司；二是它不能与原生系统共存（不然叫啥第三方？），相比“双系统”架构，我喜欢“虚拟机”方案多一点。我这里没说多看的优点，不代表它没有，不过目前对我吸引力不够。&lt;/p&gt;
 &lt;p&gt;多看适合对原生系统不满意又不具备足够折腾技能（多看不需要越狱）的孩子，折腾党不越狱怎么好意思说自己折腾？&lt;/p&gt;
 &lt;h3 id="jb-koreader"&gt;JB + KOReader&lt;/h3&gt;
-&lt;p&gt;我目前使用的方案是原生系统JailBreak+&lt;a href="http://kindlefere.com/post/39.html"&gt;KOReader&lt;/a&gt;，也是我个人推荐的方案，优点就是除了保持原生系统的特性之外，还添加了epub、djvu、chm等文档格式支持，此外还有强大的扫描PDF、djvu重排功能。这个组合和多看目前的功能已经处在同一水平线上了。只不过要安装KOReader需要先越狱，算是一个比较大的劣势吧。如果你对自己的折腾水平和阅读英文文档的能力有信心的话那我举双手双脚推荐。&lt;/p&gt;
+&lt;p&gt;我目前使用的方案是原生系统JailBreak+ &lt;a href="http://kindlefere.com/post/39.html"&gt;KOReader&lt;/a&gt; ，也是我个人推荐的方案，优点就是除了保持原生系统的特性之外，还添加了epub、djvu、chm等文档格式支持，此外还有强大的扫描PDF、djvu重排功能。这个组合和多看目前的功能已经处在同一水平线上了。只不过要安装KOReader需要先越狱，算是一个比较大的劣势吧。如果你对自己的折腾水平和阅读英文文档的能力有信心的话那我举双手双脚推荐。&lt;/p&gt;
 &lt;h3 id="_6"&gt;关于越狱&lt;/h3&gt;
-&lt;p&gt;越狱的内容十分琐碎，网上资料也很多，就不详细写了，推荐查看&lt;a href="http://kindlefere.com/post/33.html"&gt;三步搞定！Kindle Paperwhite 2 越狱教程&lt;/a&gt;。只要注意几点：
-&lt;em&gt; 由于开发越狱工具需要时间，因此最新版固件往往无法越狱且不能降级，升级固件时需要考虑有无越狱需要。
-&lt;/em&gt; 备份是折腾的基础。
-* 解除越狱只需要重置设备即可。&lt;/p&gt;
+&lt;p&gt;越狱的内容十分琐碎，网上资料也很多，就不详细写了，推荐查看 &lt;a href="http://kindlefere.com/post/33.html"&gt;三步搞定！Kindle Paperwhite 2 越狱教程&lt;/a&gt;。只要注意几点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;由于开发越狱工具需要时间，因此最新版固件往往无法越狱且不能降级，升级固件时需要考虑有无越狱需要。&lt;/li&gt;
+&lt;li&gt;备份是折腾的基础。&lt;/li&gt;
+&lt;li&gt;解除越狱只需要重置设备即可。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="_7"&gt;内容推送&lt;/h2&gt;
 &lt;h3 id="_8"&gt;设备绑定&lt;/h3&gt;
 &lt;p&gt;Kindle设备理论上可以绑定到Amazon服务的任意地区，但各地区之间并不共享帐号（美亚和中亚可使用同一账户名，但密码不能相同），所以用户必须做唯一的选择。绑定美亚则可以购买众多价格不菲的英文原版电子书，中文资源却少的可怜；绑定中亚则相对而言更实惠一些，中文资源也是主流。&lt;/p&gt;
@@ -74,39 +78,39 @@
 &lt;/ul&gt;
 &lt;h3 id="_10"&gt;推送源&lt;/h3&gt;
 &lt;p&gt;目前推送源主要有这几类：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;第三方新闻内容定时推送。RSS推送固然方便，但是订阅太多也会造成信息过载，量力而行。&lt;ol&gt;
+&lt;ol&gt;
+&lt;li&gt;第三方新闻内容定时推送。RSS推送固然方便，但是订阅太多也会造成信息过载，量力而行。&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://kindle4rss.com/"&gt;Kindle4rss&lt;/a&gt;，英文全文订阅源&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dogear.cn/"&gt;狗耳朵&lt;/a&gt;，有微信公众号推送服务&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.hikindle.com/"&gt;hikindle&lt;/a&gt;，VIP可推送电子杂志&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://readcola.com"&gt;Readcola&lt;/a&gt;，免费版支持16个订阅源，支持全文抓取&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;手动内容推送。用户自己可以手动转发或采集网络内容发至第三方服务器，经过累积和处理后再推送至Kindle。由于Kindle阅读容易集中注意力，因此适合阅读有深度的文章，“太长不看”的文章都可以收集起来推送给Kindle搞定。&lt;ol&gt;
+&lt;li&gt;手动内容推送。用户自己可以手动转发或采集网络内容发至第三方服务器，经过累积和处理后再推送至Kindle。由于Kindle阅读容易集中注意力，因此适合阅读有深度的文章，“太长不看”的文章都可以收集起来推送给Kindle搞定。&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.readability.com/"&gt;Readability&lt;/a&gt;，最佳网文推送服务，抓取算法稍逊，可推送图片，免费账户也可定时累积推送。其它功能包括社交化、数据导出和专有邮件接收地址等。&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.instapaper.com/"&gt;Instapaper&lt;/a&gt;，最早的推送网站，网页抓取算法不错，不能推送图片，免费账户也可定时累积推送。&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.klip.me/"&gt;Klip.me&lt;/a&gt;，依托Google App Engine的网页推送网站（以前和Google Reader集成），网页抓取算法好，支持图片，不过文章分单篇推送，不方便管理。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;第三方电子书推送。&lt;ol&gt;
+&lt;li&gt;第三方电子书推送。&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.readfar.com/"&gt;读远&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.mlook.mobi/"&gt;mlook&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://readfree.me/"&gt;Readfree&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.kindlemi.com/books"&gt;Kindle迷&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://book.zi5.me/"&gt;子午书简&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.ikandou.com/"&gt;爱看豆&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;邮件推送。用户或者一些邮件订阅通过邮件转发至推送邮箱，也很方便。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;h2 id="_11"&gt;笔记管理&lt;/h2&gt;
-&lt;p&gt;首先应当明确亚马逊对电子书笔记的处理是完全与云端的电子书绑定的，即如果删除了云端的电子书，那么笔记也会相应的删除（参考：(http://tieba.baidu.com/p/2616398627)）。&lt;/p&gt;
+&lt;p&gt;首先应当明确亚马逊对电子书笔记的处理是完全与云端的电子书绑定的，即如果删除了云端的电子书，那么笔记也会相应的删除（参考：&lt;a href="http://tieba.baidu.com/p/2616398627"&gt;http://tieba.baidu.com/p/2616398627&lt;/a&gt;）。&lt;/p&gt;
 &lt;h3 id="_12"&gt;笔记备份&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.clippings.io"&gt;Clippings.io&lt;/a&gt;（原ClippingsConverter）提供笔记导出/同步服务，免费版可上传&lt;code&gt;My Clippings.txt&lt;/code&gt;并导出为各种格式或者同步到Evernote，收费版使用Chrome扩展，不仅支持文件导入，也支持对Kindle各个软件客户端的识别，不过目前好像在国内无法付费购买。&lt;/li&gt;
 &lt;li&gt;使用Koreader自带的导出到Evernote功能。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;详细可参考&lt;a href="http://www.zhihu.com/question/22356174/answer/21121444?group_id=139440893"&gt;知乎：如何将 Kindle Paperwhite 读书笔记导入到 Evernote 印象笔记？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;具体可参考&lt;a href="http://www.zhihu.com/question/22356174/answer/21121444?group_id=139440893"&gt;知乎：如何将 Kindle Paperwhite 读书笔记导入到 Evernote 印象笔记？&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="_13"&gt;其它工具&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://calibre-ebook.com/"&gt;Calibre&lt;/a&gt;：开源的电子书管理利器，支持各类电子书格式阅读与转换，支持各类掌上阅读器。&lt;/li&gt;
@@ -134,7 +138,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.amazon.cn/gp/help/customer/display.html/ref=hp_bc_nav?ie=UTF8&amp;amp;nodeId=200529680"&gt;Amazon官方&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://kindlefere.com/update"&gt;Kindle伴侣-固件大全&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Kindle"></category></entry><entry><title>告别GoogleReader</title><link href="http://www.joshuazhang.net/posts/2013/goodbay-to-googlereader.html" rel="alternate"></link><updated>2013-06-14T18:47:00+08:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-06-14:posts/2013/goodbay-to-googlereader.html</id><summary type="html">&lt;p&gt;GoogleReader即将于7月1日正式退役，目前看来这是板上钉钉了，在这天到来之前，一些必要的备份转移工作现在已经可以开始了。在开始之前，先得说点场面话。&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="Kindle"></category></entry><entry><title>告别GoogleReader</title><link href="http://www.joshuazhang.net/posts/2013/goodbay-to-googlereader.html" rel="alternate"></link><updated>2013-06-14T18:47:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2013-06-14:posts/2013/goodbay-to-googlereader.html</id><summary type="html">&lt;p&gt;GoogleReader即将于7月1日正式退役，目前看来这是板上钉钉了，在这天到来之前，一些必要的备份转移工作现在已经可以开始了。在开始之前，先得说点场面话。&lt;/p&gt;
 &lt;h2 id="_1"&gt;告别一个时代&lt;/h2&gt;
 &lt;p&gt;在GR弥留之际，写几句不疼不痒的挽联，算是给心头爱将一个名分吧。我2010年才开始深度使用GR，当时深感这是一款伟大的产品，不仅仅是为浏览信息提供了方便，更是为我们从越来越庞大的互联网探索获取信息提供自动化的方法，虽然目前这种自动化智能程度还比较低，但是如果我们10年后不再需要事必躬亲地获取信息而是等待智能的推送，那么我们也不应该忘了GR的一份功劳。虽然Google不是RSS的制定者，也未必最先想到云RSS阅读的点子，但是毋庸置疑GR是普及这一想法并彻底改变我等“信息狂躁症”患者生活的最大功臣。如果认真分析，GR的价值体现在这几个方面：&lt;/p&gt;
 &lt;ul&gt;
@@ -190,7 +194,7 @@
 经过这么长时间的调整，雨后春笋般冒出的GR替代服务基本都已经走向成熟，一个详细的列表可以参考 &lt;a href="http://alternativeto.net/software/google-reader/?sort=likes"&gt;这里&lt;/a&gt; ，其中排名第一的 &lt;a href="http://www.feedspot.com/"&gt;FeedSpot&lt;/a&gt; 值得一试。&lt;/p&gt;
 &lt;h2 id="_4"&gt;整体备份&lt;/h2&gt;
 &lt;p&gt;即便我们把订阅源转出去了，也一定不要认为可以安枕无忧了。比Google无良的企业比比皆是，说不准哪一天你就发现自己常用的服务消失了，而通知仅仅是一天前或者根本没通知。因此，保险起见，我们不仅可以多测试几个替代服务，同时也要做好订阅源Takeout导出备份。这个操作没有难度，也就不赘述了。&lt;/p&gt;
-&lt;p&gt;麻烦的是加星标文章，很多新的服务不支持从GR导入加星标文章，或者虽然有该功能却有各种问题，为了最大化历史数据的安全，我们可以通过导出的 json 文件将加星标文章导入 Evernote ，具体方法参考 &lt;a href="http://www.joshuazhang.net/posts/2013/Apr/export-googlereader-starreditem-to-evernote.html"&gt;导出Google Reader加星条目到Evernote&lt;/a&gt; 。&lt;/p&gt;</summary><category term="GoogleReader"></category></entry><entry><title>博客图床规划</title><link href="http://www.joshuazhang.net/posts/2013/blog-image-hosting-plan.html" rel="alternate"></link><updated>2013-04-28T23:55:00+08:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-04-28:posts/2013/blog-image-hosting-plan.html</id><summary type="html">&lt;div class="toc"&gt;
+&lt;p&gt;麻烦的是加星标文章，很多新的服务不支持从GR导入加星标文章，或者虽然有该功能却有各种问题，为了最大化历史数据的安全，我们可以通过导出的 json 文件将加星标文章导入 Evernote ，具体方法参考 &lt;a href="http://www.joshuazhang.net/posts/2013/Apr/export-googlereader-starreditem-to-evernote.html"&gt;导出Google Reader加星条目到Evernote&lt;/a&gt; 。&lt;/p&gt;</summary><category term="GoogleReader"></category></entry><entry><title>博客图床规划</title><link href="http://www.joshuazhang.net/posts/2013/blog-image-hosting-plan.html" rel="alternate"></link><updated>2013-04-28T23:55:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2013-04-28:posts/2013/blog-image-hosting-plan.html</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#_1"&gt;要点&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#_2"&gt;方案&lt;/a&gt;&lt;ul&gt;
@@ -247,7 +251,7 @@
 &lt;/ul&gt;
 &lt;p&gt;这种方案的灵活还体现在你可以自由地选择空间，由于数据库（或者静态网页）体积流量都小，而图片等体积大、流量多，因此可以分别选择不同类型的空间Hosting，甚至是免费空间（只要备份做得到位！）。不同“空间”可以获取的权限不同（ftp、ssh、root），这种差异决定了上传和备份的方式也不相同，因此也可以说这种方式是最折腾人的。&lt;/p&gt;
 &lt;h2 id="_7"&gt;结语&lt;/h2&gt;
-&lt;p&gt;不同的人对于技术的理解、对于博客的追求乃至经济、时间、精力都不相同，因此不能用一套标准来衡量所有的方案，但幸运的是我们还有这很多选择，虽然其中一部分是在恶劣的环境下的产物。用什么方式也许不重要，重要的是我们的付出转化为了一段段文字在这个世界的众多黑暗角落里以0和1的形式奔腾着，它们才是我们的财富。&lt;/p&gt;</summary><category term="Blog"></category><category term=""></category></entry><entry><title>导出Google Reader加星条目到Evernote</title><link href="http://www.joshuazhang.net/posts/2013/export-googlereader-starreditem-to-evernote.html" rel="alternate"></link><updated>2013-04-18T19:13:00+08:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-04-18:posts/2013/export-googlereader-starreditem-to-evernote.html</id><summary type="html">&lt;p&gt;Google Reader即将离我们而去，这个决定目前看来没有挽回的可能。我个人对Google的服务也很依赖，Google Reader更是常驻在书签栏，不过与其把力气花在谴责Google的作为，不如寻找更好的替代品和抓紧时间备份积累的订阅源和文章。目前离7月1日尚早，其它在线阅读器还有很长的时间打磨产品，所以替代品的筛选还不急于一时。倒是收藏的文章（加星标的条目）怎么导出似乎没有引起大家的关注，我把自己搜索整理的一些导出方案记录下来并作个比较（虽然没有一一测试），希望我的判断能有些参考价值。&lt;/p&gt;
+&lt;p&gt;不同的人对于技术的理解、对于博客的追求乃至经济、时间、精力都不相同，因此不能用一套标准来衡量所有的方案，但幸运的是我们还有这很多选择，虽然其中一部分是在恶劣的环境下的产物。用什么方式也许不重要，重要的是我们的付出转化为了一段段文字在这个世界的众多黑暗角落里以0和1的形式奔腾着，它们才是我们的财富。&lt;/p&gt;</summary><category term="Blog"></category><category term=""></category></entry><entry><title>导出Google Reader加星条目到Evernote</title><link href="http://www.joshuazhang.net/posts/2013/export-googlereader-starreditem-to-evernote.html" rel="alternate"></link><updated>2013-04-18T19:13:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2013-04-18:posts/2013/export-googlereader-starreditem-to-evernote.html</id><summary type="html">&lt;p&gt;Google Reader即将离我们而去，这个决定目前看来没有挽回的可能。我个人对Google的服务也很依赖，Google Reader更是常驻在书签栏，不过与其把力气花在谴责Google的作为，不如寻找更好的替代品和抓紧时间备份积累的订阅源和文章。目前离7月1日尚早，其它在线阅读器还有很长的时间打磨产品，所以替代品的筛选还不急于一时。倒是收藏的文章（加星标的条目）怎么导出似乎没有引起大家的关注，我把自己搜索整理的一些导出方案记录下来并作个比较（虽然没有一一测试），希望我的判断能有些参考价值。&lt;/p&gt;
 &lt;h2 id="_1"&gt;导出方案思路&lt;/h2&gt;
 &lt;p&gt;目前网上可以搜集到的方案有这么几种：&lt;/p&gt;
 &lt;ul&gt;
@@ -281,7 +285,7 @@
 &lt;p&gt;&lt;code&gt;export2enex.py&lt;/code&gt;这个脚本有个小bug，就是对文章的链接url中的&lt;code&gt;&amp;amp;&lt;/code&gt;字符处理不当（应该转换为&lt;code&gt;&amp;amp;amp;&lt;/code&gt;的形式），导致导出的&lt;code&gt;enex&lt;/code&gt;文件无法被正确导入到Evernote，需要加入如下代码到合适位置：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;amp;&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;msg_url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;msg_url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;msg_url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&amp;amp;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&amp;amp;amp;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="Google Reader"></category><category term="Evernote"></category></entry><entry><title>El-get——emacs包管理利器</title><link href="http://www.joshuazhang.net/posts/2013/el-get-intro.html" rel="alternate"></link><updated>2013-04-07T15:38:00+08:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-04-07:posts/2013/el-get-intro.html</id><summary type="html">&lt;div class="toc"&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Google Reader"></category><category term="Evernote"></category></entry><entry><title>El-get——emacs包管理利器</title><link href="http://www.joshuazhang.net/posts/2013/el-get-intro.html" rel="alternate"></link><updated>2013-04-07T15:38:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2013-04-07:posts/2013/el-get-intro.html</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#el-get-vs-elpa"&gt;El-get vs ELPA&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#el-get"&gt;安装el-get&lt;/a&gt;&lt;/li&gt;
@@ -343,7 +347,7 @@
 &lt;h2 id="_1"&gt;参考文章&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://github.com/dimitri/el-get"&gt;el-get@Github&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;&lt;a href="http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/"&gt;Package Management in Emacs: The Good, the Bad and the Ugly&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://emacser.com/el-get.htm"&gt;GNU Emacs的终极扩展管理工具 — el-get&lt;/a&gt; &lt;/p&gt;</summary><category term="el-get"></category><category term="Emacs"></category></entry><entry><title>Markdown syntax for Pelican Quick Reference</title><link href="http://www.joshuazhang.net/posts/2013/markdown-for-pelican-ref.html" rel="alternate"></link><updated>2013-03-29T22:13:00+08:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-03-29:posts/2013/markdown-for-pelican-ref.html</id><summary type="html">&lt;div class="toc"&gt;
+&lt;p&gt;&lt;a href="http://emacser.com/el-get.htm"&gt;GNU Emacs的终极扩展管理工具 — el-get&lt;/a&gt; &lt;/p&gt;</summary><category term="el-get"></category><category term="Emacs"></category></entry><entry><title>Markdown syntax for Pelican Quick Reference</title><link href="http://www.joshuazhang.net/posts/2013/markdown-for-pelican-ref.html" rel="alternate"></link><updated>2013-03-29T22:13:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2013-03-29:posts/2013/markdown-for-pelican-ref.html</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#basic-syntax"&gt;Basic Syntax&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#headings"&gt;Headings&lt;/a&gt;&lt;/li&gt;
@@ -677,7 +681,7 @@ multiple lines.&lt;/p&gt;
 &lt;p&gt;The definition of a footnote.&amp;#160;&lt;a class="footnote-backref" href="#fnref:!DEF" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</summary><category term="markdown"></category><category term="pelican"></category></entry><entry><title>WordPress文章编辑发布方案</title><link href="http://www.joshuazhang.net/posts/2013/wp-edit-publish-plan.html" rel="alternate"></link><updated>2013-01-04T00:00:00+08:00</updated><author><name>voidmous</name></author><id>tag:www.joshuazhang.net,2013-01-04:posts/2013/wp-edit-publish-plan.html</id><summary type="html">&lt;p&gt;我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话,想要了解其它的方案，这篇文章也许会有帮助。首先要说明的是编辑和发布是两个阶段，如果再详细点还应该包括修改阶段，下面的一些发布流程往往只能照顾到某一个方面，而在另一个方面就相形见绌，总有这样那样的瑕疵。基本上，WordPress的编辑发布方案有这么几大类：&lt;/p&gt;
+&lt;/div&gt;</summary><category term="markdown"></category><category term="pelican"></category></entry><entry><title>WordPress文章编辑发布方案</title><link href="http://www.joshuazhang.net/posts/2013/wp-edit-publish-plan.html" rel="alternate"></link><updated>2013-01-04T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2013-01-04:posts/2013/wp-edit-publish-plan.html</id><summary type="html">&lt;p&gt;我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话,想要了解其它的方案，这篇文章也许会有帮助。首先要说明的是编辑和发布是两个阶段，如果再详细点还应该包括修改阶段，下面的一些发布流程往往只能照顾到某一个方面，而在另一个方面就相形见绌，总有这样那样的瑕疵。基本上，WordPress的编辑发布方案有这么几大类：&lt;/p&gt;
 &lt;div class="section" id="id1"&gt;
 &lt;h2&gt;后台发布&lt;/h2&gt;
 &lt;p&gt;这是默认的，也是便利性、兼容性最好的方案。但是它最大的缺点就在于一个字：慢。这个慢有两个方面，一是后台太笨重，如果你空间本来就不快（比如国外的空间），那加载后台都会等很久；二是WYSIWYG的编辑方式，如果你要搞长篇大论，图文并茂的话，上传图片、预览这些操作都是费事费力的。当然改进的方法也有：使用WP前台编辑插件（什么名字我忘了）、尽量不预览（对html熟悉程度要高）。&lt;/p&gt;
