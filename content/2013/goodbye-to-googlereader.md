@@ -1,6 +1,6 @@
 Title: 告别GoogleReader
 Date: 2013-06-14 18:47
-Author: voidmous
+Author: Joshz
 Category: Technique
 Tags: GoogleReader
 Lang: cn

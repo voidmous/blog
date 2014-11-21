@@ -1,5 +1,5 @@
 :title: WordPress文章编辑发布方案
-:author: voidmous
+:author: Joshz
 :date: 2013-01-04
 :tags: WordPress
 :category: Technique

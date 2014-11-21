@@ -1,6 +1,6 @@
 Title: 导出Google Reader加星条目到Evernote
 Date: 2013-04-18 19:13
-Author: voidmous
+Author: Joshz
 Category: Technique
 Tags: Google Reader, Evernote
 Lang: cn

@@ -1,5 +1,5 @@
 Title: El-get——emacs包管理利器
-Author: voidmous
+Author: Joshz
 Date: 2013-04-07 15:38
 Category: Technique
 Tags: el-get, Emacs

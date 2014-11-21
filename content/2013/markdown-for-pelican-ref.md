@@ -1,5 +1,5 @@
 Title: Markdown syntax for Pelican Quick Reference
-Author: voidmous
+Author: Joshz
 Date: 2013-03-29 22:13
 Category:
 Tags: markdown, pelican

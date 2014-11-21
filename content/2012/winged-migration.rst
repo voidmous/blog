@@ -1,7 +1,7 @@
 迁徙的鸟
 ########
 :date: 2012-04-16 08:15
-:category: Art critic
+:category: Review
 :tags: 感动, 纪录片, 自然, 
 :slug: winged-migration
 

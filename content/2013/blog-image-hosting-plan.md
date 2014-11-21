@@ -1,6 +1,6 @@
 Title: 博客图床规划
 Date: 2013-04-28 23:55
-Author: voidmous
+Author: Joshz
 Category: Technique
 Tags: Blog,
 Lang: cn
