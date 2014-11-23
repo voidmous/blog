@@ -18,13 +18,21 @@ HTML
 < meta name="mathjax" content="true" />
 ```
 
-然后还需要在 Pelican 的主题文件`base.html`中添加下列`Jinja`代码：
+然后还需要在 Pelican 的主题文件添加判断是否需要启用 MathJax 的`Jinja`代码，将以下代码保存在空文件`THEME/templates/mathjax.html`中：
 ```jinja
 {# LaTeX mathjax support
     If the post has metadata "mathjax=true", then add mathjax cdn support
 #}
 {% if article.mathjax %}
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 {% endif %}
 ```
 
@@ -33,7 +41,7 @@ HTML
 <script src="http://libs.cncdn.cn/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/javascript" src="http://pkuwwt.gitcafe.com/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 ```
-
+在需要判断是否开启 MathJax 的模板文件中（比如`index.html`、`article.html`等）的合适位置添加`{% include "mathjax.html" %}`
 
 ## 公式编辑
 ### HTML 文档
@@ -46,7 +54,7 @@ HTML
 
 $$ ... Displayed Equation ... $$
 ```
-唯独不支持`$ ... Inline Equation ... $`方式。
+默认唯独不支持`$ ... Inline Equation ... $`方式（可手动设置）。
 
 洛伦兹方程：
 ```text

@@ -2,7 +2,7 @@
 ##################################
 :date: 2012-07-30 21:04
 :category: Technique
-:tags: Matlab, 
+:tags: Matlab
 :slug: matlab-note
 
 第一章：M语言基础

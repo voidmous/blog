@@ -8,6 +8,9 @@
 {# First item #}
 {% if loop.first and not articles_page.has_previous() %}
 
+    {# Test to see if mathjax needed #}
+    {% include "mathjax.html" %}
+
     <div class='article'>
         <div class="content-title">
             <a href="{{ SITEURL }}/{{ article.url }}"><h1>{{ article.title }}</h1></a>
