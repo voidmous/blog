@@ -15,7 +15,7 @@
     <!-- Le styles -->
     <link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">{# Theme related setting goes here! #}
     <link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
     
     <!-- My custom styles -->
@@ -62,10 +62,12 @@
     <div class="content">
     <div class="row">
 
+        {# MAIN CONTENTS GOES HERE! #}
         <div class="span9">
         {% block content %}{% endblock %}
         </div>
         
+        {# SIDE BAR! #}
         <div class="span3">
 
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
@@ -143,6 +145,6 @@
 <script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
 {% include "analytics.html" %}
-{#% include "github.html" %#} 
+{#% include "github.html" %#}
 </body>
 </html>
