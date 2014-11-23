@@ -3,6 +3,7 @@
 :category: Technique
 :tags: 估计, 总体, 无偏, 标准差, 统计学
 :slug: standard-deviation
+:mathjax: true
 
 本文翻译自 `A note on standard deviation`_
 ，解释了让大部分统计学入门者感到困惑的一个经典问题。
