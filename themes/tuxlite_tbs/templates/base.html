@@ -14,7 +14,7 @@
 
     <!-- Le styles -->
     <link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/bootstrap.responsive.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/bootstrap.min.responsive.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/pygments.css" rel="stylesheet">
     
@@ -27,7 +27,17 @@
         If the post has metadata "mathjax=true", then add mathjax cdn support
     #}
     {% if article.mathjax %}
-    <script type="text/javascript" src="http://pkuwwt.gitcafe.com/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true
+        }
+      });
+    </script>
+    <!--<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+    <script src="http://libs.cncdn.cn/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="http://pkuwwt.gitcafe.com/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
     {% endif %}
 
 </head>
