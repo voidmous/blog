@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2014-11-21T00:00:00+08:00</updated><entry><title>Kindle好玩物</title><link href="http://www.joshuazhang.net/posts/2014/kindle-fun.html" rel="alternate"></link><updated>2014-11-21T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-11-21:posts/2014/kindle-fun.html</id><summary type="html">&lt;div class="toc"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2014-11-23T00:00:00+08:00</updated><entry><title>Kindle好玩物</title><link href="http://www.joshuazhang.net/posts/2014/kindle-fun.html" rel="alternate"></link><updated>2014-11-23T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-11-21:posts/2014/kindle-fun.html</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#_1"&gt;选购&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#kindle"&gt;Kindle还是平板？&lt;/a&gt;&lt;/li&gt;
@@ -908,7 +908,7 @@ Cache。以“_transient”开头的数据都是因为用了RSS小工具产生�
 &lt;li&gt;使用 nargout命令或者 length(varargout)来检测到底有了多少个输出参数。&lt;/li&gt;
 &lt;li&gt;使用元胞数组内容提取符{}来对可变输出参数赋值。&lt;/li&gt;
 &lt;/ol&gt;
-</summary><category term="Matlab"></category><category term=""></category></entry><entry><title>Linux外置硬盘加载方案</title><link href="http://www.joshuazhang.net/posts/2012/linux-usb-mount.html" rel="alternate"></link><updated>2012-07-17T16:20:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-07-17:posts/2012/linux-usb-mount.html</id><summary type="html">&lt;p&gt;对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab"&gt;fstab
+</summary><category term="Matlab"></category></entry><entry><title>Linux外置硬盘加载方案</title><link href="http://www.joshuazhang.net/posts/2012/linux-usb-mount.html" rel="alternate"></link><updated>2012-07-17T16:20:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-07-17:posts/2012/linux-usb-mount.html</id><summary type="html">&lt;p&gt;对于有大容量外置硬盘的Linuxer而言，开机自动加载外置硬盘当然是很舒服的事情，尤其是外置硬盘常年不挪窝的情况。许多Linux发行版都有usb自动加载程序，不过相对手工加载而言速度较慢，所以开机时让系统直接加载外置硬盘而不是搜索usb硬盘再添加会更好一些，这可以通过修改/etc/fstab文件来实现。这个文件语法还是比较简单的，看着其它分区的示例就差不多了，当然也可以详细地参考Arch的&lt;a class="reference external" href="https://wiki.archlinux.org/index.php/Fstab"&gt;fstab
 wiki&lt;/a&gt;。简单地说就是现在/media目录下创建好要加载到的目标目录，然后在fstab中添加常连的外置硬盘mount条目即可。&lt;/p&gt;
 &lt;p&gt;这个方案是我最开始采用的，没有太大问题，但是还不完美。主要是最近我的外置硬盘接口似乎有点松动，所以用段时间后会自动掉线，这时系统又会自动搜索加载，麻烦在于自动加载的目录和我所设的目录不一致了，这样所有对该硬盘下文件的操作就会“找不到目标”。典型的例子就是用播放器播放外置硬盘的歌曲，掉线重连后播放器就找不到曲目，只能又去手动加载，十分费劲。&lt;/p&gt;
 &lt;p&gt;Linux下自动加载usb外置硬盘会mount到/media/$partition
@@ -1158,7 +1158,7 @@ Runge-Kutta[M]. 2010.&lt;/p&gt;
 维基百科，自由的百科全书, Wikimedia Foundation, Inc., 2012.&lt;/p&gt;
 &lt;p&gt;[5]洛伦兹方程的matlab求解_百度文库[EB/OL]. [2012-05-01].
 &lt;a class="reference external" href="http://wenku.baidu.com/view/169b50c7aa00b52acfc7ca50.html"&gt;http://wenku.baidu.com/view/169b50c7aa00b52acfc7ca50.html&lt;/a&gt;.&lt;/p&gt;
-</summary><category term="Matlab"></category><category term="Runge Kutta"></category><category term="数值方法"></category><category term="洛伦兹方程"></category><category term=""></category></entry><entry><title>迁徙的鸟</title><link href="http://www.joshuazhang.net/posts/2012/winged-migration.html" rel="alternate"></link><updated>2012-04-16T08:15:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-04-16:posts/2012/winged-migration.html</id><summary type="html">&lt;p&gt;《&lt;a class="reference external" href="http://movie.douban.com/subject/1292281/"&gt;迁徙的鸟&lt;/a&gt;》是由法国导演&lt;a class="reference external" href="http://movie.douban.com/celebrity/1010752/"&gt;雅克·贝汉&lt;/a&gt;带领的一个由优秀的飞行员和科学家组成的队伍历时三年完成的影片。全片记录了全球各地各种迁徙鸟类的镜头。片子上映很久了，也一直想看，可惜一直被各种好莱坞大片轰炸，要抽出个文艺的时间真不容易，不过好歹还是看完了。&lt;/p&gt;
+</summary><category term="Matlab"></category><category term="数值方法"></category><category term=""></category></entry><entry><title>迁徙的鸟</title><link href="http://www.joshuazhang.net/posts/2012/winged-migration.html" rel="alternate"></link><updated>2012-04-16T08:15:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-04-16:posts/2012/winged-migration.html</id><summary type="html">&lt;p&gt;《&lt;a class="reference external" href="http://movie.douban.com/subject/1292281/"&gt;迁徙的鸟&lt;/a&gt;》是由法国导演&lt;a class="reference external" href="http://movie.douban.com/celebrity/1010752/"&gt;雅克·贝汉&lt;/a&gt;带领的一个由优秀的飞行员和科学家组成的队伍历时三年完成的影片。全片记录了全球各地各种迁徙鸟类的镜头。片子上映很久了，也一直想看，可惜一直被各种好莱坞大片轰炸，要抽出个文艺的时间真不容易，不过好歹还是看完了。&lt;/p&gt;
 &lt;p&gt;全片解说不多，大部分时间都只是聚焦在鸟类的飞行姿态上，然而这并不让人感觉烦闷，也许真的是我们与自然疏离了。对于这样一部片子，只要带上审美的眼睛、慵懒的耳朵和悠然的心情，你就能够感受到导演团队的良苦用心了。不需要太多的评论，我们就简单的看图说话吧：&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
 &lt;img alt="winged-migration" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/wingedmigration/shot-1.jpg" /&gt;
@@ -1743,10 +1743,86 @@ Reader是支持快捷键的，而且显然这些快捷键是精心设计过的�
 &lt;p&gt;&lt;a class="reference external" href="http://fulltextrssfeed.com"&gt;FullText Rss Feed&lt;/a&gt;（第一推荐，似乎没有失手过，中文支持完美）&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://mrss.dokoda.jp/"&gt;mrss.dokoda.jp&lt;/a&gt;（用得较少，但是还可以）&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://fivefilters.org/content-only/"&gt;fivefilters.org&lt;/a&gt;（转收费了，免费限制较多，其它工具也可以一看）&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><category term="Google Reader"></category><category term="快捷键"></category><category term="技巧"></category></entry><entry><title>LaTeX for Pelican 测试</title><link href="http://www.joshuazhang.net/posts/2012/latex-pelican.html" rel="alternate"></link><updated>2012-02-18T05:48:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/latex-pelican.html</id><summary type="html">&lt;p&gt;本文主要用于测试Pelican与MathJax配合显示数学公式&lt;/p&gt;
-&lt;p&gt;毕达哥拉斯定理： &lt;span class="formula"&gt;&lt;i&gt;a&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt; + &lt;i&gt;b&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt; = &lt;i&gt;c&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;正态分布： &lt;span class="formula"&gt;&lt;i&gt;f&lt;/i&gt;&lt;span class="symbol"&gt;(&lt;/span&gt;&lt;i&gt;x&lt;/i&gt;&lt;span class="symbol"&gt;)&lt;/span&gt; = &lt;span class="fraction"&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="numerator"&gt;1&lt;/span&gt;&lt;span class="ignored"&gt;)/(&lt;/span&gt;&lt;span class="denominator"&gt;&lt;span class="sqrt"&gt;&lt;span class="radical"&gt;√&lt;/span&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="root"&gt;2&lt;i&gt;π&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;i&gt;σ&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;i&gt;exp&lt;/i&gt;&lt;span class="array"&gt;&lt;span class="arrayrow"&gt;&lt;span class="bracket align-left"&gt;⎛&lt;/span&gt;&lt;/span&gt;&lt;span class="arrayrow"&gt;&lt;span class="bracket align-left"&gt;⎝&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; − &lt;span class="fraction"&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="numerator"&gt;(&lt;i&gt;x&lt;/i&gt; − &lt;i&gt;μ&lt;/i&gt;)&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)/(&lt;/span&gt;&lt;span class="denominator"&gt;2&lt;i&gt;σ&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class="array"&gt;&lt;span class="arrayrow"&gt;&lt;span class="bracket align-right"&gt;⎞&lt;/span&gt;&lt;/span&gt;&lt;span class="arrayrow"&gt;&lt;span class="bracket align-right"&gt;⎠&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;傅里叶变换： &lt;span class="formula"&gt;&lt;i&gt;F&lt;/i&gt;&lt;span class="symbol"&gt;(&lt;/span&gt;&lt;i&gt;ω&lt;/i&gt;&lt;span class="symbol"&gt;)&lt;/span&gt; = ℱ&lt;span class="symbol"&gt;[&lt;/span&gt;&lt;i&gt;f&lt;/i&gt;(&lt;i&gt;t&lt;/i&gt;)&lt;span class="symbol"&gt;]&lt;/span&gt; = &lt;span class="limits"&gt;&lt;span class="limit"&gt;&lt;span class="symbol"&gt;∫&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="scripts"&gt;&lt;sup class="script"&gt;∞&lt;/sup&gt;&lt;sub class="script"&gt; − ∞&lt;/sub&gt;&lt;/span&gt;&lt;i&gt;e&lt;/i&gt;&lt;sup&gt; − &lt;i&gt;i&lt;/i&gt;&lt;i&gt;ω&lt;/i&gt;&lt;i&gt;t&lt;/i&gt;&lt;/sup&gt;&lt;i&gt;dt&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;傅里叶逆变换： &lt;span class="formula"&gt;&lt;i&gt;f&lt;/i&gt;&lt;span class="symbol"&gt;(&lt;/span&gt;&lt;i&gt;t&lt;/i&gt;&lt;span class="symbol"&gt;)&lt;/span&gt; = ℱ&lt;sup&gt; − 1&lt;/sup&gt;&lt;span class="symbol"&gt;[&lt;/span&gt;&lt;i&gt;F&lt;/i&gt;&lt;span class="symbol"&gt;(&lt;/span&gt;&lt;i&gt;ω&lt;/i&gt;&lt;span class="symbol"&gt;)&lt;/span&gt;&lt;span class="symbol"&gt;]&lt;/span&gt; = &lt;span class="fraction"&gt;&lt;span class="ignored"&gt;(&lt;/span&gt;&lt;span class="numerator"&gt;1&lt;/span&gt;&lt;span class="ignored"&gt;)/(&lt;/span&gt;&lt;span class="denominator"&gt;2&lt;i&gt;π&lt;/i&gt;&lt;/span&gt;&lt;span class="ignored"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class="limits"&gt;&lt;span class="limit"&gt;&lt;span class="symbol"&gt;∫&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="scripts"&gt;&lt;sup class="script"&gt;∞&lt;/sup&gt;&lt;sub class="script"&gt; − ∞&lt;/sub&gt;&lt;/span&gt;&lt;i&gt;F&lt;/i&gt;&lt;span class="symbol"&gt;(&lt;/span&gt;&lt;i&gt;ω&lt;/i&gt;&lt;span class="symbol"&gt;)&lt;/span&gt;&lt;i&gt;e&lt;/i&gt;&lt;sup&gt;&lt;i&gt;i&lt;/i&gt;&lt;i&gt;ω&lt;/i&gt;&lt;i&gt;t&lt;/i&gt;&lt;/sup&gt;&lt;i&gt;d&lt;/i&gt;&lt;i&gt;ω&lt;/i&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;MathJax的语法基本与latex一致，可以参考wikipedia的latex书写语法规范&lt;a class="reference external" href="http://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"&gt;Help:数学公式&lt;/a&gt;&lt;/p&gt;
-</summary><category term="LaTeX"></category><category term="Pelican"></category><category term="MathJax"></category></entry></feed>
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><category term="Google Reader"></category><category term="快捷键"></category><category term="技巧"></category></entry><entry><title>Pelican 的 LaTeX 集成</title><link href="http://www.joshuazhang.net/posts/2012/latex-pelican.html" rel="alternate"></link><updated>2012-02-18T05:48:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/latex-pelican.html</id><summary type="html">&lt;p&gt;本文主要用于测试 Pelican 与 MathJax 配合显示数学公式&lt;/p&gt;
+&lt;h2 id="pelican-mathjax"&gt;为 Pelican 添加 MathJax 支持&lt;/h2&gt;
+&lt;p&gt;鉴于并非每篇文章都会有数学公式，而&lt;code&gt;MathJax.js&lt;/code&gt;的资源加载在国内并不稳定，因此只在需要显示数学公式的 HTML 文件里才添加&lt;code&gt;MathJax CDN&lt;/code&gt;。一个简单的方法是在需要公式显示的文章里加入&lt;code&gt;mathjax=true&lt;/code&gt;的元数据声明：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;Markdown
+Mathjax: true
+reST
+:mathjax: true
+HTML
+&amp;lt; meta name=&amp;quot;mathjax&amp;quot; content=&amp;quot;true&amp;quot; /&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;然后还需要在 Pelican 的主题文件添加判断是否需要启用 MathJax 的&lt;code&gt;Jinja&lt;/code&gt;代码，将以下代码保存在空文件&lt;code&gt;THEME/templates/mathjax.html&lt;/code&gt;中：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;{# LaTeX mathjax support&lt;/span&gt;
+&lt;span class="c"&gt;    If the post has metadata &amp;quot;mathjax=true&amp;quot;, then add mathjax cdn support&lt;/span&gt;
+&lt;span class="c"&gt;#}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;article.mathjax&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;&amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;  MathJax.Hub.Config({&lt;/span&gt;
+&lt;span class="x"&gt;    tex2jax: {&lt;/span&gt;
+&lt;span class="x"&gt;      inlineMath: [ [&amp;#39;$&amp;#39;,&amp;#39;$&amp;#39;], [&amp;quot;\\(&amp;quot;,&amp;quot;\\)&amp;quot;] ],&lt;/span&gt;
+&lt;span class="x"&gt;      processEscapes: true&lt;/span&gt;
+&lt;span class="x"&gt;    }&lt;/span&gt;
+&lt;span class="x"&gt;  });&lt;/span&gt;
+&lt;span class="x"&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endif&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;加速国内访问可以使用 &lt;a href="http://www.freecdn.cn/"&gt;www.freecdn.cn&lt;/a&gt; 或者&lt;code&gt;GitCafe&lt;/code&gt;上的地址：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://libs.cncdn.cn/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://pkuwwt.gitcafe.com/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;在需要判断是否开启 MathJax 的模板文件中（比如&lt;code&gt;index.html&lt;/code&gt;、&lt;code&gt;article.html&lt;/code&gt;等）的合适位置添加&lt;code&gt;{% include "mathjax.html" %}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="_1"&gt;公式编辑&lt;/h2&gt;
+&lt;h3 id="html"&gt;HTML 文档&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;MathJax.js&lt;/code&gt;的作用是把 HTML 源文件中的公式 Block 转换为 CSS 的字体和位置控制代码
+。公式块的声明有三种：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="s"&gt;\(&lt;/span&gt;&lt;span class="nb"&gt; ... Inline Equation ... &lt;/span&gt;&lt;span class="s"&gt;\)&lt;/span&gt;
+
+&lt;span class="sb"&gt;\[&lt;/span&gt;&lt;span class="nb"&gt; ... Displayed Equation ... &lt;/span&gt;&lt;span class="s"&gt;\]&lt;/span&gt;
+
+&lt;span class="sb"&gt;$$&lt;/span&gt;&lt;span class="nb"&gt; ... Displayed Equation ... &lt;/span&gt;&lt;span class="s"&gt;$$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;默认唯独不支持&lt;code&gt;$ ... Inline Equation ... $&lt;/code&gt;方式（可手动设置）。&lt;/p&gt;
+&lt;p&gt;洛伦兹方程：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;$$\begin{aligned}
+\dot{x} = \sigma(y-x) \\
+\dot{y} = \rho x - y - xz \\
+\dot{z} = -\beta z + xy
+\end{aligned}$$
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;$$\begin{aligned}
+\dot{x} = \sigma(y-x) \
+\dot{y} = \rho x - y - xz \
+\dot{z} = -\beta z + xy
+\end{aligned}$$&lt;/p&gt;
+&lt;p&gt;Cauchy-Schwarz不等式：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;\\[ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) \\]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;\[ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) \]&lt;/p&gt;
+&lt;h3 id="_2"&gt;标记语言文档&lt;/h3&gt;
+&lt;p&gt;应该注意到标记语言需要先转换为 HTML 文档，此过程中需要控制特殊字符&lt;code&gt;\&lt;/code&gt;，因此用非 
+HTML 的标记语言写作时必须写成&lt;code&gt;\\&lt;/code&gt;的格式转换为 HTML 时才会得到正确的&lt;code&gt;\&lt;/code&gt;，比如在
+&lt;code&gt;Markdown&lt;/code&gt;中。&lt;/p&gt;
+&lt;h2 id="_3"&gt;测试&lt;/h2&gt;
+&lt;p&gt;毕达哥拉斯定理：\(a^2+b^2=c^2\)&lt;/p&gt;
+&lt;p&gt;正态分布：$$f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$&lt;/p&gt;
+&lt;p&gt;傅里叶变换：
+\[F\left(\omega\right)=\mathcal{F}\left[f(t)\right]=\int_{-\infty}^{\infty}e^{-i\omega
+T}dt\]&lt;/p&gt;
+&lt;p&gt;傅里叶逆变换：
+\[f\left(t\right)=\mathcal{F}^{-1}\left[F\left(\omega\right)\right]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F\left(\omega\right)e^{i\omega t}d\omega\]&lt;/p&gt;
+&lt;p&gt;MathJax的语法基本与latex一致，可以参考wikipedia的latex书写语法规范&lt;a href="http://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"&gt;Help:数学公式&lt;/a&gt;&lt;/p&gt;</summary><category term="LaTeX"></category><category term="Pelican"></category><category term="MathJax"></category></entry></feed>

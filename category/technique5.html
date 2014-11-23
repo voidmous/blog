@@ -14,7 +14,7 @@
 
     <!-- Le styles -->
     <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
-    <link href="http://www.joshuazhang.net/theme/bootstrap.responsive.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.responsive.css" rel="stylesheet">
     <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">
     <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
     
@@ -23,8 +23,6 @@
     <link href="http://www.joshuazhang.net/theme/custom.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
     <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
-    <!-- LaTeX mathjax support -->
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </head>
 
@@ -164,7 +162,7 @@ HTTPS，用户和网站之间的交互难以被简单地分析或窃取。由于
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/latex-pelican.html"><h2>LaTeX for Pelican 测试</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2012/latex-pelican.html"><h2>Pelican 的 LaTeX 集成</h2></a>
         <hr>
         <!-- Don't use any article metadata and summary, it's ugly -->
         <!-- <div class= "well small"> 周六 18 二月 2012
@@ -174,11 +172,20 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
 
 
  </div> -->
-        <!-- <div class="summary"><p>本文主要用于测试Pelican与MathJax配合显示数学公式</p>
-<p>毕达哥拉斯定理： <span class="formula"><i>a</i><sup>2</sup> + <i>b</i><sup>2</sup> = <i>c</i><sup>2</sup></span></p>
-<p>正态分布： <span class="formula"><i>f</i><span class="symbol">(</span><i>x</i><span class="symbol">)</span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root">2<i>π</i></span><span class="ignored">)</span></span><i>σ</i></span><span class="ignored">)</span></span><i>exp</i><span class="array"><span class="arrayrow"><span class="bracket align-left">⎛</span></span><span class="arrayrow"><span class="bracket align-left">⎝</span></span></span> − <span class="fraction"><span class="ignored">(</span><span class="numerator">(<i>x</i> − <i>μ</i>)<sup>2</sup></span><span class="ignored">)/(</span><span class="denominator">2<i>σ</i><sup>2</sup></span><span class="ignored">)</span></span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎞</span></span><span class="arrayrow"><span class="bracket align-right">⎠</span></span></span></span></p>
-<p>傅里叶变换： <span class="formula"><i>F</i><span class="symbol">(</span><i>ω</i><span class="symbol">)</span> = ℱ<span class="symbol">[</span><i>f</i>(<i>t</i>)<span class="symbol">]</span> = <span class="limits"><span class="limit"><span class="symbol">∫</span></span></span><span class="scripts"><sup class="script">∞</sup><sub class="script"> − ∞</sub></span><i>e</i><sup> − <i>i</i><i>ω</i><i>t</i></sup><i>dt</i></span></p>
-<p>傅里叶逆变换： <span class="formula"><i>f</i><span class="symbol">(</span><i>t</i><span class="symbol">)</span> = ℱ<sup> − 1</sup><span class="symbol">[</span><i>F</i><span class="symbol">(</span><i>ω</i><span class="symbol">)</span><span class="symbol">]</span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">2<i>π</i></span><span class="ignored">)</span></span><span class="limits"><span class="limit"><span class="symbol">∫</span></span></span><span class="scripts"><sup class="script">∞</sup><sub class="script"> − ∞</sub></span><i>F</i><span class="symbol">(</span><i>ω</i><span class="symbol">)</span><i>e</i><sup><i>i</i><i>ω</i><i>t</i></sup><i>d ...</i></span></p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/latex-pelican.html">read more</a></div> -->
+        <!-- <div class="summary"><p>本文主要用于测试 Pelican 与 MathJax 配合显示数学公式</p>
+<h2 id="pelican-mathjax">为 Pelican 添加 MathJax 支持</h2>
+<p>鉴于并非每篇文章都会有数学公式，而<code>MathJax.js</code>的资源加载在国内并不稳定，因此只在需要显示数学公式的 HTML 文件里才添加<code>MathJax CDN</code>。一个简单的方法是在需要公式显示的文章里加入<code>mathjax=true</code>的元数据声明：</p>
+<div class="codehilite"><pre>Markdown
+Mathjax: true
+reST
+:mathjax: true
+HTML
+&lt; meta name=&quot;mathjax&quot; content=&quot;true&quot; /&gt;
+</pre></div>
+
+
+<p>然后还需要在 Pelican 的主题文件添加判断是否需要启用 MathJax 的<code>Jinja</code>代码，将以下代码保存在空文件<code>THEME/templates/mathjax.html</code>中：</p>
+<div class="codehilite"><pre><span class="c">{# LaTeX ...</span></pre></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/latex-pelican.html">read more</a></div> -->
     </div>	
 				
 <div class="pagination">
@@ -253,10 +260,9 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
 </footer>
 
 </div> <!-- /container -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
 <script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
-<a href="http://github.com/voidmous/"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
  
 </body>
 </html>
