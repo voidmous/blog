@@ -12,7 +12,7 @@ PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = u'cn'
+DEFAULT_LANG = u'en'
 
 # Python-Markdown extensions to be included
 MD_EXTENSIONS = ['codehilite','extra','toc']
