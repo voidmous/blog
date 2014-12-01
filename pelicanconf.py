@@ -14,6 +14,13 @@ TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = u'cn'
 
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
 # Python-Markdown extensions to be included
 MD_EXTENSIONS = ['codehilite','extra','toc']
 
