@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2014-11-26T00:00:00+08:00</updated><entry><title>Kindle好玩物</title><link href="http://www.joshuazhang.net/posts/2014/kindle-fun.html" rel="alternate"></link><updated>2014-11-26T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-11-21:posts/2014/kindle-fun.html</id><summary type="html">&lt;div class="toc"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2014-12-01T00:00:00+08:00</updated><entry><title>Kindle好玩物</title><link href="http://www.joshuazhang.net/posts/2014/kindle-fun.html" rel="alternate"></link><updated>2014-12-01T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-11-21:posts/2014/kindle-fun.html</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#_1"&gt;选购&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#kindle"&gt;Kindle还是平板？&lt;/a&gt;&lt;/li&gt;
@@ -1733,16 +1733,18 @@ Reader是支持快捷键的，而且显然这些快捷键是精心设计过的�
 &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><category term="Google Reader"></category><category term="快捷键"></category><category term="技巧"></category></entry><entry><title>Pelican 的 LaTeX 集成</title><link href="http://www.joshuazhang.net/posts/2012/latex-pelican.html" rel="alternate"></link><updated>2012-02-18T05:48:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/latex-pelican.html</id><summary type="html">&lt;p&gt;本文主要用于测试 Pelican 与 MathJax 配合显示数学公式。&lt;/p&gt;
 &lt;h2 id="pelican-mathjax"&gt;为 Pelican 添加 MathJax 支持&lt;/h2&gt;
 &lt;p&gt;鉴于并非每篇文章都会有数学公式，而&lt;code&gt;MathJax.js&lt;/code&gt;的资源加载在国内并不稳定，因此只在需要显示数学公式的 HTML 文件里才添加&lt;code&gt;MathJax CDN&lt;/code&gt;。一个简单的方法是在需要公式显示的文章里加入&lt;code&gt;mathjax=true&lt;/code&gt;的元数据声明：&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;Markdown
+&lt;div class="codehilite"&gt;&lt;pre&gt;Markdown Style
 Mathjax: true
-reST
+
+reST Style
 :mathjax: true
-HTML
+
+HTML Style
 &amp;lt; meta name=&amp;quot;mathjax&amp;quot; content=&amp;quot;true&amp;quot; /&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;然后还需要在 Pelican 的主题文件添加判断是否需要启用 MathJax 的&lt;code&gt;Jinja&lt;/code&gt;代码，将以下代码保存在空文件&lt;code&gt;THEME/templates/mathjax.html&lt;/code&gt;中：&lt;/p&gt;
+&lt;p&gt;然后还需要在 Pelican 的主题模板文件中添加判断是否需要启用 MathJax 的&lt;code&gt;Jinja&lt;/code&gt;代码，将以下代码保存在空文件&lt;code&gt;THEME/templates/mathjax.html&lt;/code&gt;中：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;{# LaTeX mathjax support&lt;/span&gt;
 &lt;span class="c"&gt;    If the post has metadata &amp;quot;mathjax=true&amp;quot;, then add mathjax cdn support&lt;/span&gt;
 &lt;span class="c"&gt;#}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
@@ -1760,13 +1762,13 @@ HTML
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;加速国内访问可以使用 &lt;a href="http://www.freecdn.cn/"&gt;www.freecdn.cn&lt;/a&gt; 或者&lt;code&gt;GitCafe&lt;/code&gt;上的地址：&lt;/p&gt;
+&lt;p&gt;官方的CDN国内无法稳定地加载，加速国内访问可以使用 &lt;a href="http://www.freecdn.cn/"&gt;www.freecdn.cn&lt;/a&gt; 或者&lt;code&gt;GitCafe&lt;/code&gt;上的地址：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://libs.cncdn.cn/mathjax/2.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span class="nt"&gt;&amp;lt;script &lt;/span&gt;&lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;src=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://pkuwwt.gitcafe.com/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;在需要判断是否开启 MathJax 的模板文件中（比如&lt;code&gt;index.html&lt;/code&gt;、&lt;code&gt;article.html&lt;/code&gt;等）的合适位置添加&lt;code&gt;{% include "mathjax.html" %}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在需要判断是否开启 MathJax 的模板文件中（比如&lt;code&gt;index.html&lt;/code&gt;、&lt;code&gt;article.html&lt;/code&gt;等可能需要显示公式的模板）的合适位置添加&lt;code&gt;{% include "mathjax.html" %}&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id="_1"&gt;公式编辑&lt;/h2&gt;
 &lt;h3 id="html"&gt;HTML 文档&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;MathJax.js&lt;/code&gt;的作用是把 HTML 源文件中的公式 Block 转换为 CSS 的字体和位置控制代码
@@ -1779,25 +1781,69 @@ HTML
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;默认唯独不支持&lt;code&gt;$ ... Inline Equation ... $&lt;/code&gt;方式（可手动设置）。&lt;/p&gt;
+&lt;p&gt;默认唯独不支持&lt;code&gt;$ ... Inline Equation ... $&lt;/code&gt;方式（可手动设置，见上）。&lt;/p&gt;
 &lt;h3 id="markdown"&gt;Markdown&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;.md&lt;/code&gt;文本需要首先被转换为 HTML 文档，而后在浏览器中渲染时&lt;code&gt;MathJax.js&lt;/code&gt;才会寻找定义
-的公式块。由于 Markdown 无法识别 MathJax 定义的公式块，因此公式块内的文本都会被处理，
-比如需特别注意的&lt;code&gt;\&lt;/code&gt;和&lt;code&gt;_&lt;/code&gt;这两个字符，前者为转义符，后者为斜体指示符。&lt;/p&gt;
-&lt;p&gt;洛伦兹方程：&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;$$\begin{aligned}
-\dot{x} = \sigma(y-x) \\\\
-\dot{y} = \rho x - y - xz \\\\
-\dot{z} = -\beta z + xy
-\end{aligned}$$
+&lt;p&gt;Markdown 文本首先需要被转换为 HTML 文档，而后在浏览器中渲染时&lt;code&gt;MathJax.js&lt;/code&gt;才会寻找定义
+的公式块。由于 Markdown 无法识别 MathJax 定义的公式块，因此公式块内的文本都会被当成普通文本处理，一些特殊符号尤其需要特别注意，比如&lt;code&gt;\&lt;/code&gt;和&lt;code&gt;_&lt;/code&gt;、&lt;code&gt;*&lt;/code&gt;这几个字符，前一个为 Markdown 转义符，后两个为强调指示符。&lt;/p&gt;
+&lt;p&gt;由于 Pelican 使用的 Markdown 解析器是&lt;a href="https://pythonhosted.org/Markdown/index.html"&gt;Python-Markdown&lt;/a&gt;，而它默认禁用了&lt;a href="https://pythonhosted.org/Markdown/#differences"&gt;下划线强调规则&lt;/a&gt;，因此公式中的&lt;code&gt;_&lt;/code&gt;一般情况都不会被转换为&lt;code&gt;&amp;lt;em&amp;gt;&amp;lt;/em&amp;gt;&lt;/code&gt;，但&lt;code&gt;*&lt;/code&gt;和&lt;code&gt;\&lt;/code&gt;解析的麻烦仍然存在。&lt;/p&gt;
+&lt;p&gt;一个&lt;code&gt;*&lt;/code&gt;解析的示例：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;$$ x*y*z=100 $$
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;$$\begin{aligned}
-\dot{x} = \sigma(y-x) \\
-\dot{y} = \rho x - y - xz \\
+&lt;p&gt;Markdown 转换为 HTML 的结果为：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;$$ x&lt;span class="nt"&gt;&amp;lt;em&amp;gt;&lt;/span&gt;y&lt;span class="nt"&gt;&amp;lt;/em&amp;gt;&lt;/span&gt;z=100 $$&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;此处作为乘号的两个&lt;code&gt;*&lt;/code&gt;被识别成强调指示符，正确的代码应为：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;$$ x\*y\*z=100 $$
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;渲染结果如下：
+$$ x*y*z=100 $$&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;\&lt;/code&gt;解析问题以洛伦兹方程为例：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;\[\begin{aligned}
+\dot{x} &amp;amp; = \sigma(y-x) \\
+\dot{y} &amp;amp; = \rho x - y - xz \\
+\dot{z} &amp;amp; = -\beta z + xy
+\end{aligned}\]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Markdown 转换为 HTML 的结果如下：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&amp;lt;p&amp;gt;[\begin{aligned}
+\dot{x} = \sigma(y-x) \
+\dot{y} = \rho x - y - xz \
 \dot{z} = -\beta z + xy
-\end{aligned}$$&lt;/p&gt;
+\end{aligned}]&amp;lt;/p&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;注意&lt;code&gt;\a-z&lt;/code&gt;的解析不受影响，而$\LaTeX$的换行代码&lt;code&gt;\\&lt;/code&gt;被转换为&lt;code&gt;\&lt;/code&gt;，
+&lt;code&gt;\[&lt;/code&gt;被转换为&lt;code&gt;[&lt;/code&gt;，显然这不是想要的结果。为了得到正确的解析结果，公式代码必须改为：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;\\[\begin{aligned}
+\dot{x} &amp;amp; = \sigma(y-x) \\\\
+\dot{y} &amp;amp; = \rho x - y - xz \\\\
+\dot{z} &amp;amp; = -\beta z + xy
+\end{aligned}\\]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;显示结果如下：
+\[\begin{aligned}
+\dot{x} &amp;amp; = \sigma(y-x) \\
+\dot{y} &amp;amp; = \rho x - y - xz \\
+\dot{z} &amp;amp; = -\beta z + xy
+\end{aligned}\]&lt;/p&gt;
+&lt;p&gt;通过上面的例子可见通过添加 Markdown 转义符&lt;code&gt;\&lt;/code&gt;可以有效解决各种转换问题，手工调整的方法虽然繁琐，但不失简单直接，如果公式不多不复杂这样做成本很低。对于强迫症患者或者要求较高的童鞋，还可以参考&lt;a href="http://gohugo.io/tutorials/mathjax/"&gt;这里的方法&lt;/a&gt;
+。它可以解决所有特殊符号解析的难题，只要保证&lt;code&gt;CSS&lt;/code&gt;和&lt;code&gt;MathJax&lt;/code&gt;设置一致，使用其它 Markdown
+解析器处理也不会有问题。其思路是将公式写入 Markdown 不处理的&lt;code&gt;verbatim&lt;/code&gt;环境中，在 MathJax
+ 设置中加入对&lt;code&gt;code&lt;/code&gt;标签内容的渲染并设置一个合适的式样。&lt;/p&gt;
+&lt;p&gt;此外，我们也可以使用 Python-Markdown 的扩展 &lt;a href="https://github.com/mayoff/python-markdown-mathjax"&gt;python-markdown-mathjax&lt;/a&gt;，
+缺点是安装以及设置较麻烦，而且个人支持难以长久，未来可能需要自己修改代码。&lt;/p&gt;
+&lt;p&gt;目前个人使用最朴实的方案，只要书写时稍作注意即可。&lt;/p&gt;
 &lt;p&gt;Cauchy-Schwarz不等式：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;\\[ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) \\]
 &lt;/pre&gt;&lt;/div&gt;
@@ -1806,11 +1852,23 @@ HTML
 &lt;p&gt;\[ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) \]&lt;/p&gt;
 &lt;h3 id="rest"&gt;reST&lt;/h3&gt;
 &lt;h2 id="_2"&gt;测试&lt;/h2&gt;
-&lt;p&gt;毕达哥拉斯定理：\(a^2+b^2=c^2\)&lt;/p&gt;
-&lt;p&gt;正态分布：$$f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$&lt;/p&gt;
-&lt;p&gt;傅里叶变换：
-\[F\left(\omega\right)=\mathcal{F}\left[f(t)\right]=\int_{-\infty}^{\infty}e^{-i\omega
-T}dt\]&lt;/p&gt;
-&lt;p&gt;傅里叶逆变换：
-\[f\left(t\right)=\mathcal{F}^{-1}\left[F\left(\omega\right)\right]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F\left(\omega\right)e^{i\omega t}d\omega\]&lt;/p&gt;
-&lt;p&gt;MathJax的语法基本与latex一致，可以参考wikipedia的latex书写语法规范&lt;a href="http://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"&gt;Help:数学公式&lt;/a&gt;&lt;/p&gt;</summary><category term="LaTeX"></category><category term="Pelican"></category><category term="MathJax"></category></entry></feed>
+&lt;p&gt;毕达哥拉斯定理：&lt;code&gt;\\(a^2+b^2=c^2\\)&lt;/code&gt;，\(a^2+b^2=c^2\)&lt;/p&gt;
+&lt;p&gt;正态分布：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;$$f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;$$f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$&lt;/p&gt;
+&lt;p&gt;傅里叶变换：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;\\[F\left(\omega\right)=\mathcal{F}\left[f(t)\right]=\int_{-\infty}^{\infty}e^{-i\omega T}dt\\]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;\[F\left(\omega\right)=\mathcal{F}\left[f(t)\right]=\int_{-\infty}^{\infty}e^{-i\omega T}dt\]&lt;/p&gt;
+&lt;p&gt;傅里叶逆变换：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;\\[f\left(t\right)=\mathcal{F}^{-1}\left[F\left(\omega\right)\right]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F\left(\omega\right)e^{i\omega t}d\omega\\]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;\[f\left(t\right)=\mathcal{F}^{-1}\left[F\left(\omega\right)\right]=\frac{1}{2\pi}\int_{-\infty}^{\infty}F\left(\omega\right)e^{i\omega t}d\omega\]&lt;/p&gt;
+&lt;p&gt;MathJax的语法基本与latex一致，可以参考wikipedia的latex书写语法规范&lt;a href="http://zh.wikipedia.org/wiki/Help:%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"&gt;Help:数学公式&lt;/a&gt;&lt;/p&gt;</summary><category term="LaTeX"></category><category term="Pelican"></category><category term="MathJax"></category><category term="Markdown"></category><category term="Python"></category></entry></feed>
