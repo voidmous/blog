@@ -5,9 +5,10 @@ Tags: LaTeX, Pelican, MathJax
 Slug: latex-pelican
 Mathjax: true
 
-本文主要用于测试 Pelican 与 MathJax 配合显示数学公式
+本文主要用于测试 Pelican 与 MathJax 配合显示数学公式。
 
 ## 为 Pelican 添加 MathJax 支持
+
 鉴于并非每篇文章都会有数学公式，而`MathJax.js`的资源加载在国内并不稳定，因此只在需要显示数学公式的 HTML 文件里才添加`MathJax CDN`。一个简单的方法是在需要公式显示的文章里加入`mathjax=true`的元数据声明：
 ```text
 Markdown
@@ -56,18 +57,23 @@ $$ ... Displayed Equation ... $$
 ```
 默认唯独不支持`$ ... Inline Equation ... $`方式（可手动设置）。
 
+### Markdown
+`.md`文本需要首先被转换为 HTML 文档，而后在浏览器中渲染时`MathJax.js`才会寻找定义
+的公式块。由于 Markdown 无法识别 MathJax 定义的公式块，因此公式块内的文本都会被处理，
+比如需特别注意的`\`和`_`这两个字符，前者为转义符，后者为斜体指示符。
+
 洛伦兹方程：
 ```text
 $$\begin{aligned}
-\dot{x} = \sigma(y-x) \\
-\dot{y} = \rho x - y - xz \\
+\dot{x} = \sigma(y-x) \\\\
+\dot{y} = \rho x - y - xz \\\\
 \dot{z} = -\beta z + xy
 \end{aligned}$$
 ```
 
 $$\begin{aligned}
-\dot{x} = \sigma(y-x) \\
-\dot{y} = \rho x - y - xz \\
+\dot{x} = \sigma(y-x) \\\\
+\dot{y} = \rho x - y - xz \\\\
 \dot{z} = -\beta z + xy
 \end{aligned}$$
 
@@ -79,10 +85,7 @@ Cauchy-Schwarz不等式：
 \\[ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) \\]
 
 
-### 标记语言文档
-应该注意到标记语言需要先转换为 HTML 文档，此过程中需要控制特殊字符`\`，因此用非 
-HTML 的标记语言写作时必须写成`\\`的格式转换为 HTML 时才会得到正确的`\`，比如在
-`Markdown`中。
+### reST
 
 ## 测试
 毕达哥拉斯定理：\\(a^2+b^2=c^2\\)

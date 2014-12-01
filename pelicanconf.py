@@ -12,7 +12,7 @@ PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = u'cn'
 
 # Python-Markdown extensions to be included
 MD_EXTENSIONS = ['codehilite','extra','toc']
@@ -25,7 +25,7 @@ PDF_GENERATOR = False
 THEME = "themes/tuxlite_tbs"
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
