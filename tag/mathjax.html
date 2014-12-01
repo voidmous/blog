@@ -15,12 +15,7 @@
     <!-- Le styles -->
     <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
     <link href="http://www.joshuazhang.net/theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">
-    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
-    
-    <!-- My custom styles -->
-    <!-- Table and misc styles -->
-    <link href="http://www.joshuazhang.net/theme/custom.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
     <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
 
@@ -55,9 +50,7 @@
     <div class="row">
 
         <div class="span9">
-        
 
-        
 
 
 <script type="text/x-mathjax-config">
@@ -84,7 +77,7 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
  
         </div>
         
-        <div><p>本文主要用于测试 Pelican 与 MathJax 配合显示数学公式</p>
+        <div><p>本文主要用于测试 Pelican 与 MathJax 配合显示数学公式。</p>
 <h2 id="pelican-mathjax">为 Pelican 添加 MathJax 支持</h2>
 <p>鉴于并非每篇文章都会有数学公式，而<code>MathJax.js</code>的资源加载在国内并不稳定，因此只在需要显示数学公式的 HTML 文件里才添加<code>MathJax CDN</code>。一个简单的方法是在需要公式显示的文章里加入<code>mathjax=true</code>的元数据声明：</p>
 <div class="codehilite"><pre>Markdown
@@ -134,18 +127,22 @@ HTML
 
 
 <p>默认唯独不支持<code>$ ... Inline Equation ... $</code>方式（可手动设置）。</p>
+<h3 id="markdown">Markdown</h3>
+<p><code>.md</code>文本需要首先被转换为 HTML 文档，而后在浏览器中渲染时<code>MathJax.js</code>才会寻找定义
+的公式块。由于 Markdown 无法识别 MathJax 定义的公式块，因此公式块内的文本都会被处理，
+比如需特别注意的<code>\</code>和<code>_</code>这两个字符，前者为转义符，后者为斜体指示符。</p>
 <p>洛伦兹方程：</p>
 <div class="codehilite"><pre>$$\begin{aligned}
-\dot{x} = \sigma(y-x) \\
-\dot{y} = \rho x - y - xz \\
+\dot{x} = \sigma(y-x) \\\\
+\dot{y} = \rho x - y - xz \\\\
 \dot{z} = -\beta z + xy
 \end{aligned}$$
 </pre></div>
 
 
 <p>$$\begin{aligned}
-\dot{x} = \sigma(y-x) \
-\dot{y} = \rho x - y - xz \
+\dot{x} = \sigma(y-x) \\
+\dot{y} = \rho x - y - xz \\
 \dot{z} = -\beta z + xy
 \end{aligned}$$</p>
 <p>Cauchy-Schwarz不等式：</p>
@@ -154,11 +151,8 @@ HTML
 
 
 <p>\[ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) \]</p>
-<h3 id="_2">标记语言文档</h3>
-<p>应该注意到标记语言需要先转换为 HTML 文档，此过程中需要控制特殊字符<code>\</code>，因此用非 
-HTML 的标记语言写作时必须写成<code>\\</code>的格式转换为 HTML 时才会得到正确的<code>\</code>，比如在
-<code>Markdown</code>中。</p>
-<h2 id="_3">测试</h2>
+<h3 id="rest">reST</h3>
+<h2 id="_2">测试</h2>
 <p>毕达哥拉斯定理：\(a^2+b^2=c^2\)</p>
 <p>正态分布：$$f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$</p>
 <p>傅里叶变换：
@@ -241,6 +235,5 @@ T}dt\]</p>
 <script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
 <script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
- 
 </body>
 </html>

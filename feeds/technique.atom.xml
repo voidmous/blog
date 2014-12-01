@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/technique.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2014-11-23T00:00:00+08:00</updated><entry><title>Kindle好玩物</title><link href="http://www.joshuazhang.net/posts/2014/kindle-fun.html" rel="alternate"></link><updated>2014-11-23T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-11-21:posts/2014/kindle-fun.html</id><summary type="html">&lt;div class="toc"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/technique.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2014-11-26T00:00:00+08:00</updated><entry><title>Kindle好玩物</title><link href="http://www.joshuazhang.net/posts/2014/kindle-fun.html" rel="alternate"></link><updated>2014-11-26T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-11-21:posts/2014/kindle-fun.html</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#_1"&gt;选购&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#kindle"&gt;Kindle还是平板？&lt;/a&gt;&lt;/li&gt;
@@ -1110,10 +1110,10 @@ Google书签产品，某些方面输于Delicious&lt;/li&gt;
 ，解释了让大部分统计学入门者感到困惑的一个经典问题。&lt;/p&gt;
 &lt;p&gt;假如你正同时上几门课并且刚刚通过考试拿到成绩。很自然的，我们想了解班里其他学生的情况好让你的成绩有个参照。平均值或中位数可以告诉我们所有成绩的“中心值”或者“中间数”，但是它们很难体现成绩的分布或者变化。&lt;/p&gt;
 &lt;p&gt;我们来看一个小例子。假如5名学生参加三门课程获得的成绩如下：&lt;/p&gt;
-&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th&gt;课程1
+&lt;table border="1" class="docutils"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;课程1
 &lt;/th&gt;&lt;th&gt;课程2
 &lt;/th&gt;&lt;th&gt;课程3
-&lt;/th&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;82
+&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr align="center"&gt;&lt;td&gt;82
 &lt;/td&gt;&lt;td&gt;82
 &lt;/td&gt;&lt;td&gt;67
 &lt;/td&gt;&lt;/tr&gt;&lt;tr align="center"&gt;&lt;td&gt;78
@@ -1202,25 +1202,12 @@ x_1}{N}\)，类似的方差为\(\sigma=\sqrt{\frac{\sum(x_1-\mu)^2}{N}}\)。注�
 &lt;p&gt;统计学家通常只选择一个样本，比如n个学生，在这个小数据集上估计\(\mu\)和\(\sigma\)，而不是直接对这么大的总体进行统计。这里n可能是25,30或100或者甚至1000，不过它肯定远小于N。为了估计\(\mu\)很自然地我们可以用样本均值\(\overline{x}\)。同样的为了估计\(\sigma\)似乎用\(\sqrt{\frac{\sum(x_1-\overline{x})^2}{n}}\)也很合理，不过这样计算往往会“低估”\(\sigma\)，尤其是在n比较小的时候。由于这个以及其它技术原因，通常\[s=\sqrt{\frac{\sum(x_1-\overline{x})^2}{n-1}}\]被用来估计\(\sigma\)。&lt;/p&gt;
 &lt;p&gt;如果你有计算器可以直接计算方差的话你可以试着找出它使用的是哪种计算方法。用一个3个数字的数据集-1,0,1，用手工和计算器的方式分别计算方差，看看计算器使用的是哪种计算方法吧。&lt;/p&gt;
 &lt;p&gt;译者注：该文章在网上发表后，有老师希望文章作者对n与n-1的选择问题作出更详尽的解释，本文作者回复邮件称可以用一个小实验来进行验证。这里把回复邮件也做了个简单的翻译：&lt;/p&gt;
-&lt;p&gt;与其对我所说的“其它技术原因”做一个理论上精巧的阐述，我更愿意建议你和你的学生做一个实验以说明“这个数值往往低估了\(\sigma\)值”&lt;/p&gt;
-&lt;p&gt;以及“其它技术原因”是什么。我将在下面的讲述中针对\(\sigma^2\)，而非\(\sigma\)。&lt;/p&gt;
-&lt;p&gt;我们用白豆和黑豆来进行实验。你可以用任何除了使用视觉外难以区分的物体来模拟。你可能需要60到100个这样的物件，其中1/4作为白豆，&lt;/p&gt;
-&lt;p&gt;3/4作为黑豆。假定每个白豆取值为5，黑豆取值为1。这样总体就设置好了。整个总体的比例以及均值、方差都应当向你的学生保密直到实验&lt;/p&gt;
-&lt;p&gt;完成。很简单的，总体的均值为：\[\mu=1(\frac{3}{4})+5(\frac{1}{4})=2\]方差为：\[\sigma^2=(1-2)^2(\frac{3}{4})+(5-2)^2(\frac{1}{4})=3\]&lt;/p&gt;
-&lt;p&gt;学生的任务是要利用一个随机的测试样本来估计豆子的均值及方差。为了让计算保持简单我建议样本数目设为n=3。把豆子放在一个学生无法&lt;/p&gt;
-&lt;p&gt;看到但是可以取出的地方，比如一个袋子或者一个瓶子里，每个人每次随机取出3颗豆子并做样本记录。每个学生记录完后应当将豆子放回。如&lt;/p&gt;
-&lt;p&gt;果你能得到50到60个样本那就最好了，这样你就可以让每个学生选择两个样本并且独立地处理它们。&lt;/p&gt;
-&lt;p&gt;每个学生应当计算他的样本的均值以及方差，并且要计算（方差）两次，一次除以n,一次除以n-1。把学生交给你的结果汇总记录在三栏里面，&lt;/p&gt;
-&lt;p&gt;一栏为均值，一栏为除以n得到的方差，另一栏为除以n-1得到的方差。你会发现均值一栏只有四种不同的数值，其它两栏都只有两种不同的值。&lt;/p&gt;
-&lt;p&gt;这是由于样本值n=3选得比较小的缘故。如果样本值大一点那么每栏可能值得数目就会多一点。&lt;/p&gt;
-&lt;p&gt;我们首先考虑第一栏，即均值。该栏里的每一个数值都是对总体均值的一个估计。现在告诉学生们总体的均值这样他们就可以看到有些估计值太&lt;/p&gt;
-&lt;p&gt;大而另一些太小。再计算该栏所有值的均值。这个均值应当很靠近2，也就是总体的均值。从理论上说，“平均而言”，样本均值和总体均值是&lt;/p&gt;
-&lt;p&gt;相等的。我们把这样的性质称之为无偏，样本均值就是总体均值的一个无偏估计。&lt;/p&gt;
-&lt;p&gt;现在考虑第二和第三栏，计算它们的均值并告诉学生们总体的方差。除以n-1得到的方差的均值应当很接近总体的方差而另一栏的均值就会小得&lt;/p&gt;
-&lt;p&gt;比较多。样本方差（除以n-1）是总体方差的一个无偏估计。样本方差（除以n）是总体方差的一个有偏估计，并且“总是低估\(\sigma\)”。&lt;/p&gt;
-&lt;p&gt;最后一点。当分母为n-1时计算出来的值为总体方差的一个无偏估计。有没有可能存在一个比样本方差更好的对总体方差的估计值呢？你不仅仅&lt;/p&gt;
-&lt;p&gt;希望这个新的估计值是无偏的而且还希望在该栏的所有的新的估计值大部分都接近总体方差。也就是说，你希望新的估计值的方差要小。这是我&lt;/p&gt;
-&lt;p&gt;所说的用样本方差来估计总体方差的“其它技术原因”之一。在所有你可以使用的合理的估计当中，样本均值有着最小的方差。&lt;/p&gt;
+&lt;p&gt;与其对我所说的“其它技术原因”做一个理论上精巧的阐述，我更愿意建议你和你的学生做一个实验以说明“这个数值往往低估了\(\sigma\)值”以及“其它技术原因”是什么。我将在下面的讲述中针对\(\sigma^2\)，而非\(\sigma\)。&lt;/p&gt;
+&lt;p&gt;我们用白豆和黑豆来进行实验。你可以用任何除了使用视觉外难以区分的物体来模拟。你可能需要60到100个这样的物件，其中1/4作为白豆，3/4作为黑豆。假定每个白豆取值为5，黑豆取值为1。这样总体就设置好了。整个总体的比例以及均值、方差都应当向你的学生保密直到实验完成。很简单的，总体的均值为：\[\mu=1(\frac{3}{4})+5(\frac{1}{4})=2\]方差为：\[\sigma^2=(1-2)^2(\frac{3}{4})+(5-2)^2(\frac{1}{4})=3\]&lt;/p&gt;
+&lt;p&gt;学生的任务是要利用一个随机的测试样本来估计豆子的均值及方差。为了让计算保持简单我建议样本数目设为n=3。把豆子放在一个学生无法看到但是可以取出的地方，比如一个袋子或者一个瓶子里，每个人每次随机取出3颗豆子并做样本记录。每个学生记录完后应当将豆子放回。如果你能得到50到60个样本那就最好了，这样你就可以让每个学生选择两个样本并且独立地处理它们。每个学生应当计算他的样本的均值以及方差，并且要计算（方差）两次，一次除以n,一次除以n-1。把学生交给你的结果汇总记录在三栏里面，一栏为均值，一栏为除以n得到的方差，另一栏为除以n-1得到的方差。你会发现均值一栏只有四种不同的数值，其它两栏都只有两种不同的值。这是由于样本值n=3选得比较小的缘故。如果样本值大一点那么每栏可能值得数目就会多一点。&lt;/p&gt;
+&lt;p&gt;我们首先考虑第一栏，即均值。该栏里的每一个数值都是对总体均值的一个估计。现在告诉学生们总体的均值这样他们就可以看到有些估计值太大而另一些太小。再计算该栏所有值的均值。这个均值应当很靠近2，也就是总体的均值。从理论上说，“平均而言”，样本均值和总体均值是相等的。我们把这样的性质称之为无偏，样本均值就是总体均值的一个无偏估计。&lt;/p&gt;
+&lt;p&gt;现在考虑第二和第三栏，计算它们的均值并告诉学生们总体的方差。除以n-1得到的方差的均值应当很接近总体的方差而另一栏的均值就会小得比较多。样本方差（除以n-1）是总体方差的一个无偏估计。样本方差（除以n）是总体方差的一个有偏估计，并且“总是低估\(\sigma\)”。&lt;/p&gt;
+&lt;p&gt;最后一点。当分母为n-1时计算出来的值为总体方差的一个无偏估计。有没有可能存在一个比样本方差更好的对总体方差的估计值呢？你不仅仅希望这个新的估计值是无偏的而且还希望在该栏的所有的新的估计值大部分都接近总体方差。也就是说，你希望新的估计值的方差要小。这是我所说的用样本方差来估计总体方差的“其它技术原因”之一。在所有你可以使用的合理的估计当中，样本均值有着最小的方差。&lt;/p&gt;
 &lt;p&gt;希望这个建议能有帮助。如果你做了这个实验，请告诉我结果如何。&lt;/p&gt;
 &lt;p&gt;有博士生做了本文作者建议的实验并且给出了&lt;a class="reference external" href="http://mathcentral.uregina.ca/RR/database/RR.09.95/javier.xls"&gt;excel表格&lt;/a&gt;，部分截图如下：&lt;/p&gt;
 &lt;img alt="quilez" src="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" /&gt;
@@ -1281,7 +1268,7 @@ Reader是支持快捷键的，而且显然这些快捷键是精心设计过的�
 &lt;p&gt;&lt;a class="reference external" href="http://fulltextrssfeed.com"&gt;FullText Rss Feed&lt;/a&gt;（第一推荐，似乎没有失手过，中文支持完美）&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://mrss.dokoda.jp/"&gt;mrss.dokoda.jp&lt;/a&gt;（用得较少，但是还可以）&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://fivefilters.org/content-only/"&gt;fivefilters.org&lt;/a&gt;（转收费了，免费限制较多，其它工具也可以一看）&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><category term="Google Reader"></category><category term="快捷键"></category><category term="技巧"></category></entry><entry><title>Pelican 的 LaTeX 集成</title><link href="http://www.joshuazhang.net/posts/2012/latex-pelican.html" rel="alternate"></link><updated>2012-02-18T05:48:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/latex-pelican.html</id><summary type="html">&lt;p&gt;本文主要用于测试 Pelican 与 MathJax 配合显示数学公式&lt;/p&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><category term="Google Reader"></category><category term="快捷键"></category><category term="技巧"></category></entry><entry><title>Pelican 的 LaTeX 集成</title><link href="http://www.joshuazhang.net/posts/2012/latex-pelican.html" rel="alternate"></link><updated>2012-02-18T05:48:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/latex-pelican.html</id><summary type="html">&lt;p&gt;本文主要用于测试 Pelican 与 MathJax 配合显示数学公式。&lt;/p&gt;
 &lt;h2 id="pelican-mathjax"&gt;为 Pelican 添加 MathJax 支持&lt;/h2&gt;
 &lt;p&gt;鉴于并非每篇文章都会有数学公式，而&lt;code&gt;MathJax.js&lt;/code&gt;的资源加载在国内并不稳定，因此只在需要显示数学公式的 HTML 文件里才添加&lt;code&gt;MathJax CDN&lt;/code&gt;。一个简单的方法是在需要公式显示的文章里加入&lt;code&gt;mathjax=true&lt;/code&gt;的元数据声明：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;Markdown
@@ -1331,18 +1318,22 @@ HTML
 
 
 &lt;p&gt;默认唯独不支持&lt;code&gt;$ ... Inline Equation ... $&lt;/code&gt;方式（可手动设置）。&lt;/p&gt;
+&lt;h3 id="markdown"&gt;Markdown&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.md&lt;/code&gt;文本需要首先被转换为 HTML 文档，而后在浏览器中渲染时&lt;code&gt;MathJax.js&lt;/code&gt;才会寻找定义
+的公式块。由于 Markdown 无法识别 MathJax 定义的公式块，因此公式块内的文本都会被处理，
+比如需特别注意的&lt;code&gt;\&lt;/code&gt;和&lt;code&gt;_&lt;/code&gt;这两个字符，前者为转义符，后者为斜体指示符。&lt;/p&gt;
 &lt;p&gt;洛伦兹方程：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;$$\begin{aligned}
-\dot{x} = \sigma(y-x) \\
-\dot{y} = \rho x - y - xz \\
+\dot{x} = \sigma(y-x) \\\\
+\dot{y} = \rho x - y - xz \\\\
 \dot{z} = -\beta z + xy
 \end{aligned}$$
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;$$\begin{aligned}
-\dot{x} = \sigma(y-x) \
-\dot{y} = \rho x - y - xz \
+\dot{x} = \sigma(y-x) \\
+\dot{y} = \rho x - y - xz \\
 \dot{z} = -\beta z + xy
 \end{aligned}$$&lt;/p&gt;
 &lt;p&gt;Cauchy-Schwarz不等式：&lt;/p&gt;
@@ -1351,11 +1342,8 @@ HTML
 
 
 &lt;p&gt;\[ \left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right) \]&lt;/p&gt;
-&lt;h3 id="_2"&gt;标记语言文档&lt;/h3&gt;
-&lt;p&gt;应该注意到标记语言需要先转换为 HTML 文档，此过程中需要控制特殊字符&lt;code&gt;\&lt;/code&gt;，因此用非 
-HTML 的标记语言写作时必须写成&lt;code&gt;\\&lt;/code&gt;的格式转换为 HTML 时才会得到正确的&lt;code&gt;\&lt;/code&gt;，比如在
-&lt;code&gt;Markdown&lt;/code&gt;中。&lt;/p&gt;
-&lt;h2 id="_3"&gt;测试&lt;/h2&gt;
+&lt;h3 id="rest"&gt;reST&lt;/h3&gt;
+&lt;h2 id="_2"&gt;测试&lt;/h2&gt;
 &lt;p&gt;毕达哥拉斯定理：\(a^2+b^2=c^2\)&lt;/p&gt;
 &lt;p&gt;正态分布：$$f\left(x\right)=\frac{1}{\sqrt{2\pi}\sigma}exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$&lt;/p&gt;
 &lt;p&gt;傅里叶变换：

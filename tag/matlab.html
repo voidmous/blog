@@ -15,12 +15,7 @@
     <!-- Le styles -->
     <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
     <link href="http://www.joshuazhang.net/theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">
-    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
-    
-    <!-- My custom styles -->
-    <!-- Table and misc styles -->
-    <link href="http://www.joshuazhang.net/theme/custom.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
     <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
 
@@ -55,9 +50,7 @@
     <div class="row">
 
         <div class="span9">
-        
 
-        
 
 
 
@@ -192,78 +185,32 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
 		
 
  
-        
 
  
 
     <div class='article'>
         <a href="http://www.joshuazhang.net/posts/2012/henon-matlab-analysis.html"><h2>用MATLAB分析Henon映射</h2></a>
         <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周一 09 七月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>Henon映射是动力系统研究中很常见的离散映射，因为它具有的混沌特性而闻名。映射方程如下：
-\[\left\{\begin{array}\~x_{n+1}=y_n+1-a\times~x_n^2 \\ y_{n+1}=bx_n \\ \end{array} \right. \]</p>
-<p>不同的a、b参数下该映射具有不同的性质，可能出现混沌、断续或者收敛到周期轨道上不同的情况。取a=1.4，b=0.3时会产生著名的henon吸引子。</p>
-<img alt="henon1" class="align-center" src="/static/img/wp/henon1.png" />
-<p>Henon吸引子，横轴为x，纵轴为y，其实就是所有迭代的点产生的图案，形状比较怪异。</p>
-<img alt="henon2" class="align-center" src="/static/img/wp/henon2.png" />
-<p>b=0.3时的分岔图，不同a值下x可能在几个值间变化，也可能在许多值之间变化，即产生了混沌。顺便吐槽下Matlab生成的图片太不精细了，暂时还不知道用什么方法能提高图片细节。</p>
-<p>Matlab源代码：</p>
-<div class="highlight"><pre><span class="c">% By voidmous&lt;voidmous@gmail.com ...</span></pre></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/henon-matlab-analysis.html">read more</a></div> -->
     </div>	
 				
 
  
-        
 
  
 
     <div class='article'>
         <a href="http://www.joshuazhang.net/posts/2012/MIT-BIH-manual.html"><h2>MIT-BIH开放数据库使用指南</h2></a>
         <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周五 15 六月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>最近因为项目任务要分析心电图数据，采用的是<a class="reference external" href="http://ecg.mit.edu/">MIT-BIH</a>开放数据库（或称PhysioBank数据库）。这个数据库不仅提供了经过筛选的各方面的生理数据集<a class="reference external" href="http://www.physionet.org/physiobank/">PhysioBank</a>，而且也提供了开源的数据处理和可视化工具<a class="reference external" href="http://www.physionet.org/physiotools/">PhysioToolkit</a>。对我这样的非医学类学生而言，光是看见那些医学术语就够头痛的了，还要掌握这样一套专门的基于Linux的工具，确实是个不小的挑战。好在我要完成的部分不需要很深入，所以马马虎虎也摸着些门道。不敢说会用，但是起码碰到问题方向在哪我已经清楚了，这里把这个数据库的使用简单介绍一下，方便新来的同学快速上手。当然如果你英语好的话，大可以自己慢慢翻文档，这也是要深入了解的惟一途径。</p>
-<p>首先说说数据库。你可以到<a class="reference external" href="http://www.physionet.org/physiobank/database/">分类页面</a>查找有没有自己感兴趣的数据集，上面都有比较详细的介绍。找到合适的数据后在对应页面直接将文件另存为就可以下载，当然这是比较笨的办法。推荐使用wget或者rsync来下载。wget可以用于下载单独的数据集，这样速度较快也比较快捷。例如下载mitdb：</p>
-<div class="highlight"><pre>wget -r -np http://physionet.org/physiobank/database/mitdb/
-</pre></div>
-<p>中间的<em>physionet.org</em>可以替换成离你最近的<a class="reference external" href="http://www.physionet.org/mirrors/">镜像</a>地址（好像西交的挂了，直接用原镜像吧 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/MIT-BIH-manual.html">read more</a></div> -->
     </div>	
 				
 
  
-        
 
  
 
     <div class='article'>
         <a href="http://www.joshuazhang.net/posts/2012/runge-kutta-ode.html"><h2>Runge Kutta方法求解微分方程</h2></a>
         <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周二 08 五月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。
-将一阶常微分方程初值问题写成如下形式：
-\[\left\{\begin{array}\~y^{'}=f(x,y) \\y(x_0)=y_0 \\
-\end{array}\right.\] 四阶Runge Kutta公式如下：
-\[\left\{\begin{array}{l}y_{n+1}=y_n+\frac{h}{6}(K_1+2K_2+2K_3+K_4)\\x_{n+1}=x_n+1\\K_1=f(x_n,y_n)\\K_2=f(x_n ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/runge-kutta-ode.html">read more</a></div> -->
     </div>	
 				
 <div class="pagination">
@@ -337,6 +284,5 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
 <script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
 <script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
- 
 </body>
 </html>

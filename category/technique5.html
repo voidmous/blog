@@ -15,12 +15,7 @@
     <!-- Le styles -->
     <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
     <link href="http://www.joshuazhang.net/theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">
-    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
-    
-    <!-- My custom styles -->
-    <!-- Table and misc styles -->
-    <link href="http://www.joshuazhang.net/theme/custom.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
     <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
 
@@ -55,137 +50,43 @@
     <div class="row">
 
         <div class="span9">
-        
 
-        
 
  
 
     <div class='article'>
         <a href="http://www.joshuazhang.net/posts/2012/archlinux-intro.html"><h2>ArchLinux入门浅谈</h2></a>
         <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周五 24 二月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。</p>
-<div class="section" id="arch">
-<h2>为什么用Arch？</h2>
-<p>这方面的文章相当多，一搜一大把，我就不做什么总结发言了，写几点自己的想法。其实弊人最早接触的linux发行版是ubuntu和debian，当时ubuntu很被看好，不过还没流行到现在这个程度。那是我第一次被一个完全免费而且漂亮的东西打动了，期间零零碎碎玩过几次系统，但是由于技术水平有限，一直玩得不怎么顺手。直到最近，我开始越来越讨厌windows的臃肿庞大和功利，希望能够转移到linux平台上，把windows作为对“现实世界的妥协”。虽然debian也是很出色的系统，但是显然它和windows相同的特点就是较为臃肿，杂七杂八的东西自带一大堆（我不很清楚debian有没有精简定制的可能性）。出于这点考虑，我也玩过几天的LFS，注意，我当时不过装过几次linux，断断续续看过linux书籍的几个章节而已，可以想象当时我是怎样的抓耳挠腮吧^_^。当然这次实验以失败告终，我只能继续寻找能让自己足够满意的系统，终于，ArchLinux进入了我的视线。在我看来，Arch有以下几个特点是让我欲罢不能的：</p>
-<ol class="arabic simple">
-<li>极大的定制性。虽然比不上LFS完全的定制性，但是在学习成本上要降下不少，而且LFS对于不致力于研究Linux架构的人似乎没什么必要。</li>
-<li>Pacman和AUR。Gentoo似乎也可以定制，但是每个软件都要编译对于我这样的新手而言那就是上刀山下火海。。。</li>
-<li>完善的文档。我没有接触过其他Linux发行版的文档，无法横向对比，但是就我使用的情况而言 ...</li></ol></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/archlinux-intro.html">read more</a></div> -->
     </div>	
 				
 
  
-        
 
  
 
     <div class='article'>
         <a href="http://www.joshuazhang.net/posts/2012/standard-deviation.html"><h2>标准差浅谈</h2></a>
         <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周二 21 二月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>本文翻译自 <a class="reference external" href="http://mathcentral.uregina.ca/RR/database/RR.09.95/weston2.html">A note on standard deviation</a>
-，解释了让大部分统计学入门者感到困惑的一个经典问题。</p>
-<p>假如你正同时上几门课并且刚刚通过考试拿到成绩。很自然的，我们想了解班里其他学生的情况好让你的成绩有个参照。平均值或中位数可以告诉我们所有成绩的“中心值”或者“中间数”，但是它们很难体现成绩的分布或者变化。</p>
-<p>我们来看一个小例子。假如5名学生参加三门课程获得的成绩如下：</p>
-<table><tbody><tr><th>课程1
-</th><th>课程2
-</th><th>课程3
-</th></tr><tr align="center"><td>82
-</td><td>82
-</td><td>67
-</td></tr><tr align="center"><td>78
-</td><td>82
-</td><td>66
-</td></tr><tr align="center"><td>70
-</td><td>82
-</td><td>66
-</td></tr><tr align="center"><td>58
-</td><td>42
-</td><td>66
-</td></tr><tr align="center"><td>42
-</td><td>42
-</td><td>65
-</td></tr></tbody></table><p>每一个课程都有一个平均值，\(\overline{x}\)，且都为66，尽管如此，不同课程成绩的波动仍然有很大的差异。对这种波动的测量的其中一种方法是极差，也就是最大值与最小值之差。本例中，前两门课程极差均为82-42=40而第三门课程极差为67-65=2。因为课程1和课程2有相同的极差但是它们的偏差明显不同，所以极差不是一个测量偏差的理想指标。我们还可以这样看待偏差 ...</p> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/standard-deviation.html">read more</a></div> -->
     </div>	
 				
 
  
-        
 
  
 
     <div class='article'>
         <a href="http://www.joshuazhang.net/posts/2012/google-reader-tips.html"><h2>Google Reader使用技巧</h2></a>
         <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周六 18 二月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><div><div><div><div><p>Google Reader
-确实是一个不可多得的服务，我用上GR没几天已经爱不释手了。GR非常容易上手，但是要玩转GR，没有使用经验的积累是不可能的，下面我就列举一些自己在
-使用GR过程中体会到的一些技巧，既是自己知识的整理过程，也是一个温故知新的过程。当然，这里面有我自己的心得，不可避免的也有从搜索得来的知识，来源
-较多，恕不列明。</p>
-<p>一、访问技巧</p>
-<p>1、HTTP vs HTTPS
-HTTP和HTTPS的区别从技术层面来说那是可以长篇大论的，通俗的理解就是后者是前者的加密版。应用
-HTTPS，用户和网站之间的交互难以被简单地分析或窃取。由于功夫网的强大，HTTP和HTTPS享受着不同的待遇，Google许多的服务在HTTP
-下时常会被reset（如果你没碰到过那你确实太河蟹了），而HTTPS就要好很多。这是因为HTTP的明文传输会被轻易地检索到敏感词，访问被拒绝。当
-然，魔高一尺，道高一丈，HTTPS也并非万能的，不过在现今的网络环境下，HTTPS应当是我们体验Google强大服务的首选。</p>
-<p>2、IPv4 VS IPv6</p>
-<p>Google的IPv4地址很多，但是仍然饱受GFW骚扰，IPv6是下一代的IP分配方案 ...</p></div></div></div></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/google-reader-tips.html">read more</a></div> -->
     </div>	
 				
 
  
-        
 
  
 
     <div class='article'>
         <a href="http://www.joshuazhang.net/posts/2012/latex-pelican.html"><h2>Pelican 的 LaTeX 集成</h2></a>
         <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周六 18 二月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>本文主要用于测试 Pelican 与 MathJax 配合显示数学公式</p>
-<h2 id="pelican-mathjax">为 Pelican 添加 MathJax 支持</h2>
-<p>鉴于并非每篇文章都会有数学公式，而<code>MathJax.js</code>的资源加载在国内并不稳定，因此只在需要显示数学公式的 HTML 文件里才添加<code>MathJax CDN</code>。一个简单的方法是在需要公式显示的文章里加入<code>mathjax=true</code>的元数据声明：</p>
-<div class="codehilite"><pre>Markdown
-Mathjax: true
-reST
-:mathjax: true
-HTML
-&lt; meta name=&quot;mathjax&quot; content=&quot;true&quot; /&gt;
-</pre></div>
-
-
-<p>然后还需要在 Pelican 的主题文件添加判断是否需要启用 MathJax 的<code>Jinja</code>代码，将以下代码保存在空文件<code>THEME/templates/mathjax.html</code>中：</p>
-<div class="codehilite"><pre><span class="c">{# LaTeX ...</span></pre></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/latex-pelican.html">read more</a></div> -->
     </div>	
 				
 <div class="pagination">
@@ -263,6 +164,5 @@ HTML
 <script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
 <script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
- 
 </body>
 </html>

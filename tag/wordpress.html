@@ -15,12 +15,7 @@
     <!-- Le styles -->
     <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
     <link href="http://www.joshuazhang.net/theme/bootstrap.min.responsive.css" rel="stylesheet">
-    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">
-    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
-    
-    <!-- My custom styles -->
-    <!-- Table and misc styles -->
-    <link href="http://www.joshuazhang.net/theme/custom.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
     <!-- Python-Markdown CodeHilite extension css -->
     <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
 
@@ -55,9 +50,7 @@
     <div class="row">
 
         <div class="span9">
-        
 
-        
 
 
 
@@ -117,29 +110,12 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
 		
 
  
-        
 
  
 
     <div class='article'>
         <a href="http://www.joshuazhang.net/posts/2012/wp-database-optimization.html"><h2>wordpress数据库优化记录</h2></a>
         <hr>
-        <!-- Don't use any article metadata and summary, it's ugly -->
-        <!-- <div class= "well small"> 周四 30 八月 2012
-
-by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
- 
-
-
- </div> -->
-        <!-- <div class="summary"><p>前段时间发现备份的数据库大小日渐庞大，对一个几乎长草的博客而言实在很诡异，所以抽空进行了一次后台大扫除。这里把基本的流程记录下来，供对数据库操作没有经验的朋友参考。</p>
-<p>基本流程如下：</p>
-<p>1、备份。做任何数据库操作前，做一个临时备份都是必要的。使用phpmyadmin按默认设置导出sql文件下载到本地即可。</p>
-<p>2、删除不必要的插件。不必要的插件应当越少越好，尤其是会写入数据库或者查询数据库的插件。比如我之前使用过的<a class="reference external" href="http://www.6psp.cn/20100917/statpresscn%E6%8F%92%E4%BB%B6%E9%80%A0%E6%88%90%E5%8D%9A%E5%AE%A2%E9%80%9F%E5%BA%A6%E5%8F%98%E6%85%A2%EF%BC%8C%E8%B5%B6%E5%BF%AB%E5%88%A0%E9%99%A4.html">statpresscn</a>，这个插件会在数据库中建立一个庞大的wp_statpresscn表，虽然没有前台查询，不过它造成的数据库冗余带来的坏处可远远大于统计功能带来的便利，所以还是删了吧。</p>
-<p>3、删除垃圾数据表。功能比较复杂的插件可能会在数据库中建立新表，删除插件一般不会把这些表顺带删除，所以手动排查垃圾数据表也是必要的。为了防止误删，请一定对照WP
-Codex的<a class="reference external" href="http://codex.wordpress.org/zh-cn:%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0">数据库描述</a>进行修改。</p>
-<p>删除akismet垃圾数据。关于akismet如何产生这些数据可以参考<a class="reference external" href="http://www.solagirl.net/wp-commentmeta-slowing-down-your-blog.html">wp_commentmeta是否正在拖慢你的blog</a>。</p>
-<div class="highlight"><pre><span class="k">delete</span> <span class="k">from</span> <span class="n">wp_commentmeta</span> <span class="k">where</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_as_submitted&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_history&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_rechecking&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_result&#39;</span> <span class="k">or ...</span></pre></div> <a class="btn btn-info xsmall" href="http://www.joshuazhang.net/posts/2012/wp-database-optimization.html">read more</a></div> -->
     </div>	
 				
 <div class="pagination">
@@ -213,6 +189,5 @@ Codex的<a class="reference external" href="http://codex.wordpress.org/zh-cn:%E6
 <script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
 <script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
- 
 </body>
 </html>
