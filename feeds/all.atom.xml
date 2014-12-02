@@ -1,5 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2014-12-01T00:00:00+08:00</updated><entry><title>Kindle好玩物</title><link href="http://www.joshuazhang.net/posts/2014/kindle-fun.html" rel="alternate"></link><updated>2014-12-01T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-11-21:posts/2014/kindle-fun.html</id><summary type="html">&lt;div class="toc"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2014-12-02T00:00:00+08:00</updated><entry><title>Cygwin 安装配置笔记</title><link href="http://www.joshuazhang.net/posts/2014/cygwin-cfg-note.html" rel="alternate"></link><updated>2014-12-02T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-12-02:posts/2014/cygwin-cfg-note.html</id><summary type="html">&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_1"&gt;安装&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_2"&gt;基本系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_3"&gt;安装第三方包管理工具&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_4"&gt;安装编译环境&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_5"&gt;配置&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#bash"&gt;配置 Bash&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mintty"&gt;配置 mintty&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#mintty_1"&gt;下拉式 mintty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mintty_2"&gt;mintty的常用快捷键&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mintty-dos"&gt;mintty 运行 DOS 命令乱码问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#mintty_3"&gt;替换 mintty&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#vim"&gt;配置 Vim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#emacs"&gt;使用 Emacs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#cygwinx"&gt;Cygwin/X&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_6"&gt;安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_7"&gt;中文支持&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_8"&gt;技巧&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#_9"&gt;文件共享&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_10"&gt;剪贴板共享&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_11"&gt;搜索软件包&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_12"&gt;打开当前目录&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_13"&gt;隐藏启动终端&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#_14"&gt;参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h1 id="_1"&gt;安装&lt;/h1&gt;
+&lt;p&gt;Cygwin 的安装过程并不难，但还是比较繁琐，如果你想快速拥有一个配置好的 Cygwin 环境或者仅仅想试用一下，那我推荐使用 &lt;a href="https://babun.github.io/"&gt;Babun&lt;/a&gt;，它是一个基于 Cygwin 的 Shell 环境，自带包管理工具&lt;code&gt;pact&lt;/code&gt;（基于&lt;code&gt;apt-cyg&lt;/code&gt;），预装了众多工具以及自定义配置。对于想长期使用的童靴，我还是推荐官方原配。&lt;/p&gt;
+&lt;h2 id="_2"&gt;基本系统&lt;/h2&gt;
+&lt;p&gt;下载 &lt;a href="http://cygwin.com/setup-x86.exe"&gt;setup-x86.exe&lt;/a&gt;  或者 &lt;a href="https://cygwin.com/setup-x86_64.exe"&gt;setup-x86_64.exe&lt;/a&gt;  丢到安装目录&lt;code&gt;D:\cygwin&lt;/code&gt;（建议）下。它是默认的图形包管理器，双击运行，设置包下载目录为&lt;code&gt;D:\cygwin\packages&lt;/code&gt;。推荐的国内源地址：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;; 网易
+http://mirrors.163.com/cygwin/
+; 中科大
+http://mirrors.ustc.edu.cn/cygwin/
+; 搜狐
+http://mirrors.sohu.com/cygwin/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;安装时注意选上&lt;code&gt;subversion&lt;/code&gt;和&lt;code&gt;wget&lt;/code&gt;，为安装&lt;code&gt;apt-cyg&lt;/code&gt;做准备。&lt;/p&gt;
+&lt;h2 id="_3"&gt;安装第三方包管理工具&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;cygwin&lt;/code&gt;自带的图形包管理器需要重复一些配置操作，而且需要搜索包名安装，实在是不方便。&lt;a href="http://code.google.com/p/apt-cyg/"&gt;&lt;code&gt;apt-cyg&lt;/code&gt;&lt;/a&gt;（或者&lt;a href="http://code.google.com/p/cyg-apt/"&gt;cyg-apt&lt;/a&gt;）则提供了类似&lt;code&gt;debian&lt;/code&gt;下&lt;code&gt;apt-get&lt;/code&gt;相同的功能，非常方便包管理，强烈推荐安装。首先用默认包管理器安装好&lt;code&gt;subversion&lt;/code&gt;和&lt;code&gt;wget&lt;/code&gt;，启动&lt;code&gt;Cygwin Terminal&lt;/code&gt;，输入如下命令：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;svn --force &lt;span class="nb"&gt;export &lt;/span&gt;http://apt-cyg.googlecode.com/svn/trunk/ /bin/
+&lt;span class="nv"&gt;$ &lt;/span&gt;chmod+x /bin/apt-cyg
+&lt;span class="nv"&gt;$ &lt;/span&gt;apt-cyg -m http://mirrors.163.com/cygwin/  &lt;span class="c"&gt;# 设置apt-cyg的源地址&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;apt-cyg: Installs and removes Cygwin packages.
+  &amp;quot;apt-cyg install &amp;lt;package names&amp;gt;&amp;quot; to install packages
+  &amp;quot;apt-cyg remove &amp;lt;package names&amp;gt;&amp;quot; to remove packages
+  &amp;quot;apt-cyg update&amp;quot; to update setup.ini
+  &amp;quot;apt-cyg show&amp;quot; to show installed packages
+  &amp;quot;apt-cyg find &amp;lt;patterns&amp;gt;&amp;quot; to find packages matching patterns
+  &amp;quot;apt-cyg describe &amp;lt;patterns&amp;gt;&amp;quot; to describe packages matching patterns
+  &amp;quot;apt-cyg packageof &amp;lt;commands or files&amp;gt;&amp;quot; to locate parent packages
+Options:
+  --mirror, -m &amp;lt;url&amp;gt; : set mirror
+  --cache, -c &amp;lt;dir&amp;gt;  : set cache
+  --file, -f &amp;lt;file&amp;gt;  : read package names from file
+  --noupdate, -u     : don&amp;#39;t update setup.ini from mirror
+  --help
+  --version
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;一些必备的软件：git、openssh、openssl、binutils，
+有用的工具：util-linux(more)、bash-completion（经测试可能影响终端启动性能）、procps(top)、inetutils(telnet)、bind-utils(dig)。&lt;/p&gt;
+&lt;h2 id="_4"&gt;安装编译环境&lt;/h2&gt;
+&lt;p&gt;随着 Cygwin 的更新，目前越来越多的软件可以在 Cygwin 下通过编译，但是比起 Linux 系统，出问题的概率仍然较高，而且有些编译和运行的需求是 Cygwin 平台无法满足的。因此普通用户应当优先使用二进制包，在最不利的情况下才应该尝试自己编译软件。&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;apt-get install gcc4-core gcc4-g++ gdb make autoconf automake
+&lt;span class="nv"&gt;$ &lt;/span&gt;gcc --version
+&lt;span class="nv"&gt;$ &lt;/span&gt;g++ --version
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1 id="_5"&gt;配置&lt;/h1&gt;
+&lt;h2 id="bash"&gt;配置 Bash&lt;/h2&gt;
+&lt;p&gt;鉴于 Cygwin 下大部分的配置都和 Linux 相同，因此，为了免除维护两份配置文件的麻烦，可以在&lt;code&gt;~/.bashrc&lt;/code&gt;中写入：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$OSTYPE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;linux-gnu&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Linux-gnu environment detected.&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$OSTYPE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cygwin&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Cygwin environment detected.&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -f &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/.bashrc.cygwin&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+        &lt;span class="nb"&gt;source&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/.bashrc.cygwin&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Unknown Platform&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;这样所有 cygwin 下特定的配置都可以写入到 &lt;code&gt;~/.bashrc.cygwin&lt;/code&gt; 了。&lt;/p&gt;
+&lt;h2 id="mintty"&gt;配置 mintty&lt;/h2&gt;
+&lt;p&gt;在终端标题栏右键选择“Options”就可以设置mintty的显示效果，主要修改几个方面：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;字体，我个人喜欢 &lt;a href="http://levien.com/type/myfonts/inconsolata.html"&gt;Inconsolata&lt;/a&gt;，或者你可以从&lt;a href="http://www.lowing.org/fonts/"&gt;这里&lt;/a&gt;挑一个。&lt;/li&gt;
+&lt;li&gt;终端窗口大小，可按照屏幕大小自己调整。&lt;/li&gt;
+&lt;li&gt;透明度，medium 级别在 win7 下看着比较舒服。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mintty 默认设置下深蓝色不够显眼，看着很吃力，我建议大家使用 &lt;a href="https://github.com/oumu/mintty-color-schemes"&gt;mintty-color-schemes&lt;/a&gt;  的主题，我个人最偏爱对比度较高的&lt;code&gt;base16-shapeshifter-mod-lighten&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如果想恢复默认设置，只需要清空&lt;code&gt;~/.minttyrc&lt;/code&gt;中的内容。&lt;/p&gt;
+&lt;p&gt;我的&lt;code&gt;~/.minttyrc&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nv"&gt;BoldAsFont&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;no
+&lt;span class="nv"&gt;Font&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Monaco
+&lt;span class="nv"&gt;FontHeight&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;10
+&lt;span class="nv"&gt;Transparency&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;medium
+&lt;span class="nv"&gt;CursorType&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;block
+&lt;span class="nv"&gt;CursorBlinks&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;no
+&lt;span class="nv"&gt;Scrollbar&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;right
+&lt;span class="nv"&gt;Columns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;120
+&lt;span class="nv"&gt;Rows&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;26
+&lt;span class="nv"&gt;BackspaceSendsBS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes
+&lt;span class="nv"&gt;Locale&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;zh_CN
+&lt;span class="nv"&gt;Charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;UTF-8
+
+&lt;span class="c"&gt;# base16-shapeshifter-mod-lighten theme&lt;/span&gt;
+&lt;span class="c"&gt;# from: https://github.com/oumu/mintty-color-schemes&lt;/span&gt;
+&lt;span class="nv"&gt;ForegroundColour&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;171,171,171
+&lt;span class="nv"&gt;BackgroundColour&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0,0,0
+&lt;span class="nv"&gt;CursorColour&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;253,157,79
+&lt;span class="nv"&gt;Black&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;0,0,0
+&lt;span class="nv"&gt;BoldBlack&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;52,52,52
+&lt;span class="nv"&gt;Red&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;233,47,47
+&lt;span class="nv"&gt;BoldRed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;240,116,116
+&lt;span class="nv"&gt;Green&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;14,216,57
+&lt;span class="nv"&gt;BoldGreen&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;64,243,102
+&lt;span class="nv"&gt;Yellow&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;221,221,19
+&lt;span class="nv"&gt;BoldYellow&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;240,240,78
+&lt;span class="nv"&gt;Blue&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;59,72,227
+&lt;span class="nv"&gt;BoldBlue&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;125,135,236
+&lt;span class="nv"&gt;Magenta&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;249,150,226
+&lt;span class="nv"&gt;BoldMagenta&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;253,222,246
+&lt;span class="nv"&gt;Cyan&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;35,237,218
+&lt;span class="nv"&gt;BoldCyan&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;107,243,230
+&lt;span class="nv"&gt;White&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;171,171,171
+&lt;span class="nv"&gt;BoldWhite&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;249,249,249
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;更多配置请参考&lt;code&gt;man mintty&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id="mintty_1"&gt;下拉式 mintty&lt;/h3&gt;
+&lt;p&gt;mintty本身并非下拉式终端，即不能通过热键来呼出或隐藏，参考了网友所写的 &lt;a href="https://bitbucket.org/riverscn/cyg-hotkey/"&gt;cyg-hotkey&lt;/a&gt;，我用&lt;code&gt;AHK&lt;/code&gt;写了个小工具 &lt;a href="https://github.com/voidmous/PUF/tree/ahk-devel"&gt;PUF&lt;/a&gt;，可以实现任意窗口程序的热键呼出。如果要使用 cyg-hotkey，可运行下列命令：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;hg clone https://bitbucket.org/riverscn/cyg-hotkey   &lt;span class="c"&gt;# 需安装mercurial&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;&lt;span class="nb"&gt;cd &lt;/span&gt;cyg-hotkey
+&lt;span class="nv"&gt;$ &lt;/span&gt;make all &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;cyg-hotkey 默认使用快捷键 F7，运行&lt;code&gt;cyg-hotkey.exe&lt;/code&gt;后即可使用 F7 来呼出/隐藏 mintty 窗口。&lt;/p&gt;
+&lt;h3 id="mintty_2"&gt;mintty的常用快捷键&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Shift+Insert    粘贴&lt;/li&gt;
+&lt;li&gt;Alt+Enter       全屏&lt;/li&gt;
+&lt;li&gt;Alt+F2           开启一个新 mintty 终端&lt;/li&gt;
+&lt;li&gt;Ctrl+Tab        在不同终端间切换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="mintty-dos"&gt;mintty 运行 DOS 命令乱码问题&lt;/h3&gt;
+&lt;p&gt;虽然 cygwin 已经提供了很完备的命令行工具，但涉及到 Windows 配置的个别命令仍然需要到 cmd.exe 下运行（比如&lt;code&gt;ipconfig&lt;/code&gt;，&lt;code&gt;taskkill&lt;/code&gt;，&lt;code&gt;set&lt;/code&gt;等），能不能让这些命令也在&lt;code&gt;mintty&lt;/code&gt;下运行呢？答案是肯定的，可以运行，但是并不完美，中文系统运行会出现乱码。原因就在于 cmd.exe 默认的&lt;code&gt;Code Page&lt;/code&gt;为&lt;code&gt;cp 936 ANSI/OEM 简体中文 936&lt;/code&gt;（在 cmd.exe 窗口右键——属性——选项中可查看），而我们默认设置的 cygwin 编码为 UTF-8，于是 DOS 命令输出的中文一概会变成方框。可选的解决方案有以下几种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改变 cmd.exe 的默认输出编码。通过修改注册表更改系统默认设置，见 &lt;a href="https://stackoverflow.com/questions/14109024/how-to-make-unicode-charset-in-cmd-exe-by-default"&gt;How to make Unicode charset in cmd.exe by default?&lt;/a&gt;。此方法非常危险，会导致系统无法启动，请不要轻易尝试。&lt;/li&gt;
+&lt;li&gt;改变 cygwin 和 mintty 的编码。将 cygwin 的 locale 全部改成 zh_CN.GBK，mintty 的 CharSet 也设置为 GBK 即可。但是在大部分软件都以 UTF-8 作为默认输入和输出编码的环境下，这样做会干扰许多软件，比如此时 Vim 中文显示就全是乱码，因此此方案也不推荐。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cygwin.com/faq-nochunks.html#faq.using.weirdchars"&gt;临时改变 cmd.exe 的输出编码&lt;/a&gt;。在&lt;code&gt;bash.rc&lt;/code&gt;中添加&lt;code&gt;cmd /c chcp 65001&lt;/code&gt;，这样就可以让 mintty 执行 DOS 命令时输出 UTF 编码。不过让人蛋疼的是，&lt;code&gt;cmd.exe&lt;/code&gt;本身如果变成 UTF-8 输出（运行&lt;code&gt;chcp 65001&lt;/code&gt;可临时改变输出编码，见 &lt;a href="https://stackoverflow.com/questions/388490/unicode-characters-in-windows-command-line-how/388500#388500"&gt;Unicode characters in Windows command line - how?&lt;/a&gt;）时，不仅提示全变为英文，且不再支持中文目录（具体原因不详）。幸好在 mintty 下，中文目录没有问题，只是只有英文提示参考，算是变相地解决了乱码的问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="mintty_3"&gt;替换 mintty&lt;/h2&gt;
+&lt;p&gt;虽然 mintty 也还不错，但也有其自身的限制（详细信息可参考其 Manual），从我使用的过程来看，&lt;code&gt;ConEmu&lt;/code&gt;是不错的替代者。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://blog.openshift.com/upgrade-cygwin-to-console2-and-improve-the-productivity-of-openshifts-rhc-client-tools-on-wind/"&gt;Upgrade Cygwin to Console2 and Improve Windows Productivity&lt;/a&gt;，本人测试不成功，UI有问题&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://superuser.com/questions/591206/how-do-i-configure-conemu-to-run-cygwin-bash"&gt;How do I configure ConEmu to run Cygwin Bash?&lt;/a&gt;，测试成功，界面不错，功能也很多，但&lt;code&gt;tmux&lt;/code&gt;无法运行。&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://alternativeto.net/software/conemu/"&gt;Windows下的各类 Command Prompt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="vim"&gt;配置 Vim&lt;/h2&gt;
+&lt;p&gt;Cygwin 下运行 Vim 必要的配置，加入到&lt;code&gt;~/.vimrc&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;&amp;quot;Cygwin相关设置&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;nocompatible&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nb"&gt;backspace&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;indent&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;eol&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="k"&gt;start&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="emacs"&gt;使用 Emacs&lt;/h2&gt;
+&lt;p&gt;Emacs 是神器，但不是普通人能玩得转的，偶尔拿来写点文字还不错，做为 IDE 的话门槛太高，我们作为普通用户还是不要跳这个坑了。关于 Emacs 和 Cygwin 配合使用
+的讨论有很多，比如 &lt;a href="https://stackoverflow.com/questions/2075504/how-to-best-integrate-emacs-and-cygwin"&gt;How to best integrate Emacs and Cygwin?&lt;/a&gt;，其中比较实用的方案如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文字终端 Emacs，输入&lt;code&gt;apt-cyg install emacs&lt;/code&gt;即可安装，没有图形界面，适合高级 Emacs 用户。&lt;/li&gt;
+&lt;li&gt;Emacs-X11，输入&lt;code&gt;apt-cyg install emacs-X11&lt;/code&gt;安装，启动时需要&lt;code&gt;XServer&lt;/code&gt;，由于 Cygwin/X 本身的局限（见下文），不推荐此方案。&lt;/li&gt;
+&lt;li&gt;Emacs-w32，输入&lt;code&gt;apt-cyg install emacs-w32&lt;/code&gt;安装，其实它使用的是 Windows GUI，我个人最推荐的方式。&lt;/li&gt;
+&lt;li&gt;让外部 Emacs 识别 Cygwin shell。在 Windows 下安装 Emacs，然后让 Emacs 启动时自动识别 Cygwin shell，需要编写复杂的设置脚本，门槛较高。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mintty 有一个很好用的特性：在 mintty 中后台运行的非终端程序在 mintty 进程结束后仍然可以继续运行。比如输入&lt;code&gt;emacs-w32.exe 1&amp;gt;/dev/null 2&amp;gt;/dev/null &amp;amp;&lt;/code&gt;启动 Emacs，然后输入&lt;code&gt;exit&lt;/code&gt;关闭 mintty，此时 Emacs 不会随之关闭，对于 Emacs 常驻党应该很有帮助。&lt;/p&gt;
+&lt;h1 id="cygwinx"&gt;Cygwin/X&lt;/h1&gt;
+&lt;h2 id="_6"&gt;安装&lt;/h2&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;apt-cyg install xorg-server xinit xorg-docs
+&lt;span class="c"&gt;# xorg-server 是 windows 下的 Xserver， xinit 包括各种启动命令如 xinit,startx,startwin&lt;/span&gt;
+&lt;span class="c"&gt;# xorg-docs 可选&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="_7"&gt;中文支持&lt;/h2&gt;
+&lt;p&gt;Cygwin/X 的一个问题是没有对中文输入法的支持，虽然可以安装&lt;code&gt;fcitx&lt;/code&gt;并在 Cygwin/X 中运行（我测试未成功），但只能在单窗口模式下启动。
+官方早有支持IME-XIM转换的想法，却迟迟没出成果（见 &lt;a href="http://x.cygwin.com/devel/todo.html"&gt;Development - To-Do List&lt;/a&gt;）。总之，现阶段在 Cygwin/X 下输入
+中文是很蛋疼的事情，因此它对我们而言还只能是一个玩物。&lt;/p&gt;
+&lt;h1 id="_8"&gt;技巧&lt;/h1&gt;
+&lt;h2 id="_9"&gt;文件共享&lt;/h2&gt;
+&lt;p&gt;Cygwin 让人爱不释手的原因之一就是和 Windows 的无缝文件共享：Cygwin可以直接访问Windows下的所有文件，Windows也可以访问 Cygwin 下的文本文件。
+Windows 下的盘符&lt;code&gt;C:\&lt;/code&gt;对应为 Cygwin 下的目录&lt;code&gt;/cygdrive/c/&lt;/code&gt;，所有的 Cygwin 工具可以直接对该目录操作。另外，Windows 下路径名如&lt;code&gt;C:\Program Files\&lt;/code&gt;，
+cygwin下的路径则形如&lt;code&gt;/etc/rc.d/&lt;/code&gt;，因此两者之间需要进行转换。Cygwin 提供了命令行工具&lt;a href="http://www.cygwin.com/cygwin-ug-net/using-utils.html#cygpath"&gt;&lt;code&gt;cygpath&lt;/code&gt;&lt;/a&gt;来进行 Windows 风格和 POSIX 风格的路径名互转。&lt;/p&gt;
+&lt;h2 id="_10"&gt;剪贴板共享&lt;/h2&gt;
+&lt;p&gt;Cygwin 下操作剪贴板最方便的方式是访问设备&lt;code&gt;/dev/clipboard&lt;/code&gt;，比如：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;diff file1 file2 &amp;gt; /dev/clipboard
+&lt;span class="nv"&gt;$ &lt;/span&gt;cat &amp;lt; /dev/clipboard
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;第一条命令&lt;code&gt;diff&lt;/code&gt;得到的结果被发送到剪贴板上，直接粘贴即可。&lt;/p&gt;
+&lt;h2 id="_11"&gt;搜索软件包&lt;/h2&gt;
+&lt;p&gt;常用的软件我们用&lt;code&gt;apt-cyg find packagename&lt;/code&gt;一般都可以找到，但是以下两种情况此命令却帮不上什么忙：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;某些命令行工具被集成到一个大包里，比如&lt;code&gt;dig.exe&lt;/code&gt;，&lt;code&gt;telnet.exe&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;编译软件时常见的&lt;code&gt;libXXX.so.X&lt;/code&gt;找不到的问题&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这时我们可以上 &lt;a href="http://cygwin.com/packages/"&gt;Cygwin package list&lt;/a&gt; 更精确地查找，注意打开链接查看是否包含需要的文件。或者也可以使用内置命令&lt;code&gt;cygcheck -p dig.exe&lt;/code&gt;(需要网络连接，&lt;a href="http://www.cygwin.com/cygwin-ug-net/using-utils.html#cygcheck"&gt;说明&lt;/a&gt;)，利用此方法一般都可以确定需要下载的包，更加快捷。&lt;/p&gt;
+&lt;h2 id="_12"&gt;打开当前目录&lt;/h2&gt;
+&lt;p&gt;此代码来自博客 &lt;a href="http://oldratlee.com/post/2012-12-22/stunning-cygwin"&gt;Pragmatistic Guy&lt;/a&gt;，特此致谢。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;xpl&lt;/code&gt;加参数可用于打开目录或者文件，默认无参数打开当前目录：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class="nv"&gt;cygwin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;`uname`&amp;quot;&lt;/span&gt; in
+    CYGWIN*&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;cygwin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt; &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;span class="k"&gt;esac&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nv"&gt;XPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;. &lt;span class="c"&gt;# 缺省是当前目录&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="nv"&gt;XPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;$cygwin&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+        &lt;span class="nv"&gt;XPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cygpath -C ANSI -w &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$XPATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+explorer &lt;span class="nv"&gt;$XPATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;也可写入到&lt;code&gt;.bashrc.cygwin&lt;/code&gt;中，修改如下：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="k"&gt;function&lt;/span&gt; xpl &lt;span class="o"&gt;{&lt;/span&gt;
+     &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+         &lt;span class="nv"&gt;XPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;.   &lt;span class="c"&gt;# 缺省是当前目录&lt;/span&gt;
+     &lt;span class="k"&gt;else&lt;/span&gt;
+         &lt;span class="nv"&gt;XPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
+         &lt;span class="nv"&gt;XPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cygpath -C ANSI -w &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$XPATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="k"&gt;fi&lt;/span&gt;
+     explorer &lt;span class="nv"&gt;$XPATH&lt;/span&gt;
+ &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;xpf&lt;/code&gt;用于 explorer 跳转到指定目录或文件并选中：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class="nv"&gt;cygwin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;`uname`&amp;quot;&lt;/span&gt; in
+    CYGWIN*&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;cygwin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt; &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;span class="k"&gt;esac&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nv"&gt;XPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;. &lt;span class="c"&gt;# 缺省是当前目录&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+    &lt;span class="nv"&gt;XPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;$cygwin&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+        &lt;span class="nv"&gt;XPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cygpath -C ANSI -w &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$XPATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+explorer &lt;span class="s1"&gt;&amp;#39;/select,&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;$XPATH&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;使用说明，以&lt;code&gt;xpl&lt;/code&gt;为例：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;xpl &lt;span class="c"&gt;# explorer打开当前目录&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;xpl /usr/bin/  &lt;span class="c"&gt;# explorer打开指定目录&lt;/span&gt;
+&lt;span class="nv"&gt;$ &lt;/span&gt;xpl video.avi  &lt;span class="c"&gt;# 使用 Windows 默认程序打开文件&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="_13"&gt;隐藏启动终端&lt;/h2&gt;
+&lt;p&gt;有时我们想在 Windows 下启动 Cygwin 中的程序或命令行，比如&lt;code&gt;D:\cygwin\bin\mintty.exe /usr/bin/emacs-w32.exe&lt;/code&gt;可以启动 Emacs-w32，
+但是同时也会启动一个碍事的终端窗口，如何隐藏它呢？我们可以使用官方提供的工具&lt;code&gt;run.exe&lt;/code&gt;：&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;D:\cygwin\bin\run.exe /usr/bin/emacs-w32.exe
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1 id="_14"&gt;参考资料&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://oldratlee.com/post/2012-12-22/stunning-cygwin"&gt;惊艳的cygwin——Windows下的Linux命令行环境的配置和使用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bitbucket.org/riverscn/cyg-hotkey/overview"&gt;为Windows创建一个下拉式类Unix终端 - 川叶 :: 时间河&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cygwin.com/cygwin-ug-net.html"&gt;Cygwin User's Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://x.cygwin.com/docs/ug/"&gt;Cygwin/X User's Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://code.google.com/p/mintty/wiki/Tips"&gt;官方推荐技巧&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="Cygwin"></category></entry><entry><title>Kindle好玩物</title><link href="http://www.joshuazhang.net/posts/2014/kindle-fun.html" rel="alternate"></link><updated>2014-12-01T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-11-21:posts/2014/kindle-fun.html</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#_1"&gt;选购&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#kindle"&gt;Kindle还是平板？&lt;/a&gt;&lt;/li&gt;
