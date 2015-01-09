@@ -1,7 +1,7 @@
 Title: Cygwin 安装配置笔记
 Author: Joshz
 Date: 2014-12-02
-Modified:
+Modified: 2015-01-09
 Category: Technique
 Tags: Cygwin
 Slug: cygwin-cfg-note
@@ -110,7 +110,6 @@ Rows=26
 BackspaceSendsBS=yes
 Locale=zh_CN
 Charset=UTF-8
- 
 # base16-shapeshifter-mod-lighten theme
 # from: https://github.com/oumu/mintty-color-schemes
 ForegroundColour=171,171,171
@@ -133,6 +132,7 @@ BoldCyan=107,243,230
 White=171,171,171
 BoldWhite=249,249,249
 ```
+
 更多配置请参考`man mintty`。
 
 ### 下拉式 mintty
@@ -156,6 +156,12 @@ cyg-hotkey 默认使用快捷键 F7，运行`cyg-hotkey.exe`后即可使用 F7 �
 * 改变 cmd.exe 的默认输出编码。通过修改注册表更改系统默认设置，见 [How to make Unicode charset in cmd.exe by default?](https://stackoverflow.com/questions/14109024/how-to-make-unicode-charset-in-cmd-exe-by-default )。此方法非常危险，会导致系统无法启动，请不要轻易尝试。
 * 改变 cygwin 和 mintty 的编码。将 cygwin 的 locale 全部改成 zh_CN.GBK，mintty 的 CharSet 也设置为 GBK 即可。但是在大部分软件都以 UTF-8 作为默认输入和输出编码的环境下，这样做会干扰许多软件，比如此时 Vim 中文显示就全是乱码，因此此方案也不推荐。
 * [临时改变 cmd.exe 的输出编码](https://cygwin.com/faq-nochunks.html#faq.using.weirdchars)。在`bash.rc`中添加`cmd /c chcp 65001`，这样就可以让 mintty 执行 DOS 命令时输出 UTF 编码。不过让人蛋疼的是，`cmd.exe`本身如果变成 UTF-8 输出（运行`chcp 65001`可临时改变输出编码，见 [Unicode characters in Windows command line - how?](https://stackoverflow.com/questions/388490/unicode-characters-in-windows-command-line-how/388500#388500 )）时，不仅提示全变为英文，且不再支持中文目录（具体原因不详）。幸好在 mintty 下，中文目录没有问题，只是只有英文提示参考，算是变相地解决了乱码的问题。
+* 使用 iconv 转换编码，这是推荐方案。将所有 windows 命令行程序的输出利用管道进行从 GBK 到 UTF-8 的编码转换，比如`ipconfig /all | uo`，其中命令 uo （UTF Output）定义为：
+```bash
+uo() {
+iconv -f gbk -t utf-8 $1 | less
+}
+```
 
 ## 替换 mintty
 
