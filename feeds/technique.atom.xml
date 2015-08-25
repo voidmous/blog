@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/technique.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2014-12-02T00:00:00+08:00</updated><entry><title>Cygwin 安装配置笔记</title><link href="http://www.joshuazhang.net/posts/2014/cygwin-cfg-note.html" rel="alternate"></link><updated>2014-12-02T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-12-02:posts/2014/cygwin-cfg-note.html</id><summary type="html">&lt;div class="toc"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>JoshuaZhang</title><link href="http://www.joshuazhang.net/" rel="alternate"></link><link href="http://www.joshuazhang.net/feeds/technique.atom.xml" rel="self"></link><id>http://www.joshuazhang.net/</id><updated>2015-01-09T00:00:00+08:00</updated><entry><title>Cygwin 安装配置笔记</title><link href="http://www.joshuazhang.net/posts/2014/cygwin-cfg-note.html" rel="alternate"></link><updated>2015-01-09T00:00:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2014-12-02:posts/2014/cygwin-cfg-note.html</id><summary type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#_1"&gt;安装&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#_2"&gt;基本系统&lt;/a&gt;&lt;/li&gt;
@@ -125,7 +125,6 @@ Options:
 &lt;span class="nv"&gt;BackspaceSendsBS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes
 &lt;span class="nv"&gt;Locale&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;zh_CN
 &lt;span class="nv"&gt;Charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;UTF-8
-
 &lt;span class="c"&gt;# base16-shapeshifter-mod-lighten theme&lt;/span&gt;
 &lt;span class="c"&gt;# from: https://github.com/oumu/mintty-color-schemes&lt;/span&gt;
 &lt;span class="nv"&gt;ForegroundColour&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;171,171,171
@@ -173,7 +172,14 @@ Options:
 &lt;li&gt;改变 cmd.exe 的默认输出编码。通过修改注册表更改系统默认设置，见 &lt;a href="https://stackoverflow.com/questions/14109024/how-to-make-unicode-charset-in-cmd-exe-by-default"&gt;How to make Unicode charset in cmd.exe by default?&lt;/a&gt;。此方法非常危险，会导致系统无法启动，请不要轻易尝试。&lt;/li&gt;
 &lt;li&gt;改变 cygwin 和 mintty 的编码。将 cygwin 的 locale 全部改成 zh_CN.GBK，mintty 的 CharSet 也设置为 GBK 即可。但是在大部分软件都以 UTF-8 作为默认输入和输出编码的环境下，这样做会干扰许多软件，比如此时 Vim 中文显示就全是乱码，因此此方案也不推荐。&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://cygwin.com/faq-nochunks.html#faq.using.weirdchars"&gt;临时改变 cmd.exe 的输出编码&lt;/a&gt;。在&lt;code&gt;bash.rc&lt;/code&gt;中添加&lt;code&gt;cmd /c chcp 65001&lt;/code&gt;，这样就可以让 mintty 执行 DOS 命令时输出 UTF 编码。不过让人蛋疼的是，&lt;code&gt;cmd.exe&lt;/code&gt;本身如果变成 UTF-8 输出（运行&lt;code&gt;chcp 65001&lt;/code&gt;可临时改变输出编码，见 &lt;a href="https://stackoverflow.com/questions/388490/unicode-characters-in-windows-command-line-how/388500#388500"&gt;Unicode characters in Windows command line - how?&lt;/a&gt;）时，不仅提示全变为英文，且不再支持中文目录（具体原因不详）。幸好在 mintty 下，中文目录没有问题，只是只有英文提示参考，算是变相地解决了乱码的问题。&lt;/li&gt;
+&lt;li&gt;使用 iconv 转换编码，这是推荐方案。将所有 windows 命令行程序的输出利用管道进行从 GBK 到 UTF-8 的编码转换，比如&lt;code&gt;ipconfig /all | uo&lt;/code&gt;，其中命令 uo （UTF Output）定义为：&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;uo&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+iconv -f gbk -t utf-8 &lt;span class="nv"&gt;$1&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; less
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2 id="mintty_3"&gt;替换 mintty&lt;/h2&gt;
 &lt;p&gt;虽然 mintty 也还不错，但也有其自身的限制（详细信息可参考其 Manual），从我使用的过程来看，&lt;code&gt;ConEmu&lt;/code&gt;是不错的替代者。&lt;/p&gt;
 &lt;ul&gt;
@@ -1014,84 +1020,7 @@ WFDB 的 PhysioBank 数据库读取[J]. 北京生物医学工程, 2011, 30(3):
 &lt;a class="reference external" href="http://www.cqvip.com/qk/81625x/201111/39687170.html"&gt;基于Matlab的MIT-BIH心电信号读取与波形显示的实现&lt;/a&gt;[J]. 中国电子商务,
 (11): 113–113. [9] 宋春丽. &lt;a class="reference external" href="http://www.cqvip.com/Main/Detail.aspx?id=33712105"&gt;怎样识读MIT-BIH中的心电信号&lt;/a&gt;[J].
 科技资讯, (9): 27–27.&lt;/p&gt;
-&lt;/p&gt;</summary><category term="Matlab"></category><category term="MIT-BIH"></category><category term="PhysioBank"></category><category term="WFDB"></category><category term="入门"></category><category term="心电"></category><category term="指南"></category><category term="数据库"></category></entry><entry><title>47个通用网页浏览器快捷键</title><link href="http://www.joshuazhang.net/posts/2012/universal-browser-keyboard-shortcuts.html" rel="alternate"></link><updated>2012-05-25T13:15:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-05-25:posts/2012/universal-browser-keyboard-shortcuts.html</id><summary type="html">&lt;p&gt;本文翻译自&lt;a class="reference external" href="http://www.howtogeek.com/114518/47-keyboard-shortcuts-that-work-in-all-web-browsers/?utm_source=newsletter&amp;amp;utm_medium=email&amp;amp;utm_campaign=210512&amp;amp;utm_content=emailsidebar"&gt;howtogeek&lt;/a&gt;，总结得不错。不过从评论来看，似乎对opera支持不大好，读者请自行尝试。
-&lt;img alt="image0" src="https://lh6.googleusercontent.com/x_pKkyiVelXIkdeWhGCILaf8h-qGWggeKW5FfL1HarCYRLC2WaxlouSELjisZcwrI8ziLYWGJLssOF3eOMmufgNHobGjRv3L0TQX_U86UeDW9jbYDjQ" /&gt;&lt;/p&gt;
-&lt;p&gt;每个主流的网络浏览器都有一部分相同的快捷键设置。无论你使用Mozilla
-Firefox，Google Chrome，Apple
-Safari或者Opera——这些键盘快捷键应该都是有效的。每个浏览器都有自己特有的快捷键，不过学会使用通用的键位在不同浏览器或者电脑间切换时就非常有用。下面的列表同时也包括几个鼠标快捷键。&lt;/p&gt;
-&lt;div class="section" id="id2"&gt;
-&lt;h2&gt;&lt;strong&gt;标签&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;按Ctrl +1-8 切换到指定的标签，从左边算起。 CTRL +9
-切换到最后一个标签。&lt;img alt="image1" src="https://lh4.googleusercontent.com/hxcCzImXVO3k2Ic_HxI5vR3kDc2rsKi1mIQvQvC9l8XtDy2pmnlWOA6rnfDJn4GXqyL_iJ_PQN8NK2EBw5RdA8v8cyWmhFaSZ16l6Qd7OiRGXCDUVA0" /&gt;&lt;/p&gt;
-&lt;p&gt;Ctrl + Tab
-切换到下一个标签——换句话说，切换到右边的选项卡。（CTRL + PAGE UP
-也可以，但在IE下无效。）&lt;/p&gt;
-&lt;p&gt;Ctrl + Shift + Tab
-切换到前一个标签——换句话说，切换到左边的选项卡。 （CTRL + PAGE DOWN
-也可以，但IE下无效。）&lt;/p&gt;
-&lt;p&gt;CTRL + W，CTRL + F4 关闭当前标签。&lt;/p&gt;
-&lt;p&gt;Ctrl + Shift + T
--重新打开上次关闭的标签。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image2" src="https://lh4.googleusercontent.com/RGm8i1KJGZYU58KAfe8taSJX6yjK7bpufJkTsO37xFNP3V4xEih4clt6GCSdQnmg024kcjHznnN4GVOtXcKUBoMExrH04xlSBC_VN-ItZJxX8vH8Y6o" /&gt;&lt;/p&gt;
-&lt;p&gt;CTRL + T 建立新标签&lt;/p&gt;
-&lt;p&gt;Ctrl + N
-打开一个新的浏览器窗口。&lt;/p&gt;
-&lt;p&gt;ALT + F4 关闭当前窗口。（所有应用程序通用哦）&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id3"&gt;
-&lt;h2&gt;&lt;strong&gt;鼠标操作&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;鼠标中键点击一个标签 关闭标签。 Ctrl + Left Click，Middle Click
-后台标签中打开链接 Shift + Left Click 在新浏览器窗口中打开链接 Ctrl +
-Shift + Left Click 在前台标签中打开链接。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id4"&gt;
-&lt;h2&gt;&lt;strong&gt;导航&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Alt +Left Arrow，Backspace 返回。 Alt +Right Arrow，Shift + Backspace
-前进。 F5 刷新。 Shift + F5 刷新并跳过缓存，重新下载整个网站。 Esc
--停止。 ALT + HOME -打开主页。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id5"&gt;
-&lt;h2&gt;&lt;strong&gt;缩放&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Ctrl 和+，Ctrl +Mousewheel Up&amp;nbsp; 放大。 Ctrl 和- ，Ctrl +Mousewheel Down
-缩小。 CTRL +0&amp;nbsp; 默认缩放级别。 F11 &amp;nbsp; 全屏模式。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image3" src="https://lh4.googleusercontent.com/cCLQOUzcblCOWxUe039ZFZEddAma4BoCy46cc-bdtTEfzbF_BVQ-dEVeOSbspjh8uzxccLWP_dnDEKzLRbKWi_HjDOI8NcdjsVy5KFcEL3NXf-bfCLg" /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id6"&gt;
-&lt;h2&gt;&lt;strong&gt;滚动&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Space，Page Down&amp;nbsp; 向下滚动一帧。 Page Up&amp;nbsp; 向上滚动一帧。 Home&amp;nbsp; 页面顶部。
-End&amp;nbsp; 页面底部。 Middle Click&amp;nbsp; 用鼠标滚动页面。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image4" src="https://lh6.googleusercontent.com/RBvmFecMjsIqTB683N08pV2Z2r6KStKqam2YmNp1kB-cgZPgl0nOFJLi1TuxiMxhKH2CBXFlnm6wIfr-M_O5EOY-unv03PFLx9EEUUbfO6k8mLrT9WI" /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id7"&gt;
-&lt;h2&gt;&lt;strong&gt;地址栏&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Ctrl + L ，ALT + D，F6&amp;nbsp;&amp;nbsp; 聚焦地址栏输入网址 Ctrl + Enter
-为地址栏文字加上www.前缀和.com后缀并载入该网站。比如，在地址栏输入howtogeek然后按Ctrl
-+ Enter可以打开www.howtogeek.com ALT + Enter
-在新标签中打开地址栏中的网址。&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id8"&gt;
-&lt;h2&gt;&lt;strong&gt;搜索&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;CTRL + K，CTRL + E
-聚焦浏览器内置的搜索框，如果浏览器没有专用搜索框就聚焦在地址栏（CTRL + K
-在IE浏览器下不起作用， 按Ctrl + E替代。） ALT + Enter
-在新标签中执行搜索栏搜索。 Ctrl + F，F3 打开页面搜索工具窗口 Ctrl + G，F3
-下一个搜索结果 Ctrl + Shift + G，SHIFT + F3&amp;nbsp; 上一个搜索结果&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image5" src="https://lh5.googleusercontent.com/umhFrCUC_c1AYT9M9qj7iXzo7gI_kRTG8SOYwgo_i6LN3ESOixHnNZTcbIu7ygmyO2J-4Hx5NmF_tRil0221uudjfdUj3Sb83YUj4hlludUYyZ58xmc" /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id9"&gt;
-&lt;h2&gt;&lt;strong&gt;浏览历史与书签&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;CTRL + H&amp;nbsp; 打开浏览历史窗口。 Ctrl + J&amp;nbsp; 打开下载历史窗口。 Ctrl + D
-收藏当前网站到书签。 Ctrl + Shift + Del
-打开“清除浏览历史记录”窗口&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image6" src="https://lh6.googleusercontent.com/ZOuPKcbAq_yCBJwPgOmgACos-hoBgRpkfdF_7o4EdVw8MoJpUbgagjlAsFmJfzP5E64zZbGLlpHewiBV4amCCCw3mpRpVZRWLmmLlQnWbDQHqnRdKuc" /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="id10"&gt;
-&lt;h2&gt;&lt;strong&gt;其他功能&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;Ctrl + P&amp;nbsp; 打印当前页。 Ctrl + S&amp;nbsp; 保存当前页面到您的计算机。 CTRL + O
-从本地打开一个文件 CTRL + U&amp;nbsp; 查看当前网页源代码（IE下无效）。 F12
-打开网页开发工具。（Firefox下无效）。&lt;img alt="image7" src="https://lh6.googleusercontent.com/cmxK7kVzoNOrVO4CuKRsO3PzQe7wprZEoT0szI_WTs2TEDHqk48DxDKqAS5e7M2EgchCQgq1p0Bh55PP6bE8K8Ik5QbbsmWeHX4ya97wfSa4mtheiaE" /&gt;&lt;/p&gt;
-&lt;/p&gt;&lt;/div&gt;
-</summary><category term="Keyboard Shortcuts"></category><category term="Internet Browser"></category></entry><entry><title>Runge Kutta方法求解微分方程</title><link href="http://www.joshuazhang.net/posts/2012/runge-kutta-ode.html" rel="alternate"></link><updated>2012-05-08T07:06:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-05-08:posts/2012/runge-kutta-ode.html</id><summary type="html">&lt;p&gt;普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。
+&lt;/p&gt;</summary><category term="Matlab"></category><category term="MIT-BIH"></category><category term="PhysioBank"></category><category term="WFDB"></category><category term="入门"></category><category term="心电"></category><category term="指南"></category><category term="数据库"></category></entry><entry><title>Runge Kutta方法求解微分方程</title><link href="http://www.joshuazhang.net/posts/2012/runge-kutta-ode.html" rel="alternate"></link><updated>2012-05-08T07:06:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-05-08:posts/2012/runge-kutta-ode.html</id><summary type="html">&lt;p&gt;普通的常微分方程已经有成熟的各类方法进行求解，而且得到的是解析解的形式。不过对于在计算机上求解而言，符号运算编程的难度可能要超过数值运算编程，所以，直接寻求数值解在某些情况下可能更加方便。欧拉方法和龙格库塔方法就是常见的数值计算方法。
 将一阶常微分方程初值问题写成如下形式：
 \[\left\{\begin{array}\~y^{'}=f(x,y) \\y(x_0)=y_0 \\
 \end{array}\right.\] 四阶Runge Kutta公式如下：
@@ -1300,84 +1229,7 @@ open。&lt;/p&gt;
 &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_ue&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[0m&amp;#39;&lt;/span&gt;
 &lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LESS_TERMCAP_us&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;$&amp;#39;\E[01;33m&amp;#39;&lt;/span&gt;这样一个简单可用的彩色manpage就搞定了，当然你也可以自己参照修改。
 &lt;/pre&gt;&lt;/div&gt;
-</summary><category term="Linux"></category><category term="manpage"></category></entry><entry><title>Archlinux下编译Audacious(cue、ape支持)</title><link href="http://www.joshuazhang.net/posts/2012/archlinux-audacious.html" rel="alternate"></link><updated>2012-03-20T16:25:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-03-20:posts/2012/archlinux-audacious.html</id><summary type="html">&lt;ul class="simple"&gt;
-&lt;li&gt;首先安装需求：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Glib 2, GTK+ 2, Pango, Cairo, libmcs(AUR), libmowgli(AUR)&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;为了支持cue，还需要安装libcue&lt;/li&gt;
-&lt;li&gt;下载audacious源码包与插件包： &lt;a class="reference external" href="http://audacious-media-player.org/download"&gt;下载地址&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;解压audacious源码包，然后常规三步曲&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;./configure
-&lt;span class="nv"&gt;$ &lt;/span&gt;sudo make &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
-&lt;/pre&gt;&lt;/div&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;再解压audacious插件源码包&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;此时直接configure会出错，错误提示：&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-checking for AUDACIOUS... no
-configure: error: Cannot find Audacious 3.2; have you installed Audacious yet?
-&lt;/pre&gt;
-&lt;p&gt;根据google到的方法：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PKG_CONFIG_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/lib/pkgconfig:&lt;span class="nv"&gt;$PKG_CONFIG_PATH&lt;/span&gt;
-&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/lib:&lt;span class="nv"&gt;$LD_LIBRARY_PATH&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;后续问题：
-ape不支持，dts不支持&lt;/p&gt;
-</summary><category term="Archlinux"></category><category term="audacious"></category><category term="编译"></category></entry><entry><title>我的Firefox扩展总结</title><link href="http://www.joshuazhang.net/posts/2012/firefox-addon.html" rel="alternate"></link><updated>2012-03-01T13:50:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-03-01:posts/2012/firefox-addon.html</id><summary type="html">&lt;p&gt;一、浏览优化类&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;Adblock Plus&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 清除广告就靠它了。&lt;/li&gt;
-&lt;li&gt;AutoPager
-自动翻页。不想成为鼠标手？该插件必装。&lt;/li&gt;
-&lt;li&gt;Flashblock
-加快网页加载速度，屏蔽恼人的flash广告和自动播放功能&lt;/li&gt;
-&lt;li&gt;GreaseMonkey&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 用脚本实现对个别站点的自定义配置&lt;/li&gt;
-&lt;li&gt;Stylish
-与GreaseMonkey类似，自定义CSS。GR的新界面很低效，配合该插件可以完美解决。&lt;/li&gt;
-&lt;li&gt;iReader
-重新布局文章，优化浏览体验。较少适用，需要网页符合规范。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;二、下载工具类&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;DownThemAll
-坚守FF的原因之一，非常稳定高速的下载体验&lt;/li&gt;
-&lt;li&gt;DownloadStatusbar&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 下载状态查看，必备的基本扩展&lt;/li&gt;
-&lt;li&gt;NetVideoHunter&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 在线视频下载利器&lt;/li&gt;
-&lt;li&gt;FlashVideoDownloader
-除了下载视频外，更强大的地方在于可以下载flash&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;三、云同步类&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;Xmarks&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 一流的书签管理，多浏览器同步&lt;/li&gt;
-&lt;li&gt;LastPass
-Xmarks的兄弟产品，在线密码管理，简化登录步骤&lt;/li&gt;
-&lt;li&gt;ReadItLater
-一键收藏，想快速离开电脑回到工作，必备扩展&lt;/li&gt;
-&lt;li&gt;Evernote Web Clipper&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Evernote是最强大的PKM软件，没有之一&lt;/li&gt;
-&lt;li&gt;Delicious Bookmarks&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 书签分享，社交功能强大&lt;/li&gt;
-&lt;li&gt;Gmarks
-Google书签产品，某些方面输于Delicious&lt;/li&gt;
-&lt;li&gt;SpringPad&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 类似Evernote的PKM服务&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;四、工具类&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;Firebug
-试用过几次，非常强大的网页调试工具&lt;/li&gt;
-&lt;li&gt;ScribeFire
-博客发布工具，目前跨平台博客发布工具首选&lt;/li&gt;
-&lt;li&gt;AutoProxy&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 代理工具，易用而强大&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;/p&gt;</summary><category term="Firefox"></category><category term=""></category></entry><entry><title>ArchLinux入门浅谈</title><link href="http://www.joshuazhang.net/posts/2012/archlinux-intro.html" rel="alternate"></link><updated>2012-02-24T12:43:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-24:posts/2012/archlinux-intro.html</id><summary type="html">&lt;p&gt;这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。&lt;/p&gt;
+</summary><category term="Linux"></category><category term="manpage"></category></entry><entry><title>ArchLinux入门浅谈</title><link href="http://www.joshuazhang.net/posts/2012/archlinux-intro.html" rel="alternate"></link><updated>2012-02-24T12:43:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-24:posts/2012/archlinux-intro.html</id><summary type="html">&lt;p&gt;这是本人几次安装Arch摸爬滚打得出的被虐成果，发出来一方面是整理思路，同时也希望能够帮助同样在“享受”这一过程的朋友。&lt;/p&gt;
 &lt;div class="section" id="arch"&gt;
 &lt;h2&gt;为什么用Arch？&lt;/h2&gt;
 &lt;p&gt;这方面的文章相当多，一搜一大把，我就不做什么总结发言了，写几点自己的想法。其实弊人最早接触的linux发行版是ubuntu和debian，当时ubuntu很被看好，不过还没流行到现在这个程度。那是我第一次被一个完全免费而且漂亮的东西打动了，期间零零碎碎玩过几次系统，但是由于技术水平有限，一直玩得不怎么顺手。直到最近，我开始越来越讨厌windows的臃肿庞大和功利，希望能够转移到linux平台上，把windows作为对“现实世界的妥协”。虽然debian也是很出色的系统，但是显然它和windows相同的特点就是较为臃肿，杂七杂八的东西自带一大堆（我不很清楚debian有没有精简定制的可能性）。出于这点考虑，我也玩过几天的LFS，注意，我当时不过装过几次linux，断断续续看过linux书籍的几个章节而已，可以想象当时我是怎样的抓耳挠腮吧^_^。当然这次实验以失败告终，我只能继续寻找能让自己足够满意的系统，终于，ArchLinux进入了我的视线。在我看来，Arch有以下几个特点是让我欲罢不能的：&lt;/p&gt;
@@ -1522,63 +1374,7 @@ x_1}{N}\)，类似的方差为\(\sigma=\sqrt{\frac{\sum(x_1-\mu)^2}{N}}\)。注�
 &lt;p&gt;有博士生做了本文作者建议的实验并且给出了&lt;a class="reference external" href="http://mathcentral.uregina.ca/RR/database/RR.09.95/javier.xls"&gt;excel表格&lt;/a&gt;，部分截图如下：&lt;/p&gt;
 &lt;img alt="quilez" src="http://mathcentral.uregina.ca/RR/database/RR.09.95/quilez.gif" /&gt;
 &lt;p&gt;补充：实际上n和n-1的选择问题用数学理论很容易解释，那就是n-1时样本方差的期望值就是总体方差（对样本方差求期望，简单推导即可得到）。造成大部分人困惑的原因就是n-1没有n看上去那么自然，同时对于总体和样本的概念以及它们的地位有所混淆。这篇文章其实讲的很浅显，但是国外教授对于简单问题往往会给出大量的篇幅，这与国内教材动辄大篇数学公式的风格大不一致。我们不能简单地说两种模式孰高孰低，但是国人受到苏联模式的影响如此深远，却始终成不了数学大国，恐怕是时候改变下思路了。&lt;/p&gt;
-</summary><category term="估计"></category><category term="总体"></category><category term="无偏"></category><category term="标准差"></category><category term="统计学"></category></entry><entry><title>Google Reader使用技巧</title><link href="http://www.joshuazhang.net/posts/2012/google-reader-tips.html" rel="alternate"></link><updated>2012-02-18T16:14:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/google-reader-tips.html</id><summary type="html">&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Google Reader
-确实是一个不可多得的服务，我用上GR没几天已经爱不释手了。GR非常容易上手，但是要玩转GR，没有使用经验的积累是不可能的，下面我就列举一些自己在
-使用GR过程中体会到的一些技巧，既是自己知识的整理过程，也是一个温故知新的过程。当然，这里面有我自己的心得，不可避免的也有从搜索得来的知识，来源
-较多，恕不列明。&lt;/p&gt;
-&lt;p&gt;一、访问技巧&lt;/p&gt;
-&lt;p&gt;1、HTTP vs HTTPS
-HTTP和HTTPS的区别从技术层面来说那是可以长篇大论的，通俗的理解就是后者是前者的加密版。应用
-HTTPS，用户和网站之间的交互难以被简单地分析或窃取。由于功夫网的强大，HTTP和HTTPS享受着不同的待遇，Google许多的服务在HTTP
-下时常会被reset（如果你没碰到过那你确实太河蟹了），而HTTPS就要好很多。这是因为HTTP的明文传输会被轻易地检索到敏感词，访问被拒绝。当
-然，魔高一尺，道高一丈，HTTPS也并非万能的，不过在现今的网络环境下，HTTPS应当是我们体验Google强大服务的首选。&lt;/p&gt;
-&lt;p&gt;2、IPv4 VS IPv6&lt;/p&gt;
-&lt;p&gt;Google的IPv4地址很多，但是仍然饱受GFW骚扰，IPv6是下一代的IP分配方案，已经在大学间普及。教育网的用户使用IPv6访问Google是相当方便的，强烈推荐。&lt;/p&gt;
-&lt;p&gt;二、快捷键技巧&lt;/p&gt;
-&lt;p&gt;GR每天都会更新上百条新文章，如果我一条一条地点开看，不知道会是我的
-DeathAdder先坏还是我的食指先坏。让人欣慰的是，Google
-Reader是支持快捷键的，而且显然这些快捷键是精心设计过的，谁用谁知道~&lt;/p&gt;
-&lt;p&gt;1、GR的快捷键很多，但是最重要的只有一条，那就是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;strong&gt;?：快捷键帮助&lt;/strong&gt;&lt;/blockquote&gt;
-&lt;p&gt;只要你记住了这一条，并且不断查阅，GR的快捷键就可以迅速掌握。&lt;/p&gt;
-&lt;p&gt;2、视图 GR的条目有两种视图模式，用1和2两个快捷键可以切换：&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;1:切换至扩展视图（全文列表）&lt;/li&gt;
-&lt;li&gt;2:切换至列表视图（摘要列表）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;3、跳转&lt;/p&gt;
-&lt;p&gt;这是GR最基本的操作之一，GR起码有3个快捷键可以实现，它们分别是:&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;空格：下一个条目或页面&lt;/li&gt;
-&lt;li&gt;j/k：下一个/上一个条目&lt;/li&gt;
-&lt;li&gt;n/p：向下/向上扫描条目（仅列表）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;三者的区别也很明显：空格是智能跳转，GR会判断当前需要跳转内容还是跳转条目，j/k是全文跳转，n/p则是条目间跳转。空格显然是多数情况下最佳的选择。&lt;/p&gt;
-&lt;p&gt;很多情况下我们需要跳转到原文以看到更多信息，快捷键为：&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;v：查看原始内容&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;GR会在新页面开启原文网页，新手又有问题了，那我怎么返回GR呢，难道又得把手移到鼠标去操作？这也太没效率了。实际上，这里附送两个浏览器通用标签快捷键（至少FF，Chrome和IE测试可用）：&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;Ctrl+TAB：切换标签（再加上Shift可以往回切换）&lt;/li&gt;
-&lt;li&gt;Ctrl+W：关闭当前标签&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;怎么样？有了这两个快捷键，我们的操作就不会被打乱了。&lt;/p&gt;
-&lt;p&gt;4、阅读
-信息时代阅读越来越浅，很多内容我们都是一扫而过，实际上很多网文还是需要仔细地品味的。如果我们要认真阅读，但是GR的侧边栏和标题总是会让我们分心，怎么办？贴心的Google为我们带来两个快捷键解决这个问题：&lt;/p&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;u：隐藏/取消隐藏左侧模块&lt;/li&gt;
-&lt;li&gt;f：切换至全屏模式&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;笔者更常用f，看到精美的文章，f键切换到全屏就可以慢慢地观看了。如果搭配Firefox或者Chrome，默认的阅读空间就很大了，全屏后更加清爽。&lt;/p&gt;
-&lt;p&gt;三、订阅&lt;/p&gt;
-&lt;p&gt;互联网如此浩瀚，没人敢说自己了解了其中的千分之一，总有无数的好网站在你眼前错过，好的RSS源也是如此。那么如何发现好的订阅源？Google当然替你想到了，GR探索里面就推荐了不少好的源，你也可以搜索到自己想要关注的东东。GR甚至还会根据你已经订阅的源分析你的喜好然后推荐你可能会喜欢的源，根据我的经验，这些推荐都值得一看。&lt;/p&gt;
-&lt;p&gt;很多网站只提供摘要RSS，老让我们快捷键跳过去再切回来太蛋疼了，于是各种全文RSS转换工具应运而生。我用过的工具也不多，但是有几个转换引擎值得推荐:&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://fulltextrssfeed.com"&gt;FullText Rss Feed&lt;/a&gt;（第一推荐，似乎没有失手过，中文支持完美）&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://mrss.dokoda.jp/"&gt;mrss.dokoda.jp&lt;/a&gt;（用得较少，但是还可以）&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://fivefilters.org/content-only/"&gt;fivefilters.org&lt;/a&gt;（转收费了，免费限制较多，其它工具也可以一看）&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</summary><category term="Google Reader"></category><category term="快捷键"></category><category term="技巧"></category></entry><entry><title>Pelican 的 LaTeX 集成</title><link href="http://www.joshuazhang.net/posts/2012/latex-pelican.html" rel="alternate"></link><updated>2012-02-18T05:48:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/latex-pelican.html</id><summary type="html">&lt;p&gt;本文主要用于测试 Pelican 与 MathJax 配合显示数学公式。&lt;/p&gt;
+</summary><category term="估计"></category><category term="总体"></category><category term="无偏"></category><category term="标准差"></category><category term="统计学"></category></entry><entry><title>Pelican 的 LaTeX 集成</title><link href="http://www.joshuazhang.net/posts/2012/latex-pelican.html" rel="alternate"></link><updated>2012-02-18T05:48:00+08:00</updated><author><name>Joshz</name></author><id>tag:www.joshuazhang.net,2012-02-18:posts/2012/latex-pelican.html</id><summary type="html">&lt;p&gt;本文主要用于测试 Pelican 与 MathJax 配合显示数学公式。&lt;/p&gt;
 &lt;h2 id="pelican-mathjax"&gt;为 Pelican 添加 MathJax 支持&lt;/h2&gt;
 &lt;p&gt;鉴于并非每篇文章都会有数学公式，而&lt;code&gt;MathJax.js&lt;/code&gt;的资源加载在国内并不稳定，因此只在需要显示数学公式的 HTML 文件里才添加&lt;code&gt;MathJax CDN&lt;/code&gt;。一个简单的方法是在需要公式显示的文章里加入&lt;code&gt;mathjax=true&lt;/code&gt;的元数据声明：&lt;/p&gt;
 &lt;div class="codehilite"&gt;&lt;pre&gt;Markdown Style
