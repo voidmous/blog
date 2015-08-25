@@ -78,10 +78,3 @@ GoogleReader即将于7月1日正式退役，目前看来这是板上钉钉了，
 即便我们把订阅源转出去了，也一定不要认为可以安枕无忧了。比Google无良的企业比比皆是，说不准哪一天你就发现自己常用的服务消失了，而通知仅仅是一天前或者根本没通知。因此，保险起见，我们不仅可以多测试几个替代服务，同时也要做好订阅源Takeout导出备份。这个操作没有难度，也就不赘述了。
 
 麻烦的是加星标文章，很多新的服务不支持从GR导入加星标文章，或者虽然有该功能却有各种问题，为了最大化历史数据的安全，我们可以通过导出的 json 文件将加星标文章导入 Evernote ，具体方法参考 [导出Google Reader加星条目到Evernote](http://www.joshuazhang.net/posts/2013/Apr/export-googlereader-starreditem-to-evernote.html ) 。
-
-
-
-
-
-
-
