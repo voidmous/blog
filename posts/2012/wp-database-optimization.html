@@ -69,12 +69,12 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
 <p>3、删除垃圾数据表。功能比较复杂的插件可能会在数据库中建立新表，删除插件一般不会把这些表顺带删除，所以手动排查垃圾数据表也是必要的。为了防止误删，请一定对照WP
 Codex的<a class="reference external" href="http://codex.wordpress.org/zh-cn:%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8F%8F%E8%BF%B0">数据库描述</a>进行修改。</p>
 <p>删除akismet垃圾数据。关于akismet如何产生这些数据可以参考<a class="reference external" href="http://www.solagirl.net/wp-commentmeta-slowing-down-your-blog.html">wp_commentmeta是否正在拖慢你的blog</a>。</p>
-<div class="highlight"><pre><span class="k">delete</span> <span class="k">from</span> <span class="n">wp_commentmeta</span> <span class="k">where</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_as_submitted&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_history&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_rechecking&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_result&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_user&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="err">&#39;</span><span class="n">akismet_user_result</span>
+<div class="highlight"><pre><span></span><span class="k">delete</span> <span class="k">from</span> <span class="n">wp_commentmeta</span> <span class="k">where</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_as_submitted&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_history&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_rechecking&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_result&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="s1">&#39;akismet_user&#39;</span> <span class="k">or</span> <span class="n">meta_key</span><span class="o">=</span><span class="err">&#39;</span><span class="n">akismet_user_result</span>
 </pre></div>
 <p>wp_options数据表清理。主要有两部分垃圾数据：其一、已删除的插件选项。大部分插件都不提供完全的删除功能，主要就是针对数据表而言。由于不清楚数据和插件的对应关系，最好不要盲目删除，如果一定要清理，可以尝试用<a class="reference external" href="http://www.mittineague.com/dev/co.php">clean
 options</a>插件，注意备份！其二、没用的RSS Feed
 Cache。以“_transient”开头的数据都是因为用了RSS小工具产生的，作用不大，体积却不小。可以用下面的SQL语句删除：</p>
-<div class="highlight"><pre><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">wp_options</span> <span class="k">WHERE</span> <span class="n">option_name</span> <span class="n">REGEXP</span> <span class="err">&quot;</span><span class="n">_transient_</span>
+<div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">wp_options</span> <span class="k">WHERE</span> <span class="n">option_name</span> <span class="n">REGEXP</span> <span class="err">&quot;</span><span class="n">_transient_</span>
 </pre></div>
 <p>4、优化数据表。最后还要利用phpmyadmin执行优化数据表，体积还会有所减小。</p>
 </div>
@@ -82,22 +82,18 @@ Cache。以“_transient”开头的数据都是因为用了RSS小工具产生�
         <hr>
     	   
         <h2>Comments</h2>
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="joshuazhangblog" data-title="wordpress数据库优化记录" data-url="http://www.joshuazhang.net/posts/2012/wp-database-optimization.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<div id="disqus_thread"></div>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"joshuazhangblog"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->    </div>
+    var disqus_shortname = 'joshuazhangblog'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
         </div>
         
         <div class="span3">

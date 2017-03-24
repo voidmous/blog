@@ -76,7 +76,7 @@ Kutta公式不需要改变形式，只要把四个参数改成相应的向量形
 \frac{dy}{dt}=x(\rho-z)-y\\
 \frac{dz}{dt}=xy-\beta~z\end{array}\right.\]取\(\sigma=10,\beta=\frac{8}{3},\rho=28\)。相空间轨迹如下图：
 <img alt="RK求解lorenz" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/Science/RKlorenz.png" /></p>
-<div class="highlight"><pre><span class="c">% By voidmous</span>
+<div class="highlight"><pre><span></span><span class="c">% By voidmous</span>
 <span class="c">% 利用四阶Runge Kutta求解洛伦兹方程</span>
 <span class="n">clear</span> <span class="n">all</span><span class="p">;</span><span class="n">close</span> <span class="n">all</span><span class="p">;</span><span class="n">clc</span>
 <span class="n">h</span><span class="p">=</span><span class="mf">0.005</span><span class="p">;</span> <span class="n">n</span><span class="p">=</span><span class="mi">30</span><span class="o">/</span><span class="n">h</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">sigma</span><span class="p">=</span><span class="mi">10</span><span class="p">;</span><span class="nb">beta</span><span class="p">=</span><span class="mi">8</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="n">rho</span><span class="p">=</span><span class="mi">28</span><span class="p">;</span>
@@ -110,22 +110,18 @@ Runge-Kutta[M]. 2010.</p>
         <hr>
     	   
         <h2>Comments</h2>
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="joshuazhangblog" data-title="Runge Kutta方法求解微分方程" data-url="http://www.joshuazhang.net/posts/2012/runge-kutta-ode.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<div id="disqus_thread"></div>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"joshuazhangblog"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->    </div>
+    var disqus_shortname = 'joshuazhangblog'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
         </div>
         
         <div class="span3">

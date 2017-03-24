@@ -82,7 +82,7 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">void
 <div class="section" id="gui1">
 <h2>GUI1</h2>
 <p><code>figure</code> 命令创建一个空白窗口，<code>uicontrol</code> 创建一个控件，并由 <code>style</code> 属性控制控件类型。代码示例：</p>
-<div class="highlight"><pre><span class="k">function</span><span class="w"> </span>[] <span class="p">=</span><span class="w"> </span><span class="nf">GUI_1</span><span class="p">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>[] <span class="p">=</span><span class="w"> </span><span class="nf">GUI_1</span><span class="p">()</span><span class="w"></span>
 
 <span class="n">S</span><span class="p">.</span><span class="n">fh</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;pixels&#39;</span><span class="p">,</span><span class="c">...</span>
               <span class="s">&#39;position&#39;</span><span class="p">,[</span><span class="mi">500</span> <span class="mi">500</span> <span class="mi">200</span> <span class="mi">260</span><span class="p">],</span><span class="c">...</span>
@@ -134,22 +134,18 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">void
         <hr>
     	   
         <h2>Comments</h2>
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="joshuazhangblog" data-title="Matlab GUI学习笔记" data-url="http://www.joshuazhang.net/drafts/matlab-gui-learning-notes.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<div id="disqus_thread"></div>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"joshuazhangblog"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->    </div>
+    var disqus_shortname = 'joshuazhangblog'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
         </div>
         
         <div class="span3">

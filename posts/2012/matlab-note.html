@@ -76,7 +76,7 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
 <p>这一张图基本就讲清楚了所有的情况，注意A([9 14;10
 15])这样的索引方式。想一想A([8 12;10 11])是什么，A([8:10;10:12])又是什么？
 进一步想想这个程序的结果是什么：</p>
-<div class="highlight"><pre><span class="n">a</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">;</span>
 <span class="n">b</span><span class="p">=</span><span class="n">a</span><span class="p">(</span><span class="nb">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">),:)</span>
 <span class="n">c</span><span class="p">=[</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">];</span>
 <span class="n">d</span><span class="p">=</span><span class="n">c</span><span class="p">(:,</span><span class="nb">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
@@ -180,22 +180,18 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
         <hr>
     	   
         <h2>Comments</h2>
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="joshuazhangblog" data-title="《MATLAB M语言高级编程》读书笔记" data-url="http://www.joshuazhang.net/posts/2012/matlab-note.html"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<div id="disqus_thread"></div>
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"joshuazhangblog"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->    </div>
+    var disqus_shortname = 'joshuazhangblog'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
         </div>
         
         <div class="span3">
