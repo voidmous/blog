@@ -76,7 +76,7 @@ Kutta公式不需要改变形式，只要把四个参数改成相应的向量形
 \frac{dy}{dt}=x(\rho-z)-y\\
 \frac{dz}{dt}=xy-\beta~z\end{array}\right.\]取\(\sigma=10,\beta=\frac{8}{3},\rho=28\)。相空间轨迹如下图：
 <img alt="RK求解lorenz" src="http://i1078.photobucket.com/albums/w482/voidmous/blog/Science/RKlorenz.png" /></p>
-<div class="highlight"><pre><span></span><span class="c">% By voidmous</span>
+<div class="highlight"><pre><span class="c">% By voidmous</span>
 <span class="c">% 利用四阶Runge Kutta求解洛伦兹方程</span>
 <span class="n">clear</span> <span class="n">all</span><span class="p">;</span><span class="n">close</span> <span class="n">all</span><span class="p">;</span><span class="n">clc</span>
 <span class="n">h</span><span class="p">=</span><span class="mf">0.005</span><span class="p">;</span> <span class="n">n</span><span class="p">=</span><span class="mi">30</span><span class="o">/</span><span class="n">h</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">sigma</span><span class="p">=</span><span class="mi">10</span><span class="p">;</span><span class="nb">beta</span><span class="p">=</span><span class="mi">8</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span><span class="n">rho</span><span class="p">=</span><span class="mi">28</span><span class="p">;</span>

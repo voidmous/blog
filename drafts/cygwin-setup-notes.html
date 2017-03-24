@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JoshuaZhang</title>
+    <meta name="description" content="">
+    <meta name="author" content="Joshz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.joshuazhang.net/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.joshuazhang.net">JoshuaZhang</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+
+    <div class='article'>
+        <div class="content-title">
+            <h1>Cygwin安装设置笔记</h1>
+周一 25 三月 2013
+
+by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">voidmous</a>
+ 
+
+
+        </div>
+	
+        <div><div class="toc">
+<ul>
+<li><a href="#cygwin">基本Cygwin系统安装</a></li>
+<li><a href="#_1">安装编译环境</a></li>
+<li><a href="#_2">基本设置</a><ul>
+<li><a href="#bash">bash设置</a></li>
+<li><a href="#vim">vim设置</a></li>
+<li><a href="#mintty">mintty设置</a></li>
+</ul>
+</li>
+<li><a href="#_3">安装其它工具</a></li>
+<li><a href="#_4">其它有用工具</a></li>
+<li><a href="#_5">常见问题</a><ul>
+<li><a href="#rebase">Rebase</a></li>
+<li><a href="#cygcheck">cygcheck</a></li>
+</ul>
+</li>
+<li><a href="#cygwinx">Cygwin/X配置</a></li>
+<li><a href="#cygwinemacs">Cygwin下使用Emacs</a></li>
+</ul>
+</div>
+<h2 id="cygwin">基本Cygwin系统安装</h2>
+<p>下载最新的<a href="http://cygwin.com/setup.exe">setup.exe</a>运行之。</p>
+<p>选择安装目录，推荐D:\cygwin（路径中最好不要带空格，cygwin是绿色的，重装后仍然可以使用，需要<a href="http://hi.baidu.com/hawk_kt/item/2d2e2f6faeb470167cdecc73">配置用户</a>）,注意选择一个较快的源。</p>
+<p>安装完成后将setup.exe放到cygwin目录下，以后要安装什么可能还会用到。</p>
+<p>在cygwin下创建一个packages子目录，用于存放下载下来的安装包（可选，apt-cyg和setup.exe的下载目录不同）</p>
+<p>安装默认基本包,注意额外安装subversion和wget，为安装apt-cyg做准备。Xorg什么的先不用装，可用性不高，需要了再装上不迟。</p>
+<h2 id="_1">安装编译环境</h2>
+<p>cygwin自带的安装工具使用起来太繁琐，于是就有了类似apt-get的包管理器<a href="https://code.google.com/p/apt-cyg/ apt-cyg google code">apt-cyg</a>，实乃广大cygwin玩家的福音。安装apt-cyg:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>svn --force <span class="nb">export </span>http://apt-cyg.googlecode.com/svn/trunk/ /bin/
+<span class="nv">$ </span>chmod+x /bin/apt-cyg
+<span class="nv">$ </span>apt-cyg --help
+<span class="nv">$ </span>apt-cyg -m mirrorurl  % 设置apt-cyg使用的镜像地址
+</pre></div>
+
+
+<p>安装一些必备的工具：</p>
+<div class="codehilite"><pre><span class="nv">$ </span>apt-cyg install openssl openssh
+<span class="nv">$ </span>apt-cyg install git mercurial % 源代码管理工具
+<span class="nv">$ </span>git config --global user.name <span class="s2">&quot;Your Name Comes Here&quot;</span>
+<span class="nv">$ </span>git config --global user.email you@yourdomain.example.com
+</pre></div>
+
+
+<p>安装binutils、gcc4、gdb、make以及vim</p>
+<div class="codehilite"><pre><span class="nv">$ </span>apt-cyg install binutils gcc4 gdb make vim
+</pre></div>
+
+
+<p>查看安装是否成功</p>
+<div class="codehilite"><pre><span class="nv">$ </span>gcc -v
+<span class="nv">$ </span>gdb -v
+<span class="nv">$ </span>make -v
+</pre></div>
+
+
+<h2 id="_2">基本设置</h2>
+<h3 id="bash">bash设置</h3>
+<p>编辑~/.bashrc，加入以下内容(根据自己的喜好配置)：</p>
+<div class="codehilite"><pre><span class="nb">alias </span><span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls --color=auto&#39;</span>
+<span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;\[\e[32m\]\u:\[\e[33m\]\w\[\e[0m\]\$ &quot;</span>
+<span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+</pre></div>
+
+
+<h3 id="vim">vim设置</h3>
+<div class="codehilite"><pre>&quot;Cygwin相关设置
+set backspace=indent,eol,start
+</pre></div>
+
+
+<h3 id="mintty">mintty设置</h3>
+<p>在终端标题栏右键选择“Options”就可以设置mintty的显示效果，主要修改几个方面：
+字体，推荐<a href="http://levien.com/type/myfonts/inconsolata.html">Inconsolata</a>或者其它的<a href="http://www.lowing.org/fonts/">编程字体</a>，这些字体保证可以清晰地区别0和“o”。
+终端窗口大小，按照屏幕大小自己调整。
+透明度，high级别在win7下看着比较舒服。
+如果想恢复默认设置，只需要清空~/.minttyrc中的内容。
+mintty快捷键：
+shift+insert 粘贴
+alt+Enter 全屏
+深蓝色难以阅读的问题：</p>
+<div class="codehilite"><pre><span class="nb">echo</span> <span class="s1">&#39;Blue=127,127,255&#39;</span> &gt;&gt; ~/.minttyrc
+<span class="nb">echo</span> <span class="s1">&#39;BoldBlue=191,191,255&#39;</span> &gt;&gt; ~/.minttyrc
+</pre></div>
+
+
+<h2 id="_3">安装其它工具</h2>
+<p><a href="http://riverslee.com/project/cyg-hotkey/">cyg-hotkey</a>使mintty变成一个类似tilda的呼叫式终端，默认用快捷键F7来调出和隐藏mintty，使用起来还是很顺手的。</p>
+<div class="codehilite"><pre>hg clone https://bitbucket.org/riverscn/cyg-hotkey
+<span class="nb">cd </span>cyg-hotkey
+make all
+make install
+</pre></div>
+
+
+<p>将cyg-hotkey的快捷方式放到开始菜单的启动目录里，让它开机自动启动。如果要更换快捷键，可以修改源码重新编译。</p>
+<p>安装python easy_install：</p>
+<div class="codehilite"><pre>wget http://peak.telecommunity.com/dist/ez_setup.py
+python ez_setup.py
+</pre></div>
+
+
+<p>推荐安装pip，具体见<a href="http://stackoverflow.com/questions/3220404/why-use-pip-over-easy-install">这里</a></p>
+<div class="codehilite"><pre><span class="nv">$ </span>curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+<span class="nv">$ </span><span class="o">[</span>sudo<span class="o">]</span> python get-pip.py
+<span class="nv">$ </span>pip install Markdown
+</pre></div>
+
+
+<h2 id="_4">其它有用工具</h2>
+<p>util-linux(more)，bash-completion，procps(top)，inetutils(telnet)</p>
+<p>cygcheck</p>
+<h2 id="_5">常见问题</h2>
+<h3 id="rebase"><a href="http://cygwin.wikia.com/wiki/Rebaseall">Rebase</a></h3>
+<p>在更新或者安装了某些包以后，如果出现问题，可能需要rebase来解决。</p>
+<h3 id="cygcheck">cygcheck</h3>
+<p>如果apt-cyg安装过程中断，再安装时会发生与dll相关的错误，这时可以用cygcheck命令追踪问题</p>
+<h2 id="cygwinx">Cygwin/X配置</h2>
+<p>我个人用cygwin/X主要是想用emacs的GUI，此外小程序的GUI也会用到，但是cygwin/X目前虽然可以调出windows的输入法却无法输入中文，目前可用的方案也许只有<a href="http://cn.bbs.comp.linux.narkive.com/JrQG9Hge/cygwin-x">这个</a>（未测试）。</p>
+<h2 id="cygwinemacs">Cygwin下使用Emacs</h2>
+<p>有这么几种方案：</p>
+<ul>
+<li>使用命令行下的emacs</li>
+<li>使用Cygwin/X下的emacs-X11</li>
+<li>使用emacs-w32</li>
+<li>使用Xming+emacs-X11？未测试</li>
+</ul>
+<p>参考： <a href="http://stackoverflow.com/questions/2075504/how-to-best-integrate-emacs-and-cygwin">http://stackoverflow.com/questions/2075504/how-to-best-integrate-emacs-and-cygwin</a>
+EmacsW32：<a href="http://ourcomments.org/Emacs/EmacsW32.html">http://ourcomments.org/Emacs/EmacsW32.html</a></p></div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'joshuazhangblog'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.joshuazhang.net/archives.html">Archives</a>
+                <li><a href="http://www.joshuazhang.net/tags.html">Tags</a>
+                <li><a href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.joshuazhang.net/category/life.html">Life</a></li>
+                <li><a href="http://www.joshuazhang.net/category/review.html">Review</a></li>
+                <li><a href="http://www.joshuazhang.net/category/technique.html">Technique</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/voidmous">Github</a></li>
+                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.joshuazhang.net">JoshuaZhang</a> &copy; Joshz 2012-2014 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+</body>
+</html>

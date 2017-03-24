@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JoshuaZhang</title>
+    <meta name="description" content="">
+    <meta name="author" content="Joshz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.joshuazhang.net/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.joshuazhang.net">JoshuaZhang</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+
+
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="http://www.joshuazhang.net/posts/2013/el-get-intro.html"><h1>El-get——emacs包管理利器</h1></a>
+周日 07 四月 2013
+
+by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><div class="toc">
+<ul>
+<li><a href="#el-get-vs-elpa">El-get vs ELPA</a></li>
+<li><a href="#el-get">安装el-get</a></li>
+<li><a href="#el-get_1">配置el-get</a></li>
+<li><a href="#github">Github同步</a></li>
+<li><a href="#_1">参考文章</a></li>
+</ul>
+</div>
+<h2 id="el-get-vs-elpa">El-get vs ELPA</h2>
+<p>Emacs24已经集成了<code>package.el</code>，可以安装多个源下的宏包。不过El-get宣称支持多种安装方式，ELPA方法只是其中一种。从我使用的情况来看，el-get似乎速度更快。另外，el-get安装的包不再需要手动<code>(require 'somepackage)</code>，它会自动管理所有安装包的加载和初始化，当然配置还是需要的，不过这已经方便不少了。我个人ELPA用得较少，就不比较了，有时间再把两者比较一下。</p>
+<h2 id="el-get">安装el-get</h2>
+<p>el-get现在处于活跃的开发阶段，因此推荐使用更新维护更活跃的<code>master branch</code>，安装只需要把如下命令拷贝到emacs的<code>*scrach*</code>buffer，然后<code>C-j</code>或者<code>M-x eval-print-last-exp</code>运行，el-get就会自动下载安装了。</p>
+<div class="codehilite"><pre><span class="c1">;; So the idea is that you copy/paste this code into your *scratch* buffer,</span>
+<span class="c1">;; hit C-j, and you have a working developper edition of el-get.</span>
+<span class="p">(</span><span class="nf">url-retrieve</span>
+ <span class="s">&quot;https://raw.github.com/dimitri/el-get/master/el-get-install.el&quot;</span>
+ <span class="p">(</span><span class="k">lambda </span><span class="p">(</span><span class="nf">s</span><span class="p">)</span>
+   <span class="p">(</span><span class="k">let </span><span class="p">(</span><span class="nf">el-get-master-branch</span><span class="p">)</span>
+     <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-max</span><span class="p">))</span>
+     <span class="p">(</span><span class="nf">eval-print-last-sexp</span><span class="p">))))</span>
+</pre></div>
+
+
+<p>安装完毕，如果要手动安装package，可以<code>M-x el-get-install RET packagename</code>，喝口茶的功夫估计就好啦。</p>
+<h2 id="el-get_1">配置el-get</h2>
+<p>将下列代码加入配置文件，emacs每次启动时就会检查el-get是否已经安装，未安装则自动下载安装。</p>
+<div class="codehilite"><pre><span class="p">(</span><span class="nf">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/el-get/el-get&quot;</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nf">unless</span> <span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;el-get</span> <span class="nv">nil</span> <span class="ss">&#39;noerror</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">with-current-buffer</span>
+      <span class="p">(</span><span class="nf">url-retrieve-synchronously</span>
+       <span class="s">&quot;https://raw.github.com/dimitri/el-get/master/el-get-install.el&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="k">let </span><span class="p">(</span><span class="nf">el-get-master-branch</span><span class="p">)</span>
+      <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-max</span><span class="p">))</span>
+      <span class="p">(</span><span class="nf">eval-print-last-sexp</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nf">el-get</span> <span class="ss">&#39;sync</span><span class="p">)</span>
+</pre></div>
+
+
+<p>想要自动检测并安装需要的宏包，可以使用下面这段代码：</p>
+<div class="codehilite"><pre><span class="p">(</span><span class="nf">setq</span> <span class="nv">my-el-get-packages</span>
+<span class="o">&#39;</span><span class="p">(</span>
+    <span class="nv">el-get</span>
+    <span class="nv">auto-complete</span>
+    <span class="nv">yasnippet</span>
+    <span class="nv">auctex</span>
+    <span class="nv">emacs-w3m</span>
+    <span class="nv">markdown-mode</span>
+    <span class="nv">color-theme</span>
+    <span class="c1">;; Any package you like))</span>
+
+<span class="p">(</span><span class="nf">el-get</span> <span class="ss">&#39;sync</span> <span class="nv">my-el-get-packages</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="github">Github同步</h2>
+<p>如果想要在不同电脑上共享同样的emacs配置，那么你可以选择dropbox或者更开放的github同步。为了便于git的管理，需要把所有配置文件都放到<code>.emacs.d</code>目录下，这样只需要<code>ln -s</code>把该目录链接到用户主目录即可。如果你使用<code>.emacs</code>配置文件，那么可以把它原封不动地迁徙一下即可：<code>mv .emacs .emacs.d/init.el</code>。</p>
+<h2 id="_1">参考文章</h2>
+<p><a href="https://github.com/dimitri/el-get">el-get@Github</a> </p>
+<p><a href="http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/">Package Management in Emacs: The Good, the Bad and the Ugly</a></p>
+<p><a href="http://emacser.com/el-get.htm">GNU Emacs的终极扩展管理工具 — el-get</a> </p></div>
+        <hr />
+    </div>
+		
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="http://www.joshuazhang.net/tag/el-get.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.joshuazhang.net/archives.html">Archives</a>
+                <li><a href="http://www.joshuazhang.net/tags.html">Tags</a>
+                <li><a href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.joshuazhang.net/category/life.html">Life</a></li>
+                <li><a href="http://www.joshuazhang.net/category/review.html">Review</a></li>
+                <li><a href="http://www.joshuazhang.net/category/technique.html">Technique</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/voidmous">Github</a></li>
+                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.joshuazhang.net">JoshuaZhang</a> &copy; Joshz 2012-2014 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+</body>
+</html>

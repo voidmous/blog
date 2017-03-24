@@ -56,8 +56,8 @@
 
     <div class='article'>
         <div class="content-title">
-            <a href="http://www.joshuazhang.net/posts/2013/wp-edit-publish-plan.html"><h1>WordPress文章编辑发布方案</h1></a>
-周五 04 一月 2013
+            <a href="http://www.joshuazhang.net/posts/2014/cygwin-cfg-note.html"><h1>Cygwin 安装配置笔记</h1></a>
+周二 02 十二月 2014
 
 by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
  
@@ -66,45 +66,323 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
  
         </div>
         
-        <div><p>我已经不再使用WP作为博客平台，其中一个原因就是因为找不到一个适合自己的编辑发布工具链（也许是我太挑剔）。如果你也和我一样对这方面很不满意的话,想要了解其它的方案，这篇文章也许会有帮助。首先要说明的是编辑和发布是两个阶段，如果再详细点还应该包括修改阶段，下面的一些发布流程往往只能照顾到某一个方面，而在另一个方面就相形见绌，总有这样那样的瑕疵。基本上，WordPress的编辑发布方案有这么几大类：</p>
-<div class="section" id="id1">
-<h2>后台发布</h2>
-<p>这是默认的，也是便利性、兼容性最好的方案。但是它最大的缺点就在于一个字：慢。这个慢有两个方面，一是后台太笨重，如果你空间本来就不快（比如国外的空间），那加载后台都会等很久；二是WYSIWYG的编辑方式，如果你要搞长篇大论，图文并茂的话，上传图片、预览这些操作都是费事费力的。当然改进的方法也有：使用WP前台编辑插件（什么名字我忘了）、尽量不预览（对html熟悉程度要高）。</p>
-</div>
-<div class="section" id="id2">
-<h2>编辑器终端</h2>
-<p>包括两大类：专用的和通用的。</p>
-<p>专用的就有大名鼎鼎的WLW，这应该是许多人坚守Windows平台的原因之一吧。其它如qumana、thingamablog等，虽然可用，但是功能不完善，体验也不好。特别值得一提的是浏览器插件 <a class="reference external" href="https://addons.mozilla.org/en-us/firefox/addon/scribefire-next/">ScribeFireNext</a> ，比起WLW也未逊色多少，如果要跨平台的话可以一试。Linux下可以尝试 <a class="reference external" href="http://paranimage.com/6-under-linux-blog-editor/">这些</a> 。</p>
-<p>通用的也很多，这里又分两类：WYSIWYG和代码编辑器。所见即所得的比如M$ Office中的 <a class="reference external" href="http://www.dongbinbin.com/2012/07/wordfabuboke/">Word编辑器</a> 就可以作为发布终端，<a class="reference external" href="http://hi.baidu.com/yumi44444/item/52e203d0c0f5d2e0b3f77789">OneNote</a> 也是选择之一。代码编辑器其实就是指VIM和emacs啦。用这两款编辑器发布文章往往可以使用一些轻量级标记语言，从而简化写作过程，但是修改过程可能很让人恼火。编辑器之神和神之编辑器都有相应的WordPress插件如vimpress、vimrepress和Weblogger Mode等，请读者自行搜索。</p>
-</div>
-<div class="section" id="id4">
-<h2>云服务中转</h2>
-<p>这一类方案也有很多，可以举出许多例子：</p>
-<ul class="simple">
-<li>邮箱转发</li>
-<li>Google docs发布</li>
-<li>云笔记发布</li>
+        <div><div class="toc">
+<ul>
+<li><a href="#_1">安装</a><ul>
+<li><a href="#_2">基本系统</a></li>
+<li><a href="#_3">安装第三方包管理工具</a></li>
+<li><a href="#_4">安装编译环境</a></li>
+</ul>
+</li>
+<li><a href="#_5">配置</a><ul>
+<li><a href="#bash">配置 Bash</a></li>
+<li><a href="#mintty">配置 mintty</a><ul>
+<li><a href="#mintty_1">下拉式 mintty</a></li>
+<li><a href="#mintty_2">mintty的常用快捷键</a></li>
+<li><a href="#mintty-dos">mintty 运行 DOS 命令乱码问题</a></li>
+</ul>
+</li>
+<li><a href="#mintty_3">替换 mintty</a></li>
+<li><a href="#vim">配置 Vim</a></li>
+<li><a href="#emacs">使用 Emacs</a></li>
+</ul>
+</li>
+<li><a href="#cygwinx">Cygwin/X</a><ul>
+<li><a href="#_6">安装</a></li>
+<li><a href="#_7">中文支持</a></li>
+</ul>
+</li>
+<li><a href="#_8">技巧</a><ul>
+<li><a href="#_9">文件共享</a></li>
+<li><a href="#_10">剪贴板共享</a></li>
+<li><a href="#_11">搜索软件包</a></li>
+<li><a href="#_12">打开当前目录</a></li>
+<li><a href="#_13">隐藏启动终端</a></li>
+</ul>
+</li>
+<li><a href="#_14">参考资料</a></li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h2>命令行工具</h2>
-<p>这里强调的实际是发布工具。对于命令行geek而言，真正让他们恋恋不舍的其实是vim，emacs之流的编辑器神器加上Markdown这样的快速语法配合得到的强大的文章编辑工作流，至于发布，除了插件，第三方工具也是一个选择，比如 <a class="reference external" href="http://mooninsky.net/history/?p=271">基于Perl的命令行WordPress客户端</a> 。当然还有很多此类的工具，它们都基于 <a class="reference external" href="http://www.ibm.com/developerworks/cn/xml/x-metablog/">标准的API</a> ，如果你喜欢，甚至可以自己编写一个。</p>
-<p>前两种方案有诸多限制，因此并不推荐。第三种方案我实践了一段时间，主要用 <a class="reference external" href="http://note.sdo.com/register?ac=634782146519602937">麦库</a> 作为编辑终端，所有文章都存在网上，成文后在麦库发布然后复制粘贴到WP博客上，虽然发布过程麻烦，但是胜在编辑是在速度很快的云端，多地点写作的感觉很好。还有一个缺点是图片需要外链到麦库，太依赖此服务。</p>
-</div>
-<div class="section" id="id7">
-<h2>我的选择</h2>
-<p>应该说选择还是很多的，不过我的要求更多，列表如下：</p>
-<ul class="simple">
-<li>网络同步。因为我需要在不同地点都能够编辑文章，如果能够云端编辑更好，省去了同步的时间</li>
-<li>较高的编辑效率。写文章的时候大量的格式修改、插入图片的操作很另人沮丧，编辑效率太低很影响写作的流畅度，WYSIWYG的方式尤其如此。</li>
-<li>快速的响应，这是我讨厌后台发布文章的主因。</li>
-<li>跨平台，windows和linux我都在使用，能够统一编辑当然是最好的。</li>
-<li>延时发布机制。好的文章往往并非一蹴而就的，构思、动笔、不断的修改和打磨是正常的，这就需要草稿能够很好地保存且易于修改。</li>
-<li>图片发布转存。文章里的图片、附件应当能够正确地上传到指定的地址且url可以自由定制。</li>
+<h1 id="_1">安装</h1>
+<p>Cygwin 的安装过程并不难，但还是比较繁琐，如果你想快速拥有一个配置好的 Cygwin 环境或者仅仅想试用一下，那我推荐使用 <a href="https://babun.github.io/">Babun</a>，它是一个基于 Cygwin 的 Shell 环境，自带包管理工具<code>pact</code>（基于<code>apt-cyg</code>），预装了众多工具以及自定义配置。对于想长期使用的童靴，我还是推荐官方原配。</p>
+<h2 id="_2">基本系统</h2>
+<p>下载 <a href="http://cygwin.com/setup-x86.exe">setup-x86.exe</a>  或者 <a href="https://cygwin.com/setup-x86_64.exe">setup-x86_64.exe</a>  丢到安装目录<code>D:\cygwin</code>（建议）下。它是默认的图形包管理器，双击运行，设置包下载目录为<code>D:\cygwin\packages</code>。推荐的国内源地址：</p>
+<div class="codehilite"><pre>; 网易
+http://mirrors.163.com/cygwin/
+; 中科大
+http://mirrors.ustc.edu.cn/cygwin/
+; 搜狐
+http://mirrors.sohu.com/cygwin/
+</pre></div>
+
+
+<p>安装时注意选上<code>subversion</code>和<code>wget</code>，为安装<code>apt-cyg</code>做准备。</p>
+<h2 id="_3">安装第三方包管理工具</h2>
+<p><code>cygwin</code>自带的图形包管理器需要重复一些配置操作，而且需要搜索包名安装，实在是不方便。<a href="http://code.google.com/p/apt-cyg/"><code>apt-cyg</code></a>（或者<a href="http://code.google.com/p/cyg-apt/">cyg-apt</a>）则提供了类似<code>debian</code>下<code>apt-get</code>相同的功能，非常方便包管理，强烈推荐安装。首先用默认包管理器安装好<code>subversion</code>和<code>wget</code>，启动<code>Cygwin Terminal</code>，输入如下命令：</p>
+<div class="codehilite"><pre><span class="nv">$ </span>svn --force <span class="nb">export </span>http://apt-cyg.googlecode.com/svn/trunk/ /bin/
+<span class="nv">$ </span>chmod+x /bin/apt-cyg
+<span class="nv">$ </span>apt-cyg -m http://mirrors.163.com/cygwin/  <span class="c"># 设置apt-cyg的源地址</span>
+</pre></div>
+
+
+<div class="codehilite"><pre>apt-cyg: Installs and removes Cygwin packages.
+  &quot;apt-cyg install &lt;package names&gt;&quot; to install packages
+  &quot;apt-cyg remove &lt;package names&gt;&quot; to remove packages
+  &quot;apt-cyg update&quot; to update setup.ini
+  &quot;apt-cyg show&quot; to show installed packages
+  &quot;apt-cyg find &lt;patterns&gt;&quot; to find packages matching patterns
+  &quot;apt-cyg describe &lt;patterns&gt;&quot; to describe packages matching patterns
+  &quot;apt-cyg packageof &lt;commands or files&gt;&quot; to locate parent packages
+Options:
+  --mirror, -m &lt;url&gt; : set mirror
+  --cache, -c &lt;dir&gt;  : set cache
+  --file, -f &lt;file&gt;  : read package names from file
+  --noupdate, -u     : don&#39;t update setup.ini from mirror
+  --help
+  --version
+</pre></div>
+
+
+<p>一些必备的软件：git、openssh、openssl、binutils，
+有用的工具：util-linux(more)、bash-completion（经测试可能影响终端启动性能）、procps(top)、inetutils(telnet)、bind-utils(dig)。</p>
+<h2 id="_4">安装编译环境</h2>
+<p>随着 Cygwin 的更新，目前越来越多的软件可以在 Cygwin 下通过编译，但是比起 Linux 系统，出问题的概率仍然较高，而且有些编译和运行的需求是 Cygwin 平台无法满足的。因此普通用户应当优先使用二进制包，在最不利的情况下才应该尝试自己编译软件。</p>
+<div class="codehilite"><pre><span class="nv">$ </span>apt-get install gcc4-core gcc4-g++ gdb make autoconf automake
+<span class="nv">$ </span>gcc --version
+<span class="nv">$ </span>g++ --version
+</pre></div>
+
+
+<h1 id="_5">配置</h1>
+<h2 id="bash">配置 Bash</h2>
+<p>鉴于 Cygwin 下大部分的配置都和 Linux 相同，因此，为了免除维护两份配置文件的麻烦，可以在<code>~/.bashrc</code>中写入：</p>
+<div class="codehilite"><pre><span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$OSTYPE</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;linux-gnu&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Linux-gnu environment detected.&quot;</span>
+<span class="k">elif</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$OSTYPE</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;cygwin&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Cygwin environment detected.&quot;</span>
+    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.bashrc.cygwin&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nb">source</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.bashrc.cygwin&quot;</span>
+    <span class="k">fi</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Unknown Platform&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+
+
+<p>这样所有 cygwin 下特定的配置都可以写入到 <code>~/.bashrc.cygwin</code> 了。</p>
+<h2 id="mintty">配置 mintty</h2>
+<p>在终端标题栏右键选择“Options”就可以设置mintty的显示效果，主要修改几个方面：</p>
+<ul>
+<li>字体，我个人喜欢 <a href="http://levien.com/type/myfonts/inconsolata.html">Inconsolata</a>，或者你可以从<a href="http://www.lowing.org/fonts/">这里</a>挑一个。</li>
+<li>终端窗口大小，可按照屏幕大小自己调整。</li>
+<li>透明度，medium 级别在 win7 下看着比较舒服。</li>
 </ul>
-<p>基本上我的要求难以同时得到满足，所以有这么一个折腾的理由，我也就顺理成章地转到了Pelican上去了。静态博客当然也有它的缺点，不过暂时而言我对它的喜爱还是多一点的。</p>
-</div>
-</div>
+<p>Mintty 默认设置下深蓝色不够显眼，看着很吃力，我建议大家使用 <a href="https://github.com/oumu/mintty-color-schemes">mintty-color-schemes</a>  的主题，我个人最偏爱对比度较高的<code>base16-shapeshifter-mod-lighten</code>。</p>
+<p>如果想恢复默认设置，只需要清空<code>~/.minttyrc</code>中的内容。</p>
+<p>我的<code>~/.minttyrc</code>：</p>
+<div class="codehilite"><pre><span class="nv">BoldAsFont</span><span class="o">=</span>no
+<span class="nv">Font</span><span class="o">=</span>Monaco
+<span class="nv">FontHeight</span><span class="o">=</span>10
+<span class="nv">Transparency</span><span class="o">=</span>medium
+<span class="nv">CursorType</span><span class="o">=</span>block
+<span class="nv">CursorBlinks</span><span class="o">=</span>no
+<span class="nv">Scrollbar</span><span class="o">=</span>right
+<span class="nv">Columns</span><span class="o">=</span>120
+<span class="nv">Rows</span><span class="o">=</span>26
+<span class="nv">BackspaceSendsBS</span><span class="o">=</span>yes
+<span class="nv">Locale</span><span class="o">=</span>zh_CN
+<span class="nv">Charset</span><span class="o">=</span>UTF-8
+<span class="c"># base16-shapeshifter-mod-lighten theme</span>
+<span class="c"># from: https://github.com/oumu/mintty-color-schemes</span>
+<span class="nv">ForegroundColour</span><span class="o">=</span>171,171,171
+<span class="nv">BackgroundColour</span><span class="o">=</span>0,0,0
+<span class="nv">CursorColour</span><span class="o">=</span>253,157,79
+<span class="nv">Black</span><span class="o">=</span>0,0,0
+<span class="nv">BoldBlack</span><span class="o">=</span>52,52,52
+<span class="nv">Red</span><span class="o">=</span>233,47,47
+<span class="nv">BoldRed</span><span class="o">=</span>240,116,116
+<span class="nv">Green</span><span class="o">=</span>14,216,57
+<span class="nv">BoldGreen</span><span class="o">=</span>64,243,102
+<span class="nv">Yellow</span><span class="o">=</span>221,221,19
+<span class="nv">BoldYellow</span><span class="o">=</span>240,240,78
+<span class="nv">Blue</span><span class="o">=</span>59,72,227
+<span class="nv">BoldBlue</span><span class="o">=</span>125,135,236
+<span class="nv">Magenta</span><span class="o">=</span>249,150,226
+<span class="nv">BoldMagenta</span><span class="o">=</span>253,222,246
+<span class="nv">Cyan</span><span class="o">=</span>35,237,218
+<span class="nv">BoldCyan</span><span class="o">=</span>107,243,230
+<span class="nv">White</span><span class="o">=</span>171,171,171
+<span class="nv">BoldWhite</span><span class="o">=</span>249,249,249
+</pre></div>
+
+
+<p>更多配置请参考<code>man mintty</code>。</p>
+<h3 id="mintty_1">下拉式 mintty</h3>
+<p>mintty本身并非下拉式终端，即不能通过热键来呼出或隐藏，参考了网友所写的 <a href="https://bitbucket.org/riverscn/cyg-hotkey/">cyg-hotkey</a>，我用<code>AHK</code>写了个小工具 <a href="https://github.com/voidmous/PUF/tree/ahk-devel">PUF</a>，可以实现任意窗口程序的热键呼出。如果要使用 cyg-hotkey，可运行下列命令：</p>
+<div class="codehilite"><pre><span class="nv">$ </span>hg clone https://bitbucket.org/riverscn/cyg-hotkey   <span class="c"># 需安装mercurial</span>
+<span class="nv">$ </span><span class="nb">cd </span>cyg-hotkey
+<span class="nv">$ </span>make all <span class="o">&amp;&amp;</span> make install
+</pre></div>
+
+
+<p>cyg-hotkey 默认使用快捷键 F7，运行<code>cyg-hotkey.exe</code>后即可使用 F7 来呼出/隐藏 mintty 窗口。</p>
+<h3 id="mintty_2">mintty的常用快捷键</h3>
+<ul>
+<li>Shift+Insert    粘贴</li>
+<li>Alt+Enter       全屏</li>
+<li>Alt+F2           开启一个新 mintty 终端</li>
+<li>Ctrl+Tab        在不同终端间切换</li>
+</ul>
+<h3 id="mintty-dos">mintty 运行 DOS 命令乱码问题</h3>
+<p>虽然 cygwin 已经提供了很完备的命令行工具，但涉及到 Windows 配置的个别命令仍然需要到 cmd.exe 下运行（比如<code>ipconfig</code>，<code>taskkill</code>，<code>set</code>等），能不能让这些命令也在<code>mintty</code>下运行呢？答案是肯定的，可以运行，但是并不完美，中文系统运行会出现乱码。原因就在于 cmd.exe 默认的<code>Code Page</code>为<code>cp 936 ANSI/OEM 简体中文 936</code>（在 cmd.exe 窗口右键——属性——选项中可查看），而我们默认设置的 cygwin 编码为 UTF-8，于是 DOS 命令输出的中文一概会变成方框。可选的解决方案有以下几种：</p>
+<ul>
+<li>改变 cmd.exe 的默认输出编码。通过修改注册表更改系统默认设置，见 <a href="https://stackoverflow.com/questions/14109024/how-to-make-unicode-charset-in-cmd-exe-by-default">How to make Unicode charset in cmd.exe by default?</a>。此方法非常危险，会导致系统无法启动，请不要轻易尝试。</li>
+<li>改变 cygwin 和 mintty 的编码。将 cygwin 的 locale 全部改成 zh_CN.GBK，mintty 的 CharSet 也设置为 GBK 即可。但是在大部分软件都以 UTF-8 作为默认输入和输出编码的环境下，这样做会干扰许多软件，比如此时 Vim 中文显示就全是乱码，因此此方案也不推荐。</li>
+<li><a href="https://cygwin.com/faq-nochunks.html#faq.using.weirdchars">临时改变 cmd.exe 的输出编码</a>。在<code>bash.rc</code>中添加<code>cmd /c chcp 65001</code>，这样就可以让 mintty 执行 DOS 命令时输出 UTF 编码。不过让人蛋疼的是，<code>cmd.exe</code>本身如果变成 UTF-8 输出（运行<code>chcp 65001</code>可临时改变输出编码，见 <a href="https://stackoverflow.com/questions/388490/unicode-characters-in-windows-command-line-how/388500#388500">Unicode characters in Windows command line - how?</a>）时，不仅提示全变为英文，且不再支持中文目录（具体原因不详）。幸好在 mintty 下，中文目录没有问题，只是只有英文提示参考，算是变相地解决了乱码的问题。</li>
+<li>使用 iconv 转换编码，这是推荐方案。将所有 windows 命令行程序的输出利用管道进行从 GBK 到 UTF-8 的编码转换，比如<code>ipconfig /all | uo</code>，其中命令 uo （UTF Output）定义为：</li>
+</ul>
+<div class="codehilite"><pre>uo<span class="o">()</span> <span class="o">{</span>
+iconv -f gbk -t utf-8 <span class="nv">$1</span> <span class="p">|</span> less
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="mintty_3">替换 mintty</h2>
+<p>虽然 mintty 也还不错，但也有其自身的限制（详细信息可参考其 Manual），从我使用的过程来看，<code>ConEmu</code>是不错的替代者。</p>
+<ul>
+<li><a href="https://blog.openshift.com/upgrade-cygwin-to-console2-and-improve-the-productivity-of-openshifts-rhc-client-tools-on-wind/">Upgrade Cygwin to Console2 and Improve Windows Productivity</a>，本人测试不成功，UI有问题</li>
+<li><a href="https://superuser.com/questions/591206/how-do-i-configure-conemu-to-run-cygwin-bash">How do I configure ConEmu to run Cygwin Bash?</a>，测试成功，界面不错，功能也很多，但<code>tmux</code>无法运行。</li>
+<li><a href="http://alternativeto.net/software/conemu/">Windows下的各类 Command Prompt</a></li>
+</ul>
+<h2 id="vim">配置 Vim</h2>
+<p>Cygwin 下运行 Vim 必要的配置，加入到<code>~/.vimrc</code>：</p>
+<div class="codehilite"><pre><span class="c">&quot;Cygwin相关设置</span>
+<span class="k">set</span> <span class="nb">nocompatible</span>
+<span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span>indent<span class="p">,</span><span class="nb">eol</span><span class="p">,</span><span class="k">start</span>
+</pre></div>
+
+
+<h2 id="emacs">使用 Emacs</h2>
+<p>Emacs 是神器，但不是普通人能玩得转的，偶尔拿来写点文字还不错，做为 IDE 的话门槛太高，我们作为普通用户还是不要跳这个坑了。关于 Emacs 和 Cygwin 配合使用
+的讨论有很多，比如 <a href="https://stackoverflow.com/questions/2075504/how-to-best-integrate-emacs-and-cygwin">How to best integrate Emacs and Cygwin?</a>，其中比较实用的方案如下：</p>
+<ul>
+<li>文字终端 Emacs，输入<code>apt-cyg install emacs</code>即可安装，没有图形界面，适合高级 Emacs 用户。</li>
+<li>Emacs-X11，输入<code>apt-cyg install emacs-X11</code>安装，启动时需要<code>XServer</code>，由于 Cygwin/X 本身的局限（见下文），不推荐此方案。</li>
+<li>Emacs-w32，输入<code>apt-cyg install emacs-w32</code>安装，其实它使用的是 Windows GUI，我个人最推荐的方式。</li>
+<li>让外部 Emacs 识别 Cygwin shell。在 Windows 下安装 Emacs，然后让 Emacs 启动时自动识别 Cygwin shell，需要编写复杂的设置脚本，门槛较高。</li>
+</ul>
+<p>Mintty 有一个很好用的特性：在 mintty 中后台运行的非终端程序在 mintty 进程结束后仍然可以继续运行。比如输入<code>emacs-w32.exe 1&gt;/dev/null 2&gt;/dev/null &amp;</code>启动 Emacs，然后输入<code>exit</code>关闭 mintty，此时 Emacs 不会随之关闭，对于 Emacs 常驻党应该很有帮助。</p>
+<h1 id="cygwinx">Cygwin/X</h1>
+<h2 id="_6">安装</h2>
+<div class="codehilite"><pre><span class="nv">$ </span>apt-cyg install xorg-server xinit xorg-docs
+<span class="c"># xorg-server 是 windows 下的 Xserver， xinit 包括各种启动命令如 xinit,startx,startwin</span>
+<span class="c"># xorg-docs 可选</span>
+</pre></div>
+
+
+<h2 id="_7">中文支持</h2>
+<p>Cygwin/X 的一个问题是没有对中文输入法的支持，虽然可以安装<code>fcitx</code>并在 Cygwin/X 中运行（我测试未成功），但只能在单窗口模式下启动。
+官方早有支持IME-XIM转换的想法，却迟迟没出成果（见 <a href="http://x.cygwin.com/devel/todo.html">Development - To-Do List</a>）。总之，现阶段在 Cygwin/X 下输入
+中文是很蛋疼的事情，因此它对我们而言还只能是一个玩物。</p>
+<h1 id="_8">技巧</h1>
+<h2 id="_9">文件共享</h2>
+<p>Cygwin 让人爱不释手的原因之一就是和 Windows 的无缝文件共享：Cygwin可以直接访问Windows下的所有文件，Windows也可以访问 Cygwin 下的文本文件。
+Windows 下的盘符<code>C:\</code>对应为 Cygwin 下的目录<code>/cygdrive/c/</code>，所有的 Cygwin 工具可以直接对该目录操作。另外，Windows 下路径名如<code>C:\Program Files\</code>，
+cygwin下的路径则形如<code>/etc/rc.d/</code>，因此两者之间需要进行转换。Cygwin 提供了命令行工具<a href="http://www.cygwin.com/cygwin-ug-net/using-utils.html#cygpath"><code>cygpath</code></a>来进行 Windows 风格和 POSIX 风格的路径名互转。</p>
+<h2 id="_10">剪贴板共享</h2>
+<p>Cygwin 下操作剪贴板最方便的方式是访问设备<code>/dev/clipboard</code>，比如：</p>
+<div class="codehilite"><pre><span class="nv">$ </span>diff file1 file2 &gt; /dev/clipboard
+<span class="nv">$ </span>cat &lt; /dev/clipboard
+</pre></div>
+
+
+<p>第一条命令<code>diff</code>得到的结果被发送到剪贴板上，直接粘贴即可。</p>
+<h2 id="_11">搜索软件包</h2>
+<p>常用的软件我们用<code>apt-cyg find packagename</code>一般都可以找到，但是以下两种情况此命令却帮不上什么忙：</p>
+<ol>
+<li>某些命令行工具被集成到一个大包里，比如<code>dig.exe</code>，<code>telnet.exe</code></li>
+<li>编译软件时常见的<code>libXXX.so.X</code>找不到的问题</li>
+</ol>
+<p>这时我们可以上 <a href="http://cygwin.com/packages/">Cygwin package list</a> 更精确地查找，注意打开链接查看是否包含需要的文件。或者也可以使用内置命令<code>cygcheck -p dig.exe</code>(需要网络连接，<a href="http://www.cygwin.com/cygwin-ug-net/using-utils.html#cygcheck">说明</a>)，利用此方法一般都可以确定需要下载的包，更加快捷。</p>
+<h2 id="_12">打开当前目录</h2>
+<p>此代码来自博客 <a href="http://oldratlee.com/post/2012-12-22/stunning-cygwin">Pragmatistic Guy</a>，特此致谢。</p>
+<p><code>xpl</code>加参数可用于打开目录或者文件，默认无参数打开当前目录：</p>
+<div class="codehilite"><pre><span class="c">#!/bin/bash</span>
+
+<span class="nv">cygwin</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+<span class="k">case</span> <span class="s2">&quot;`uname`&quot;</span> in
+    CYGWIN*<span class="o">)</span> <span class="nv">cygwin</span><span class="o">=</span><span class="nb">true</span> <span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">XPATH</span><span class="o">=</span>. <span class="c"># 缺省是当前目录</span>
+<span class="k">else</span>
+    <span class="nv">XPATH</span><span class="o">=</span><span class="nv">$1</span>
+    <span class="k">if</span> <span class="nv">$cygwin</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nv">XPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cygpath -C ANSI -w <span class="s2">&quot;</span><span class="nv">$XPATH</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+
+explorer <span class="nv">$XPATH</span>
+</pre></div>
+
+
+<p>也可写入到<code>.bashrc.cygwin</code>中，修改如下：</p>
+<div class="codehilite"><pre><span class="k">function</span> xpl <span class="o">{</span>
+     <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+         <span class="nv">XPATH</span><span class="o">=</span>.   <span class="c"># 缺省是当前目录</span>
+     <span class="k">else</span>
+         <span class="nv">XPATH</span><span class="o">=</span><span class="nv">$1</span>
+         <span class="nv">XPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cygpath -C ANSI -w <span class="s2">&quot;</span><span class="nv">$XPATH</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="p">;</span>
+     <span class="k">fi</span>
+     explorer <span class="nv">$XPATH</span>
+ <span class="o">}</span>
+</pre></div>
+
+
+<p><code>xpf</code>用于 explorer 跳转到指定目录或文件并选中：</p>
+<div class="codehilite"><pre><span class="c">#!/bin/bash</span>
+
+<span class="nv">cygwin</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+<span class="k">case</span> <span class="s2">&quot;`uname`&quot;</span> in
+    CYGWIN*<span class="o">)</span> <span class="nv">cygwin</span><span class="o">=</span><span class="nb">true</span> <span class="p">;;</span>
+<span class="k">esac</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">XPATH</span><span class="o">=</span>. <span class="c"># 缺省是当前目录</span>
+<span class="k">else</span>
+    <span class="nv">XPATH</span><span class="o">=</span><span class="nv">$1</span>
+    <span class="k">if</span> <span class="nv">$cygwin</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nv">XPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>cygpath -C ANSI -w <span class="s2">&quot;</span><span class="nv">$XPATH</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+
+explorer <span class="s1">&#39;/select,&#39;</span> <span class="nv">$XPATH</span>
+</pre></div>
+
+
+<p>使用说明，以<code>xpl</code>为例：</p>
+<div class="codehilite"><pre><span class="nv">$ </span>xpl <span class="c"># explorer打开当前目录</span>
+<span class="nv">$ </span>xpl /usr/bin/  <span class="c"># explorer打开指定目录</span>
+<span class="nv">$ </span>xpl video.avi  <span class="c"># 使用 Windows 默认程序打开文件</span>
+</pre></div>
+
+
+<h2 id="_13">隐藏启动终端</h2>
+<p>有时我们想在 Windows 下启动 Cygwin 中的程序或命令行，比如<code>D:\cygwin\bin\mintty.exe /usr/bin/emacs-w32.exe</code>可以启动 Emacs-w32，
+但是同时也会启动一个碍事的终端窗口，如何隐藏它呢？我们可以使用官方提供的工具<code>run.exe</code>：</p>
+<div class="codehilite"><pre>D:\cygwin\bin\run.exe /usr/bin/emacs-w32.exe
+</pre></div>
+
+
+<h1 id="_14">参考资料</h1>
+<ul>
+<li><a href="http://oldratlee.com/post/2012-12-22/stunning-cygwin">惊艳的cygwin——Windows下的Linux命令行环境的配置和使用</a></li>
+<li><a href="https://bitbucket.org/riverscn/cyg-hotkey/overview">为Windows创建一个下拉式类Unix终端 - 川叶 :: 时间河</a></li>
+<li><a href="http://cygwin.com/cygwin-ug-net.html">Cygwin User's Guide</a></li>
+<li><a href="http://x.cygwin.com/docs/ug/">Cygwin/X User's Guide</a></li>
+<li><a href="https://code.google.com/p/mintty/wiki/Tips">官方推荐技巧</a></li>
+</ul></div>
         <hr />
     </div>
 		
@@ -114,7 +392,7 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/wp-database-optimization.html"><h2>wordpress数据库优化记录</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2014/kindle-fun.html"><h2>Kindle好玩物</h2></a>
         <hr>
     </div>	
 				
@@ -124,7 +402,7 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/matlab-note.html"><h2>《MATLAB M语言高级编程》读书笔记</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2013/goodbay-to-googlereader.html"><h2>告别GoogleReader</h2></a>
         <hr>
     </div>	
 				
@@ -134,7 +412,7 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/linux-usb-mount.html"><h2>Linux外置硬盘加载方案</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2013/blog-image-hosting-plan.html"><h2>博客图床规划</h2></a>
         <hr>
     </div>	
 				
@@ -144,7 +422,7 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
  
 
     <div class='article'>
-        <a href="http://www.joshuazhang.net/posts/2012/henon-matlab-analysis.html"><h2>用MATLAB分析Henon映射</h2></a>
+        <a href="http://www.joshuazhang.net/posts/2013/export-googlereader-starreditem-to-evernote.html"><h2>导出Google Reader加星条目到Evernote</h2></a>
         <hr>
     </div>	
 				
@@ -155,6 +433,8 @@ by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</
     <li class="active"><a href="http://www.joshuazhang.net/author/joshz.html">1</a></li>
     <li class=""><a href="http://www.joshuazhang.net/author/joshz2.html">2</a></li>
     <li class=""><a href="http://www.joshuazhang.net/author/joshz3.html">3</a></li>
+    <li class=""><a href="http://www.joshuazhang.net/author/joshz4.html">4</a></li>
+    <li class=""><a href="http://www.joshuazhang.net/author/joshz5.html">5</a></li>
 
     <li class="next"><a href="http://www.joshuazhang.net/author/joshz2.html">Next &rarr;</a></li>
 

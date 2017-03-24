@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JoshuaZhang</title>
+    <meta name="description" content="">
+    <meta name="author" content="Joshz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.joshuazhang.net/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.joshuazhang.net">JoshuaZhang</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+
+
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="http://www.joshuazhang.net/posts/2013/export-googlereader-starreditem-to-evernote.html"><h1>导出Google Reader加星条目到Evernote</h1></a>
+周四 18 四月 2013
+
+by <a class="url fn" href="http://www.joshuazhang.net/author/joshz.html">Joshz</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><p>Google Reader即将离我们而去，这个决定目前看来没有挽回的可能。我个人对Google的服务也很依赖，Google Reader更是常驻在书签栏，不过与其把力气花在谴责Google的作为，不如寻找更好的替代品和抓紧时间备份积累的订阅源和文章。目前离7月1日尚早，其它在线阅读器还有很长的时间打磨产品，所以替代品的筛选还不急于一时。倒是收藏的文章（加星标的条目）怎么导出似乎没有引起大家的关注，我把自己搜索整理的一些导出方案记录下来并作个比较（虽然没有一一测试），希望我的判断能有些参考价值。</p>
+<h2 id="_1">导出方案思路</h2>
+<p>目前网上可以搜集到的方案有这么几种：</p>
+<ul>
+<li><a href="http://blog.vsharing.com/ligongzi/A1472320.html">Google Reader的条目转发</a>。手工转发当然是很蛋疼的，配合ifttt转发对已经加上星标的又没作用，需要更自动化的工具。</li>
+<li><a href="http://m.blog.csdn.net/blog/chief1985/6689805">基于html页面脚本或AHK脚本</a>。这种方法大多是用脚本刷新页面直接打印为PDF，显然处理过程不怎么“漂亮”，而且输出也丢失了扩展性。</li>
+<li>基于第三方服务。目前似乎只有<a href="http://blog.wiz.cn/google-reader.html">为知</a>可以方便快捷地下载加星标的文章，但程序好像也不怎么给力。feedly貌似也可以直接导入加星标条目。</li>
+<li><a href="http://www.36kr.com/p/201886.html">RSS</a>导出。这种方式貌似可以导出订阅源的所有条目，即便该博客已经不存在了。。。这种方法适合导出一个订阅源的所有文章，但缺点还是自动化程度太低。</li>
+<li>基于GoogleTakeout的导出数据。虽然关闭了Reader，但是Google对用户还是尽到了自己的责任，提供了一个强大而完备的备份工具，只不过导出的是比较另类的<code>.json</code>文件。对它们做进一步处理可以得到组织良好的html文件。<ol>
+<li><a href="http://mescoda.com/2011/12/gr2evernote/">GR2Evernote — 将Google Reader的分享内容导入Evernote</a> ，<a href="http://blog.sina.com.cn/s/blog_4afc0d8201017ah3.html">导出和备份google阅读器喜欢星标评论等历史内容到evernote或者wiz</a> （未测试）</li>
+<li><a href="http://www.appinn.com/convertjson/">ConvertJSON – 转换 Google Reader 导出数据为网页</a> （未测试）</li>
+</ol>
+</li>
+</ul>
+<p>我个人更喜欢最后一种思路，因为Google提供的备份文件组织良好，而且保留了重要的由用户操作过的文档数据（加星、分享等）而非全部备份文档数据，这使得导出的数据不会很大同时保留住了精华。这里我要推荐一个python脚本<code>export_gr2evernote</code>，它的作用是处理<code>json</code>文件得到Evernote自家的笔记本格式<code>.enex</code>（也可以得到html格式），这样就可以导入到Evernote中，而Evernote虽小，似乎比Google要有良心一些^-^。</p>
+<h2 id="export_gr2evernote">export_gr2evernote</h2>
+<p><a href="https://github.com/kerchen/export_gr2evernote">@Github</a></p>
+<p>目前该项目仍然处在改进中，现在已经有了三种导入处理方式：</p>
+<ul>
+<li><code>export2HTMLFiles</code>，每篇文章都输出为单独的html文件。</li>
+<li><code>export2enex</code>，导出为<code>enex</code>文件，所有转换都在本地完成，对<code>json</code>文件大小无限制。</li>
+<li><code>export_gr2evernote</code>，利用邮件发送功能导入Evernote，脚本不会进行任何的格式优化，所以在Evernote中显示的效果可能很丑陋，不推荐。</li>
+</ul>
+<p>作者本人推荐用前两种方式之一。从我个人测试的情况来看，导入的<code>enex</code>笔记完全保存了GR中文章的样式，图片、视频都能正常显示和观看，最重要的是整个流程十分简单快捷。</p>
+<p>处理流程（以Windows下<code>export2enex</code>为例）：</p>
+<ol>
+<li>首先确保系统安装了python</li>
+<li>用GoogleTakeout导出Reader数据，下载压缩包解压。</li>
+<li>将脚本丢到解压目录，<code>Win+r cmd &lt;RET&gt;</code>运行Dos窗口， <code>cd</code>到该目录，运行<code>export2enex.py starred.json &gt; starred.enex</code>，很快目录下就会出现<code>starred.enex</code></li>
+<li>Evernote导入<code>starred.enex</code>文件，注意选择<strong>本地笔记本</strong>，尤其是文章数很多的情况。</li>
+</ol>
+<p><code>export2enex.py</code>这个脚本有个小bug，就是对文章的链接url中的<code>&amp;</code>字符处理不当（应该转换为<code>&amp;amp;</code>的形式），导致导出的<code>enex</code>文件无法被正确导入到Evernote，需要加入如下代码到合适位置：</p>
+<div class="codehilite"><pre><span class="k">if</span> <span class="s">&#39;&amp;&#39;</span> <span class="ow">in</span> <span class="n">msg_url</span><span class="p">:</span>
+    <span class="n">msg_url</span><span class="o">=</span><span class="n">msg_url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;&#39;</span><span class="p">,</span> <span class="s">&#39;&amp;amp;&#39;</span><span class="p">)</span>
+</pre></div></div>
+        <hr />
+    </div>
+		
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+    <li class="active"><a href="http://www.joshuazhang.net/tag/evernote.html">1</a></li>
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.joshuazhang.net/archives.html">Archives</a>
+                <li><a href="http://www.joshuazhang.net/tags.html">Tags</a>
+                <li><a href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.joshuazhang.net/category/life.html">Life</a></li>
+                <li><a href="http://www.joshuazhang.net/category/review.html">Review</a></li>
+                <li><a href="http://www.joshuazhang.net/category/technique.html">Technique</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/voidmous">Github</a></li>
+                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.joshuazhang.net">JoshuaZhang</a> &copy; Joshz 2012-2014 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+</body>
+</html>

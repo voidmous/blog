@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JoshuaZhang</title>
+    <meta name="description" content="">
+    <meta name="author" content="Joshz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.joshuazhang.net/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.joshuazhang.net/theme/local.css" rel="stylesheet">    <link href="http://www.joshuazhang.net/theme/pygments.css" rel="stylesheet">
+    <!-- Python-Markdown CodeHilite extension css -->
+    <link href="http://www.joshuazhang.net/theme/codehilite.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.joshuazhang.net">JoshuaZhang</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+
+    <div class='article'>
+        <div class="content-title">
+            <h1>Markdown语法笔记</h1>
+周三 27 三月 2013
+
+by <a class="url fn" href="http://www.joshuazhang.net/author/voidmous.html">voidmous</a>
+ 
+
+
+        </div>
+	
+        <div><p>这是我自己学习Markdown语法的一个备忘，主要是一些难以理解或者易错的地方。更详细的可以参考 <a href="http://wowubuntu.com/markdown/basic.html">Markdown快速入门</a>和 <a href="http://wowubuntu.com/markdown/basic.html">Markdown语法说明</a> </p>
+<h3 id="_1">基本语法</h3>
+<p>HTML标签可以直接在md文本中书写，不必区分。某些区块元素标签比如<code>&lt;table&gt;,&lt;pre&gt;</code>需要前后空行且开始结尾不能缩进。HTML标签和md语法互相嵌套的情况比较复杂，不过这种需求比较少。</p>
+<p>Markdown对<code>&lt;</code>和<code>&amp;</code>字符的处理比较智能，会自动根据所处的位置做相应的转换，对于作者而言是很自然的，按照习惯书写即可。</p>
+<p>Markdown以空行分段且段落不需要手工缩进。</p>
+<p>两种标题语法Setext和atx都支持，如何选择合适的标题层次？</p>
+<p>区块引用使用<code>&gt;</code>，类比gmail的回复引用。</p>
+<p>在列表中空行会导致每个项目都被<code>&lt;p&gt;</code>标签包起来。</p>
+<p>连续的缩进行或者段落会被当作代码块处理，注意前后空行。</p>
+<p>链接、图片都有行内和参考两种形式。参考标记可以是数字或者字符甚至空白和标点符号，不区分大小写。参考链接或图片的定义推荐放在引用段落的后面，方便查看。参考式链接的有点在于增强了去除正文的链接内容，使之更具可读性。</p>
+<p>目前Markdown无法指定图片宽高，需要普通的<code>&lt;img&gt;</code>标签。</p>
+<p>反斜杠作为逃逸符？</p></div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'joshuazhangblog'; 
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.joshuazhang.net/archives.html">Archives</a>
+                <li><a href="http://www.joshuazhang.net/tags.html">Tags</a>
+                <li><a href="http://www.joshuazhang.net/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.joshuazhang.net/category/life.html">Life</a></li>
+                <li><a href="http://www.joshuazhang.net/category/review.html">Review</a></li>
+                <li><a href="http://www.joshuazhang.net/category/technique.html">Technique</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="https://github.com/voidmous">Github</a></li>
+                <li><a href="http://www.douban.com/people/45448149">Douban</a></li>
+                <li><a href="http://weibo.com/u/1760438435">Weibo</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.joshuazhang.net">JoshuaZhang</a> &copy; Joshz 2012-2014 Powered By <a href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> and <a href="https://github.com/">Github</a></p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<script>var _gaq=[['_setAccount','UA-40506321-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+</body>
+</html>
