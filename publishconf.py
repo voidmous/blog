@@ -23,6 +23,5 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
-DUOSHUO_SITENAME = "joshuazhangblog"
 DISQUS_SITENAME = "joshuazhangblog"
 GOOGLE_ANALYTICS = "UA-40506321-1"
